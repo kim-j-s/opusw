@@ -1,0 +1,71 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<!-- 헤더영역 -->
+		@@include('include/header.html')
+		<!-- //헤더영역 -->
+
+<style type="text/css">
+.tabListBox {position:absolute; top:27px; right:0; width:150px; height:62px; border:1px solid blue; background:#fff; overflow:hidden;}
+.tabListBox li {}
+.tabListBox li a {display:block; font-size:14px; color:#333;}
+</style>
+
+		<section id="container">
+			<div class="inner">
+				@@include('include/nav.html')
+				<div class="content">
+
+					<div class="tabWrap">
+						<ul class="tabList">
+							<li class="home single">
+								<a href="#">Home</a>
+							</li>
+							<li>
+								<a href="#" class="on">
+									<span>House B/L</span>
+									<span>OBK-000468</span>
+								</a>
+								<button class="tabClose">Close</button>
+							</li>
+							<li>
+								<a href="#">
+									<span>House B/L</span>
+									<span>OBK-000468</span>
+								</a>
+								<button class="tabClose">Close</button>
+							</li>
+							<li>
+								<a href="#">
+									<span>House B/L</span>
+									<span>OBK-000468</span>
+								</a>
+								<button class="tabClose">Close</button>
+							</li>
+							<li class="on">
+								<a href="#">
+									<span>House B/L</span>
+									<span>OBK-000468</span>
+								</a>
+								<button class="tabClose">Close</button>
+							</li>
+							<li>
+								<a href="#">
+									<span>House B/L</span>
+									<span>OBK-000468</span>
+								</a>
+								<button class="tabClose">Close</button>
+							</li>
+						</ul>
+						<div class="tabListBox">
+							<ul>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

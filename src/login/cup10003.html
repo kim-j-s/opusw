@@ -1,0 +1,142 @@
+@@include('include/head.html')
+<body>
+	<div class="flexWrap">
+		<div class="flexLayer">
+			<h1><img src="../static/images/common/logo.png" alt="OPUS LOGISTICS" /></h1>
+			<div class="inner">
+				<h2 class="tit" id="i10003-newAccount">New Account</h2>
+				<section class="inpGroup">
+					<h1 class="tit" id="i10003-userLb">User</h1>
+					<dl class="inpItem">
+						<dt id="i10003-nameLb">Name</dt>
+						<dd>
+							<div class="inputBox">
+								<input type="text" class="inp Mandate" id="i10003-name" placeholder="Your Name" maxlength="50">
+								<button class="inpReset"></button>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i10003-eMailLb">Email</dt>
+						<dd>
+							<div class="inputBox">
+								<input type="text" class="inp Mandate" id="i10003-eMail" placeholder="Your Email" maxlength="50">
+								<button class="inpReset"></button>
+							</div>
+							<p class="alertMessage" id="i10003-dupeMailLb">Duplicated Email address found while adding your address.</p>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i10003-passwordLb">Password</dt>
+						<dd>
+							<div class="inputBox">
+								<input type="password" class="inp Mandate pwinp" id="i10003-password" placeholder="Type Password" maxlength="50">
+								<button class="inpReset"></button>
+							</div>
+							<p class="alertMessage" id="i10003-shortPasswordLb">Password must contain at least 6 characters, including alphabets and numbers.</p>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i10003-confirmPasswordLb">Confirm Password</dt>
+						<dd>
+							<div class="inputBox">
+								<input type="password" class="inp Mandate pwinp" id="i10003-confirmPassword" placeholder="Re-Type Password" maxlength="50">
+								<button class="inpReset"></button>
+							</div>
+							<p class="alertMessage" id="i10003-misconfirmPasswordLb">The passwords you entered don't match.</p>
+						</dd>
+					</dl>
+				</section>
+				<section class="inpGroup">
+					<h2 class="tit" id="i10003-organizationLb">Organization</h2>
+					<dl class="inpItem">
+						<dt id="i10003-companyLb">Company</dt>
+						<dd>
+							<div class="inputBox schType ty1">
+								<div class="inner">
+									<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+									<input type="text" class="inp autoSch ty1 name" id="i10003-company" placeholder="Type Company Name">
+									<button class="inpReset"></button>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i10003-departmentLb">Department</dt>
+						<dd>
+							<div class="inputBox">
+								<input type="text" class="inp" id="i10003-department" placeholder="Type Department Name" maxlength="50">
+								<button class="inpReset"></button>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i10003-address1Lb">Address Line1</dt>
+						<dd>
+							<div class="inputBox">
+								<input type="text" class="inp" id="i10003-address1" placeholder="Type Street Address, P.O. box" maxlength="50">
+								<button class="inpReset"></button>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i10003-address2Lb">Address Line2</dt>
+						<dd>
+							<div class="inputBox">
+								<input type="text" class="inp" id="i10003-address2" placeholder="Type Department Name" maxlength="50">
+								<button class="inpReset"></button>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i10003-cityLb">City</dt>
+						<dd>
+							<div class="inputBox schType ty2">
+								<div class="inner">
+									<input type="text" class="inp autoSch ty2 code Readonly" readonly="readonly">
+									<input type="text" class="inp autoSch ty2 name" id="i10003-city" placeholder="Type City">
+									<button class="inpReset"></button>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i10003-stateLb">State/Province</dt>
+						<dd>
+							<div class="inputBox schType ty2">
+								<div class="inner">
+									<input type="text" class="inp autoSch ty3 code Readonly" readonly="readonly">
+									<input type="text" class="inp autoSch ty3 name" id="i10003-state" placeholder="Type State">
+									<button class="inpReset"></button>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i10003-countryLb">Country</dt>
+						<dd>
+							@@include('include/CountrySelect.html',{
+								"id": "i10003-state"
+							})
+							<div class="inputBox zipCode">
+								<div class="inner">
+									<input type="text" class="inp" id="i10003-zipCode" placeholder="Zip Code">
+									<button class="inpReset"></button>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</section>
+				<div class="joinBtn">
+					<button class="btn" id="i10003-next">Next</button>
+				</div>
+			</div>
+			<div class="link">
+				<a href="#" id="i10003-helpLb">Help</a>
+				<a href="#" id="i10003-privacyLb">Privacy</a>
+				<a href="#" id="i10003-termsLb">Terms</a>
+			</div>
+		</div>
+    </div>
+</body>
+</html>

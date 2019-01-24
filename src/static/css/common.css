@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+@import url('lib/animated.css');
+@import url('lib/daterangepicker.css');
+@import url('lib/jquery-ui-1.10.4.custom.min.css');
+@import url('lib/swiper.css');
+@import url('lib/quill.snow.css');
+@import url('lib/semantic.min.css');
+
+
+/* ==============================
+ * header
+ * ============================== */
+#headerWrap {position:fixed; top:0; left:0; z-index:100; width:100%; height:56px; padding-left:88px; border-bottom:1px solid #e8e9ee; background:#fff;}
+#headerWrap > h1 {height:55px; padding:18px 0 0 29px; border-left:1px solid #e8e9ee;}
+#headerWrap > h1 a {display:inline-block; font-size:0;}
+
+
+/* ==============================
+ * footer
+ * ============================== */
+
+
+/* ==============================
+ * common
+ * ============================== */
+
+/* input */
+.inputBox {position:relative; display:inline-block; max-width:200px;}
+.inputBox .inp {display:block; width:100%; height:28px; padding:0 28px 0 10px; border:1px solid #dcdcdc; font-size:14px; transition: all .5s ease; outline:none; border-radius:5px;}
+.inputBox .inp:focus {border:1px solid #78abea;}
+.inputBox .inp.Readonly {background:#d9d9d9; pointer-events:none;}
+.inputBox .inp.Warning {border:1px solid #ffc000;}
+.inputBox .inp.Mandate {background:#b2d6f3;}
+.inputBox .inpReset {position:absolute; top:7px; right:7px; width:14px; height:14px; background:url(../images/common/sprite_common.png) no-repeat -20px -40px;}
+.inputBox .inpReset {display:none;}
+.inputBox + .alertMessage {margin-top:7px;}
+
+
+/* autocomplete case */
+.inputBox.schType {max-width:none; font-size:0;}
+.inputBox.schType > .inner {position:relative; display:inline-block;}
+.inputBox.schType > .inner .easy-autocomplete {display:inline-block; font-size:0; width:115px;}
+.inputBox.schType > .inner .easy-autocomplete .inp {padding:0 10px 0 10px;}
+
+.inputBox.schType > .inner .easy-autocomplete .inp {border-radius:0 5px 5px 0;}
+.inputBox.schType > .inner .easy-autocomplete:first-child .inp {border-radius:5px 0 0 5px;}
+
+.inputBox.schType.ty1 > .inner .easy-autocomplete {width:208px;}
+.inputBox.schType.ty1 > .inner .easy-autocomplete:first-child {width:100px;}
+.inputBox.schType.ty2 > .inner .easy-autocomplete {width:150px;}
+.inputBox.schType.ty2 > .inner .easy-autocomplete:first-child {width:100px;}
+
+.inputBox.zipCode {width:104px;}
+.dropdown + .inputBox.zipCode {vertical-align:top;}
+
+/* easy-autocomplete */
+.easy-autocomplete-container {position:absolute; left:0; z-index:1; width:100%;}
+.easy-autocomplete-container ul {/* display:block !important */}
+.easy-autocomplete-container li {position:relative; border:1px solid #e1e0e8; border-top:0; border-radius:5px; font-size:13px; background:#fff;}
+.easy-autocomplete-container li.selected, .easy-autocomplete-container li:hover {background:#ddd;}
+.easy-autocomplete-container li + li {}
+.easy-autocomplete-container li:after {content:''; position:absolute; top:5px; left:100px; height:calc(100% - 10px); border-right:1px solid #ddd;}
+.easy-autocomplete-container li > div {position:relative; padding:5px 5px 5px 105px; overflow:hidden; white-space:nowrap;}
+.easy-autocomplete-container li > div b {font-weight:600;}
+.easy-autocomplete-container li span {position:absolute; top:0px; left:0; width:95px; padding:5px 0 5px 5px; overflow:hidden;}
+
+
+/* dropdown*/
+.ui.dropdown.country {width:200px;}
+
+
+/* checkbox */
+.checkbox {display:inline-block; position:relative; min-height:30px; padding:1px 0 0 40px;}
+.checkbox input { position:absolute; top:-20px; left:0; z-index:1; opacity:0;}
+.checkbox label {font-weight:400; font-size:12px; color:#4e4f62; cursor:pointer; line-height:30px;}
+.checkbox label:before {content:''; position:absolute; top:0; left:0; width:30px; height:30px; border:1px solid #dcdcdc; box-sizing:border-box; border-radius:5px;}
+.checkbox input:checked + label:after {content:''; display:block; position:absolute; top:9px; left:8px; width:16px; height:12px; background:url('../images/common/sprite_common.png') no-repeat -126px 0;}
+
+
+/* btn */
+.btn {display:inline-block; padding:0 17px; height:28px; font-weight:600; font-size:13px; color:#fff; background:#0b61ca; line-height:28px; text-align:center; border-radius:5px;}
+
+
+/* menuAll */
+.menuAll {position:fixed; top:0; left:0; z-index:101; width:88px; height:55px;}
+.menuAll > .allBtn {position:absolute; top:10px; left:26px; z-index:5; display:inline-block; width:36px; height:36px; overflow:hidden;}
+.menuAll > .allBtn > span {position:absolute; top:50%; left:5px; margin-top:-1px; display:block; width:25px; height:3px; background:#a2a7b2; text-indent:-999px; transition:all 300ms ease-in-out;}
+.menuAll > .allBtn > span:before {content:''; position:absolute; top:-10px; left:0; width:100%; height:100%; background-color:#a2a7b2; transition:all 300ms ease-in-out;}
+.menuAll > .allBtn > span:after {content:''; position:absolute; top:10px; left:0; width:12px; height:100%; background-color:#a2a7b2; transition:all 300ms ease-in-out;}
+
+
+/* tablist */
+.tabWrap {padding:27px 150px 0 43px; height:82px; /* background:#f5f6fa; */ background:#333; font-size:0; overflow:hidden;}
+.tabList {/* display:inline-block; */ font-size:0; overflow:hidden;}
+.tabList > li {position:relative; float:left; width:190px; background:#e9f0fb;}
+.tabList > li + li {}
+.tabList > li + li > a:after {content:''; position:absolute; top:12px; left:-1px; width:1px; border-bottom:35px solid #c3ccda;}
+.tabList > li:last-child {border-radius:0 10px 0 0;}
+.tabList > li > a {position:relative; z-index:1; display:block; height:55px; padding:10px 0 0 20px; text-decoration:none;}
+.tabList > li > a.on {z-index:2; background:#fff; border-radius:10px 10px 0 0;}
+.tabList > li > a.on:before {content:''; position:absolute; top:0; left:-10px; z-index:1; width:18px; height:62px; background:url(../images/common/sprite_common.png) no-repeat -42px 0;}
+.tabList > li > a.on:after {content:''; position:absolute; top:0; left:auto; right:-10px; z-index:1; width:18px; height:62px; background:url(../images/common/sprite_common.png) no-repeat -60px 0;}
+.tabList > li > a span {display:block; font-weight:600; font-size:14px; color:#405b85;}
+.tabList > li > a span + span {font-weight:400; font-size:17px;}
+.tabList > li > a.on span {color:#2346d6;}
+.tabList > li.home {width:77px; text-indent:-9999px; border-radius:10px 0 0 0;}
+.tabList > li.home.single {border-radius:10px 10px 0 0;}
+.tabList > li.home:before {content:''; position:absolute; top:22px; left:27px; width:22px; height:21px; background:url(../images/common/sprite_common.png) no-repeat -40px -72px;}
+.tabList > li.home .tabClose {right:16px;}
+.tabList > li .tabClose {position:absolute; top:12px; right:20px; z-index:2; width:14px; height:14px; overflow:hidden; text-indent:-9999px; background:url(../images/common/sprite_common.png) no-repeat 0 -40px;}
+.tabList > li > a.on + .tabClose {background-position:-20px -40px;}
+
+.tabListBox {position:absolute; top:27px; right:0; width:150px; height:62px; border:1px solid blue; background:#fff;}
+.tabListBox li {}
+.tabListBox li a {display:block; font-size:14px; color:#333;}
+
+
+/* lnb */
+nav {padding-top:21px; overflow:hidden; border-right:1px solid #e1e0e8;}
+.gnb {position:relative; width:258px; height:100%; padding:0 0 50px 0; overflow:auto; border-left:1px solid #e1e0e8;}
+.gnbList > li {position:relative;}
+.gnbList > li .gnbTit {position:relative; padding:0 80px 0 30px; line-height:36px; font-weight:600; font-size:16px; color:#3c3c3c; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; cursor:pointer;}
+.gnbList > li .gnbTit.on {color:#2144d2;}
+.gnbList > li .gnbTit:after {content:''; position:absolute; top:16px; right:21px; width:11px; height:4px; background:url(../images/common/sprite_common.png) no-repeat -20px 0;}
+.gnbList > li .gnbTit.on:after {background-position:0 0;}
+.gnbList > li .clip {position:absolute; top:9px; right:46px; width:25px; height:21px; background:url(../images/common/sprite_common.png) -102px 0;}
+.gnbList > li .clip.on {background-position:-78px 0px;}
+.gnbList > li .dept {display:none;}
+.gnbList > li .dept > li > a {position:relative; display:block; padding:0 22px 0 30px; line-height:35px; font-weight:600; font-size:14px; color:#9899a9; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.gnbList > li .dept > li:hover > a {background:#ebeffb; color:#687df2;}
+
+
+/* editor */
+.editorWrap {}
+.editorWrap > #editor {height:200px;}
+

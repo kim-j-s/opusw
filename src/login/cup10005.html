@@ -1,0 +1,44 @@
+@@include('include/head.html')
+<body>
+	<div class="flexWrap">
+		<div class="flexLayer">
+			<h1><img src="../static/images/common/logo.png" alt="OPUS LOGISTICS" /></h1>
+			<div class="inner">
+				<h2 class="tit" id="i10005-resetPasswordLb">Reset Password</h2>
+				<div class="inpInner">
+					<p class="nTxt" id="i10005-requestedResetLb">
+						You have requested to reset the password for: <br />
+						{User Name}
+					</p>
+					<dl class="inpItem">
+						<dd>
+							<div class="inputBox">
+								<input type="password" class="inp Mandate pwinp" id="i10005-password" placeholder="Type Password" maxlength="50">
+								<button class="inpReset"></button>
+							</div>
+							<p class="alertMessage" id="i10005-shortPasswordLb">Password must contain at least 8 characters. At least one alphabet and one number should be included.</p>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dd>
+							<div class="inputBox">
+								<input type="password" class="inp Mandate pwinp" id="i10005-confirmPassword" placeholder="Re-Type Password" maxlength="50">
+								<button class="inpReset"></button>
+							</div>
+							<p class="alertMessage" id="i10005-misconfirmPasswordLb">The passwords you entered don't match.</p>
+						</dd>
+					</dl>
+					<div class="joinBtn">
+						<button class="btn" id="i10005-next">Reset Password</button>
+					</div>
+				</div>
+			</div>
+			<div class="link">
+				<a href="#" id="i10005-helpLb">Help</a>
+				<a href="#" id="i10005-privacyLb">Privacy</a>
+				<a href="#" id="i10005-termsLb">Terms</a>
+			</div>
+		</div>
+    </div>
+</body>
+</html>

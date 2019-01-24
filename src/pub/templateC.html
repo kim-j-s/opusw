@@ -1,0 +1,101 @@
+<!-- ===============================================================
+	작성자 : 김재섭
+=============================================================== -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+<title>공통 템플릿</title>
+<link href="../static/css/reset.css" rel="stylesheet" />
+<link href="../static/css/common.css" rel="stylesheet" />
+<link href="../static/css/contents.css" rel="stylesheet" />
+<script type="text/javascript" src="../static/js/common.js"></script>
+<script type="text/javascript" src="../static/js/lib/moment.min.js"></script>
+<script type="text/javascript" src="../static/js/lib/daterangepicker.js"></script>
+<script type="text/javascript" src="../static/js/lib/quill.min.js"></script>
+<script type="text/javascript" src="../static/js/lib/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="../static/js/lib/jQuery.dPassword.js"></script>
+<script type="text/javascript" src="../static/js/lib/jquery.easy-autocomplete.js"></script>
+<script type="text/javascript" src="../static/js/lib/semantic.min.js"></script>
+<script type="text/javascript" src="../static/js/ui.js"></script>
+
+<!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article");
+        document.createElement("aside"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+
+
+<!-- 2018.05.16 -->
+<script type="text/javascript" src="code/scripts/shCore.js"></script>
+<script type="text/javascript" src="code/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="code/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="code/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="code/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="code/scripts/shBrushXml.js"></script>
+
+<link type="text/css" rel="stylesheet" href="code/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="code/styles/shThemeDefault.css"/>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+</script>
+<!-- //2018.05.16 -->
+<style>
+	body { padding:0 20px; padding-bottom:200px; overflow:auto;}
+	h1 { font-size:30px; padding:0 20px;}
+	h2 { padding:20px 0; margin-top:20px; border-top:1px dashed #666666; font-size:20px;}
+	.box { margin-top:20px; border:1px solid #E3E3E3}
+	.maping {position:fixed; z-index:1000; top:5px; left:0; width:100%; padding:5px; padding-bottom:0; border:1px solid blue; background:#fff;}
+	.maping a {display:inline-block; padding:3px; margin-bottom:5px; border:1px solid #333;}
+</style>
+</head>
+<body>
+	<h1>공통 템플릿</h1>
+	<h2>텍스트 에디터</h2>
+	<div class="editorWrap">
+		<div id="editor"></div>
+	</div>
+<style type="text/css">
+.editorWrap {}
+.editorWrap > #editor {height:100px;}
+</style>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<div class="editorWrap">
+				<div id="editor"></div>
+			</div>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+
+
+
+
+
+
+	<h2></h2>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+	
+
+
+	<div class="maping">
+		<a href="templateA.html">버튼 가이드</a>
+		<a href="templateB.html">입력 가이드</a>
+		<a href="templateC.html">레이어 가이드</a>
+	</div>
+
+</body>
+</html>
