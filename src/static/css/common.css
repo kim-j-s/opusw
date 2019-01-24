@@ -2,7 +2,7 @@
 
 @import url('lib/animated.css');
 @import url('lib/daterangepicker.css');
-@import url('lib/jquery-ui-1.10.4.custom.min.css');
+@import url('lib/jquery-ui.min.css');
 @import url('lib/swiper.css');
 @import url('lib/quill.snow.css');
 @import url('lib/semantic.min.css');
@@ -26,14 +26,31 @@
  * ============================== */
 
 /* input */
-.inputBox {position:relative; display:inline-block; max-width:200px;}
+.inputBox {position:relative; display:inline-block; min-width:200px;}
+.inputBox + .inputBox {margin-left:7px;}
 .inputBox .inp {display:block; width:100%; height:28px; padding:0 28px 0 10px; border:1px solid #dcdcdc; font-size:14px; transition: all .5s ease; outline:none; border-radius:5px;}
 .inputBox .inp:focus {border:1px solid #78abea;}
-.inputBox .inp.Readonly {background:#d9d9d9; pointer-events:none;}
+.inputBox .inp.Readonly {border:1px solid #cecfd3; background:#e4e4e6; pointer-events:none;}
 .inputBox .inp.Warning {border:1px solid #ffc000;}
 .inputBox .inp.Mandate {background:#b2d6f3;}
 .inputBox .inpReset {position:absolute; top:7px; right:7px; width:14px; height:14px; background:url(../images/common/sprite_common.png) no-repeat -20px -40px;}
 .inputBox .inpReset {display:none;}
+
+.inputBox.count {}
+.inputBox.count > .inp.Edit_Count {padding:0 24px 0 10px;}
+.inputBox.count > button {position:absolute; right:5px; width:12px; height:6px; font-size:0; background:url(../images/common/sprite_common.png) no-repeat;}
+.inputBox.count > button > span {position:relative; top:0; left:0; display:block; overflow:hidden; text-indent:-999px;}
+.inputBox.count > .plus {top: 5px; background-position:-20px -60px;}
+.inputBox.count > .minus {bottom:5px; background-position:0 -60px;}
+
+.inputBox.amount {min-width:auto; vertical-align:top; font-size:0;}
+.inputBox.amount:before {content:''; position:absolute; top:3px; left:45px; height:calc(100% - 6px); border-right:1px solid #cecfd3;}
+.inputBox.amount:after {content:''; display:block; clear:both;}
+.inputBox.amount > .inp {display:inline-block; min-width:auto;}
+.inputBox.amount > .inp:nth-child(1) {width:45px; padding:0 5px; text-align:center; border-radius:5px 0 0 5px;  border-right:none;}
+.inputBox.amount > .inp:nth-child(2) {width:80px; padding:0 5px; text-align:right; border-radius:0 5px 5px 0; border-left:none;}
+
+
 .inputBox + .alertMessage {margin-top:7px;}
 
 
@@ -51,8 +68,6 @@
 .inputBox.schType.ty2 > .inner .easy-autocomplete {width:150px;}
 .inputBox.schType.ty2 > .inner .easy-autocomplete:first-child {width:100px;}
 
-.inputBox.zipCode {width:104px;}
-.dropdown + .inputBox.zipCode {vertical-align:top;}
 
 /* easy-autocomplete */
 .easy-autocomplete-container {position:absolute; left:0; z-index:1; width:100%;}
@@ -67,13 +82,15 @@
 
 
 /* dropdown*/
-.ui.dropdown.country {width:200px;}
+.ui.dropdown.country {width:197px;}
+.inputBox.zipCode {width:104px; min-width:auto;}
+.ui.dropdown + .inputBox.zipCode {vertical-align:top; margin-left:7px;}
 
 
 /* checkbox */
-.checkbox {display:inline-block; position:relative; min-height:30px; padding:1px 0 0 40px;}
+.checkbox {display:inline-block; position:relative; min-height:30px; padding:6px 0 0 40px;}
 .checkbox input { position:absolute; top:-20px; left:0; z-index:1; opacity:0;}
-.checkbox label {font-weight:400; font-size:12px; color:#4e4f62; cursor:pointer; line-height:30px;}
+.checkbox label {font-weight:400; font-size:12px; color:#4e4f62; cursor:pointer; line-height:18px;}
 .checkbox label:before {content:''; position:absolute; top:0; left:0; width:30px; height:30px; border:1px solid #dcdcdc; box-sizing:border-box; border-radius:5px;}
 .checkbox input:checked + label:after {content:''; display:block; position:absolute; top:9px; left:8px; width:16px; height:12px; background:url('../images/common/sprite_common.png') no-repeat -126px 0;}
 
@@ -111,12 +128,15 @@
 .tabList > li .tabClose {position:absolute; top:12px; right:20px; z-index:2; width:14px; height:14px; overflow:hidden; text-indent:-9999px; background:url(../images/common/sprite_common.png) no-repeat 0 -40px;}
 .tabList > li > a.on + .tabClose {background-position:-20px -40px;}
 
-.tabListBox {position:absolute; top:27px; right:0; width:150px; height:62px; border:1px solid blue; background:#fff;}
+.tabListBox {position:absolute; top:20px; right:0; width:150px; height:62px; border:1px solid blue; background:#fff;}
 .tabListBox li {}
 .tabListBox li a {display:block; font-size:14px; color:#333;}
 
 
-/* lnb */
+
+
+
+/* gnb */
 nav {padding-top:21px; overflow:hidden; border-right:1px solid #e1e0e8;}
 .gnb {position:relative; width:258px; height:100%; padding:0 0 50px 0; overflow:auto; border-left:1px solid #e1e0e8;}
 .gnbList > li {position:relative;}

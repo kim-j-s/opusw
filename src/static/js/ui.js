@@ -48,13 +48,6 @@ $(function(){
 		Editor();
 	}
 
-	//gnbList
-	GnbList();
-
-	// tab list sorting
-	TablistSort();
-	$(window).resize(TablistSort);
-
 	// password api
 	$('.pwinp').dPassword();
 
@@ -65,7 +58,16 @@ $(function(){
 	$(".autoSch.ty1").easyAutocomplete(Comp_options);
 	$(".autoSch.ty2").easyAutocomplete(city_options);
 	$(".autoSch.ty3").easyAutocomplete(state_options);
-	
+
+	//gnbList
+	GnbList();
+
+	// tab list sorting
+	TablistSort();
+	$(window).resize(TablistSort);
+
+	// input Number
+	PlusMinus();
 
 	//Input Reset
 	InputReset();
@@ -255,6 +257,33 @@ function InputReset() {
 		{
 			$(this).next('button').css('display','none');
 		}
+	});
+}
+
+
+// input Number
+function PlusMinus() {
+	var Plus = $('.inputBox.count').find('.plus');
+	var Minus = $('.inputBox.count').find('.minus');
+
+	$(Plus).on('click', function(){
+		var inpVal = $(this).next('.inp').val();
+		if (inpVal == 0)
+		{
+			inpVal = 0;
+		}
+		numVal = Number(inpVal) + 1;
+		$(this).next('.inp').val(numVal);
+	});
+
+	$(Minus).on('click', function(){
+		var inpVal = $(this).prev('.inp').val();
+		numVal = Number(inpVal) - 1;
+		if (numVal < 0)
+		{
+			numVal = 0;
+		}
+		$(this).prev('.inp').val(numVal);
 	});
 }
 

@@ -5,21 +5,6 @@
 		@@include('include/header.html')
 		<!-- //헤더영역 -->
 
-<style type="text/css">
-
-
-.layer {display:flex; height:calc(100% - 89px);}
-.layer .double {flex:1; /* display:inline-block; */ font-size:0; height:100%; background:#ddd;}
-.layer .double > .ele {display:inline-block; font-size:0; min-width:300px; max-width:500px; height:100%;}
-.layer .double > .ele:first-child {background:blue;}
-.layer .opt {/* display:inline-block; */ width:300px; height:100%; background:#333;}
-
-.fix {position:fixed; top:500px; left:100px; z-index:111; min-width:100px; text-align:center; height:50px; line-height:50px; border:1px solid #333; background:#fff; padding:0 10px;}
-</style>
-
-
-<div class="fix"></div>
-
 		<section id="container">
 			<div class="inner">
 				@@include('include/nav.html')
@@ -29,112 +14,15 @@
 							<li class="home single">
 								<a href="#">Home</a>
 							</li>
-
-							<!--
-							<li>
-								<a href="#" class="on">
-									<span>House B/L 1</span>
-									<span>OBK-000468</span>
-								</a>
-								<button class="tabClose">Close</button>
-							</li>
-							<li>
-								<a href="#">
-									<span>House B/L 2</span>
-									<span>OBK-000468</span>
-								</a>
-								<button class="tabClose">Close</button>
-							</li>
-							<li>
-								<a href="#">
-									<span>House B/L 3</span>
-									<span>OBK-000468</span>
-								</a>
-								<button class="tabClose">Close</button>
-							</li>
-							<li>
-								<a href="#">
-									<span>House B/L 4</span>
-									<span>OBK-000468</span>
-								</a>
-								<button class="tabClose">Close</button>
-							</li>
-							<li>
-								<a href="#">
-									<span>House B/L 5</span>
-									<span>OBK-000468</span>
-								</a>
-								<button class="tabClose">Close</button>
-							</li>
-							<li>
-								<a href="#">
-									<span>House B/L 6</span>
-									<span>OBK-000468</span>
-								</a>
-								<button class="tabClose">Close</button>
-							</li>
-							<li>
-								<a href="#">
-									<span>House B/L 7</span>
-									<span>OBK-000468</span>
-								</a>
-								<button class="tabClose">Close</button>
-							</li>
-							<li>
-								<a href="#">
-									<span>House B/L 8</span>
-									<span>OBK-000468</span>
-								</a>
-								<button class="tabClose">Close</button>
-							</li>
-							<li>
-								<a href="#">
-									<span>House B/L 9</span>
-									<span>OBK-000468</span>
-								</a>
-								<button class="tabClose">Close</button>
-							</li>
-							-->
 						</ul>
 						<div class="tabListBox">
 							<ul>
 							</ul>
 						</div>
 					</div>
-
-
-<div class="fix2"></div>
-
-<style type="text/css">
-.fix2 {position:fixed; top:700px; left:100px; z-index:111; min-width:100px; text-align:center; height:50px; line-height:50px; border:1px solid #333; background:#fff; padding:0 10px;}
-</style>
-
-<script type="text/javascript">
-
-$(function(){
-
-	
-
-	var xxx = '<li><a href="#"><span>House B/L 9</span><span>OBK-000468</span></a><button class="tabClose">Close</button></li>';
-	$('.fix2').click(function(){
-		$(xxx).appendTo('.tabList');
-		TablistSort();
-	});
-
-});
-
-
-
-
-</script>
-					<div class="cnt">5</div>
-
-
 					<div class="layer">
-
-												
+						
 					</div>
-
 				</div>
 			</div>
 		</section>
