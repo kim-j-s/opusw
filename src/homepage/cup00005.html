@@ -1,0 +1,122 @@
+@@include('include/head.html')
+<body>
+	<div class="flexWrap">
+		<div class="flexLayer">
+			<h1><img src="../static/images/common/logo.png" alt="OPUS LOGISTICS" /></h1>
+			<div class="flexContent">
+				<div class="inner">
+					<h2 class="tit" id="i00005-defineBillingInformationLb">Define Billing Information</h2>
+					<dl class="inpItem">
+						<dt id="i00005-billToPartyLb">Customer Name</dt>
+						<dd>
+							<div class="inputBox">
+								<input type="text" name="i00005-billToParty" class="inp Mandate" id="i00005-billToParty" placeholder="Party Name" maxlength="50">
+								<button class="inpReset"></button>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i00005-addressLine1Lb">Address Line1</dt>
+						<dd>
+							<div class="inputBox full">
+								<input type="text" name="i00005-addressLine1" class="inp Mandate" id="i00005-addressLine1" placeholder="Worldcup Buk-Ro 140 Nuritkum Sqr. 16F" maxlength="80">
+								<button class="inpReset"></button>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i00005-addressLine2Lb">Address Line2</dt>
+						<dd>
+							<div class="inputBox full">
+								<input type="text" name="i00005-addressLine2" class="inp" id="i00005-addressLine2" placeholder="Mapo-Gu, Sang Am-Dong" maxlength="80">
+								<button class="inpReset"></button>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i00005-cityLb">City, State/Province</dt>
+						<dd>
+							<div class="inputBox full schType ty2">
+								<div class="inner">
+									<input type="text" name="i00005-stateProvince" class="inp autoSch ty2 code Readonly" id="i00005-stateProvince" readonly="readonly" maxlength="50">
+									<input type="text" name="i00005-city" class="inp autoSch Mandate ty2 name" id="i00005-city" placeholder="Type City" maxlength="50">
+									<button class="inpReset"></button>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i00005-countryLb">Country, Zip Code</dt>
+						<dd>
+							@@include('include/CountrySelect.html',{
+								"id": "i00005-country"
+							})
+							<div class="inputBox zipCode">
+								<div class="inner">
+									<input type="text" name="i00005-zipCode" class="inp" id="i00005-zipCode" placeholder="Zip Code">
+									<button class="inpReset"></button>
+								</div>
+							</div>
+						</dd>
+					</dl>
+
+					<h3 class="tit" id="i00005-personInChargeLb">Person in Charge</h3>
+					<dl class="inpItem">
+						<dt id="i00005-departmentLb">Department</dt>
+						<dd>
+							<div class="inputBox full">
+								<input type="text" name="i00005-department" class="inp full" id="i00005-department" placeholder="Department Name" maxlength="80">
+								<button class="inpReset"></button>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i00005-picNameLb">Person in Charge</dt>
+						<dd>
+							<div class="inputBox">
+								<input type="text" name="i00005-picName" class="inp Readonly" id="i00005-picName" readonly="readonly" value="Name">
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i00005-emailLb">Email</dt>
+						<dd>
+							<div class="inputBox">
+								<input type="text" name="i00005-email" class="inp Readonly" id="i00005-email" readonly="readonly" value="Email">
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i00005-phoneNumberLb">Phone Number</dt>
+						<dd>
+							<div class="inputBox">
+								<input type="text" name="i00005-phoneNumber" class="inp Mandate" id="i00005-phoneNumber" placeholder="Phone Number">
+								<button class="inpReset"></button>
+							</div>
+						</dd>
+					</dl>
+					<dl class="inpItem">
+						<dt id="i00005-faxNumberLb">Fax Number</dt>
+						<dd>
+							<div class="inputBox">
+								<input type="text" name="i00005-faxNumber" class="inp" id="i00005-faxNumber" placeholder="Fax Number">
+								<button class="inpReset"></button>
+							</div>
+						</dd>
+					</dl>					
+					<div class="joinBtn">
+						<div class="btns">
+							<button class="btn" id="i00005-next">Next</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="link">
+				<a href="#" id="i00005-helpLb">Help</a>
+				<a href="#" id="i00005-privacyLb">Privacy</a>
+				<a href="#" id="i00005-termsLb">Terms</a>
+			</div>
+		</div>
+    </div>
+</body>
+</html>

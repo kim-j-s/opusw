@@ -3,13 +3,12 @@
 	<div class="flexWrap">
 		<div class="flexLayer">
 			<h1><img src="../static/images/common/logo.png" alt="OPUS LOGISTICS" /></h1>
-			<div class="inner">
-				<h2 class="tit" id="i00002-newAccountLb">Define Users</h2>
-
-				<section class="contGroup">
-					<dl class="itemList1">
+			<div class="flexContent">
+				<div class="inner">
+					<h2 class="tit" id="i00002-newAccountLb">Define Users</h2>
+					<dl class="inpItem">
 						<dt id="i00002-basicLb">Basic</dt>
-						<dd>
+						<dd class="tr">
 							<div class="inputBox count">
 								<button class="plus"><span>Plus</span></button>
 								<input type="number" name="i00002-basic" class="inp Edit_Count" id="i00002-basic" min="0" value="15">
@@ -21,21 +20,20 @@
 							</div>
 						</dd>
 					</dl>
-					<dl class="itemList1 fin">
-						<dt id="i00002-monthlyTotalLb">Monthly Total</dt>
-						<dd>
-							<span class="totalVal" id="i00002-monthlyTotal">15</span>
+					<div class="lineBasic"></div>
+					<dl class="inpItem">
+						<dt id="i00002-monthlyTotalLb"><span class="bold">Monthly Total</span></dt>
+						<dd class="tr">
+							<span class="totalVal" id="i00002-monthlyTotal"><span class="bold">15</span></span>
 							<div class="inputBox readonly amount">
 								<input type="text" name="" class="inp Readonly" id="" readonly="readonly" value="USD">
 								<input type="text" name="i00002-totalPrice" class="inp Readonly" id="i00002-totalPrice" readonly="readonly" value="1,500.00">
 							</div>
 						</dd>
 					</dl>
-				</section>
 
-				<section class="contGroup">
-					<h1 class="tit" id="i00002-optionalServicesLb">Optional Services</h1>
-					<dl class="itemList2">
+					<h3 class="tit" id="i00002-optionalServicesLb">Optional Services</h3>
+					<dl class="inpItem">
 						<dt id="i00002-internetFaxLb">Internet Fax <br />($ 1.00/call)</dt>
 						<dd>
 							<ul class="optionList">
@@ -47,49 +45,49 @@
 							</ul>
 						</dd>
 					</dl>
-					<dl class="itemList2">
+					<dl class="inpItem">
 						<dt id="i00002-customsFilingEdiLb">Customs Filing EDI <br />($ 1.00/bill)</dt>
 						<dd>
 							<ul class="optionList">
 								<li>
 									<div class="checkbox">
-										<input type="checkbox" name="" id="check"><label for="check" id="i00002-usAms">U.S. AMS(Advance Manifest System)</label>
+										<input type="checkbox" name="i00002-usAmsChk" id="i00002-usAmsChk"><label for="i00002-usAmsChk" id="i00002-usAms">U.S. AMS(Advance Manifest System)</label>
 									</div>	
 								</li>
 								<li>
 									<div class="checkbox">
-										<input type="checkbox" name="" id="check"><label for="check" id="i00002-usIsf">U.S. ISF(Import Security Filing)</label>
+										<input type="checkbox" name="i00002-usIsfChk" id="i00002-usIsfChk"><label for="i00002-usIsfChk" id="i00002-usIsf">U.S. ISF(Import Security Filing)</label>
 									</div>	
 								</li>
 								<li>
 									<div class="checkbox">
-										<input type="checkbox" name="" id="check"><label for="check" id="i00002-krAms">Korean AMS(Advance Manifest System)</label>
+										<input type="checkbox" name="i00002-krAmsChk" id="i00002-krAmsChk"><label for="i00002-krAmsChk" id="i00002-krAms">Korean AMS(Advance Manifest System)</label>
 									</div>	
 								</li>
 							</ul>
 						</dd>
 					</dl>
-					<dl class="itemList2">
+					<dl class="inpItem">
 						<dt id="i00002-shippingEdiLb">Shipping EDI <br />($ 0.50/bill)</dt>
 						<dd>
 							<ul class="optionList">
 								<li>
 									<div class="checkbox">
-										<input type="checkbox" name="" id="check"><label for="check" id="i00002-vgm">VGM(Verified Gross Mass)</label>
+										<input type="checkbox" name="i00002-vgmChk" id="i00002-vgmChk"><label for="i00002-vgmChk" id="i00002-vgm">VGM(Verified Gross Mass)</label>
 									</div>	
 								</li>
 								<li>
 									<div class="checkbox">
-										<input type="checkbox" name="" id="check"><label for="check" id="i00002-bookSi">Booking/Shipping Instruction</label>
+										<input type="checkbox" name="i00002-bookSiChk" id="i00002-bookSiChk"><label for="i00002-bookSiChk" id="i00002-bookSi">Booking/Shipping Instruction</label>
 									</div>	
 								</li>
 							</ul>
 						</dd>
 					</dl>
-				</section>
-				<div class="joinBtn">
-					<div class="btns">
-						<button class="btn" id="i00002-next">Next</button>
+					<div class="joinBtn">
+						<div class="btns">
+							<button class="btn" id="i00002-next">Next</button>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -3,10 +3,10 @@
 	<div class="flexWrap">
 		<div class="flexLayer">
 			<h1><img src="../static/images/common/logo.png" alt="OPUS LOGISTICS" /></h1>
-			<div class="inner">
-				<h2 class="tit" id="i10003-newAccount">New Account</h2>
-				<section class="contGroup">
-					<h1 class="tit" id="i10003-userLb">User</h1>
+			<div class="flexContent">
+				<div class="inner">
+					<h2 class="tit" id="i10003-newAccount">New Account</h2>
+					<h3 class="tit" id="i10003-userLb">User</h3>
 					<dl class="inpItem">
 						<dt id="i10003-nameLb">Name</dt>
 						<dd>
@@ -23,9 +23,11 @@
 								<input type="text" name="i10003-eMail" class="inp Mandate" id="i10003-eMail" placeholder="Your Email" maxlength="50">
 								<button class="inpReset"></button>
 							</div>
-							<p class="alertMessage" id="i10003-dupeMailLb">Duplicated Email address found while adding your address.</p>
 						</dd>
 					</dl>
+					<div class="txtBox">
+						<p class="alertMessage" id="i10003-dupeMailLb">Duplicated Email address found while adding your address.</p>
+					</div>
 					<dl class="inpItem">
 						<dt id="i10003-passwordLb">Password</dt>
 						<dd>
@@ -33,9 +35,11 @@
 								<input type="password" name="i10003-password" class="inp Mandate pwinp" id="i10003-password" placeholder="Type Password" maxlength="50">
 								<button class="inpReset"></button>
 							</div>
-							<p class="alertMessage" id="i10003-shortPasswordLb">Password must contain at least 6 characters, including alphabets and numbers.</p>
 						</dd>
 					</dl>
+					<div class="txtBox">
+						<p class="alertMessage" id="i10003-shortPasswordLb">Password must contain at least 6 characters, including alphabets and numbers.</p>
+					</div>
 					<dl class="inpItem">
 						<dt id="i10003-confirmPasswordLb">Confirm Password</dt>
 						<dd>
@@ -43,12 +47,13 @@
 								<input type="password" name="i10003-confirmPassword" class="inp Mandate pwinp" id="i10003-confirmPassword" placeholder="Re-Type Password" maxlength="50">
 								<button class="inpReset"></button>
 							</div>
-							<p class="alertMessage" id="i10003-misconfirmPasswordLb">The passwords you entered don't match.</p>
 						</dd>
 					</dl>
-				</section>
-				<section class="contGroup">
-					<h1 class="tit" id="i10003-organizationLb">Organization</h1>
+					<div class="txtBox">
+						<p class="alertMessage" id="i10003-misconfirmPasswordLb">The passwords you entered don't match.</p>
+					</div>
+
+					<h3 class="tit" id="i10003-organizationLb">Organization</h3>
 					<dl class="inpItem">
 						<dt id="i10003-companyLb">Company</dt>
 						<dd>
@@ -126,10 +131,10 @@
 							</div>
 						</dd>
 					</dl>
-				</section>
-				<div class="joinBtn">
-					<div class="btns">
-						<button class="btn" id="i10003-next">Next</button>
+					<div class="joinBtn">
+						<div class="btns">
+							<button class="btn" id="i10003-next">Next</button>
+						</div>
 					</div>
 				</div>
 			</div>
