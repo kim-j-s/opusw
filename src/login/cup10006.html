@@ -18,11 +18,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="link">
-				<a href="#" id="i10006-helpLb">Help</a>
-				<a href="#" id="i10006-privacyLb">Privacy</a>
-				<a href="#" id="i10006-termsLb">Terms</a>
-			</div>
+			@@include('include/link.html',{
+				"help": "i10006-helpLb",
+				"privacy": "i10006-privacyLb",
+				"terms": "i10006-termsLb"
+			})
 		</div>
     </div>
 </body>

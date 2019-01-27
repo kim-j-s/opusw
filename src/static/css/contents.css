@@ -25,7 +25,7 @@
 .flexLayer .flexContent {margin-top:10px; padding:20px 20px; border:1px solid #d9d9d9; font-size:0;}
 .flexLayer .flexContent > .inner {display:inline-block; width:518px; min-height:260px; vertical-align:top;}
 .flexLayer .flexContent > .inner > .inpInner {padding:0 50px;}
-.flexLayer .flexContent > .inner + .inner {padding-left:20px; margin-left:20px; border-left:1px solid #d9d9d9; box-sizing:content-box;}
+.flexLayer .flexContent > .inner + .inner {padding-top:66px; padding-left:20px; margin-left:20px; border-left:1px solid #d9d9d9; box-sizing:content-box;}
 
 h2.tit {position:relative; font-weight:700; font-size:34px; color:#181818; line-height:46px;}
 h2.tit.thumb {padding-left:50px;}
@@ -40,18 +40,22 @@ h3.tit + .txtBox {margin-top:20px;}
 
 .inpInner .nTxt {font-size:14px; margin-top:20px;}
 .inpInner .nTxt + .inpItem {margin-top:20px;}
+.inpInner .nTxt + .list1 {margin-top:20px;}
 .inpInner > .itemList1:nth-of-type(1) {margin-top:20px;}
 
 .idArea {margin-top:20px;}
 .idArea .inputBox {max-width:none;}
 .loginCheck {margin-top:15px;}
-.joinBtn {margin-top:25px; overflow:hidden;}
+.joinBtn {margin-top:25px; overflow:hidden; display:flex;}
 .joinBtn > a {font-size:14px; line-height:28px;}
-.joinBtn .btns {float:right;}
-.link {display:flex; margin-top:15px;}
-.link > a {flex:1;}
-.link > a:nth-child(2) {text-align:center;}
-.link > a:nth-child(3) {text-align:right;}
+.joinBtn > .txt {flex:1; font-size:14px;}
+.joinBtn .btns {flex:1; text-align:right; padding-left:10px; /* float:right; */}
+.joinBtn .btns .btn + .btn {margin-left:7px;}
+
+.link {width:560px; margin:0 auto; margin-top:15px; overflow:hidden; text-align:center;}
+.link > a:nth-child(1) {float:left;}
+.link > a:nth-child(2) {}
+.link > a:nth-child(3) {float:right;}
 
 
 /* inpItem */
@@ -88,6 +92,10 @@ h3.tit + .txtBox {margin-top:20px;}
 .optionList > li {text-align:left;}
 .optionList > li + li {margin-top:10px;}
 
+.list1 {}
+.list1 > li {position:relative; padding-left:10px; font-size:14px;}
+.list1 > li + li {margin-top:7px;}
+.list1 > li:before {content:''; position:absolute; top:9px; left:0; width:3px; border-bottom:3px solid #d9d9d9; border-radius:50%;}
 
 
 /* etc */
