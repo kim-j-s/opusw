@@ -63,6 +63,7 @@
 .inputBox.schType > .inner .easy-autocomplete .inp {padding:0 10px 0 10px;}
 .inputBox.schType > .inner .easy-autocomplete .inp {border-radius:0 5px 5px 0;}
 .inputBox.schType > .inner .easy-autocomplete:first-child .inp {border-radius:5px 0 0 5px;}
+.inputBox.schType > .inner .easy-autocomplete + .easy-autocomplete .inp {border-left:none;}
 .inputBox.schType.ty1 > .inner .easy-autocomplete {width:208px;}
 .inputBox.schType.ty1 > .inner .easy-autocomplete:first-child {width:100px;}
 .inputBox.schType.ty2 > .inner .easy-autocomplete {width:150px;}
