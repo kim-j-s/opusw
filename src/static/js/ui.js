@@ -58,6 +58,7 @@ $(function(){
 	$(".autoSch.ty1").easyAutocomplete(Comp_options);
 	$(".autoSch.ty2").easyAutocomplete(city_options);
 	$(".autoSch.ty3").easyAutocomplete(state_options);
+	$(".autoSch.keyword").easyAutocomplete(state_keyword);
 
 	//gnbList
 	GnbList();
@@ -75,6 +76,119 @@ $(function(){
 	// auto complete combobox
 	ACC();
 	$( ".comboSelect" ).combobox();
+
+
+
+
+	// date range picker
+	$('.daterange').daterangepicker({
+	ranges: {
+		'Today': [moment(), moment()],
+		'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+		'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+		'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+		'This Month': [moment().startOf('month'), moment().endOf('month')],
+		'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+	},
+	"locale": {
+		"format": "MM/DD/YYYY",
+		"separator": " - ",
+		"applyLabel": "Apply",
+		"cancelLabel": "Cancel",
+		"fromLabel": "From",
+		"toLabel": "To",
+		"customRangeLabel": "Custom",
+		"weekLabel": "W",
+		"daysOfWeek": [
+			"Su",
+			"Mo",
+			"Tu",
+			"We",
+			"Th",
+			"Fr",
+			"Sa"
+		],
+		"monthNames": [
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June",
+			"July",
+			"August",
+			"September",
+			"October",
+			"November",
+			"December"
+		],
+		"firstDay": 1
+	},
+		"alwaysShowCalendars": true,
+		"startDate": "01/22/2019",
+		"endDate": "01/28/2019"
+	}, function(start, end, label) {
+		console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+	});
+
+	$('.datesingle').daterangepicker({
+    "singleDatePicker": true,
+    ranges: {
+        'Today': [moment(), moment()],
+        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+        'This Month': [moment().startOf('month'), moment().endOf('month')],
+        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+    },
+    "locale": {
+        "format": "MM/DD/YYYY",
+        "separator": " - ",
+        "applyLabel": "Apply",
+        "cancelLabel": "Cancel",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "customRangeLabel": "Custom",
+        "weekLabel": "W",
+        "daysOfWeek": [
+            "Su",
+            "Mo",
+            "Tu",
+            "We",
+            "Th",
+            "Fr",
+            "Sa"
+        ],
+        "monthNames": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ],
+        "firstDay": 1
+    },
+		"startDate": "01/22/2019",
+		"endDate": "01/28/2019"
+	}, function(start, end, label) {
+		console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+	});
+
+	$('.timeSelect').each(function(){
+		$(this).on('click', function(){
+			if ( $(this).find('.tsDropBox').css('display') == 'none')
+			{
+				$(this).find('.tsDropBox').show();
+			}
+		});
+	});
 
 });
 
@@ -122,7 +236,7 @@ function Gnb() {
 				{
 					$('.tabListBox > ul > li').first().appendTo('.tabList');
 				}
-				$('.fix').html('기준 넓이 : ' + (tabListWidth + (LiWidth + 2)) + ' , 상대 넓이 : ' + tabObjWidth);
+				//$('.fix').html('기준 넓이 : ' + (tabListWidth + (LiWidth + 2)) + ' , 상대 넓이 : ' + tabObjWidth);
 			}, 50);
 			
 			$('nav').stop(true).animate({
@@ -141,7 +255,7 @@ function Gnb() {
 				var tabListWidth = $('.tabList').width();
 				var tabObjLng = $('.tabList > li').length;
 				var tabObjWidth = (tabObjLng - 1) * LiWidth + 77;
-				$('.fix').html('기준 넓이 : ' + (tabListWidth + (LiWidth + 2)) + ' , 상대 넓이 : ' + (tabObjWidth - LiWidth) + ' , li 갯수 : ' + tabObjLng);
+				//$('.fix').html('기준 넓이 : ' + (tabListWidth + (LiWidth + 2)) + ' , 상대 넓이 : ' + (tabObjWidth - LiWidth) + ' , li 갯수 : ' + tabObjLng);
 				if ((tabObjLng - 1) == 0)
 				{
 					console.log('랭 : ' + tabObjLng);
@@ -232,7 +346,7 @@ function tabListOut() {
 		{
 			$('.tabListBox > ul > li').first().appendTo('.tabList');
 		}
-		$('.fix').html('기준 넓이 : ' + (tabListWidth + (LiWidth + 2)) + ' , 상대 넓이 : ' + tabObjWidth);
+		//$('.fix').html('기준 넓이 : ' + (tabListWidth + (LiWidth + 2)) + ' , 상대 넓이 : ' + tabObjWidth);
 		setTimeout(function(){
 			if (tabListWidth > (tabObjWidth + (LiWidth + 2)))
 			{
@@ -426,12 +540,30 @@ function ACC() {
 }
 
 
+// time select
+function tsChk(e) {
+	var Hour = $(e).closest('.tsDropBox').find("input[name='hour']").val();
+	var Minute = $(e).closest('.tsDropBox').find("input[name='minute']").val();
+	var AmPm = $(e).closest('.tsDropBox').find("input[name='ampm']").val();
+	selectedTime = Hour + ':' + Minute + ' ' + AmPm;
+	if ( Hour == '' || Minute == '' || AmPm == '')
+	{
+		selectedTime = '';
+	}
+	$(e).closest('.timeSelect').find('.txt').html(selectedTime);
+	tsClose(e);
+}
+
+// time select close
+function tsClose(e) {
+	setTimeout(function() {
+		$(e).closest('.tsDropBox').hide();
+	}, 100)
+}
+
+
 
 // function
-
-
-
-
 
 
 
@@ -514,6 +646,26 @@ var state_options = {
 			var selectedItemValue2 = $(".autoSch.ty3.name").getSelectedItemData().code;
 			$(".autoSch.ty3.name").val(selectedItemValue);
 			$(".autoSch.ty3.code").val(selectedItemValue2);
+		},
+		match: {
+			enabled: true
+		}
+	}
+};
+
+var state_keyword = {
+	url: "../static/json/sample_keyword.json",
+	getValue: function(element) {
+		return element.name;
+	},
+	list: {
+		maxNumberOfElements: 10,
+		sort: {
+			enabled: true
+		},
+		onChooseEvent: function() {
+			var selectedItemValue = $(".autoSch.ty4.name").getSelectedItemData().name;
+			$(".autoSch.ty4.name").val(selectedItemValue);
 		},
 		match: {
 			enabled: true

@@ -36,6 +36,8 @@ h2.tit + h3.tit {margin-top:20px;}
 h3.tit {padding-bottom:10px; font-weight:600; font-size:18px; color:#181818; border-bottom:1px solid #d9d9d9;}
 h3.tit + .inpItem {margin-top:20px;}
 h3.tit + .txtBox {margin-top:20px;}
+h3.tit + .itemList2 {margin-top:20px;}
+h3.tit + .inpItem2 {margin-top:20px;}
 
 
 .inpInner .nTxt {font-size:14px; margin-top:20px;}
@@ -71,6 +73,9 @@ h3.tit + .txtBox {margin-top:20px;}
 .inpItem > dd .totalVal + .inputBox {margin-left:7px;}
 .inpItem > dd .inputBox.count .inp {text-align:right;}
 
+.inpItem2 {}
+.inpItem2 + .inpItem2 {margin-top:15px;}
+
 
 /* txtBox */
 .txtBox {max-height:200px; font-size:14px; overflow:auto;}
@@ -96,6 +101,47 @@ h3.tit + .txtBox {margin-top:20px;}
 .list1 > li {position:relative; padding-left:10px; font-size:14px;}
 .list1 > li + li {margin-top:7px;}
 .list1 > li:before {content:''; position:absolute; top:9px; left:0; width:3px; border-bottom:3px solid #d9d9d9; border-radius:50%;}
+
+
+.Layout_List {padding:20px 20px 20px 20px;}
+
+.Layout_Sidebar {height:calc(100% - 82px); padding:20px 20px 20px 20px;}
+.Layout_Sidebar {}
+.Layout_Sidebar > .inner {display:flex;}
+.Layout_Sidebar > .inner.saveAdd {min-height:calc(100% - 126px);}
+.Layout_Sidebar > .inner .lsCont {}
+.Layout_Sidebar > .inner .lsCont:not(.fix) {flex:1; padding:10px 10px 0 10px;}
+.Layout_Sidebar > .inner .lsCont + .lsCont {display:inline-block; width:370px; padding:10px; margin-left:10px;}
+.Layout_Sidebar > .inner + .saveDiv {padding:0 0 10px 0; text-align:right;}
+
+.serviceCode {padding:10px 0;}
+.serviceCode > .srvNum {display:inline-block; width:200px; font-weight:600; font-size:18px; line-height:28px; vertical-align:top;}
+.serviceCode > .actChk {display:inline-block; vertical-align:top;}
+
+.schOptionGroup {position:relative; padding:10px 100px 0px 10px; background:#e2ecf8;}
+.schOptionGroup > .btn {position:absolute; right:10px; bottom:10px;}
+.schOptionGroup + h3.tit {margin-top:15px;}
+
+.itemList1 {position:relative;}
+.itemList1:after {content:''; display:block; clear:both;}
+.itemList1 > li {display:inline-block; width:370px; margin-right:10px; margin-bottom:10px; font-size:0; vertical-align:top;}
+.itemList1 > li .inpItem {}
+.itemList1 > li .inpItem > dt {width:170px;}
+.itemList1 > li .inpItem > dt + dd {padding:0 0 0 170px;}
+
+.itemList2 {position:relative;}
+.itemList2:after {content:''; display:block; clear:both;}
+.itemList2 > li {display:inline-block; width:580px; margin-bottom:10px; font-size:0; vertical-align:top;}
+.itemList2 > li:nth-child(2n + 1) {margin-right:10px;}
+.itemList2 > li .inpItem {}
+.itemList2 > li .inpItem > dt {width:220px;}
+.itemList2 > li .inpItem > dt + dd {padding:0 0 0 220px;}
+
+.ibsheepTop {position:relative; margin-top:10px;}
+.ibsheepTop:after {content:''; display:block; clear:both;}
+.ibsheepTop > .filter {}
+.ibsheepTop > .btn {float:right;}
+.ibsheepTop + .ibsheetDiv {margin-top:10px;}
 
 
 /* etc */

@@ -14,7 +14,7 @@ table { border-collapse:collapse; border-spacing:0; table-layout:fixed; width:10
 button { margin:0; padding:0; border:0; font:inherit; color:inherit; background:transparent; overflow:visible; cursor:pointer; line-height:1; }
 a:link, a:visited, a:hover, a,active, a:focus {cursor:pointer; color:rgba(0,0,0,0.65);}
 legend, caption { display:none; }
-textarea { resize:vertical; font:inherit; overflow-y:auto; }
+textarea { resize:vertical; font:inherit; overflow-y:auto; box-sizing:border-box;}
 input, select { color:inherit; font:inherit; vertical-align: middle; box-sizing:border-box;}
 address, i { font-style:normal; }
 table { border-collapse:collapse; table-layout:fixed; }
