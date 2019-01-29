@@ -60,7 +60,7 @@
 							<div class="inputBox schType ty1">
 								<div class="inner">
 									<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
-									<input type="text" name="i10003-company" class="inp autoSch ty1 name" id="i10003-company" placeholder="Type Company Name">
+									<input type="text" name="i10003-company" class="inp autoSch ty1 name Mandate" id="i10003-company" placeholder="Type Company Name"> <!-- 2019-01-29 클래스 추가 -->
 									<button class="inpReset"></button>
 								</div>
 							</div>
@@ -69,7 +69,7 @@
 					<dl class="inpItem">
 						<dt id="i10003-departmentLb">Department</dt>
 						<dd>
-							<div class="inputBox">
+							<div class="inputBox full"> <!-- 2019-01-29 클래스 추가 -->
 								<input type="text" name="i10003-department" class="inp" id="i10003-department" placeholder="Type Department Name" maxlength="50">
 								<button class="inpReset"></button>
 							</div>
@@ -78,7 +78,7 @@
 					<dl class="inpItem">
 						<dt id="i10003-address1Lb">Address Line1</dt>
 						<dd>
-							<div class="inputBox">
+							<div class="inputBox full"> <!-- 2019-01-29 클래스 추가 -->
 								<input type="text" name="i10003-address1" class="inp" id="i10003-address1" placeholder="Type Street Address, P.O. box" maxlength="50">
 								<button class="inpReset"></button>
 							</div>
@@ -87,7 +87,7 @@
 					<dl class="inpItem">
 						<dt id="i10003-address2Lb">Address Line2</dt>
 						<dd>
-							<div class="inputBox">
+							<div class="inputBox full"> <!-- 2019-01-29 클래스 추가 -->
 								<input type="text" name="i10003-address2" class="inp" id="i10003-address2" placeholder="Type Department Name" maxlength="50">
 								<button class="inpReset"></button>
 							</div>
@@ -99,7 +99,7 @@
 							<div class="inputBox schType ty2">
 								<div class="inner">
 									<input type="text" class="inp autoSch ty2 code Readonly" readonly="readonly">
-									<input type="text" name="i10003-city" class="inp autoSch ty2 name" id="i10003-city" placeholder="Type City">
+									<input type="text" name="i10003-city" class="inp autoSch ty2 name Mandate" id="i10003-city" placeholder="Type City"><!-- 2019-01-29 클래스 추가 -->
 									<button class="inpReset"></button>
 								</div>
 							</div>
@@ -120,9 +120,12 @@
 					<dl class="inpItem">
 						<dt id="i10003-countryLb">Country</dt>
 						<dd>
+							<!-- 2019-01-29 클래스 수정 -->
 							@@include('include/CountrySelect.html',{
+								"class": " Mandate",
 								"id": "i10003-state"
 							})
+							<!--// 2019-01-29 클래스 수정 -->
 							<div class="inputBox zipCode">
 								<div class="inner">
 									<input type="text" name="i10003-zipCode" class="inp" id="i10003-zipCode" placeholder="Zip Code">

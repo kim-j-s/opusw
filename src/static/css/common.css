@@ -115,6 +115,7 @@
 
 /* dropdown*/
 .ui.dropdown.country {width:197px;}
+.ui.dropdown.Mandate {background:#b2d6f3;}
 .ui.dropdown.disabled {background:#e4e4e6; opacity:1;}
 .inputBox.zipCode {width:104px; min-width:auto;}
 .ui.dropdown + .inputBox.zipCode {vertical-align:top; margin-left:7px;}
@@ -163,8 +164,11 @@ body .ui-tooltip {display:none !important;}
 
 
 /* btn */
-.btn {display:inline-block; padding:0 17px; height:28px; font-weight:600; font-size:13px; color:#fff; background:#0b61ca; line-height:28px; text-align:center; border-radius:5px; vertical-align:top;}
-a.btn {color:#fff; text-decoration:none;}
+.btn {display:inline-block; padding:0 17px; height:28px; font-weight:600; font-size:13px; line-height:28px; text-align:center; border-radius:5px; vertical-align:top; border:1px solid #808080;}
+.btn.basic {color:#fff; background:#0b61ca;}
+a.btn {text-decoration:none;}
+
+
 
 
 /* menuAll */
