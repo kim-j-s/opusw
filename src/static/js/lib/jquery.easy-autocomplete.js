@@ -1055,7 +1055,7 @@ var EasyAutocomplete = (function(scope) {
 								break;
 
 								default:
-									$elements_container.find("ul").show();
+									$elements_container.find("ul").addClass('on').show();
 								break;
 							}
 
@@ -1082,7 +1082,8 @@ var EasyAutocomplete = (function(scope) {
 								break;
 
 								default:
-									$elements_container.find("ul").hide();
+									$elements_container.find("ul").removeClass('on').hide();
+									//$elements_container.find("ul").hide();
 								break;
 							}
 

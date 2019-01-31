@@ -4,30 +4,14 @@
 		<!-- 헤더영역 -->
 		@@include('include/header.html')
 		<!-- //헤더영역 -->
-
-<style type="text/css">
-.layer {}
-.layer .double {font-size:0; height:100%; background:#ddd;}
-.layer .double > .ele {display:inline-block; font-size:0; min-width:300px; max-width:500px; height:100%;}
-.layer .double > .ele:first-child {background:blue;}
-.layer .opt {width:300px; height:100%; background:#333;}
-
-.fix2 {position:fixed; top:700px; left:100px; z-index:111; min-width:100px; text-align:center; height:50px; line-height:50px; border:1px solid #333; background:#fff; padding:0 10px;}
-
-.box {margin-top:50px; width:200px;}
-</style>
-
-
-<div class="fix2">탭 추가</div>
-
 		<section id="container">
 			<div class="inner">
 				@@include('include/nav.html')
 				<div class="content">
 					@@include('include/tabWrap.html')
-
+					<!-- 컨텐츠 영역 -->
 					<div class="Layout_List">
-						<h2 class="tit" id="i10701-serviceListLb">Service List</h2>
+						<h2 class="tit" id="i10701_serviceListLb">Service List</h2>
 						<div class="schOptionGroup">
 							<ul class="itemList1">
 								<li>
@@ -36,7 +20,7 @@
 										<dd>
 											<div class="inputBox schType keyword">
 												<div class="inner">
-													<input type="text" name="" class="inp autoSch keyword name" id="i10003-company" placeholder="Type Company Name">
+													<input type="text" name="" class="inp autoSch keyword name" id="" placeholder="Type Company Name">
 													<button class="inpReset"></button>
 												</div>
 											</div>
@@ -76,37 +60,23 @@
 									</dl>
 								</li>
 							</ul>
-							<button class="btn" id="i10701-search">Search</button>
+							<button class="btn" id="i10701_search">Search</button>
 						</div>
-						<h3 class="tit" id="i10701-servicesLb">Services</h3>
+						<h3 class="tit" id="i10701_servicesLb">Services</h3>
 						<div class="ibsheepTop">
 							@@include('include/sheet_filter.html',{
-								"id": "i10701-filterStatus"
+								"id": "i10701_filterStatus"
 							})
-							<button class="btn" id="i10701-addService">Add Service</button>
+							<button class="btn" id="i10701_addService">Add Service</button>
 						</div>
 						<div class="ibsheetDiv">
 							ibsheet
 						</div>
 					</div>
+					<!--// 컨텐츠 영역 -->
 				</div>
 			</div>
 		</section>
 	</div>
-<script type="text/javascript">
-$(function(){
-	var xxx = '<li><a href="#"><span>House B/L 9</span><span>OBK-000468</span></a><button class="tabClose" onclick="TabRemove(this)">Close</button></li>';
-	$('.fix2').click(function(){
-		$(xxx).appendTo('.tabList');
-		TablistSort();
-	});
-
-});
-
-function TabRemove(e) {
-	$(e).closest('li').remove();
-	TablistSort();
-}
-</script>
 </body>
 </html>

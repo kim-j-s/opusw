@@ -260,17 +260,10 @@
 
 	<h2>Combobox</h2>
 
-	<div class="comboBox">
-		<select class="comboSelect" id="" placeholder="Select a Type">
-			<option value="">Select a Type</option>
-			<option value="Share">Share</option>
-			<option value="ActionScript">ActionScript</option>
-			<option value="AppleScript">AppleScript</option>
-			<option value="Asp">Asp</option>
-			<option value="BASIC">BASIC</option>
-			<option value="C">C</option>
-		</select>
-	</div>
+	@@include('include/combobox.html',{
+		"id": "",
+		"placeholder": "Select a Type"
+	})
 	<!-- souce code 뷰어 -->
 	<textarea name="" id="" cols="30" rows="10" class="pubTextarea">
 <div class="comboBox">
@@ -283,6 +276,28 @@
 value="" 값과 option text를 비교하여 검색하는 기능 두가지가 동일해야 함.
 	</textarea>
 	<!-- //souce code 뷰어 -->
+
+	<h2>국가선택</h2>
+	<div>
+	@@include('include/CountrySelect.html',{
+		"class": "",
+		"id": ""
+	})
+	</div>
+<p>Mandate 클래스로 색상 조정</p>
+	<!-- souce code 뷰어 -->
+	<textarea name="" id="" cols="30" rows="10" class="pubTextarea">
+@@include('include/CountrySelect.html',{
+	"class": "",
+	"id": ""
+})
+	</textarea>
+	<!-- //souce code 뷰어 -->
+
+
+
+
+
 
 	<h2>동의 체크</h2>
 	<div class="agreeChk">

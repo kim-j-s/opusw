@@ -1,0 +1,197 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<!-- 헤더영역 -->
+		@@include('include/header.html')
+		<!-- //헤더영역 -->
+		<section id="container">
+			<div class="inner">
+				@@include('include/nav.html')
+				<div class="content">
+					@@include('include/tabWrap.html')					
+					<!-- 컨텐츠 영역 -->
+					<div class="Layout_Sidebar">
+						<h2 class="tit" id="cup10702_serviceLb">Service</h2>
+						<div class="serviceCode">
+							<!-- 2019-01-30 수정 -->
+							<div class="srvNum" id="cup10702_serviceIDLb">
+								<div class="inputBox inpNone">
+									<input type="text" name="" class="inp" id="" readonly="readonly" value="S10000001">
+								</div>
+							</div>
+							<!--// 2019-01-30 수정 -->
+							<div class="actChk">
+								<!-- 2019-01-29 수정 -->
+								<div class="switchChk">
+									<input type="checkbox" name="cup10702_activeChk" id="cup10702_activeChk">
+									<label for="cup10702_activeChk" id="cup10702_active">
+										<span class="txt1">Inactive</span>
+										<span class="txt2">Active</span>
+									</label>
+								</div>
+								<!--// 2019-01-29 수정 -->
+							</div>
+						</div>
+						<div class="inner saveAdd">
+							<div class="lsCont">
+								<h3 class="tit" id="cup10702_basicLb">Basic</h3>
+								<ul class="itemList2">
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_serviceTypeLb">Service Type</dt>
+											<dd>
+												@@include('include/combobox.html',{
+													"id": "cup10702_serviceType",
+													"placeholder": "Select a Type"
+												})
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_serviceNameLb">Service Name</dt>
+											<dd>
+												<div class="inputBox">
+													<input type="text" name="cup10702_serviceName" class="inp Mandate" id="cup10702_serviceName" maxlength="50">
+													<button class="inpReset"></button>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_serviceAliasLb">Service Alias</dt>
+											<dd>
+												<div class="inputBox">
+													<input type="text" name="cup10702_serviceAlias" class="inp" id="cup10702_serviceAlias">
+													<button class="inpReset"></button>
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Alias</strong>
+															<p class="txt">Alias can be service <br />code or abbreviation.</p>
+														</div>
+													</div>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_descriptionLb">Description</dt>
+											<dd>
+												<div class="textareaDiv">
+													<textarea name="" id="cup10702_description" cols="30" rows="10" class="textarea" maxlength="500"></textarea>
+													<div class="byte"><span class="bold">100</span>/150</div>
+												</div>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+
+								<h3 class="tit" id="cup10702_suggestedTariffLb">Selling</h3>
+								<ul class="itemList2">
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_suggestedTariff">Suggested Tariff</dt>
+											<dd>
+												<!-- 2019-01-30 수정 -->
+												@@include('include/combobox.html',{
+													"id": "cup10702_suggestedTariff",
+													"placeholder": "Select a Tariff"
+												})
+												<!--// 2019-01-30 수정 -->
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_addTariffLb">Need New Tariff?</dt>
+											<dd>
+												<button class="btn" id="cup10702_newTariff">Add Tariff</button>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_isForOnlineSalesLb">Is for Online Sales</dt>
+											<dd>
+												<div class="checkbox">
+													<input type="checkbox" name="cup10702_isForOnlineSalesChk" id="cup10702_isForOnlineSalesChk" checked="checked"><label for="cup10702_isForOnlineSalesChk" id="cup10702_isForOnlineSales">Apply</label>
+												</div>	
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_displayOrderLb">Display Order</dt>
+											<dd>
+												<div class="inputBox">
+													<input type="text" name="cup10702_displayOrder" class="inp" id="cup10702_displayOrder" placeholder="Ascending Order" maxlength="10">
+													<button class="inpReset"></button>
+												</div>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+							<div class="lsCont fix">
+								<h3 class="tit">Record</h3>
+								<dl class="inpItem2">
+									<dt id="cup10702_createdOnLb">Created on</dt>
+									<dd>
+										<!-- 2019-01-30 수정 -->
+										<div class="ele">
+											<div class="inputBox Edit_date single">
+												<input type="text" name="cup10702_createDate" class="inp Readonly" id="cup10702_createDate" value="12-14-2018" readonly/>
+											</div>
+											@@include('include/timeSelect.html',{
+												"id": "cup10702_createTime"
+											})
+										</div>
+										<div class="ele">
+											<div class="inputBox Edit_User">
+												<img src="../static/images/common/icon/icon_person.png" alt="" class="thumb" />
+												<input type="text" name="cup10702_createdBy" class="inp" id="cup10702_createdBy">
+												<button class="inpReset"></button>
+											</div>
+										</div>
+										<!--// 2019-01-30 수정 -->
+									</dd>
+								</dl>
+
+								<dl class="inpItem2">
+									<dt id="cup10702_modifiedOnLb">Modified on</dt>
+									<dd>
+										<!-- 2019-01-30 수정 -->
+										<div class="ele">
+											<div class="inputBox Edit_date single">
+												<input type="text" name="cup10702_modifiedDate" class="inp Readonly" id="cup10702_modifiedDate" value="12-14-2018" readonly/>
+											</div>
+											@@include('include/timeSelect.html',{
+												"id": "cup10702_modifiedTime"
+											})
+										</div>
+										<div class="ele">
+											<div class="inputBox Edit_User">
+												<img src="../static/images/common/icon/icon_person.png" alt="" class="thumb" />
+												<input type="text" name="cup10702_modifiedBy" class="inp" id="cup10702_modifiedBy">
+												<button class="inpReset"></button>
+											</div>
+										</div>
+										<!--// 2019-01-30 수정 -->
+									</dd>
+								</dl>
+
+							</div>
+						</div>
+						<div class="saveDiv">
+							<button class="btn" id="cup10702_Save">Save</button>
+						</div>
+					</div>
+					<!--// 컨텐츠 영역 -->
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
