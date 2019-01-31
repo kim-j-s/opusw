@@ -137,7 +137,7 @@
 
 	<h2>input타입 - Edit_User</h2>
 	<div class="inputBox Edit_User">
-		<img src="../static/images/common/icon/icon_person.png" alt="" class="thumb" />
+		<img src="../static/images/common/icon/icon_person_small.png" alt="" class="thumb" />
 		<input type="text" name="" class="inp" id="">
 		<button class="inpReset"></button>
 	</div>
@@ -145,9 +145,37 @@
 	<div class="box">
 		<pre class="brush: html;">
 			<div class="inputBox Edit_User">
-				<img src="" alt="" class="thumb" />
+				<img src="../static/images/common/icon/icon_person_small.png" alt="" class="thumb" />
 				<input type="text" name="" class="inp" id="">
 				<button class="inpReset"></button>
+			</div>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+
+	<h2>input타입 - Edit_Time</h2>
+	@@include('include/timeSelect.html',{
+		"id": "cup10702_modifiedTime"
+	})
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('include/timeSelect.html',{
+				"id": ""
+			})
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+
+	<h2>input타입 - Edit_Time Readonly</h2>
+	<div class="inputBox Edit_Time readonly">
+		<input type="text" name="cup10702_modifiedTime" class="inp Readonly" id="cup10702_modifiedTime" value="10 : 20 AM" readonly="readonly">
+	</div>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<div class="inputBox Edit_Time readonly">
+				<input type="text" name="cup10702_modifiedTime" class="inp Readonly" id="cup10702_modifiedTime" value="10 : 20 AM" readonly="readonly">
 			</div>
 		</pre>
 	</div>

@@ -27,9 +27,9 @@
 
 /* input */
 .inputBox {position:relative; display:inline-block; width:200px;}
-.inputBox.full {display:block;}
+.inputBox.full {display:block; width:auto;}
 .inputBox + .inputBox {margin-left:7px;}
-.inputBox .inp {display:block; width:100%; height:28px; padding:0 28px 0 10px; border:1px solid #b4bcc9; font-size:13px; transition:all .5s ease; outline:none; border-radius:5px;}
+.inputBox .inp {display:block; width:100%; height:28px; padding:0 28px 0 10px; border:1px solid #b4bcc9; font-size:13px; transition:all .5s ease; /* outline:none; */ border-radius:5px;}
 .inputBox .inp:focus {border:1px solid #78abea;}
 .inputBox .inp.Readonly {border:1px solid #b4bcc9; background:#e4e4e6; pointer-events:none;}
 .inputBox .inp.Warning {border:1px solid #ff597a; color:#ff0033;}
@@ -45,7 +45,7 @@
 .inputBox.count > .plus {top:5px; background-position:-20px -60px;}
 .inputBox.count > .minus {bottom:5px; background-position:0 -60px;}
 
-.inputBox.amount {min-width:auto; vertical-align:top; font-size:0;}
+.inputBox.amount {width:125px; vertical-align:top; font-size:0;}
 .inputBox.amount:before {content:''; position:absolute; top:3px; left:45px; height:calc(100% - 6px); border-right:1px solid #cecfd3;}
 .inputBox.amount:after {content:''; display:block; clear:both;}
 .inputBox.amount > .inp {display:inline-block; min-width:auto;}
@@ -56,12 +56,16 @@
 .inputBox.Edit_User > .thumb {position:absolute; top:5px; left:5px; width:20px; height:20px;}
 .inputBox.Edit_User > .inp {padding:0 28px 0 30px;}
 
-.inputBox.Edit_date {}
+.inputBox.Edit_date {vertical-align:top;}
 .inputBox.Edit_date:after {content:''; position:absolute; top:5px; right:5px; width:19px; height:17px; background:url(../images/common/sprite_common.png) no-repeat -126px -40px;}
 .inputBox.Edit_date > .inp {}
 
 .inputBox.Edit_date.single {width:110px;}
 .inputBox.Edit_date.single + .timeSelect {margin-left:7px;}
+
+
+.inputBox.Edit_Time {width:110px;}
+.inputBox.Edit_Time.readonly {}
 
 .inputBox.inpNone {border-radius:0;}
 .inputBox.inpNone > .inp {padding:0; border:none; font-weight:600; font-size:18px;}
@@ -87,7 +91,7 @@
 
 
 /* autocomplete case */
-.inputBox.schType {width:auto; max-width:none; font-size:0;}
+.inputBox.schType {display:block; width:auto; max-width:none; font-size:0;}
 .inputBox.schType > .inner {position:relative; display:inline-block;}
 .inputBox.schType > .inner .easy-autocomplete {display:inline-block; font-size:0; width:115px;}
 .inputBox.schType > .inner .easy-autocomplete .inp {padding:0 10px 0 10px;}
@@ -95,6 +99,7 @@
 .inputBox.schType > .inner .easy-autocomplete:first-child .inp {border-radius:5px 0 0 5px;}
 .inputBox.schType > .inner .easy-autocomplete + .easy-autocomplete .inp {border-left:none;}
 .inputBox.schType.ty1 > .inner .easy-autocomplete {width:220px;}
+.flexContent .inputBox.schType.ty1 > .inner .easy-autocomplete {width:208px;}
 .inputBox.schType.ty1 > .inner .easy-autocomplete:first-child {width:100px;}
 .inputBox.schType.ty2 > .inner .easy-autocomplete {width:150px;}
 .inputBox.schType.ty2 > .inner .easy-autocomplete:first-child {width:100px;}
@@ -128,11 +133,11 @@
 
 
 /* dropdown*/
-.ui.dropdown.country {width:197px;}
+.ui.dropdown.country {width:200px;}
 .ui.dropdown.Mandate {border:1px solid #78abea; background:#eff5f8; color:#1f63cd;}
 .ui.dropdown.disabled {background:#e4e4e6; opacity:1;}
 .inputBox.zipCode {width:104px; min-width:auto;}
-.ui.dropdown + .inputBox.zipCode {vertical-align:top; margin-left:7px;}
+.ui.dropdown + .inputBox.zipCode {width:calc(100% - 207px); max-width:200px; vertical-align:top; margin-left:7px;}
 .ui.dropdown > .text {font-size:14px;}
 .ui.search.dropdown.active > input.search, .ui.search.dropdown.visible>input.search {height:100%;}
 .ui.search.selection.dropdown > input.search {height:100%; font-size:14px; line-height:28px;}
@@ -142,10 +147,10 @@
 body .ui-tooltip {display:none !important;}
 .comboBox {position:relative; display:inline-block; width:200px; vertical-align:top;}
 .ui-widget.ui-widget-content {/* display:block !important; */ border:1px solid #b4bcc9; background:#fff; border-radius:5px; overflow:auto; max-height:200px;}
-.ui-widget.ui-widget-content:focus {outline:0;}
+.ui-widget.ui-widget-content:focus {/* outline:0; */}
 .custom-combobox {position:relative; display:block; font-size:14px;}
 .custom-combobox-toggle {position:absolute; top:1px; right:0px; padding:0; width:34px; height:26px; border:none; background:transparent;}
-.custom-combobox-toggle:hover, .custom-combobox-toggle:visited, .custom-combobox-toggle:focus, .custom-combobox-toggle:active {background:transparent !important; border:none !important; outline:none;}
+.custom-combobox-toggle:hover, .custom-combobox-toggle:visited, .custom-combobox-toggle:focus, .custom-combobox-toggle:active {background:transparent !important; border:none !important; /* outline:none; */}
 .custom-combobox-input {display:block; width:100%; height:28px; margin:0; padding:5px 34px 5px 10px; border-radius:5px; color:#1f63cd;}
 .comboBox + .inputBox {margin-left:7px;}
 .comboBox .ui-button .ui-icon {position:absolute; top:50%; left:50%; margin-top:-3px; margin-left:-6px; width:12px; height:6px; background:url(../images/common/sprite_common.png) no-repeat 0 -80px;}
@@ -179,8 +184,8 @@ body .ui-tooltip {display:none !important;}
 /* checkbox */
 .checkbox {display:inline-block; position:relative; padding:0 0 0 20px;}
 .checkbox input { position:absolute; top:-20px; left:0; z-index:1; opacity:0;}
-.checkbox label {font-weight:400; font-size:12px; color:#4e4f62; cursor:pointer; line-height:18px;}
-.checkbox label:before {content:''; position:absolute; top:3px; left:0; width:14px; height:14px; border:1px solid #b4bcc9; box-sizing:border-box; border-radius:3px;}
+.checkbox label {display:block; font-weight:400; font-size:12px; color:#4e4f62; cursor:pointer; line-height:18px;}
+.checkbox label:before {content:''; position:absolute; top:2px; left:0; width:14px; height:14px; border:1px solid #b4bcc9; box-sizing:border-box; border-radius:3px;}
 .checkbox input:checked + label:after {content:''; display:block; position:absolute; top:5px; left:3px; width:13px; height:9px; background:url('../images/common/sprite_common.png') no-repeat -126px 0;}
 
 .switchChk {position:relative; display:inline-block; height:28px;vertical-align:top; overflow:hidden;}
