@@ -132,6 +132,7 @@ $(function(){
 		}, function(start, end, label) {
 		console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
 	});
+	$('.daterange').val('From - To');
 
 	$('.datesingle').daterangepicker({
 		"singleDatePicker": true,
@@ -204,6 +205,7 @@ function Editor() {
 function Gnb() {
 	cnt = 0;
 	$('.allBtn').on('click', function(){
+		console.log('bng');
 		cnt++;
 		if (cnt == 1)
 		{
@@ -255,7 +257,7 @@ function Gnb() {
 			}, 50);
 			$(this).removeClass('on');
 			$('nav').stop(true).animate({
-				width:'250px'
+				width:'285px'
 			}, 500, function(){
 				console.log('끝 2');
 				setTimeout(function(){

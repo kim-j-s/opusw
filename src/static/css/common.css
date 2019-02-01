@@ -11,7 +11,7 @@
 /* ==============================
  * header
  * ============================== */
-#headerWrap {position:fixed; top:0; left:0; z-index:100; width:100%; height:56px; padding-left:88px; border-bottom:1px solid #e8e9ee; background:#fff;}
+#headerWrap {position:fixed; top:0; left:0; z-index:100; width:100%; height:60px; padding-left:88px; border-bottom:5px solid #085ec1; background:#fff;}
 #headerWrap > h1 {height:55px; padding:18px 0 0 29px; border-left:1px solid #e8e9ee;}
 #headerWrap > h1 a {display:inline-block; font-size:0;}
 
@@ -53,7 +53,10 @@
 .inputBox.amount > .inp:nth-child(2) {width:80px; padding:0 5px; text-align:right; border-radius:0 5px 5px 0; border-left:none;}
 
 .inputBox.Edit_User {}
-.inputBox.Edit_User > .thumb {position:absolute; top:5px; left:5px; width:20px; height:20px;}
+.inputBox.Edit_User > .thumb {position:absolute; top:4px; left:5px; width:20px; height:20px; display:flex; align-items: center; vertical-align:middle;}
+.inputBox.Edit_User > .thumb:before {content:''; flex:1;}
+.inputBox.Edit_User > .thumb:after {content:''; flex:1;}
+.inputBox.Edit_User > .thumb > img {max-width:100%; max-height:100%;}
 .inputBox.Edit_User > .inp {padding:0 28px 0 30px;}
 
 .inputBox.Edit_date {vertical-align:top;}
@@ -204,9 +207,9 @@ body .ui-tooltip {display:none !important;}
 /* btn */
 .btn {display:inline-block; padding:0 17px; height:28px; font-weight:600; font-size:13px; line-height:28px; text-align:center; border-radius:5px; vertical-align:top; border:1px solid #808080; background:#fff;}
 .btn.basic {color:#fff; background:#0b61ca;}
+.btn.schBtn {position:relative; width:28px; height:28px; padding:0; background:#eceefb; overflow:hidden; border:none; border-radius:5px; text-indent:-999px;}
+.btn.schBtn:before {content:''; position:absolute; top:5px; left:6px; width:16px; height:17px; background:url(../images/common/sprite_common.png) no-repeat -126px -140px;}
 a.btn {text-decoration:none;}
-
-
 
 
 /* menuAll */
@@ -218,13 +221,13 @@ a.btn {text-decoration:none;}
 
 
 /* tablist */
-.tabWrap {padding:27px 150px 0 43px; height:82px; /* background:#f5f6fa; */ background:#333; font-size:0; overflow:hidden;}
+.tabWrap {padding:30px 150px 0 0; height:90px; background:#f5f6fa; font-size:0; overflow:hidden;}
 .tabList {font-size:0; overflow:hidden;}
 .tabList > li {position:relative; float:left; width:190px; background:#e9f0fb;}
 .tabList > li + li {}
 .tabList > li + li > a:after {content:''; position:absolute; top:12px; left:-1px; width:1px; border-bottom:35px solid #c3ccda;}
 .tabList > li:last-child {border-radius:0 10px 0 0;}
-.tabList > li > a {position:relative; z-index:1; display:block; height:55px; padding:8px 0 0 20px; text-decoration:none;}
+.tabList > li > a {position:relative; z-index:1; display:block; height:60px; padding:8px 0 0 20px; text-decoration:none;}
 .tabList > li > a.on {z-index:2; background:#fff; border-radius:10px 10px 0 0;}
 .tabList > li > a.on:before {content:''; position:absolute; top:0; left:-10px; z-index:1; width:18px; height:62px; background:url(../images/common/sprite_common.png) no-repeat -42px 0;}
 .tabList > li > a.on:after {content:''; position:absolute; top:0; left:auto; right:-10px; z-index:1; width:18px; height:62px; background:url(../images/common/sprite_common.png) no-repeat -60px 0;}
@@ -244,17 +247,39 @@ a.btn {text-decoration:none;}
 
 
 /* gnb */
-nav {padding-top:21px; overflow:hidden; border-right:1px solid #e1e0e8;}
-.gnb {position:relative; width:258px; height:100%; padding:0 0 50px 0; overflow:auto; border-left:1px solid #e1e0e8;}
+nav {position:absolute; top:60px; left:0; height:calc(100% - 60px);}
+nav {padding-top:21px; background:#fff; overflow:hidden; border-right:1px solid #e1e0e8;}
+nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
+.gnb {position:relative; width:285px; height:100%; padding:0 0 50px 0; overflow:auto; border-left:1px solid #e1e0e8;}
+
+
+
+
+
 .gnbList > li {position:relative;}
-.gnbList > li .gnbTit {position:relative; padding:0 80px 0 30px; line-height:36px; font-weight:600; font-size:16px; color:#3c3c3c; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; cursor:pointer;}
+.gnbList > li .gnbTit {position:relative; padding:0 80px 0 62px; line-height:36px; font-weight:600; font-size:16px; color:#3c3c3c; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; cursor:pointer;}
+.gnbList > li .gnbTit:before {content:''; position:absolute; top:5px; left:20px; width:25px; height:25px; background:url(../images/common/sprite_gnb.png) no-repeat;}
+.gnbList > li .gnbTit.ty1:before {background-position:0 0;}
+.gnbList > li .gnbTit.ty2:before {background-position:0 -25px;}
+.gnbList > li .gnbTit.ty3:before {background-position:0 -50px;}
+.gnbList > li .gnbTit.ty4:before {background-position:0 -75px;}
+.gnbList > li .gnbTit.ty5:before {background-position:0 -100px;}
+.gnbList > li .gnbTit.ty6:before {background-position:0 -125px;}
+.gnbList > li .gnbTit.ty7:before {background-position:0 -150px;}
 .gnbList > li .gnbTit.on {color:#2144d2;}
+.gnbList > li .gnbTit.on.ty1:before {background-position:-25px 0;}
+.gnbList > li .gnbTit.on.ty2:before {background-position:-25px -25px;}
+.gnbList > li .gnbTit.on.ty3:before {background-position:-25px -50px;}
+.gnbList > li .gnbTit.on.ty4:before {background-position:-25px -75px;}
+.gnbList > li .gnbTit.on.ty5:before {background-position:-25px -100px;}
+.gnbList > li .gnbTit.on.ty6:before {background-position:-25px -125px;}
+.gnbList > li .gnbTit.on.ty7:before {background-position:-25px -150px;}
 .gnbList > li .gnbTit:after {content:''; position:absolute; top:16px; right:21px; width:11px; height:4px; background:url(../images/common/sprite_common.png) no-repeat -20px 0;}
 .gnbList > li .gnbTit.on:after {background-position:0 0;}
-.gnbList > li .clip {position:absolute; top:9px; right:46px; width:25px; height:21px; background:url(../images/common/sprite_common.png) -102px 0;}
+.gnbList > li .clip {position:absolute; top:9px; right:46px; width:25px; height:21px; background:url(../images/common/sprite_common.png) -78px -25px;}
 .gnbList > li .clip.on {background-position:-78px 0px;}
 .gnbList > li .dept {display:none;}
-.gnbList > li .dept > li > a {position:relative; display:block; padding:0 22px 0 30px; line-height:35px; font-weight:600; font-size:14px; color:#9899a9; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.gnbList > li .dept > li > a {position:relative; display:block; padding:0 22px 0 62px; line-height:35px; font-weight:600; font-size:14px; color:#9899a9; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-decoration:none;}
 .gnbList > li .dept > li:hover > a {background:#ebeffb; color:#687df2;}
 
 

@@ -1,82 +1,75 @@
 @@include('include/head.html')
 <body>
 	<div class="wrapper">
-		<!-- 헤더영역 -->
-		@@include('include/header.html')
-		<!-- //헤더영역 -->
-		<section id="container">
-			<div class="inner">
-				@@include('include/nav.html')
-				<div class="content">
-					@@include('include/tabWrap.html')
-					<!-- 컨텐츠 영역 -->
-					<div class="Layout_List">
-						<h2 class="tit" id="i10701_serviceListLb">Service List</h2>
-						<div class="schOptionGroup">
-							<ul class="itemList1">
-								<li>
-									<dl class="inpItem">
-										<dt id="">Keyword</dt>
-										<dd>
-											<div class="inputBox schType keyword">
-												<div class="inner">
-													<input type="text" name="" class="inp autoSch keyword name" id="" placeholder="Type Company Name">
-													<button class="inpReset"></button>
+		<form action="">
+			<!-- 헤더영역 -->
+			@@include('include/header.html')
+			<!-- //헤더영역 -->
+			<section id="container">
+				<div class="inner">
+					@@include('include/nav.html')
+					<div class="content">
+						@@include('include/tabWrap.html')
+						<!-- 컨텐츠 영역 -->
+						<div class="layout Layout_List"> <!-- 2019-02-01 수정 -->
+							<h2 class="tit" id="i10701_serviceListLb">Service List</h2>
+							<div class="schOptionGroup">
+								<!-- 2019-02-01 수정 -->
+								<ul class="itemList1">
+									<li>
+										<dl class="inpItem">
+											<dt id="">Keyword</dt>
+											<dd>
+												<div class="inputBox schType keyword">
+													<div class="inner">
+														<input type="text" name="" class="inp autoSch keyword name" id="" placeholder="Type Company Name">
+														<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
+													</div>
 												</div>
-											</div>
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl class="inpItem">
-										<dt>B/L Date</dt>
-										<dd>
-											@@include('include/daterangepicker.html',{
-												"id": ""
-											})
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl class="inpItem">
-										<dt>Item Description</dt>
-										<dd>
-											@@include('include/combobox.html',{
-												"id": "",
-												"placeholder": "Select a Type"
-											})
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl class="inpItem">
-										<dt>Item Description</dt>
-										<dd>
-											@@include('include/combobox.html',{
-												"id": "",
-												"placeholder": "Select a Type"
-											})
-										</dd>
-									</dl>
-								</li>
-							</ul>
-							<button class="btn" id="i10701_search">Search</button>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt>Service Type</dt>
+											<dd>
+												@@include('include/combobox.html',{
+													"id": "",
+													"placeholder": "Select a Type"
+												})
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt>Creation</dt>
+											<dd>
+												@@include('include/daterangepicker.html',{
+													"id": ""
+												})
+											</dd>
+										</dl>
+									</li>
+								</ul>
+								<button type="button" class="btn schBtn" id="i10701_search">Search</button>
+								<!--// 2019-02-01 수정 -->
+							</div>
+							<h3 class="tit" id="i10701_servicesLb">Services</h3>
+							<div class="ibsheepTop">
+								@@include('include/sheet_filter.html',{
+									"id": "i10701_filterStatus"
+								})
+								<button type="button" class="btn" id="i10701_addService">Add Service</button> <!-- 2019-02-01 수정 -->
+							</div>
+							<div class="ibsheetDiv">
+								ibsheet
+							</div>
 						</div>
-						<h3 class="tit" id="i10701_servicesLb">Services</h3>
-						<div class="ibsheepTop">
-							@@include('include/sheet_filter.html',{
-								"id": "i10701_filterStatus"
-							})
-							<button class="btn" id="i10701_addService">Add Service</button>
-						</div>
-						<div class="ibsheetDiv">
-							ibsheet
-						</div>
+						<!--// 컨텐츠 영역 -->
 					</div>
-					<!--// 컨텐츠 영역 -->
 				</div>
-			</div>
-		</section>
+			</section>
+		</form>
 	</div>
 </body>
 </html>
