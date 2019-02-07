@@ -56,8 +56,15 @@
 .inputBox.Edit_User > .thumb {position:absolute; top:4px; left:5px; width:20px; height:20px; display:flex; align-items: center; vertical-align:middle;}
 .inputBox.Edit_User > .thumb:before {content:''; flex:1;}
 .inputBox.Edit_User > .thumb:after {content:''; flex:1;}
-.inputBox.Edit_User > .thumb > img {max-width:100%; max-height:100%;}
+.inputBox.Edit_User > .thumb > img {max-width:100%; max-height:100%; border-radius:50%;}
 .inputBox.Edit_User > .inp {padding:0 28px 0 30px;}
+
+.inputBox.Edit_Organization {}
+.inputBox.Edit_Organization > .thumb {position:absolute; top:4px; left:5px; width:20px; height:20px; display:flex; align-items: center; vertical-align:middle;}
+.inputBox.Edit_Organization > .thumb:before {content:''; flex:1;}
+.inputBox.Edit_Organization > .thumb:after {content:''; flex:1;}
+.inputBox.Edit_Organization > .thumb > img {max-width:100%; max-height:100%; border-radius:5px;}
+.inputBox.Edit_Organization > .inp {padding:0 28px 0 30px;}
 
 .inputBox.Edit_date {vertical-align:top;}
 .inputBox.Edit_date:after {content:''; position:absolute; top:5px; right:5px; width:19px; height:17px; background:url(../images/common/sprite_common.png) no-repeat -126px -40px;}
@@ -65,7 +72,6 @@
 
 .inputBox.Edit_date.single {width:110px;}
 .inputBox.Edit_date.single + .timeSelect {margin-left:7px;}
-
 
 .inputBox.Edit_Time {width:110px;}
 .inputBox.Edit_Time.readonly {}
@@ -77,14 +83,21 @@
 .inputBox + .alertMessage {margin-top:7px;}
 
 
+/* input file images upload */
+.fileBox {position:relative; display:inline-block;}
+.fileBox > label {display:inline-block; padding:0 17px; height:28px; font-weight:600; font-size:13px; line-height:28px; text-align:center; border-radius:5px; vertical-align:top; border:1px solid #808080; background:#fff;}
+.fileBox > input[type="file"] {position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;}
+
+
 /* tooltip */
-.tooltip {position:absolute; top:0; right:-25px; width:17px; height:17px;}
-.tooltip:before {content:''; position:absolute; top:5px; left:0; width:19px; height:19px; background:url(../images/common/sprite_common.png) no-repeat -126px -160px;}
-.tooltip > .tips {position:absolute; top:5px; left:28px; z-index:1; display:none; padding:6px 10px 7px 10px; font-size:11px; white-space:nowrap; border:1px solid #bfc2c6; background:#ebecef; border-radius:5px;}
+.tooltip {position:relative; display:inline-block; font-size:0; width:19px; height:19px;}
+.tooltip:before {content:''; position:absolute; top:0; left:0; width:19px; height:19px; background:url(../images/common/sprite_common.png) no-repeat -126px -160px;}
+.tooltip > .tips {position:absolute; top:0px; left:28px; z-index:1; display:none; padding:6px 10px 7px 10px; font-size:11px; white-space:nowrap; border:1px solid #bfc2c6; background:#ebecef; border-radius:5px;}
 .tooltip > .tips strong {display:block; font-weight:600;}
 .tooltip > .tips:before {content:''; position:absolute; top:5px; left:-5px; border-right:5px solid #bfc2c6; border-top:4px solid transparent; border-bottom:4px solid transparent;}
 .tooltip > .tips:after {content:''; position:absolute; top:5px; left:-3px; border-right:5px solid #ebecef; border-top:4px solid transparent; border-bottom:4px solid transparent;}
 .tooltip:hover > .tips {display:block;}
+.inputBox + .tooltip {top:5px; margin:0 0 0 5px;}
 
 
 /* textarea */
@@ -149,8 +162,12 @@
 /* auto Complete combobox */
 body .ui-tooltip {display:none !important;}
 .comboBox {position:relative; display:inline-block; width:200px; vertical-align:top;}
-.ui-widget.ui-widget-content {/* display:block !important; */ border:1px solid #b4bcc9; background:#fff; border-radius:5px; overflow:auto; max-height:200px;}
+.comboBox.small {width:110px;}
+.comboBox.full {display:block; width:auto;}
+.comboBox.Mandate .ui-widget.ui-widget-content {background:#eff5f8;}
+.ui-widget.ui-widget-content {border:1px solid #b4bcc9; background:#fff; border-radius:5px; overflow:auto; max-height:200px;}
 .ui-widget.ui-widget-content:focus {/* outline:0; */}
+
 .custom-combobox {position:relative; display:block; font-size:14px;}
 .custom-combobox-toggle {position:absolute; top:1px; right:0px; padding:0; width:34px; height:26px; border:none; background:transparent;}
 .custom-combobox-toggle:hover, .custom-combobox-toggle:visited, .custom-combobox-toggle:focus, .custom-combobox-toggle:active {background:transparent !important; border:none !important; /* outline:none; */}
@@ -168,7 +185,7 @@ body .ui-tooltip {display:none !important;}
 
 
 /* semantic ui reset flag selectbox */
-.ui.search.dropdown .menu {/* display:block !important; */ margin-top:1px; border:1px solid #b4bcc9; border-top-width:1px !important; border-radius:5px; max-height:200px; box-shadow:none;}
+.ui.search.dropdown .menu {margin-top:1px; border:1px solid #b4bcc9; border-top-width:1px !important; border-radius:5px; max-height:200px; box-shadow:none;}
 .ui.selection.dropdown .menu>.item {position:relative; padding:11px 7px 11px 7px; line-height:18px; font-size:13px; border:none;}
 .ui.selection.dropdown .menu>.item:after {content:''; position:absolute; top:0; left:7px; width:calc(100% - 14px); border-bottom:1px solid #dcdcdc;}
 .ui.selection.dropdown .menu>.item:hover {color:#fff; background:#4c7bec;}
@@ -205,12 +222,16 @@ body .ui-tooltip {display:none !important;}
 
 
 /* btn */
-.btn {display:inline-block; padding:0 17px; height:28px; font-weight:600; font-size:13px; line-height:28px; text-align:center; border-radius:5px; vertical-align:top; border:1px solid #808080; background:#fff;}
+.btn {position:relative; display:inline-block; padding:0 17px; height:28px; font-weight:600; font-size:13px; line-height:28px; text-align:center; border-radius:5px; vertical-align:top; border:1px solid #808080; background:#fff;}
 .btn.basic {color:#fff; background:#0b61ca;}
 .btn.schBtn {position:relative; width:28px; height:28px; padding:0; background:#eceefb; overflow:hidden; border:none; border-radius:5px; text-indent:-999px;}
 .btn.schBtn:before {content:''; position:absolute; top:5px; left:6px; width:16px; height:17px; background:url(../images/common/sprite_common.png) no-repeat -126px -140px;}
 a.btn {text-decoration:none;}
-
+.imgRemove {display:inline-block; width:14px; height:14px; font-size:0; text-indent:-999px; overflow:hidden; background:url(../images/common/sprite_common.png) no-repeat -20px -40px;}
+.btn.addBtn {width:31px; height:30px; padding:0; text-indent:-999px; border:1px solid #dcdcdc; overflow:hidden;}
+.btn.addBtn:before {content:''; position:absolute; top:5px; left:4px; width:23px; height:19px; background:url(../images/common/sprite_common.png) no-repeat -156px 0px;}
+.btn.removeBtn {width:31px; height:30px; padding:0; text-indent:-999px; border:1px solid #dcdcdc; overflow:hidden;}
+.btn.removeBtn:before {content:''; position:absolute; top:5px; left:4px; width:23px; height:19px; background:url(../images/common/sprite_common.png) no-repeat -156px -30px;}
 
 /* menuAll */
 .menuAll {position:fixed; top:0; left:0; z-index:101; width:88px; height:55px;}
@@ -247,15 +268,10 @@ a.btn {text-decoration:none;}
 
 
 /* gnb */
-nav {position:absolute; top:60px; left:0; height:calc(100% - 60px);}
-nav {padding-top:21px; background:#fff; overflow:hidden; border-right:1px solid #e1e0e8;}
+nav {position:absolute; top:60px; left:0; z-index:10; width:285px; height:calc(100% - 60px); padding-top:21px; background:#fff; overflow:hidden; border-right:1px solid #e1e0e8;}
 nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
+
 .gnb {position:relative; width:285px; height:100%; padding:0 0 50px 0; overflow:auto; border-left:1px solid #e1e0e8;}
-
-
-
-
-
 .gnbList > li {position:relative;}
 .gnbList > li .gnbTit {position:relative; padding:0 80px 0 62px; line-height:36px; font-weight:600; font-size:16px; color:#3c3c3c; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; cursor:pointer;}
 .gnbList > li .gnbTit:before {content:''; position:absolute; top:5px; left:20px; width:25px; height:25px; background:url(../images/common/sprite_gnb.png) no-repeat;}

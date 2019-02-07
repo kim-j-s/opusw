@@ -22,7 +22,8 @@ img, select, input, button { vertical-align:middle; }
 em { font-style:normal; }
 input { font-family: 'Open Sans', sans-serif;}
 
-html, body {width:100%; height:100%;}
+html {width:100%; height:100%;}
+body {height:100%; min-height:100%; min-width:1400px;}
 
 
 /* placeholder */
@@ -77,3 +78,8 @@ input[type=number]::-webkit-outer-spin-button {
 .ellipsis {overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 
 .blind { overflow:hidden; position:absolute; top:0; left:0; width:0; height:0; font-size:0;}
+
+
+
+.mt10 {margin-top:10px;}
+.mt15 {margin-top:15px;}

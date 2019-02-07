@@ -27,6 +27,7 @@ $(function(){
 		});
 	}
 
+
 	
 	/* ==============================
 	 * gnb 
@@ -177,6 +178,34 @@ $(function(){
 	});
 
 
+	// images upload
+	jQuery('.fileUpload').on('change', function () {
+		ext = jQuery(this).val().split('.').pop().toLowerCase();
+		if (jQuery.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
+			resetFormElement(jQuery(this));
+			window.alert('Not an image!');
+		} else {
+			file = jQuery('.fileUpload').prop("files")[0];
+			blobURL = window.URL.createObjectURL(file);
+			console.log(blobURL);
+			jQuery(this).closest('.imgAdd').find('.imgBox').show();
+			jQuery(this).closest('.imgAdd').find('.Image_Logo_Large').attr('src', blobURL);
+		}
+	});
+
+	$('.imgRemove').on('click', function(){
+		resetFormElement(jQuery('.fileUpload'));
+		$(this).closest('.imgBox').hide().find('img').attr('src','');
+		return false;
+	});
+
+	function resetFormElement(e) {
+		e.wrap('<form>').closest('form').get(0).reset();
+		e.unwrap();
+	}
+	// images upload
+
+
 });
 
 
@@ -235,6 +264,9 @@ function Gnb() {
 					clearInterval(Tablist);
 				}, 100);
 			});
+			$('.content').stop(true).animate({
+				'padding-left':'20px'
+			},500);
 		} else if (cnt != 0)
 		{
 			console.log('펼치기');
@@ -264,7 +296,11 @@ function Gnb() {
 					clearInterval(Tablist);
 				}, 150);
 			});
+			$('.content').stop(true).animate({
+				'padding-left':'305px'
+			},500);
 			cnt = 0;
+			
 		}
 	});
 }

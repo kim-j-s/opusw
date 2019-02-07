@@ -8,7 +8,7 @@
 			<section id="container">
 				<div class="inner">
 					@@include('include/nav.html')
-					<div class="content">
+					<div class="content editBtns"> <!-- 2019-02-07 클래스 추가 -->
 						@@include('include/tabWrap.html')					
 						<!-- 컨텐츠 영역 -->
 						<div class="layout Layout_Sidebar"> <!-- 2019-02-01 수정 -->
@@ -33,7 +33,7 @@
 									<!--// 2019-01-29 수정 -->
 								</div>
 							</div>
-							<div class="inner saveAdd">
+							<div class="inner"> <!-- 2019-02-07 클래스 수정 -->
 								<div class="lsCont">
 									<h3 class="tit" id="cup10702_basicLb">Basic</h3>
 									<ul class="itemList2">
@@ -43,6 +43,7 @@
 												<dd>
 													@@include('include/combobox.html',{
 														"id": "cup10702_serviceType",
+														"class": "",
 														"placeholder": "Select a Type"
 													})
 												</dd>
@@ -63,16 +64,18 @@
 											<dl class="inpItem">
 												<dt id="cup10702_serviceAliasLb">Service Alias</dt>
 												<dd>
+													<!-- 2019-02-07 수정 -->
 													<div class="inputBox">
 														<input type="text" name="cup10702_serviceAlias" class="inp" id="cup10702_serviceAlias">
 														<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
-														<div class="tooltip">
-															<div class="tips">
-																<strong class="tit">Alias</strong>
-																<p class="txt">Alias can be service <br />code or abbreviation.</p>
-															</div>
+													</div>
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Alias</strong>
+															<p class="txt">Alias can be service <br />code or abbreviation.</p>
 														</div>
 													</div>
+													<!--// 2019-02-07 수정 -->
 												</dd>
 											</dl>
 										</li>
@@ -98,6 +101,7 @@
 													<!-- 2019-01-31 수정 -->
 													@@include('include/combobox.html',{
 														"id": "cup10702_suggestedTariff",
+														"class": "",
 														"placeholder": "Select a Tariff"
 													})
 													<!--// 2019-01-31 수정 -->
@@ -191,7 +195,7 @@
 
 								</div>
 							</div>
-							<div class="saveDiv">
+							<div class="editBtns">	<!-- 2019-02-07 클래스 수정 -->
 								<button type="button" class="btn basic" id="cup10702_Save">Save</button> <!-- 2019-02-01 수정 -->
 							</div>
 						</div>
