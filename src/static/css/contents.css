@@ -14,7 +14,7 @@
 .content {padding:0 20px 20px 305px;}
 .content.editBtns {padding:0 20px 82px 305px;}
 .content:before {content:''; position:absolute; top:0; left:-1px; height:100%;}
-
+.content.editBtns .editBtns {position:fixed; right:0; bottom:0; z-index:2; padding:17px 20px; background:#fff; width:100%; text-align:right;}
 
 /* login */
 .flexWrap{position:relative; display:flex; height:100%; align-items:center;}
@@ -43,7 +43,7 @@ h3.tit + .txtBox {margin-top:20px;}
 h3.tit + .itemList2 {margin-top:20px;}
 h3.tit + .inpItem2 {margin-top:20px;}
 h3.tit + .ibsheetDiv {margin-top:20px;}
-
+h3.tit + .iTxtCont {margin-top:10px;}
 
 .inpInner .nTxt {font-size:14px; margin-top:20px;}
 .inpInner .nTxt + .inpItem {margin-top:20px;}
@@ -96,6 +96,10 @@ h3.tit + .ibsheetDiv {margin-top:20px;}
 .txtBox + .agreeChk {margin-top:15px;}
 .txtBox + h3.tit {margin-top:20px;}
 
+.iTxtCont {}
+.iTxtCont > .txt {font-size:13px;}
+.iTxtCont > .txt + .btnBox {margin-top:15px; text-align:right;}
+.iTxtCont + h3.tit {margin-top:20px;}
 
 /* agreeChk */
 .agreeChk {position:relative;}
@@ -126,10 +130,11 @@ h3.tit + .ibsheetDiv {margin-top:20px;}
 /* 임시 수정 사이즈 370 -> 350 */
 /* .Layout_Sidebar > .inner .lsCont + .lsCont {display:inline-block; width:350px; margin-left:10px;} */
 /* 임시 수정 사이즈 370 -> 350 */
-.Layout_Sidebar > .inner + .editBtns {position:fixed; right:0; bottom:0; z-index:2; padding:17px 20px; background:#fff; width:100%; text-align:right;}
-
 .serviceCode {padding:10px 0;}
-.serviceCode > .srvNum {display:inline-block; width:200px; font-weight:600; font-size:18px; line-height:28px; vertical-align:top;}
+.serviceCode > .srvNum {display:inline-block; min-width:200px; font-weight:600; font-size:18px; line-height:28px; vertical-align:top;}
+.serviceCode > .srvNum .inputBox.inpNone:nth-of-type(1) {width:120px;}
+.serviceCode > .srvNum .inputBox.inpNone:nth-of-type(2) {width:50px;}
+.serviceCode > .srvNum .codeLabel {display:inline-block; padding:0 20px 0 0; vertical-align:top; line-height:28px;}
 .serviceCode > .actChk {display:inline-block; vertical-align:top;}
 
 .schOptionGroup {position:relative; padding:10px 48px 0px 10px; background:#f7fcff; border-top:1px solid #dbdbdb; border-bottom:1px solid #dbdbdb;}
@@ -150,6 +155,7 @@ h3.tit + .ibsheetDiv {margin-top:20px;}
 .itemList2 > li .inpItem {}
 .itemList2 > li .inpItem > dt {width:220px;}
 .itemList2 > li .inpItem > dt + dd {padding:0 0 0 220px;}
+.itemList2 + h3.tit {margin-top:20px;}
 
 .ibsheepTop {position:relative; margin-top:10px;}
 .ibsheepTop:after {content:''; display:block; clear:both;}

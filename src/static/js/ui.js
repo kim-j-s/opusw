@@ -54,6 +54,7 @@ $(function(){
 
 	// Semantic UI Drop box
 	$('.ui.selection.dropdown').dropdown();
+	$('.ui.fluid.dropdown').dropdown();
 
 	// autocomplete
 	$(".autoSch.ty1").easyAutocomplete(Comp_options);
@@ -133,7 +134,7 @@ $(function(){
 		}, function(start, end, label) {
 		console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
 	});
-	$('.daterange').val('From - To');
+	$('.daterange').val('');
 
 	$('.datesingle').daterangepicker({
 		"singleDatePicker": true,
@@ -204,6 +205,11 @@ $(function(){
 		e.unwrap();
 	}
 	// images upload
+
+	$(".inp.onlyNumber").keyup(function (event) {
+		var inputVal = $(this).val();
+		$(this).val(inputVal.replace(/[^0-9]/gi,''));
+	});
 
 
 });
@@ -587,17 +593,16 @@ function ACC() {
 
 // time select
 function tsChk() {
-	$(".quantity").keypress(function (e) {
-		quantityVal = $(this).val();
-		if (quantityVal.length > 4)
+	$(".quantity").keyup(function (event) {
+		var inputVal = $(this).val();
+		if (inputVal.length > 4)
 		{
 			$(this).val('');
 		}
-		if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-			return false;
-		}
+		$(this).val(inputVal.replace(/[^0-9]/gi,''));
 	});
 }
+
 
 // time select close
 function tsDisplay() {
@@ -654,6 +659,14 @@ function tsDisplay() {
 			}
 		}, 10);
 	});
+}
+
+
+// input number block
+function onlyNumber() {
+	if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+		return false;
+	}
 }
 
 

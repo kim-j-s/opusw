@@ -217,9 +217,38 @@
 	</div>
 	<!-- //souce code 뷰어 -->
 
+	<h2>input타입 - Percent</h2>
+	<div class="inputBox Percent onlyNumber">
+		<input type="text" name="" class="inp Mandate onlyNumber" id="">
+		<button type="button" class="inpReset"></button>
+	</div>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<div class="inputBox Percent onlyNumber">
+				<input type="text" name="" class="inp Mandate onlyNumber" id="">
+				<button type="button" class="inpReset"></button>
+			</div>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
 
 
-
+	<h2>input타입 - Only Number</h2>
+	<div class="inputBox onlyNumber">
+		<input type="text" name="" class="inp onlyNumber" id="">
+		<button type="button" class="inpReset"></button>
+	</div>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<div class="inputBox onlyNumber">
+				<input type="text" name="" class="inp onlyNumber" id="">
+				<button type="button" class="inpReset"></button>
+			</div>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
 	
 
 	<h2>input타입 - 증감</h2>
@@ -323,7 +352,6 @@
 	<!-- //souce code 뷰어 -->
 
 	<h2>Combobox</h2>
-
 	@@include('include/combobox.html',{
 		"id": "",
 		"class": "",
@@ -339,6 +367,23 @@
 </div>
 
 value="" 값과 option text를 비교하여 검색하는 기능 두가지가 동일해야 함.
+	</textarea>
+	<!-- //souce code 뷰어 -->
+
+	<h2>Item Select</h2>
+	@@include('include/itemselect.html',{
+		"id": "",
+		"class": "",
+		"placeholder": "Select TAX Item(s)"
+	})
+	<!-- souce code 뷰어 -->
+	<textarea name="" id="" cols="30" rows="10" class="pubTextarea">
+<select name="" multiple class="ui fluid dropdown" id="">
+	<option value="">Select TAX Item(s)</option>
+	<option value="10%VAT">10% VAT</option>
+	<option value="5%EDUCATION TAX">5% EDUCATION TAX</option>
+	<option value="5%REGIONAL TAX">5% REGIONAL TAX</option>
+</select>
 	</textarea>
 	<!-- //souce code 뷰어 -->
 

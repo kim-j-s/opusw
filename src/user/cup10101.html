@@ -1,0 +1,254 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<form action="">
+			<!-- 헤더영역 -->
+			@@include('include/header.html')
+			<!-- //헤더영역 -->
+			<section id="container">
+				<div class="inner">
+					@@include('include/nav.html')
+					<div class="content editBtns">
+						@@include('include/tabWrap.html')					
+						<!-- 컨텐츠 영역 -->
+						<div class="layout Layout_Sidebar">
+							<h2 class="tit" id="">Profile</h2>
+							<div class="inner">
+								<div class="lsCont">
+									<h3 class="tit" id="">Basic</h3>
+									<div style="height:50px; background:skyblue;">사진교체</div>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="">Language Name</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="" class="inp" id="">
+														<button type="button" class="inpReset"></button>
+													</div>
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Language Name</strong>
+															<p class="txt">Language Name Is <br />your name in native<br /> language, as it appear<br /> language.</p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="">Display Name</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="" class="inp Mandate" id="">
+														<button type="button" class="inpReset"></button>
+													</div>
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Display Name</strong>
+															<p class="txt">Display Name is <br />shown on the system</p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="">Password</dt>
+												<dd>
+													<button type="button" class="btn">Change Password</button>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="">English Name</dt>
+												<dd>
+													<div class="inputBox Edit_AlphaNum">
+														<input type="text" name="" class="inp" id="">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="">Telephone Number</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="" class="inp" id="">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="">Email</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="" class="inp Readonly" id="" readonly="readonly">
+													</div>
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Email</strong>
+															<p class="txt">You can’t change your <br />Email during <br />subscription. </p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="">Mobile Phone Number</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="" class="inp" id="">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="">Department</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "",
+														"class": "",
+														"placeholder": "Select a Type"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="">Fax Number</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="" class="inp" id="">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="">Social Network</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="" class="inp" id="">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+
+									<h3 class="tit" id="">System Options</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="">Language</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "",
+														"class": "",
+														"placeholder": "Select a Type"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="">Date Display Format</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "",
+														"class": "",
+														"placeholder": "Select a Type"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="">Time Display Format</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "",
+														"class": "",
+														"placeholder": "Select a Type"
+													})
+												</dd>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="lsCont fix">
+									<h3 class="tit">Record</h3>
+									<dl class="inpItem2">
+										<dt id="cup10702_createdOnLb">Created on</dt>
+										<dd>
+											<div class="ele">
+												<div class="inputBox Edit_date single">
+													<input type="text" name="" class="inp Readonly" id="" value="12-14-2018" readonly/>
+												</div>
+												<div class="inputBox Edit_Time readonly">
+													<input type="text" name="" class="inp Readonly" id="" value="10 : 20 AM" readonly="readonly">
+												</div>
+											</div>
+										</dd>
+									</dl>
+									<dl class="inpItem2">
+										<dt id="cup10702_modifiedOnLb">Modified on</dt>
+										<dd>
+											<div class="ele">
+												<div class="inputBox Edit_date single">
+													<input type="text" name="" class="inp Readonly" id="" value="12-14-2018" readonly/>
+												</div>
+												<div class="inputBox Edit_Time readonly">
+													<input type="text" name="" class="inp Readonly" id="" value="10 : 20 AM" readonly="readonly">
+												</div>
+											</div>
+										</dd>
+									</dl>
+
+									<h3 class="tit">Invite User</h3>
+									<div class="iTxtCont">
+										<p class="txt" id="">
+											Invite User allow you to invite other users to manage your subscription. Invited user will be belong to your organization
+										</p>
+										<div class="btnBox">
+											<button type="button" class="btn">Invite User</button>
+										</div>
+									</div>
+
+									<h3 class="tit">Leave Organization?</h3>
+									<div class="iTxtCont">
+										<p class="txt" id="">
+											Leave your organization? <br />To inactive the user account, you must define alternate account to organization’s subscription manager.
+										</p>
+										<div class="btnBox">
+											<button type="button" class="btn">Leave Organization</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="editBtns">
+								<button type="button" class="btn basic" id="cup10702_Save">Save</button>
+							</div>
+						</div>
+						<!--// 컨텐츠 영역 -->
+					</div>
+				</div>
+			</section>
+		</form>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('form').areYouSure();
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<form action="">
+			<!-- 헤더영역 -->
+			@@include('include/header.html')
+			<!-- //헤더영역 -->
+			<section id="container">
+				<div class="inner">
+					@@include('include/nav.html')
+					<div class="content editBtns">
+						@@include('include/tabWrap.html')
+						<!-- 컨텐츠 영역 -->
+						<div class="layout Layout_List">
+							<h2 class="tit" id="cup10704_tariffLb">Tariff</h2>
+
+							<div class="serviceCode">
+								<div class="srvNum" id="">
+									<div class="inputBox inpNone">
+										<input type="text" name="cup10704_tariffIdLb" class="inp" id="cup10704_tariffIdLb" readonly="readonly" value="S10000001">
+									</div>
+									<span class="codeLabel" id="cup10704_RevisonLb">REV</span>
+									<div class="inputBox inpNone">
+										<input type="text" name="cup10704_tariffRevLb" class="inp" id="cup10704_tariffRevLb" readonly="readonly" value="11">
+									</div>
+								</div>
+								<div class="actChk">
+									<div class="switchChk">
+										<input type="checkbox" name="" id="cup10704_activeChk">
+										<label for="cup10704_activeChk" id="cup10704_active">
+											<span class="txt1">Inactive</span>
+											<span class="txt2">Active</span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<h3 class="tit" id="cup10704_basicLb">Basic</h3>
+							<ul class="itemList2">
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_serviceNameLb">Service Name</dt>
+										<dd>
+											<div class="inputBox schType ty1">
+												<div class="inner">
+													<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+													<input type="text" name="cup10704_serviceName" class="inp autoSch ty1 name Mandate" id="cup10704_serviceName" placeholder="Select a Service">
+													<button type="button" class="inpReset"></button>
+												</div>
+											</div>
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_customerTypeLb">Customer Type</dt>
+										<dd>
+											@@include('include/combobox.html',{
+												"id": "cup10704_customerType",
+												"class": " Mandate",
+												"placeholder": "Select a Type"
+											})
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_tariffNameLb">Tariff Name</dt>
+										<dd>
+											<div class="inputBox">
+												<input type="text" name="cup10704_tariffName" class="inp Mandate" id="cup10704_tariffName" maxlength="50">
+												<button type="button" class="inpReset"></button>
+											</div>
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_tariffCycleLb">Tariff Cycle</dt>
+										<dd>
+											@@include('include/combobox.html',{
+												"id": "cup10704_tariffCycle",
+												"class": " Mandate",
+												"placeholder": "Select a Cycle"
+											})
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_paymentTermsLb">Payment Terms</dt>
+										<dd>
+											@@include('include/combobox.html',{
+												"id": "cup10704_paymentTerms",
+												"class": " Mandate",
+												"placeholder": "Select a Term"
+											})
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_descriptionLb">Description</dt>
+										<dd>
+											<div class="textareaDiv">
+												<textarea name="cup10704_description" id="cup10704_description" cols="30" rows="10" class="textarea" maxlength="500"></textarea>
+												<div class="byte"><span class="bold">100</span>/150</div>
+											</div>
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_registeredOnLb">Registered on</dt>
+										<dd>
+											<div class="inputBox Edit_date single">
+												<input type="text" name="cup10704_registeredDate" class="inp Readonly" id="cup10704_registeredDate" value="12-14-2018" readonly/>
+											</div>
+											<div class="inputBox Edit_Time readonly">
+												<input type="text" name="cup10704_registeredTime" class="inp Readonly" id="cup10704_registeredTime" value="10 : 20 AM" readonly="readonly">
+											</div>
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_registeredByLb">Registered on</dt>
+										<dd>
+											<div class="inputBox Edit_User">
+												<div class="thumb">
+													<img src="../static/images/common/icon/icon_person_small.png" alt="" />
+												</div>
+												<input type="text" name="cup10704_registeredBy" class="inp Readonly" id="cup10704_registeredBy" value="Park, JungIl" readonly="readonly">
+											</div>
+										</dd>
+									</dl>
+								</li>
+							</ul>
+
+							<h3 class="tit" id="cup10704_unitRateLb">Unit Rate</h3>
+							<ul class="itemList2">
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_unitLb">Unit</dt>
+										<dd>
+											@@include('include/combobox.html',{
+												"id": "cup10704_unit",
+												"class": " Mandate",
+												"placeholder": "Select a Unit"
+											})
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_unitCurrencyLb">Unit Currency</dt>
+										<dd>
+											@@include('include/combobox.html',{
+												"id": "cup10704_unitCurrency",
+												"class": " Mandate",
+												"placeholder": "Select a Type"
+											})
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_unitRateLb">Unit Rate</dt>
+										<dd>
+											<div class="inputBox">
+												<input type="text" name="cup10704_unitRate" class="inp Mandate" id="cup10704_unitRate">
+												<button type="button" class="inpReset"></button>
+											</div>
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_unitPointLb">Unit Point</dt>
+										<dd>
+											<div class="inputBox onlyNumber">
+												<input type="text" name="cup10704_unitPoint" class="inp onlyNumber" id="cup10704_unitPoint">
+												<button type="button" class="inpReset"></button>
+											</div>
+										</dd>
+									</dl>
+								</li>
+							</ul>
+
+							<h3 class="tit" id="cup10704_taxLb">TAX</h3>
+							<ul class="itemList2">
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_isTaxAppliedLb">Is TAX Applied</dt>
+										<dd>
+											<div class="checkbox">
+												<input type="checkbox" name="" id="cup10704_isTaxAppliedChk" checked="checked"><label for="cup10704_isTaxAppliedChk" id="cup10704_isTaxApplied">Apply</label>
+											</div>	
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_taxItemLb">TAX Item</dt>
+										<dd>
+											@@include('include/itemselect.html',{
+												"id": "cup10704_taxItem",
+												"class": "",
+												"placeholder": "Select TAX Item(s)"
+											})
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="cup10704_taxRatioLb">TAX Ratio</dt>
+										<dd>
+											<div class="inputBox Percent onlyNumber">
+												<input type="text" name="cup10704_taxRatio" class="inp Mandate onlyNumber" id="cup10704_taxRatio" maxlength="50">
+												<button type="button" class="inpReset"></button>
+											</div>
+										</dd>
+									</dl>
+								</li>
+							</ul>
+
+							<h3 class="tit" id="cup10704_discountRuleLb">Discount Rule</h3>
+							<div class="ibsheepTop">
+								<div class="tools">
+									<button type="button" class="btn addBtn" id="cup10704_addRule">ADD</button>
+									<button type="button" class="btn removeBtn" id="cup10704_deleteRule">REMOVE</button>
+								</div>
+							</div>
+							<div class="ibsheetDiv">
+								ibsheet
+							</div>
+							<div class="editBtns">
+								<button type="button" class="btn basic" id="cup10704_Save">Save</button> 
+							</div>
+						</div>
+						<!--// 컨텐츠 영역 -->
+					</div>
+				</div>
+			</section>
+		</form>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('form').areYouSure();
+		});
+	</script>
+</body>
+</html>

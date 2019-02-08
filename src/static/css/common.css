@@ -11,7 +11,7 @@
 /* ==============================
  * header
  * ============================== */
-#headerWrap {position:fixed; top:0; left:0; z-index:100; width:100%; height:60px; padding-left:88px; border-bottom:5px solid #085ec1; background:#fff;}
+#headerWrap {position:fixed; top:0; left:0; z-index:50; width:100%; height:60px; padding-left:88px; border-bottom:5px solid #085ec1; background:#fff;}
 #headerWrap > h1 {height:55px; padding:18px 0 0 29px; border-left:1px solid #e8e9ee;}
 #headerWrap > h1 a {display:inline-block; font-size:0;}
 
@@ -77,7 +77,13 @@
 .inputBox.Edit_Time.readonly {}
 
 .inputBox.inpNone {border-radius:0;}
-.inputBox.inpNone > .inp {padding:0; border:none; font-weight:600; font-size:18px;}
+.inputBox.inpNone > .inp {padding:0; border:none; font-weight:600; font-size:18px; color:#3e60ee;}
+
+.inputBox.Percent {}
+.inputBox.Percent > .inp {padding:0 65px 0 10px; text-align:right; ime-mode:disabled}
+.inputBox.Percent > .inpReset {right:46px;}
+.inputBox.Percent:before {content:''; position:absolute; top:8px; left:160px; width:1px; border-bottom:12px solid #666;}
+.inputBox.Percent:after {content:'%'; position:absolute; top:0; left:160px; width:40px; height:28px; line-height:28px; font-size:13px; text-align:center; font-family:'Open Sans', sans-serif;}
 
 
 .inputBox + .alertMessage {margin-top:7px;}
@@ -148,7 +154,7 @@
 .inputBox.schType.keyword .easy-autocomplete-container li > div {position:relative; padding:5px 0px 5px 5px; overflow:hidden; white-space:nowrap;}
 
 
-/* dropdown*/
+/* dropdown */
 .ui.dropdown.country {width:200px;}
 .ui.dropdown.Mandate {border:1px solid #78abea; background:#eff5f8; color:#1f63cd;}
 .ui.dropdown.disabled {background:#e4e4e6; opacity:1;}
@@ -157,6 +163,16 @@
 .ui.dropdown > .text {font-size:14px;}
 .ui.search.dropdown.active > input.search, .ui.search.dropdown.visible>input.search {height:100%;}
 .ui.search.selection.dropdown > input.search {height:100%; font-size:14px; line-height:28px;}
+
+/* dropdown multiple */
+.ui.multiple.dropdown {height:auto; min-height:28px; padding:4px 34px 0 10px; font-size:0; border:1px solid #b4bcc9;}
+.ui.multiple.dropdown.Mandate {border:1px solid #78abea; background:#eff5f8; color:#1f63cd;}
+.ui.multiple.dropdown > .text {height:18px; margin:0;}
+.ui.multiple.dropdown:not(.button)>.default.text {line-height:18px;}
+.ui.multiple.dropdown > .label {position:relative; font-size:12px; margin:0 5px 4px 0; padding:0 22px 0 10px; background:#3689f0; color:#fff; line-height:20px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; border:none; border-radius:5px; box-shadow:none;}
+.ui.multiple.dropdown > .label .delete.icon {position:absolute; top:6px; right:10px; display:inline-block; width:8px; height:8px;}
+.ui.multiple.dropdown > .label .delete.icon:before {content:''; position:absolute; top:3px; left:-1px; width:10px; border-bottom:1px solid #fff; transform: rotate(45deg);}
+.ui.multiple.dropdown > .label .delete.icon:after {content:''; position:absolute; top:3px; right:-1px; width:10px; border-bottom:1px solid #fff; transform: rotate(135deg);}
 
 
 /* auto Complete combobox */
@@ -268,7 +284,7 @@ a.btn {text-decoration:none;}
 
 
 /* gnb */
-nav {position:absolute; top:60px; left:0; z-index:10; width:285px; height:calc(100% - 60px); padding-top:21px; background:#fff; overflow:hidden; border-right:1px solid #e1e0e8;}
+nav {position:absolute; top:60px; left:0; z-index:45; width:285px; height:calc(100% - 60px); padding-top:21px; background:#fff; border-right:1px solid #e1e0e8; overflow:hidden;}
 nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
 
 .gnb {position:relative; width:285px; height:100%; padding:0 0 50px 0; overflow:auto; border-left:1px solid #e1e0e8;}
