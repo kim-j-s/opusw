@@ -1,16 +1,16 @@
 @@include('include/head.html')
 <body>
 	<div class="wrapper">
-		<form action="">
-			<!-- 헤더영역 -->
-			@@include('include/header.html')
-			<!-- //헤더영역 -->
-			<section id="container">
-				<div class="inner">
-					@@include('include/nav.html')
-					<div class="content editBtns">
-						@@include('include/tabWrap.html')					
-						<!-- 컨텐츠 영역 -->
+		<!-- 헤더영역 -->
+		@@include('include/header.html')
+		<!-- //헤더영역 -->
+		<section id="container">
+			<div class="inner">
+				@@include('include/nav.html')
+				<div class="content editBtns">
+					@@include('include/tabWrap.html')					
+					<!-- 컨텐츠 영역 -->
+					<form action="">
 						<div class="layout Layout_Sidebar">
 							<h2 class="tit" id="cup10505_subscriptionLb">Subscription</h2>
 							<div class="serviceCode">
@@ -490,11 +490,11 @@
 								<button type="button" class="btn basic" id="cup10505_Save">Save</button> 
 							</div>
 						</div>
-						<!--// 컨텐츠 영역 -->
-					</div>
+					</form>
+					<!--// 컨텐츠 영역 -->
 				</div>
-			</section>
-		</form>
+			</div>
+		</section>
 	</div>
 	<script type="text/javascript">
 		$(function(){
