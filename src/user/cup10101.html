@@ -11,234 +11,263 @@
 					@@include('include/tabWrap.html')
 					<!-- 컨텐츠 영역 -->
 					<form action="">
-					<div class="layout Layout_Sidebar">
-						<h2 class="tit" id="">Profile</h2>
-						<div class="inner">
-							<div class="lsCont">
-								<h3 class="tit" id="">Basic</h3>
-								<div style="height:50px; background:skyblue;">사진교체</div>
-								<ul class="itemList2">
-									<li>
-										<dl class="inpItem">
-											<dt id="">Language Name</dt>
-											<dd>
-												<div class="inputBox">
-													<input type="text" name="" class="inp" id="">
-													<button type="button" class="inpReset"></button>
-												</div>
-												<div class="tooltip">
-													<div class="tips">
-														<strong class="tit">Language Name</strong>
-														<p class="txt">Language Name Is <br />your name in native<br /> language, as it appear<br /> language.</p>
-													</div>
-												</div>
-											</dd>
-										</dl>
-									</li>
-									<li>
-										<dl class="inpItem">
-											<dt id="">Display Name</dt>
-											<dd>
-												<div class="inputBox">
-													<input type="text" name="" class="inp Mandate" id="">
-													<button type="button" class="inpReset"></button>
-												</div>
-												<div class="tooltip">
-													<div class="tips">
-														<strong class="tit">Display Name</strong>
-														<p class="txt">Display Name is <br />shown on the system</p>
-													</div>
-												</div>
-											</dd>
-										</dl>
-									</li>
-									<li>
-										<dl class="inpItem">
-											<dt id="">Password</dt>
-											<dd>
-												<button type="button" class="btn">Change Password</button>
-											</dd>
-										</dl>
-									</li>
-									<li>
-										<dl class="inpItem">
-											<dt id="">English Name</dt>
-											<dd>
-												<div class="inputBox Edit_AlphaNum">
-													<input type="text" name="" class="inp" id="">
-													<button type="button" class="inpReset"></button>
-												</div>
-											</dd>
-										</dl>
-									</li>
-									<li>
-										<dl class="inpItem">
-											<dt id="">Telephone Number</dt>
-											<dd>
-												<div class="inputBox">
-													<input type="text" name="" class="inp" id="">
-													<button type="button" class="inpReset"></button>
-												</div>
-											</dd>
-										</dl>
-									</li>
-									<li>
-										<dl class="inpItem">
-											<dt id="">Email</dt>
-											<dd>
-												<div class="inputBox">
-													<input type="text" name="" class="inp Readonly" id="" readonly="readonly">
-												</div>
-												<div class="tooltip">
-													<div class="tips">
-														<strong class="tit">Email</strong>
-														<p class="txt">You can’t change your <br />Email during <br />subscription. </p>
-													</div>
-												</div>
-											</dd>
-										</dl>
-									</li>
-									<li>
-										<dl class="inpItem">
-											<dt id="">Mobile Phone Number</dt>
-											<dd>
-												<div class="inputBox">
-													<input type="text" name="" class="inp" id="">
-													<button type="button" class="inpReset"></button>
-												</div>
-											</dd>
-										</dl>
-									</li>
-									<li>
-										<dl class="inpItem">
-											<dt id="">Department</dt>
-											<dd>
-												@@include('include/combobox.html',{
-													"id": "",
-													"class": "",
-													"placeholder": "Select a Type"
-												})
-											</dd>
-										</dl>
-									</li>
-									<li>
-										<dl class="inpItem">
-											<dt id="">Fax Number</dt>
-											<dd>
-												<div class="inputBox">
-													<input type="text" name="" class="inp" id="">
-													<button type="button" class="inpReset"></button>
-												</div>
-											</dd>
-										</dl>
-									</li>
-									<li>
-										<dl class="inpItem">
-											<dt id="">Social Network</dt>
-											<dd>
-												<div class="inputBox">
-													<input type="text" name="" class="inp" id="">
-													<button type="button" class="inpReset"></button>
-												</div>
-											</dd>
-										</dl>
-									</li>
-								</ul>
-
-								<h3 class="tit" id="">System Options</h3>
-								<ul class="itemList2">
-									<li>
-										<dl class="inpItem">
-											<dt id="">Language</dt>
-											<dd>
-												@@include('include/combobox.html',{
-													"id": "",
-													"class": "",
-													"placeholder": "Select a Type"
-												})
-											</dd>
-										</dl>
-									</li>
-									<li>
-										<dl class="inpItem">
-											<dt id="">Date Display Format</dt>
-											<dd>
-												@@include('include/combobox.html',{
-													"id": "",
-													"class": "",
-													"placeholder": "Select a Type"
-												})
-											</dd>
-										</dl>
-									</li>
-									<li>
-										<dl class="inpItem">
-											<dt id="">Time Display Format</dt>
-											<dd>
-												@@include('include/combobox.html',{
-													"id": "",
-													"class": "",
-													"placeholder": "Select a Type"
-												})
-											</dd>
-										</dl>
-									</li>
-								</ul>
-							</div>
-							<div class="lsCont fix">
-								<h3 class="tit">Record</h3>
-								<dl class="inpItem2">
-									<dt id="cup10702_createdOnLb">Created on</dt>
-									<dd>
-										<div class="ele">
-											<div class="inputBox Edit_date single">
-												<input type="text" name="" class="inp Readonly" id="" value="12-14-2018" readonly/>
-											</div>
-											<div class="inputBox Edit_Time readonly">
-												<input type="text" name="" class="inp Readonly" id="" value="10 : 20 AM" readonly="readonly">
-											</div>
-										</div>
-									</dd>
-								</dl>
-								<dl class="inpItem2">
-									<dt id="cup10702_modifiedOnLb">Modified on</dt>
-									<dd>
-										<div class="ele">
-											<div class="inputBox Edit_date single">
-												<input type="text" name="" class="inp Readonly" id="" value="12-14-2018" readonly/>
-											</div>
-											<div class="inputBox Edit_Time readonly">
-												<input type="text" name="" class="inp Readonly" id="" value="10 : 20 AM" readonly="readonly">
-											</div>
-										</div>
-									</dd>
-								</dl>
-
-								<h3 class="tit">Invite User</h3>
-								<div class="iTxtCont">
-									<p class="txt" id="">
-										Invite User allow you to invite other users to manage your subscription. Invited user will be belong to your organization
-									</p>
-									<div class="btnBox">
-										<button type="button" class="btn">Invite User</button>
-									</div>
-								</div>
-
-								<h3 class="tit">Leave Organization?</h3>
-								<div class="iTxtCont">
-									<p class="txt" id="">
-										Leave your organization? <br />To inactive the user account, you must define alternate account to organization’s subscription manager.
-									</p>
-									<div class="btnBox">
-										<button type="button" class="btn">Leave Organization</button>
+						<div class="layout Layout_Sidebar">
+							<h2 class="tit" id="i10101-profileLb">Profile</h2>
+							<div class="serviceCode">
+								<div class="srvNum" id="">
+									<div class="inputBox inpNone">
+										<input type="text" name="i10101-userIdLb" class="inp" id="i10101-userIdLb" readonly="readonly" value="U10000001">
 									</div>
 								</div>
 							</div>
+							<div class="inner">
+								<div class="lsCont">
+									<h3 class="tit" id="i10101-userLb">User</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-userPictureLb">Picture</dt>
+												<dd>
+													<div class="imgAdd">
+														<div class="imgBox person">
+															<img src="../static/images/common/icon/icon_person.png" alt="" class="Image_Logo_Large" id="i10101-userPicture" />
+															<button type="button" class="imgRemove" id="i10101-deletePicture">Delete</button>
+														</div>
+														<div class="changeBtn">
+															<div class="fileBox">
+																<label for="imgUpload" id="i10101-changePicture">Change Logo</label>
+																<input type="file" name="imgUpload" id="imgUpload" class="fileUpload" />
+															</div>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-displayNameLb">Display Name</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="i10101-displayName" class="inp Mandate" id="i10101-displayName" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Display Name</strong>
+															<p class="txt">Display Name is <br />shown on the system</p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+											<dl class="inpItem">
+												<dt id="i10101-englishNameLb">English Name</dt>
+												<dd>
+													<div class="inputBox Edit_AlphaNum">
+														<input type="text" name="i10101-englishName" class="inp" id="i10101-englishName" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-languageNameLb">Language Name</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="i10101-languageName" class="inp" id="i10101-languageName" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Language Name</strong>
+															<p class="txt">Language Name Is <br />your name in native<br /> language, as it appear<br /> language.</p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-eMailLb">Email</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="i10101-eMail" class="inp Readonly" id="i10101-eMail" readonly="readonly">
+													</div>
+													<div class="tooltip">
+														<div class="tips" id="i10101-eMailInfo">
+															<strong class="tit">Email</strong>
+															<p class="txt">You can’t change your <br />Email during <br />subscription. </p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-passwordLb">Password</dt>
+												<dd>
+													<button type="button" class="btn" id="i10101-password">Change Password</button>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-departmentLb">Department</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "i10101-deparment",
+														"class": " Edit_HisSuggestion",
+														"placeholder": "Select a Type"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-telephoneNoLb">Telephone Number</dt>
+												<dd>
+													<div class="inputBox Edit_PhoneFax">
+														<input type="text" name="i10101-telephoneNo" class="inp" id="i10101-telephoneNo" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-faxNoLb">Fax Number</dt>
+												<dd>
+													<div class="inputBox Edit_PhoneFax">
+														<input type="text" name="i10101-faxNo" class="inp" id="i10101-faxNo" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-mobilePhoneNoLb">Mobile Phone Number</dt>
+												<dd>
+													<div class="inputBox Edit_PhoneFax">
+														<input type="text" name="i10101-mobilePhoneNoNetwork" class="inp" id="i10101-mobilePhoneNoNetwork" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-socialNetworkLb">Social Network</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="i10101-socialNetwork" class="inp" id="i10101-socialNetwork" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+
+									<h3 class="tit" id="i10101-systemOptionsLb">System Options</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-languageLb">Language</dt>
+												<dd>
+													<div class="comboBox">
+														<select class="comboSelect" id="i10101-language" placeholder="Select a Type">
+															<option value="">Select a Type</option>
+															<option value="En">En</option>
+														</select>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-dateDisplayFormatLb">Date Display Format</dt>
+												<dd>
+													<div class="comboBox">
+														<select class="comboSelect" id="i10101-dateDisplayFormat" placeholder="Select a Type">
+															<option value="">Select a Type</option>
+															<option value="Date1">MM-dd-yyyy</option>
+															<option value="Date2">dd-MM-yyyy</option>
+															<option value="Date3">yyyy-MM-dd</option>
+														</select>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="i10101-timeDisplayFormatLb">Time Display Format</dt>
+												<dd>
+													<div class="comboBox">
+														<select class="comboSelect" id="i10101-timeDisplayFormat" placeholder="Select a Type">
+															<option value="">Select a Type</option>
+															<option value="Time1">24:00</option>
+															<option value="Time2">12:00 PM</option>
+														</select>
+													</div>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+								</div>
+								<div class="lsCont fix">
+									<h3 class="tit" id="i10101-recordLb">Record</h3>
+									<dl class="inpItem2">
+										<dt id="i10101-createOnLb">Created on</dt>
+										<dd>
+											<div class="ele">
+												<div class="inputBox Edit_date single">
+													<input type="text" name="i10101-createDate" class="inp Readonly" id="i10101-createDate" value="12-14-2018" readonly/>
+												</div>
+												<div class="inputBox Edit_Time readonly">
+													<input type="text" name="i10101-createTime" class="inp Readonly" id="i10101-createTime" value="10 : 20 AM" readonly="readonly">
+												</div>
+											</div>
+										</dd>
+									</dl>
+									<dl class="inpItem2">
+										<dt id="i10101-modifiedOnLb">Modified on</dt>
+										<dd>
+											<div class="ele">
+												<div class="inputBox Edit_date single">
+													<input type="text" name="i10101-modifiedDate" class="inp Readonly" id="i10101-modifiedDate" value="12-14-2018" readonly/>
+												</div>
+												<div class="inputBox Edit_Time readonly">
+													<input type="text" name="i10101-modifiedTime" class="inp Readonly" id="i10101-modifiedTime" value="10 : 20 AM" readonly="readonly">
+												</div>
+											</div>
+										</dd>
+									</dl>
+
+									<h3 class="tit" id="i10101-inviteUserLb">Invite User</h3>
+									<div class="iTxtCont">
+										<p class="txt" id="i10101-inviteDescriptionLb">
+											Invite User allow you to invite other users to manage your subscription. Invited user will be belong to your organization
+										</p>
+										<div class="btnBox">
+											<button type="button" class="btn" id="i10101-inviteUser">Invite User</button>
+										</div>
+									</div>
+
+									<h3 class="tit" id="i10101-leaveOrganizationLb">Leave Organization?</h3>
+									<div class="iTxtCont">
+										<p class="txt" id="i10101-leaveOrganizationDescriptionLb">
+											Leave your organization? <br />To inactive the user account, you must define alternate account to organization’s subscription manager.
+										</p>
+										<div class="btnBox">
+											<button type="button" class="btn" id="i10101-leaveOrganization">Leave Organization</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="editBtns">
+								<button type="button" class="btn basic" id="i10101-Save">Save</button>
+							</div>
 						</div>
-						<div class="editBtns">
-							<button type="button" class="btn basic" id="cup10702_Save">Save</button>
-						</div>
-					</div>
 					</form>
 					<!--// 컨텐츠 영역 -->
 				</div>

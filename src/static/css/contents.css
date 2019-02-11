@@ -14,7 +14,8 @@
 .content {padding:0 20px 20px 305px;}
 .content.editBtns {padding:0 20px 82px 305px;}
 .content:before {content:''; position:absolute; top:0; left:-1px; height:100%;}
-.content.editBtns .editBtns {position:fixed; right:0; bottom:0; z-index:2; padding:17px 20px; background:#fff; width:100%; text-align:right;}
+.content.editBtns .editBtns {position:fixed; right:0; bottom:0; z-index:2; padding:17px 20px; background:#fff; width:100%; text-align:right; box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);}
+
 
 /* login */
 .flexWrap{position:relative; display:flex; height:100%; align-items:center;}
@@ -37,7 +38,7 @@ h2.tit.thumb > img {position:absolute; top:0; left:0; max-width:41px; max-height
 h2.tit + .inpItem {margin-top:20px;}
 h2.tit + h3.tit {margin-top:20px;}
 
-h3.tit {padding-bottom:10px; font-weight:600; font-size:10px; color:#181818; border-bottom:1px solid #d9d9d9;}
+h3.tit {padding-bottom:1px; font-weight:600; font-size:14px; color:#181818; border-bottom:1px solid #d9d9d9;}
 h3.tit + .inpItem {margin-top:20px;}
 h3.tit + .txtBox {margin-top:20px;}
 h3.tit + .itemList2 {margin-top:20px;}
@@ -141,6 +142,8 @@ h3.tit + .iTxtCont {margin-top:10px;}
 .schOptionGroup > .btn {position:absolute; top:10px; right:10px;}
 .schOptionGroup + h3.tit {margin-top:15px;}
 
+.schOptionGroup .itemList1 > li .inpItem > dt {/* text-align:right; */ text-align:center;}
+
 .itemList1 {position:relative;}
 .itemList1:after {content:''; display:block; clear:both;}
 .itemList1 > li {display:inline-block; width:370px; margin-right:10px; margin-bottom:10px; font-size:0; vertical-align:top;}
@@ -148,13 +151,14 @@ h3.tit + .iTxtCont {margin-top:10px;}
 .itemList1 > li .inpItem > dt {width:170px;}
 .itemList1 > li .inpItem > dt + dd {padding:0 0 0 170px;}
 
-.itemList2 {position:relative; font-size:0; max-width:1170px;}
+.itemList2 {position:relative; font-size:0;}
 .itemList2:after {content:''; display:block; clear:both;}
 .itemList2 > li {float:left; display:inline-block; width:580px; margin-bottom:10px; font-size:0; vertical-align:top;}
-.itemList2 > li:nth-child(2n + 1) {margin-right:10px;}
+/* .itemList2 > li:nth-child(2n + 1) {margin-right:10px;} */
 .itemList2 > li .inpItem {}
 .itemList2 > li .inpItem > dt {width:220px;}
 .itemList2 > li .inpItem > dt + dd {padding:0 0 0 220px;}
+.itemList2 > li .inpItem + .inpItem {margin-top:10px;}
 .itemList2 + h3.tit {margin-top:20px;}
 
 .ibsheepTop {position:relative; margin-top:10px;}
@@ -165,12 +169,25 @@ h3.tit + .iTxtCont {margin-top:10px;}
 .ibsheepTop > .tools .btn + .btn {margin-left:7px;}
 .ibsheepTop + .ibsheetDiv {margin-top:10px;}
 
-.imgAdd {}
+.imgAdd {max-width:320px;}
 .imgAdd > .imgBox {position:relative; display:inline-block; max-width:360px; font-size:0;}
 .imgAdd > .imgBox > img {max-width:100%;}
+.imgAdd > .imgBox.person > img {max-width:40px;}
 .imgAdd > .imgBox .imgRemove {position:absolute; top:-7px; right:-7px;}
 .imgAdd > .changeBtn {text-align:right;}
 .imgAdd > .imgBox + .changeBtn {margin-top:10px;}
+
+
+
+/* layer Popup */
+.layerPopup {position:relative; display:inline-block; width:500px; padding:30px; font-size:0; border-radius:10px;}
+.layerPopup {box-shadow: 3px 4px 20px 0px rgba(35, 75, 149, 0.7);}
+.layerPopup > .inner {}
+.layerPopup > .inner .popupTitle {padding:2px 0 19px 0; font-weight:600; font-size:20px; color:#0754d2; border-bottom:2px solid #085ec1;}
+.layerPopup .layerContent {padding:15px 0;}
+.layerPopup .layerBtns {padding:10px 0 0 0; text-align:right;}
+.layerPopup > .btn.close {position:absolute; top:15px; right:11px;}
+
 
 /* etc */
 .alertMessage {position:relative; padding-left:25px; font-size:12px;}

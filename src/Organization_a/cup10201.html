@@ -1,0 +1,74 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<!-- 헤더영역 -->
+		@@include('include/header.html')
+		<!-- //헤더영역 -->
+		<section id="container">
+			<div class="inner">
+				@@include('include/nav.html')
+				<div class="content">
+					@@include('include/tabWrap.html')
+					<!-- 컨텐츠 영역 -->
+					<form action="">
+						<div class="layout Layout_List">
+							<h2 class="tit" id="i10201-organizationList">Organization List</h2>
+							<div class="schOptionGroup">
+								<ul class="itemList1">
+									<li>
+										<dl class="inpItem">
+											<dt id="i10201-kewordLb">Keyword</dt>
+											<dd>
+												<div class="inputBox schType keyword">
+													<div class="inner">
+														<input type="text" name="i10201-keword" class="inp autoSch keyword name" id="i10201-keword" placeholder="Organization, Alias, Company" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="i10201-countryLb">Country</dt>
+											<dd>
+												@@include('include/CountrySelect.html',{
+													"id": "i10201-country",
+													"class": " Mandate",
+													"placeholder": "Select Country"
+												})
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="i10201-creationLb">Creation</dt>
+											<dd>
+												@@include('include/daterangepicker.html',{
+													"id": "i10201-creation"
+												})
+											</dd>
+										</dl>
+									</li>
+								</ul>
+								<button type="button" class="btn schBtn" id="i10201-search">Search</button>
+							</div>
+							<h3 class="tit" id="i10201-organizationsLb">Organizations</h3>
+							<div class="ibsheepTop">
+								@@include('include/sheet_filter.html',{
+									"id": "i10201-filterStatus"
+								})
+								<button type="button" class="btn" id="">Add Organization</button>
+							</div>
+							<div class="ibsheetDiv">
+								ibsheet
+							</div>
+						</div>
+					</form>
+					<!--// 컨텐츠 영역 -->
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

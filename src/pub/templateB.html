@@ -143,6 +143,33 @@
 		<input type="text" name="" class="inp" id="">
 		<button type="button" class="inpReset"></button>
 	</div>
+
+
+	<div class="inputBox Edit_User schType">
+		<div class="inner">
+			<div class="thumb">
+				<img src="../static/images/common/icon/icon_person_small.png" alt="" />
+			</div>
+			<input type="text" class="inp autoSch Edit_User code Readonly" id="n" readonly="readonly" style="width:500px;">
+			<input type="text" name="" class="inp autoSch Edit_User name" id="" placeholder="Type Company Name">
+			<button type="button" class="inpReset"></button>
+		</div>
+	</div>
+
+	<div class="inputBox Edit_User schType">
+		<div class="inner">
+			<div class="thumb">
+				<img src="../static/images/common/icon/icon_person_small.png" alt="" />
+			</div>
+			<input type="text" class="inp autoSch Edit_User code Readonly" id="n" readonly="readonly" style="width:500px;">
+			<input type="text" name="" class="inp autoSch Edit_User name" id="" placeholder="Type Company Name">
+			<button type="button" class="inpReset"></button>
+		</div>
+	</div>
+
+
+
+
 	<!-- souce code 뷰어 -->
 	<div class="box">
 		<pre class="brush: html;">
@@ -156,8 +183,6 @@
 		</pre>
 	</div>
 	<!-- //souce code 뷰어 -->
-
-
 
 
 
@@ -249,6 +274,26 @@
 		</pre>
 	</div>
 	<!-- //souce code 뷰어 -->
+
+
+	<h2>input타입 - Edit_AlphaNum</h2>
+	<div class="inputBox Edit_AlphaNum">
+		<input type="text" name="" class="inp" id="">
+		<button type="button" class="inpReset"></button>
+	</div>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<div class="inputBox Edit_AlphaNum">
+				<input type="text" name="" class="inp" id="">
+				<button type="button" class="inpReset"></button>
+			</div>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+
+
+	
 	
 
 	<h2>input타입 - 증감</h2>
@@ -327,7 +372,7 @@
 		<dd>
 			<div class="inputBox schType ty1">
 				<div class="inner">
-					<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+					<input type="text" class="inp autoSch ty1 code Readonly" id="n" readonly="readonly">
 					<input type="text" name="" class="inp autoSch ty1 name" id="i10003-company" placeholder="Type Company Name">
 					<button type="button" class="inpReset"></button>
 				</div>
@@ -391,7 +436,8 @@ value="" 값과 option text를 비교하여 검색하는 기능 두가지가 동
 	<div>
 	@@include('include/CountrySelect.html',{
 		"class": "",
-		"id": ""
+		"id": "",
+		"placeholder": "Type Country"
 	})
 	</div>
 <p>Mandate 클래스로 색상 조정</p>
@@ -399,7 +445,8 @@ value="" 값과 option text를 비교하여 검색하는 기능 두가지가 동
 	<textarea name="" id="" cols="30" rows="10" class="pubTextarea">
 @@include('include/CountrySelect.html',{
 	"class": "",
-	"id": ""
+	"id": "",
+	"placeholder": "Type Country"
 })
 	</textarea>
 	<!-- //souce code 뷰어 -->

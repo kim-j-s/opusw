@@ -1,0 +1,6 @@
+[
+	{"name": "State1", "code": "State1, s1, s2, s3, s4, s5", "url": "../static/images/sample/person.jpg"},
+    {"name": "State2", "code": "State2, t1, t2, t3, t4, t5"},
+	{"name": "State3", "code": "State3, u1, s2, u3, t4, u5"},
+	{"name": "State4", "code": "State4, z1, z2, z3, z4, z5"}
+]

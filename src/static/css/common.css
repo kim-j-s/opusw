@@ -27,13 +27,13 @@
 
 /* input */
 .inputBox {position:relative; display:inline-block; width:200px;}
-.inputBox.full {display:block; width:auto;}
+.inputBox.full {display:block; width:auto; max-width:320px;}
 .inputBox + .inputBox {margin-left:7px;}
-.inputBox .inp {display:block; width:100%; height:28px; padding:0 28px 0 10px; border:1px solid #b4bcc9; font-size:13px; transition:all .5s ease; /* outline:none; */ border-radius:5px;}
+.inputBox .inp {display:block; width:100%; height:28px; padding:0 28px 0 10px; border:1px solid #b4bcc9; font-size:13px; transition:all .5s ease; outline:none; border-radius:5px;}
 .inputBox .inp:focus {border:1px solid #78abea;}
 .inputBox .inp.Readonly {border:1px solid #b4bcc9; background:#e4e4e6; pointer-events:none;}
 .inputBox .inp.Warning {border:1px solid #ff597a; color:#ff0033;}
-.inputBox .inp.Mandate {border:1px solid #78abea; background:#eff5f8; color:#1f63cd;}
+.inputBox .inp.Mandate {background:#eff5f8; color:#1f63cd;}
 .inputBox .inpReset {position:absolute; top:7px; right:7px; width:14px; height:14px; background:url(../images/common/sprite_common.png) no-repeat -20px -40px;}
 .inputBox .inpReset {display:none;}
 .inputBox + .btn {margin-left:7px;}
@@ -67,14 +67,16 @@
 .inputBox.Edit_Organization > .inp {padding:0 28px 0 30px;}
 
 .inputBox.Edit_date {vertical-align:top;}
-.inputBox.Edit_date:after {content:''; position:absolute; top:5px; right:5px; width:19px; height:17px; background:url(../images/common/sprite_common.png) no-repeat -126px -40px;}
-.inputBox.Edit_date > .inp {}
+.inputBox.Edit_date > .inp {background:url(../images/common/icon/icon_calendar.png) no-repeat right 4px top 4px;}
+.inputBox.Edit_date > .inp.Readonly {background:#e4e4e6 url(../images/common/icon/icon_calendar.png) no-repeat right 4px top 4px;}
 
 .inputBox.Edit_date.single {width:110px;}
 .inputBox.Edit_date.single + .timeSelect {margin-left:7px;}
 
 .inputBox.Edit_Time {width:110px;}
-.inputBox.Edit_Time.readonly {}
+.inputBox.Edit_Time.readonly {width:83px;}
+.inputBox.Edit_Time.readonly > .inp {padding:0 0 0 0; text-align:center;}
+
 
 .inputBox.inpNone {border-radius:0;}
 .inputBox.inpNone > .inp {padding:0; border:none; font-weight:600; font-size:18px; color:#3e60ee;}
@@ -107,13 +109,14 @@
 
 
 /* textarea */
-.textareaDiv {font-size:14px;}
-.textareaDiv > .textarea {display:block; width:100%; height:100px; padding:10px;}
+.textareaDiv {font-size:14px; max-width:320px;}
+.textareaDiv > .textarea {display:block; width:100%; height:100px; padding:10px; border-radius:5px; border:1px solid #b4bcc9; background:#fff; outline:none;}
+.textareaDiv > .textarea:focus {border:1px solid #78abea;}
 .textareaDiv > .byte {text-align:right;}
 
 
 /* autocomplete case */
-.inputBox.schType {display:block; width:auto; max-width:none; font-size:0;}
+.inputBox.schType {display:block; width:auto; max-width:320px; font-size:0;}
 .inputBox.schType > .inner {position:relative; display:inline-block;}
 .inputBox.schType > .inner .easy-autocomplete {display:inline-block; font-size:0; width:115px;}
 .inputBox.schType > .inner .easy-autocomplete .inp {padding:0 10px 0 10px;}
@@ -159,7 +162,7 @@
 .ui.dropdown.Mandate {border:1px solid #78abea; background:#eff5f8; color:#1f63cd;}
 .ui.dropdown.disabled {background:#e4e4e6; opacity:1;}
 .inputBox.zipCode {width:104px; min-width:auto;}
-.ui.dropdown + .inputBox.zipCode {width:calc(100% - 207px); max-width:200px; vertical-align:top; margin-left:7px;}
+.ui.dropdown + .inputBox.zipCode {width:calc(100% - 247px); max-width:200px; vertical-align:top; margin-left:7px;}
 .ui.dropdown > .text {font-size:14px;}
 .ui.search.dropdown.active > input.search, .ui.search.dropdown.visible>input.search {height:100%;}
 .ui.search.selection.dropdown > input.search {height:100%; font-size:14px; line-height:28px;}
@@ -186,7 +189,7 @@ body .ui-tooltip {display:none !important;}
 
 .custom-combobox {position:relative; display:block; font-size:14px;}
 .custom-combobox-toggle {position:absolute; top:1px; right:0px; padding:0; width:34px; height:26px; border:none; background:transparent;}
-.custom-combobox-toggle:hover, .custom-combobox-toggle:visited, .custom-combobox-toggle:focus, .custom-combobox-toggle:active {background:transparent !important; border:none !important; /* outline:none; */}
+.custom-combobox-toggle:hover, .custom-combobox-toggle:visited, .custom-combobox-toggle:focus, .custom-combobox-toggle:active {background:transparent !important; border:none !important; outline:none;}
 .custom-combobox-input {display:block; width:100%; height:28px; margin:0; padding:5px 34px 5px 10px; border-radius:5px; color:#1f63cd;}
 .comboBox + .inputBox {margin-left:7px;}
 .comboBox .ui-button .ui-icon {position:absolute; top:50%; left:50%; margin-top:-3px; margin-left:-6px; width:12px; height:6px; background:url(../images/common/sprite_common.png) no-repeat 0 -80px;}
@@ -238,8 +241,8 @@ body .ui-tooltip {display:none !important;}
 
 
 /* btn */
-.btn {position:relative; display:inline-block; padding:0 17px; height:28px; font-weight:600; font-size:13px; line-height:28px; text-align:center; border-radius:5px; vertical-align:top; border:1px solid #808080; background:#fff;}
-.btn.basic {color:#fff; background:#0b61ca;}
+.btn {position:relative; display:inline-block; padding:0 17px; height:28px; font-weight:600; font-size:13px; color:#fff; line-height:28px; text-align:center; border-radius:5px; vertical-align:top; border:1px solid #abb8c5; background:#abb8c5;}
+.btn.basic {color:#fff; background:#0b61ca; border:1px solid #0b61ca;}
 .btn.schBtn {position:relative; width:28px; height:28px; padding:0; background:#eceefb; overflow:hidden; border:none; border-radius:5px; text-indent:-999px;}
 .btn.schBtn:before {content:''; position:absolute; top:5px; left:6px; width:16px; height:17px; background:url(../images/common/sprite_common.png) no-repeat -126px -140px;}
 a.btn {text-decoration:none;}
@@ -248,6 +251,7 @@ a.btn {text-decoration:none;}
 .btn.addBtn:before {content:''; position:absolute; top:5px; left:4px; width:23px; height:19px; background:url(../images/common/sprite_common.png) no-repeat -156px 0px;}
 .btn.removeBtn {width:31px; height:30px; padding:0; text-indent:-999px; border:1px solid #dcdcdc; overflow:hidden;}
 .btn.removeBtn:before {content:''; position:absolute; top:5px; left:4px; width:23px; height:19px; background:url(../images/common/sprite_common.png) no-repeat -156px -30px;}
+.btn.close {display:inline-block; width:12px; height:12px; padding:0; font-size:0; overflow:hidden; text-indent:-999px; background:url(../images/common/sprite_common.png) no-repeat 0 -100px; border:none; line-height:normal; border-radius:0;}
 
 /* menuAll */
 .menuAll {position:fixed; top:0; left:0; z-index:101; width:88px; height:55px;}
@@ -284,7 +288,7 @@ a.btn {text-decoration:none;}
 
 
 /* gnb */
-nav {position:absolute; top:60px; left:0; z-index:45; width:285px; height:calc(100% - 60px); padding-top:21px; background:#fff; border-right:1px solid #e1e0e8; overflow:hidden;}
+nav {position:fixed; top:60px; left:0; z-index:45; width:285px; height:calc(100% - 60px); padding-top:21px; background:#fff; border-right:1px solid #e1e0e8; overflow:hidden;}
 nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
 
 .gnb {position:relative; width:285px; height:100%; padding:0 0 50px 0; overflow:auto; border-left:1px solid #e1e0e8;}
@@ -306,8 +310,8 @@ nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
 .gnbList > li .gnbTit.on.ty5:before {background-position:-25px -100px;}
 .gnbList > li .gnbTit.on.ty6:before {background-position:-25px -125px;}
 .gnbList > li .gnbTit.on.ty7:before {background-position:-25px -150px;}
-.gnbList > li .gnbTit:after {content:''; position:absolute; top:16px; right:21px; width:11px; height:4px; background:url(../images/common/sprite_common.png) no-repeat -20px 0;}
-.gnbList > li .gnbTit.on:after {background-position:0 0;}
+.gnbList > li .gnbTit:after {content:''; position:absolute; top:16px; right:21px; width:12px; height:6px; background:url(../images/common/sprite_common.png) no-repeat 0 -60px;}
+.gnbList > li .gnbTit.on:after {background-position:-20px -60px;}
 .gnbList > li .clip {position:absolute; top:9px; right:46px; width:25px; height:21px; background:url(../images/common/sprite_common.png) -78px -25px;}
 .gnbList > li .clip.on {background-position:-78px 0px;}
 .gnbList > li .dept {display:none;}
