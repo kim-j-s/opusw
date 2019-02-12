@@ -1,7 +1,7 @@
 [
-    {"name": "lg", "code": "code_num_lg"},
-	{"name": "samsung", "code": "code_num_samsung"},
-	{"name": "sa", "code": "code_num_sa"},
-	{"name": "saung", "code": "code_num_saung"},
-	{"name": "deawoo", "code": "code_num_deawoo"}
+    {"name": "lg", "code": "code_lg", "keyword": "s1, s2"},
+	{"name": "samsung", "code": "code_samsung"},
+	{"name": "sa", "code": "code_sa"},
+	{"name": "saung", "code": "code_saung"},
+	{"name": "deawoo", "code": "code_deawoo"}
 ]

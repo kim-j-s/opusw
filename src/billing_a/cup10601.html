@@ -19,7 +19,9 @@
 									<dl class="inpItem">
 										<dt id="">Keyword</dt>
 										<dd>
-											<div class="inputBox schType keyword">
+											<!-- 2019-02-12 수정 -->
+											<div class="inputBox keyword">
+											<!--// 2019-02-12 수정 -->
 												<div class="inner">
 													<input type="text" name="" class="inp autoSch keyword name" id="" placeholder="">
 													<button type="button" class="inpReset"></button>
@@ -55,9 +57,13 @@
 						</div>
 						<h3 class="tit" id="i10601_billingPoliciesLb">Billing Policies</h3>
 						<div class="ibsheepTop">
+							<!-- 2019-02-12 수정 -->
 							@@include('include/sheet_filter.html',{
-								"id": "i10601_filterStatus"
+								"id": "i10601_filterStatus",
+								"class": " filter",
+								"placeholder": "Search tags..."
 							})
+							<!--// 2019-02-12 수정 -->
 							<button type="button" class="btn" id="i10601_addBillingPolicy">Add Billing Policy</button>
 						</div>
 						<div class="ibsheetDiv">

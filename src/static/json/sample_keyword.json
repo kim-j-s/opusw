@@ -1,9 +1,5 @@
 [
-    {"name": "s1"},
-	{"name": "s2"},
-	{"name": "s3"},
-	{"name": "s4"},
-	{"name": "s5"},
-	{"name": "s6"},
-	{"name": "s7"}
+	{"name": "keyword", "code": "State1, q1, q2, s3"},
+	{"name": "State1", "code": "State1, s1, s2, s3"},
+	{"name": "State2", "code": "State2, t1, t2, t3, t4, t5"}
 ]

@@ -53,14 +53,23 @@ $(function(){
 	$('.pwinp').dPassword();
 
 	// Semantic UI Drop box
-	$('.ui.selection.dropdown').dropdown({fullTextSearch:true});
+	$('.ui.selection.dropdown').dropdown({
+		fullTextSearch:true,
+		onLabelSelect: function(){
+			console.log('zzz');
+			$(this).find('.search').blur();;
+		}
+	});
 	$('.ui.fluid.dropdown').dropdown({fullTextSearch:true});
+	$('.ui.floating.dropdown.labeled').dropdown();
 
 	// autocomplete
 	$(".autoSch.ty1").easyAutocomplete(Comp_options);
 	$(".autoSch.ty2").easyAutocomplete(city_options);
 	$(".autoSch.ty3").easyAutocomplete(state_options);
 	$(".autoSch.keyword").easyAutocomplete(state_keyword);
+	$(".autoSch.Edit_User").easyAutocomplete(person);
+	$(".autoSch.Edit_Organization").easyAutocomplete(company);	
 	
 
 	//gnbList
@@ -441,7 +450,6 @@ function InputReset() {
 			}
 		}, 10);
 	});
-
 }
 
 // input Number
@@ -694,23 +702,29 @@ function onlyNumber() {
 
 
 
-
 // 자동완성 예시 변수
 var Comp_options = {
 	url: "../static/json/sample_company.json",
 	getValue: function(element) {
-		return element.name;
+		//return element.name;
+		return element.name+", "+element.code+", "+element.keyword;
 	},
 	template: {
-		type: "description",
-		fields: {
-			description: "code"
+		type: "custom",
+		method: function(value, item) {
+			return item.name + "<span>" + item.code + "</span>";
 		}
 	},
 	list: {
 		maxNumberOfElements: 10,
 		sort: {
 			enabled: true
+		},
+		onSelectItemEvent: function() {
+			var selectedItemValue = $(".autoSch.ty1.name").getSelectedItemData().name;
+			var selectedItemValue2 = $(".autoSch.ty1.name").getSelectedItemData().code;
+			$(".autoSch.ty1.name").val(selectedItemValue);
+			$(".autoSch.ty1.code").val(selectedItemValue2);
 		},
 		onChooseEvent: function() {
 			var selectedItemValue = $(".autoSch.ty1.name").getSelectedItemData().name;
@@ -727,18 +741,25 @@ var Comp_options = {
 var city_options = {
 	url: "../static/json/sample_city.json",
 	getValue: function(element) {
-		return element.name;
+		//return element.name;
+		return element.name+", "+element.code+", "+element.keyword;
 	},
 	template: {
-		type: "description",
-		fields: {
-			description: "code"
+		type: "custom",
+		method: function(value, item) {
+			return item.name + "<span>" + item.code + "</span>";
 		}
 	},
 	list: {
 		maxNumberOfElements: 10,
 		sort: {
 			enabled: true
+		},
+		onSelectItemEvent: function() {
+			var selectedItemValue = $(".autoSch.ty2.name").getSelectedItemData().name;
+			var selectedItemValue2 = $(".autoSch.ty2.name").getSelectedItemData().code;
+			$(".autoSch.ty2.name").val(selectedItemValue);
+			$(".autoSch.ty2.code").val(selectedItemValue2);
 		},
 		onChooseEvent: function() {
 			var selectedItemValue = $(".autoSch.ty2.name").getSelectedItemData().name;
@@ -755,18 +776,24 @@ var city_options = {
 var state_options = {
 	url: "../static/json/sample_state.json",
 	getValue: function(element) {
-		return element.name;
+		return element.name+", "+element.code+", "+element.keyword;
 	},
 	template: {
-		type: "description",
-		fields: {
-			description: "code"
+		type: "custom",
+		method: function(value, item) {
+			return item.name + "<span>" + item.code + "</span>";
 		}
 	},
 	list: {
 		maxNumberOfElements: 10,
 		sort: {
 			enabled: true
+		},
+		onSelectItemEvent: function() {
+			var selectedItemValue = $(".autoSch.ty3.name").getSelectedItemData().name;
+			var selectedItemValue2 = $(".autoSch.ty3.name").getSelectedItemData().code;
+			$(".autoSch.ty3.name").val(selectedItemValue);
+			$(".autoSch.ty3.code").val(selectedItemValue2);
 		},
 		onChooseEvent: function() {
 			var selectedItemValue = $(".autoSch.ty3.name").getSelectedItemData().name;
@@ -783,16 +810,28 @@ var state_options = {
 var state_keyword = {
 	url: "../static/json/sample_keyword.json",
 	getValue: function(element) {
-		return element.name;
+		return element.name+", "+element.code;
+	},
+	template: {
+		type: "description",
+		fields: {
+			description: "name"
+		}
 	},
 	list: {
 		maxNumberOfElements: 10,
 		sort: {
 			enabled: true
 		},
+		onSelectItemEvent: function() {
+			var selectedItemValue = $(".autoSch.keyword.name").getSelectedItemData().name;
+			$(".autoSch.keyword.name").val(selectedItemValue);
+		},
 		onChooseEvent: function() {
-			var selectedItemValue = $(".autoSch.ty4.name").getSelectedItemData().name;
-			$(".autoSch.ty4.name").val(selectedItemValue);
+			//var selectedItemValue = $(".autoSch.keyword.name").getSelectedItemData().name;
+			var selectedItemValue = $(".autoSch.keyword.name").getSelectedItemData().name;
+			var selectedItemValue2 = $(".autoSch.keyword.name").getSelectedItemData().code;
+			$(".autoSch.keyword.name").val(selectedItemValue);
 		},
 		match: {
 			enabled: true
@@ -800,73 +839,11 @@ var state_keyword = {
 	}
 };
 
-
-$(function(){
-	//$(".autoSch.Edit_User").easyAutocomplete(test, this);
-	var eacs = [];
-	$(".autoSch.Edit_User").each(function(index, element){
-
-		$(this).addClass('s' + index);
-		var $self = $(this);
-
-		$self.easyAutocomplete({
-			url: "../static/json/test.json",
-			getValue: function(element) {
-				return element.code;
-			},
-			//getValue: "code",
-			template: {
-				type: "description",
-				fields: {
-					description: "name",
-					url: "url"
-				}
-			},
-			list: {
-				maxNumberOfElements: 10,
-				sort: {
-					enabled: true
-				},
-				onChooseEvent: function() {
-					var selectedItemValue = $self.getSelectedItemData().cdek_id;
-	                console.log(selectedItemValue);
-					//var self = $(".autoSch.Edit_User").eq(i);
-					var selectedItemValue = $(".autoSch.Edit_User.name").getSelectedItemData().name;
-					var selectedItemValue2 = $(".autoSch.Edit_User.name").getSelectedItemData().code;
-					var selectedItemValue3 = $(".autoSch.Edit_User.name").getSelectedItemData().url;
-					$(".autoSch.Edit_User.name").val(selectedItemValue);
-					$(".autoSch.Edit_User.code").val(selectedItemValue3);
-
-					$(".autoSch.Edit_User.code").each(function(){
-						if ( $(this).val() != '')
-						{
-							$(this).closest('.inputBox.Edit_User').find('img').attr('src',selectedItemValue3);
-						} else {
-							$(this).closest('.inputBox.Edit_User').find('img').attr('src','../static/images/common/icon/icon_person_small.png');
-						}
-					});
-				},
-				match: {
-					enabled: true,
-					method: function(element, phrase) {
-						return element.indexOf(phrase) === 0;
-					}
-				}
-			}
-		});
-	});
-
-});
-
-
-var test = {
-	url: "../static/json/test.json",
-	/*
+var person = {
+	url: "../static/json/person.json",
 	getValue: function(element) {
-		return element.code;
+		return element.name+", "+element.code;
 	},
-	*/
-	getValue: "code",
 	template: {
 		type: "description",
 		fields: {
@@ -879,23 +856,76 @@ var test = {
 		sort: {
 			enabled: true
 		},
+		onSelectItemEvent: function() {
+			var selectedItemValue = $(".autoSch.Edit_User.name").getSelectedItemData().name;
+			$(".autoSch.Edit_User.name").val(selectedItemValue);
+		},
 		onChooseEvent: function() {
-			//var tha = $(this);
-			console.log(this.html());
 			var selectedItemValue = $(".autoSch.Edit_User.name").getSelectedItemData().name;
 			var selectedItemValue2 = $(".autoSch.Edit_User.name").getSelectedItemData().code;
 			var selectedItemValue3 = $(".autoSch.Edit_User.name").getSelectedItemData().url;
 			$(".autoSch.Edit_User.name").val(selectedItemValue);
-			$(".autoSch.Edit_User.code").val(selectedItemValue3);
 
+			//$(".autoSch.Edit_User.code").val(selectedItemValue2 + ' , ' + selectedItemValue3);
+			/* thumbnail image
 			$(".autoSch.Edit_User.code").each(function(){
-				if ( $(this).val() != '')
+				if ( selectedItemValue3 != null)
 				{
+					console.log('y ' + selectedItemValue3);
 					$(this).closest('.inputBox.Edit_User').find('img').attr('src',selectedItemValue3);
 				} else {
+					console.log('n');
 					$(this).closest('.inputBox.Edit_User').find('img').attr('src','../static/images/common/icon/icon_person_small.png');
 				}
 			});
+			*/
+		},
+		match: {
+			enabled: true
+		}
+	}
+};
+
+var company = {
+	url: "../static/json/person.json",
+	getValue: function(element) {
+		return element.name+", "+element.code;
+	},
+	template: {
+		type: "description",
+		fields: {
+			description: "name",
+			url: "url"
+		}
+	},
+	list: {
+		maxNumberOfElements: 10,
+		sort: {
+			enabled: true
+		},
+		onSelectItemEvent: function() {
+			var selectedItemValue = $(".autoSch.Edit_Organization.name").getSelectedItemData().name;
+			$(".autoSch.Edit_Organization.name").val(selectedItemValue);
+		},
+		onChooseEvent: function() {
+			var selectedItemValue = $(".autoSch.Edit_Organization.name").getSelectedItemData().name;
+			var selectedItemValue2 = $(".autoSch.Edit_Organization.name").getSelectedItemData().code;
+			var selectedItemValue3 = $(".autoSch.Edit_Organization.name").getSelectedItemData().url;
+			$(".autoSch.Edit_Organization.name").val(selectedItemValue);
+
+			//$(".autoSch.Edit_Organization.code").val(selectedItemValue2 + ' , ' + selectedItemValue3);
+			/* thumbnail image
+			$(".autoSch.Edit_Organization.code").each(function(){
+				if ( selectedItemValue3 != null)
+				{
+					console.log('y ' + selectedItemValue3);
+					$(this).closest('.inputBox.Edit_Organization').find('img').attr('src',selectedItemValue3);
+				} else {
+					console.log('n');
+					$(this).closest('.inputBox.Edit_Organization').find('img').attr('src','../static/images/common/icon/icon_logo_small.png');
+				}
+			});
+			*/
 		},
 		match: {
 			enabled: true
