@@ -8,13 +8,9 @@
 <style type="text/css">
 .layer {}
 
-.fix2 {position:fixed; top:700px; left:100px; z-index:111; min-width:100px; text-align:center; height:50px; line-height:50px; border:1px solid #333; background:#fff; padding:0 10px;}
-
 .box {margin-top:50px; width:200px;}
 </style>
 
-
-<div class="fix2">탭 추가</div>
 
 		<section id="container">
 			<div class="inner">
@@ -22,94 +18,90 @@
 				<div class="content">
 					@@include('include/tabWrap.html')
 
+					<form action="">
 					<div class="layout Layout_List">
-						<h2 class="tit" id="i10701-serviceListLb">Service List</h2>
-						<div class="schOptionGroup">
-							<ul class="itemList1">
-								<li>
-									<dl class="inpItem">
-										<dt id="">Keyword</dt>
-										<dd>
-											<div class="inputBox schType keyword">
-												<div class="inner">
-													<input type="text" name="" class="inp autoSch keyword name" id="i10003-company" placeholder="Type Company Name">
-													<button type="button" class="inpReset"></button>
-												</div>
-											</div>
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl class="inpItem">
-										<dt>B/L Date</dt>
-										<dd>
-											@@include('include/daterangepicker.html',{
-												"id": ""
-											})
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl class="inpItem">
-										<dt>Item Description</dt>
-										<dd>
-											@@include('include/combobox.html',{
-												"id": "",
-												"class": "",
-												"placeholder": "Select a Type"
-											})
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl class="inpItem">
-										<dt>Item Description</dt>
-										<dd>
-											@@include('include/combobox.html',{
-												"id": "",
-												"class": "",
-												"placeholder": "Select a Type"
-											})
-										</dd>
-									</dl>
-								</li>
-							</ul>
-							<button type="button" class="btn schBtn" id="i10701_search">Search</button>
-						</div>
-						<h3 class="tit" id="i10701-servicesLb">Services</h3>
-						<div class="ibsheepTop">
-							@@include('include/sheet_filter.html',{
-								"id": "",
-								"class": " filter",
-								"placeholder": "Search tags..."
-							})
-							<button type="button" class="btn" id="i10701-addService">Add Service</button>
-						</div>
+						<h2 class="tit" id="">Welcome to OPUS Logistics!</h2>
+						<h3 class="tit" id="">Notice</h3>
 						<div class="ibsheetDiv">
 							ibsheet
 						</div>
-
-						<div style="height:200px; background:green"></div>
-
 					</div>
+					</form>
 				</div>
 			</div>
 		</section>
 	</div>
 <script type="text/javascript">
 $(function(){
-	var xxx = '<li><a href="#"><span>House B/L 9</span><span>OBK-000468</span></a><button type="button" class="tabClose" onclick="TabRemove(this)">Close</button></li>';
-	$('.fix2').click(function(){
-		$(xxx).appendTo('.tabList');
-		TablistSort();
-	});
 
+	var gnbAppen = $('.gnbList').find('a');
+	$(gnbAppen).each(function(){
+		$(this).on('click', function(){
+			var thisDate = $(this).data('name');
+			var thisTitle = $(this).text();
+			console.log(thisDate);
+
+			if ( $('.tabList').find('li').hasClass(thisDate) || $('.tabListBox').find('li').hasClass(thisDate) )
+			{
+				idx = $('.tabList').find('.' + thisDate).index();
+				console.log(idx + ' : 동일 클래스가 있는 경우');
+				$('.tabList > li > a').removeClass('on');
+				$('.tabListBox > ul > li > a').removeClass('on');
+				$('.tabList > li').find('.' + thisDate).children('a').addClass('on');
+				$('.tabListBox > ul > li').find('.' + thisDate).children('a').addClass('on');
+				$('.content').find('form').hide();
+				$('.content').find('form').eq(idx - 1).show();
+			} else {
+				var make = '<li class="' + thisDate + '"><a href="#"><span>' + thisTitle + '</span><span>OBK-000468</span></a><button type="button" class="tabClose" onclick="TabRemove(this)">Close</button></li>;'
+				$(make).appendTo('.tabList');
+				TablistSort();
+				idx = $('.tabList').find('.' + thisDate).index();
+				console.log(idx + ' : 동일 클래스가 없는 경우');
+				$('.tabList > li > a').removeClass('on');
+				$('.tabList > li').eq(idx).children('a').addClass('on');
+				
+				/*
+				$('.tabList > li > a').removeClass('on');
+				$('.tabListBox > ul > li > a').removeClass('on');
+				$('.tabList > li').find('.' + thisDate).children('a').addClass('on');
+				$('.tabListBox > ul > li').find('.' + thisDate).children('a').addClass('on');
+				*/
+				var dmpDom = '<form action=""><div class="layout" style="background:blue; height:300px;"><span style="color:#fff;">'+ thisDate +'</span></div></form>'
+				$('.content').find('form').hide();
+				$(dmpDom).appendTo('.content');
+			}
+		});
+	});
 });
 
 function TabRemove(e) {
+	
+	idx = $(e).closest('li').index();
+	lng = $('form').length;
+	
 	$(e).closest('li').remove();
 	TablistSort();
+
+	setTimeout(function(){
+		tabLng = $('.tabList > li').length;
+		tabBoxLng = $('.tabListBox > ul > li').length;
+		console.log(idx + ' , ' + lng + ' , 탭 길이 : ' + tabLng + ' , 탭 박스 길이 : ' + tabBoxLng);
+	}, 210);
+
+	
+
+	$('.content').find('form').eq(idx).remove();
+	if (idx == 1 && $('form').length == 1)
+	{
+		$('.content').find('form').eq(0).show();
+	}
+	
 }
 </script>
+
+<style type="text/css">
+.gnbList > li .dept {display:block !important;}
+</style>
+
 </body>
 </html>

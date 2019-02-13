@@ -77,7 +77,7 @@
 .inputBox.keyword .easy-autocomplete-container li span {width:100%; padding:0; font-size:13px;}
 
 .inputBox.Edit_date {vertical-align:top;}
-.inputBox.Edit_date > .inp {background:url(../images/common/icon/icon_calendar.png) no-repeat right 4px top 4px;}
+.inputBox.Edit_date > .inp {background:#fff url(../images/common/icon/icon_calendar.png) no-repeat right 4px top 4px;}
 .inputBox.Edit_date > .inp.Readonly {background:#e4e4e6 url(../images/common/icon/icon_calendar.png) no-repeat right 4px top 4px;}
 
 .inputBox.Edit_date.single {width:110px;}
@@ -287,9 +287,9 @@ body .ui-tooltip {display:none !important;}
 .btn.schBtn:before {content:''; position:absolute; top:5px; left:6px; width:16px; height:17px; background:url(../images/common/sprite_common.png) no-repeat -126px -140px;}
 a.btn {text-decoration:none;}
 .imgRemove {display:inline-block; width:14px; height:14px; font-size:0; text-indent:-999px; overflow:hidden; background:url(../images/common/sprite_common.png) no-repeat -20px -40px;}
-.btn.addBtn {width:31px; height:30px; padding:0; text-indent:-999px; border:1px solid #dcdcdc; overflow:hidden;}
+.btn.addBtn {width:31px; height:30px; padding:0; text-indent:-999px; background:#fff; border:1px solid #dcdcdc; overflow:hidden;}
 .btn.addBtn:before {content:''; position:absolute; top:5px; left:4px; width:23px; height:19px; background:url(../images/common/sprite_common.png) no-repeat -156px 0px;}
-.btn.removeBtn {width:31px; height:30px; padding:0; text-indent:-999px; border:1px solid #dcdcdc; overflow:hidden;}
+.btn.removeBtn {width:31px; height:30px; padding:0; text-indent:-999px; background:#fff; border:1px solid #dcdcdc; overflow:hidden;}
 .btn.removeBtn:before {content:''; position:absolute; top:5px; left:4px; width:23px; height:19px; background:url(../images/common/sprite_common.png) no-repeat -156px -30px;}
 .btn.close {display:inline-block; width:12px; height:12px; padding:0; font-size:0; overflow:hidden; text-indent:-999px; background:url(../images/common/sprite_common.png) no-repeat 0 -100px; border:none; line-height:normal; border-radius:0;}
 
@@ -302,7 +302,7 @@ a.btn {text-decoration:none;}
 
 
 /* tablist */
-.tabWrap {padding:30px 150px 0 0; height:90px; background:#f5f6fa; font-size:0; overflow:hidden;}
+.tabWrap {position:relative; z-index:1; padding:30px 150px 0 0; height:90px; background:#f5f6fa; font-size:0;}
 .tabList {font-size:0; overflow:hidden;}
 .tabList > li {position:relative; float:left; width:190px; background:#e9f0fb;}
 .tabList > li + li {}
@@ -313,6 +313,7 @@ a.btn {text-decoration:none;}
 .tabList > li > a.on:before {content:''; position:absolute; top:0; left:-10px; z-index:1; width:18px; height:62px; background:url(../images/common/sprite_common.png) no-repeat -42px 0;}
 .tabList > li > a.on:after {content:''; position:absolute; top:0; left:auto; right:-10px; z-index:1; width:18px; height:62px; background:url(../images/common/sprite_common.png) no-repeat -60px 0; border:none;}
 .tabList > li > a span {display:block; font-weight:600; font-size:14px; color:#405b85;}
+.tabList > li > a span {padding:0 40px 0 0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 .tabList > li > a span + span {font-weight:400; font-size:17px;}
 .tabList > li > a.on span {color:#2346d6;}
 .tabList > li.home {width:77px; text-indent:-9999px; border-radius:10px 0 0 0;}
@@ -322,7 +323,8 @@ a.btn {text-decoration:none;}
 .tabList > li .tabClose {position:absolute; top:12px; right:20px; z-index:2; width:14px; height:14px; overflow:hidden; text-indent:-9999px; background:url(../images/common/sprite_common.png) no-repeat 0 -40px;}
 .tabList > li > a.on + .tabClose {background-position:-20px -40px;}
 
-.tabListBox {position:absolute; top:20px; right:0; width:150px; height:62px; border:1px solid blue; background:#fff;}
+.tabListBox {position:absolute; top:20px; right:0; z-index:55; width:150px; height:62px; border:1px solid blue; background:#fff;}
+.tabListBox ul {position:absolute; top:63px; left:0; width:100%; background:#fff;}
 .tabListBox li {}
 .tabListBox li a {display:block; font-size:14px; color:#333;}
 
