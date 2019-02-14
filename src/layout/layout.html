@@ -30,9 +30,47 @@
 				</div>
 			</div>
 		</section>
+
 	</div>
 <script type="text/javascript">
 $(function(){
+
+	// list tab 활성화
+	$('.tabList').on('click', '.addNewTab', function(){
+		idx = $(this).parent('li').index();
+		$('.tabList > li > a').removeClass('on');
+		$('.tabList > li').eq(idx).children('a').addClass('on');
+		$('.content').find('form').hide();
+		$('.content').find('form').eq(idx).show();
+	});
+
+	// more 탭 제어
+	$('.tabListBox').on('click', '.addNewTab', function(){
+		idx = $(this).parent('li').index();
+		tabLng = $('.tabList > li').length;
+		moveIdx = tabLng + idx;
+		console.log('박스위치 , 순번 : ' + idx + ' , 탭의 갯수 : ' + tabLng + ' , 이동하는 엘리먼트 위치 : ' + (moveIdx));
+		$('.tabList > li').last().prependTo('.tabListBox > ul');
+		$(this).parent('li').appendTo('.tabList');
+		$('.content').find('form').eq(moveIdx).insertBefore($('.content').find('form').eq(tabLng - 1));
+
+		$('.tabList > li > a').removeClass('on');
+		$('.tabListBox').find('a').removeClass('on');
+		$('.tabList > li').eq(tabLng - 1).children('a').addClass('on');
+		$('.content').find('form').hide();
+		$('.content').find('form').eq(tabLng - 1).show();
+		$('.tabListBox > ul').stop(true, true).slideUp();
+	});
+
+	// more 탭 리스트
+	$('.tabListBox > span').on('click', function(){
+		if ( $('.tabListBox > ul').css('display') == 'none' )
+		{
+			$('.tabListBox > ul').stop(true, true).slideDown();
+		} else {
+			$('.tabListBox > ul').stop(true, true).slideUp();
+		}
+	});
 
 	var gnbAppen = $('.gnbList').find('a');
 	$(gnbAppen).each(function(){
@@ -44,59 +82,119 @@ $(function(){
 			if ( $('.tabList').find('li').hasClass(thisDate) || $('.tabListBox').find('li').hasClass(thisDate) )
 			{
 				idx = $('.tabList').find('.' + thisDate).index();
-				console.log(idx + ' : 동일 클래스가 있는 경우');
+				console.log(idx + ' : 동일 클래스가 있는 경우 class 명 : ' + thisDate);
+
 				$('.tabList > li > a').removeClass('on');
 				$('.tabListBox > ul > li > a').removeClass('on');
-				$('.tabList > li').find('.' + thisDate).children('a').addClass('on');
-				$('.tabListBox > ul > li').find('.' + thisDate).children('a').addClass('on');
+				$('.tabList').find('.' + thisDate).children('a').addClass('on');
+				$('.tabListBox').find('.' + thisDate).children('a').addClass('on');
+
 				$('.content').find('form').hide();
-				$('.content').find('form').eq(idx - 1).show();
+				//$('.content').find('form').eq(idx - 1).show();
+				$('.content').find('form').eq(idx).show();
 			} else {
-				var make = '<li class="' + thisDate + '"><a href="#"><span>' + thisTitle + '</span><span>OBK-000468</span></a><button type="button" class="tabClose" onclick="TabRemove(this)">Close</button></li>;'
+				var make = '<li class="' + thisDate + '"><a href="#" class="addNewTab"><span>' + thisTitle + '</span><span>OBK-000468</span></a><button type="button" class="tabClose" onclick="TabRemove(this)">Close</button></li>;'
 				$(make).appendTo('.tabList');
 				TablistSort();
 				idx = $('.tabList').find('.' + thisDate).index();
 				console.log(idx + ' : 동일 클래스가 없는 경우');
-				$('.tabList > li > a').removeClass('on');
-				$('.tabList > li').eq(idx).children('a').addClass('on');
-				
-				/*
+
 				$('.tabList > li > a').removeClass('on');
 				$('.tabListBox > ul > li > a').removeClass('on');
-				$('.tabList > li').find('.' + thisDate).children('a').addClass('on');
-				$('.tabListBox > ul > li').find('.' + thisDate).children('a').addClass('on');
-				*/
-				var dmpDom = '<form action=""><div class="layout" style="background:blue; height:300px;"><span style="color:#fff;">'+ thisDate +'</span></div></form>'
+				$('.tabList > li').eq(idx).children('a').addClass('on');
+				$('.tabListBox').find('.' + thisDate).children('a').addClass('on');
+
+				var dmpDom = '<form action=""><div class="layout" style="background:#fff; height:300px;"><span style="color:#000;">'+ thisDate +'</span></div></form>'
 				$('.content').find('form').hide();
 				$(dmpDom).appendTo('.content');
 			}
 		});
 	});
+
+	// script
 });
 
+
+
+// 탭 삭제
 function TabRemove(e) {
-	
+	tabLng = $('.tabList > li').length;
 	idx = $(e).closest('li').index();
-	lng = $('form').length;
-	
-	$(e).closest('li').remove();
-	TablistSort();
+	Formlng = $('form').length;
+	console.log('탭 삭제 이벤트 순번 : ' + idx + ', 탭의 길이 : ' + tabLng + ' , form 의 갯수 : ' + Formlng);
 
-	setTimeout(function(){
-		tabLng = $('.tabList > li').length;
-		tabBoxLng = $('.tabListBox > ul > li').length;
-		console.log(idx + ' , ' + lng + ' , 탭 길이 : ' + tabLng + ' , 탭 박스 길이 : ' + tabBoxLng);
-	}, 210);
-
-	
-
-	$('.content').find('form').eq(idx).remove();
-	if (idx == 1 && $('form').length == 1)
+	if ( (idx == (tabLng - 1)) && $(e).prev().hasClass('on'))
 	{
-		$('.content').find('form').eq(0).show();
+		console.log('마지막');
+
+		if ( $('.tabListBox').css('display') == 'none' )
+		{
+			console.log('리스트 박스 없음');
+			$(e).closest('li').remove();
+			$('.content').find('form').eq(idx).remove();
+			$('.tabList > li').last().children('a').addClass('on');
+			tabLng = $('.tabList > li').length;
+			$('.content').find('form').eq(tabLng - 1).show();
+			if (tabLng == 1)
+			{
+				$('.tabList').find('.home').addClass('single');
+			}
+			TablistSort();
+		} else if ( $('.tabListBox').css('display') == 'block' )
+		{
+			console.log('리스트 박스 있음');
+			$(e).closest('li').remove();
+			$('.content').find('form').eq(idx).remove();
+			TablistSort();
+			setTimeout(function(){
+				$('.tabList > li').last().children('a').addClass('on');
+				tabLng = $('.tabList > li').length;
+				$('.content').find('form').eq(tabLng - 1).show();
+				if (tabLng == 1)
+				{
+					$('.tabList').find('.home').addClass('single');
+				}
+			}, 210);
+		}
+	} else {
+		console.log('다른곳');
+		if ( $('.tabListBox').css('display') == 'none' )
+		{
+			console.log('리스트 박스 없음');
+			$(e).closest('li').remove();
+			$('.content').find('form').eq(idx).remove();
+		} else if ( $('.tabListBox').css('display') == 'block' )
+		{
+			if ( $(e).closest('ul').hasClass('tabList') )
+			{
+				console.log('일반 탭 영역');
+				$(e).closest('li').remove();
+				$('.content').find('form').eq(idx).remove();
+			} else {
+				console.log('more 탭 영역');
+				$(e).closest('li').remove();
+				tabLng = $('.tabList > li').length;
+				moveIdx = tabLng + idx;
+				$('.content').find('form').eq(moveIdx).remove();
+			}
+
+			TablistSort();
+			setTimeout(function(){
+				$('.tabList').find('a').removeClass('on');
+				$('.tabListBox').find('a').removeClass('on');
+				$('.tabList > li').last().children('a').addClass('on');
+				tabLng = $('.tabList > li').length;
+				$('.content').find('form').hide();
+				$('.content').find('form').eq(tabLng - 1).show();
+				if ($('.tabListBox > ul > li').length < 1)
+				{
+					$('.tabListBox').removeClass('on');
+				}
+			}, 210);
+		}
 	}
-	
 }
+
 </script>
 
 <style type="text/css">

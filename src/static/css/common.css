@@ -34,7 +34,7 @@
 .inputBox .inp.Readonly {border:1px solid #b4bcc9; background:#e4e4e6; pointer-events:none;}
 .inputBox .inp.Warning {border:1px solid #ff597a; color:#ff0033;}
 .inputBox .inp.Mandate {background:#eff5f8; color:#1f63cd;}
-.inputBox .inpReset {position:absolute; top:7px; right:7px; width:14px; height:14px; background:url(../images/common/sprite_common.png) no-repeat -20px -40px;}
+.inputBox .inpReset {position:absolute; top:7px; right:7px; width:14px; height:14px; background:url(../images/common/sprite_common.png) no-repeat 0px -120px;}
 .inputBox .inpReset {display:none;}
 .inputBox + .btn {margin-left:7px;}
 
@@ -286,7 +286,7 @@ body .ui-tooltip {display:none !important;}
 .btn.schBtn {position:relative; width:28px; height:28px; padding:0; background:#eceefb; overflow:hidden; border:none; border-radius:5px; text-indent:-999px;}
 .btn.schBtn:before {content:''; position:absolute; top:5px; left:6px; width:16px; height:17px; background:url(../images/common/sprite_common.png) no-repeat -126px -140px;}
 a.btn {text-decoration:none;}
-.imgRemove {display:inline-block; width:14px; height:14px; font-size:0; text-indent:-999px; overflow:hidden; background:url(../images/common/sprite_common.png) no-repeat -20px -40px;}
+.imgRemove {display:inline-block; width:14px; height:14px; font-size:0; text-indent:-999px; overflow:hidden; background:url(../images/common/sprite_common.png) no-repeat 0px -120px;}
 .btn.addBtn {width:31px; height:30px; padding:0; text-indent:-999px; background:#fff; border:1px solid #dcdcdc; overflow:hidden;}
 .btn.addBtn:before {content:''; position:absolute; top:5px; left:4px; width:23px; height:19px; background:url(../images/common/sprite_common.png) no-repeat -156px 0px;}
 .btn.removeBtn {width:31px; height:30px; padding:0; text-indent:-999px; background:#fff; border:1px solid #dcdcdc; overflow:hidden;}
@@ -304,7 +304,7 @@ a.btn {text-decoration:none;}
 /* tablist */
 .tabWrap {position:relative; z-index:1; padding:30px 150px 0 0; height:90px; background:#f5f6fa; font-size:0;}
 .tabList {font-size:0; overflow:hidden;}
-.tabList > li {position:relative; float:left; width:190px; background:#e9f0fb;}
+.tabList > li {position:relative; float:left; /* width:190px; */ width:400px; background:#e9f0fb;}
 .tabList > li + li {}
 .tabList > li + li > a:after {content:''; position:absolute; top:12px; left:-1px; width:1px; border-bottom:35px solid #c3ccda;}
 .tabList > li:last-child {border-radius:0 10px 0 0;}
@@ -317,16 +317,41 @@ a.btn {text-decoration:none;}
 .tabList > li > a span + span {font-weight:400; font-size:17px;}
 .tabList > li > a.on span {color:#2346d6;}
 .tabList > li.home {width:77px; text-indent:-9999px; border-radius:10px 0 0 0;}
+.tabList > li.home a.on {background:none !important;}
+.tabList > li.home a:before {content:none !important;}
+.tabList > li.home a:after {content:none !important;}
 .tabList > li.home.single {border-radius:10px 10px 0 0;}
+.tabList > li.home.single a.on {z-index:1; background:none; border-radius:10px 10px 0 0;}
 .tabList > li.home:before {content:''; position:absolute; top:22px; left:27px; width:22px; height:21px; background:url(../images/common/sprite_common.png) no-repeat -40px -72px;}
 .tabList > li.home .tabClose {right:16px;}
-.tabList > li .tabClose {position:absolute; top:12px; right:20px; z-index:2; width:14px; height:14px; overflow:hidden; text-indent:-9999px; background:url(../images/common/sprite_common.png) no-repeat 0 -40px;}
-.tabList > li > a.on + .tabClose {background-position:-20px -40px;}
+.tabList > li .tabClose {position:absolute; top:12px; right:20px; z-index:2; width:14px; height:14px; overflow:hidden; text-indent:-9999px; background:url(../images/common/sprite_common.png) no-repeat 0 -120px;}
+/* .tabList > li > a.on + .tabClose {background-position:-20px -40px;} */
 
-.tabListBox {position:absolute; top:20px; right:0; z-index:55; width:150px; height:62px; border:1px solid blue; background:#fff;}
-.tabListBox ul {position:absolute; top:63px; left:0; width:100%; background:#fff;}
-.tabListBox li {}
-.tabListBox li a {display:block; font-size:14px; color:#333;}
+.tabListBox {display:none;}
+.tabListBox.on {display:block;}
+.tabListBox {position:absolute; top:35px; right:0; z-index:55; width:115px; padding:0 0 0 0; /* border-radius:5px 5px 0 0; */ /* box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15); */}
+.tabListBox:before {content:''; position:absolute; top:0; left:-15px; z-index:-1; width:100%; height:100%; background:#e9f0fb; border-radius:5px 5px 0 0; box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);}
+.tabListBox:after {content:''; position:absolute; top:0; left:-30px; z-index:-2; width:100%; height:100%; background:#e9f0fb; border-radius:5px 5px 0 0; box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);}
+.tabListBox > span {display:block; font-weight:600; font-size:14px; color:#0754d2; line-height:55px; text-align:center; background:#fff; border-radius:5px 5px 0 0; box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15); cursor:pointer;}
+.tabListBox ul {position:absolute; top:55px; right:0; width:212px; max-height:532px; overflow:auto; background:#fff; border:1px solid #b4bcc9; border-radius:5px;}
+.tabListBox li {position:relative; padding:0 38px 0 15px;}
+.tabListBox li:hover {background:#4c7bec;}
+.tabListBox li:hover a span {color:#fff;}
+.tabListBox li:hover:after {content:none;}
+.tabListBox li + li:after {content:''; position:absolute; top:0; left:7px; width:calc(100% - 14px); border-bottom:1px solid #dcdcdc;}
+.tabListBox li a {display:block; padding:7px 0 6px 0; font-size:14px; color:#333; text-decoration:none;}
+
+/*
+.tabListBox li a.on {background:#ddd;}
+form {display:block !important; border:1px solid #333;}
+form + form {margin-top:10px; height:40px; overflow:hidden;}
+form .layout {background:none !important;}
+*/
+
+.tabListBox li a span {display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:13px; color:#4e4f62; line-height:20px;}
+.tabListBox li .tabClose {position:absolute; top:12px; right:14px; width:10px; height:10px;}
+.tabListBox li .tabClose:before {content:''; position:absolute; top:4px; left:-1px; width:12px; border-bottom:2px solid #c5c4cd; transform: rotate(45deg);}
+.tabListBox li .tabClose:after {content:''; position:absolute; top:4px; right:-1px; width:12px; border-bottom:2px solid #c5c4cd; transform: rotate(135deg);}
 
 
 /* gnb */
@@ -364,12 +389,12 @@ nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
 /* editor */
 .editorWrap {}
 .editorWrap > #editor {height:200px;}
-
+.ql-editor strong, .ql-editor strong * {font-weight:600;}
+.ql-editor em, .ql-editor em * {font-style:italic;}
+.ql-editor u, .ql-editor u * {text-decoration:underline;}
 
 .filter {display:inline-block;}
-
 .ibsheetDiv {min-height:200px; border:1px solid #d9d9d9;}
-
 
 
 /* flag */
