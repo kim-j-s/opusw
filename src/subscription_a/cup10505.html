@@ -318,11 +318,11 @@
 														"class": " small",
 														"placeholder": "Type"
 													})
-													<div class="inputBox count">
-														<button type="button" class="plus"><span>Plus</span></button>
-														<input type="number" name="cup10505_creditTermDay" class="inp Edit_Count" id="cup10505_creditTermDay" min="0">
-														<button type="button" class="minus"><span>Minus</span></button>
-													</div>
+													@@include('include/input_counter.html',{
+														"id": "cup10505_creditTermDay",
+														"class": "",
+														"etc": ""
+													})
 													<div class="tooltip">
 														<div class="tips">
 															<strong class="tit">Credit Term</strong>
@@ -372,7 +372,9 @@
 												<dt id="cup10505_invoiceRemarksLb">Invoice Remarks</dt>
 												<dd>
 													<div class="textareaDiv">
-														<textarea name="cup10505_invoiceRemarks" id="cup10505_invoiceRemarks" cols="30" rows="10" class="textarea" maxlength="50"></textarea>
+														<!-- 2019-02-18 수정 -->
+														<textarea name="cup10505_invoiceRemarks" id="cup10505_invoiceRemarks" cols="30" rows="10" class="textarea" maxlength="500"></textarea>
+														<!--// 2019-02-18 수정 -->
 														<div class="byte"><span class="bold">100</span>/150</div>
 													</div>
 												</dd>

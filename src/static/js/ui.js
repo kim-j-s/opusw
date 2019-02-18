@@ -78,7 +78,7 @@ $(function(){
 	$(".autoSch.keyword").easyAutocomplete(state_keyword);
 	$(".autoSch.Edit_User").easyAutocomplete(person);
 	$(".autoSch.Edit_Organization").easyAutocomplete(company);	
-	
+
 
 	//gnbList
 	GnbList();
@@ -146,7 +146,7 @@ $(function(){
 			],
 			"firstDay": 1
 		},
-			"alwaysShowCalendars": true
+			"alwaysShowCalendars": false
 			//"startDate": "01/22/2019",
 			//"endDate": "01/28/2019"
 		}, function(start, end, label) {
@@ -190,7 +190,7 @@ $(function(){
 			],
 			"firstDay": 1
 		},
-			"alwaysShowCalendars": true
+			"alwaysShowCalendars": false
 		}, function(start, end, label) {
 		console.log('New date range selected: ' + start.format('YYYY/MM/DD') + ' to ' + end.format('YYYY/MM/DD') + ' (predefined range: ' + label + ')');
 	});
@@ -211,6 +211,7 @@ $(function(){
 			blobURL = window.URL.createObjectURL(file);
 			console.log(blobURL);
 			jQuery(this).closest('.imgAdd').find('.imgBox').show();
+			jQuery(this).closest('.imgAdd').find('.imgRemove').show();
 			jQuery(this).closest('.imgAdd').find('.Image_Logo_Large').attr('src', blobURL);
 		}
 	});
@@ -251,11 +252,13 @@ $(function(){
 // 페이지 로드 시 탭 포커스
 $(window).load(function(){
 	$('.tabFocus').focus();	
+	//eacKeywordChk();
 });
 // 페이지 로드 시 탭 포커스
 
 
 // functions
+
 
 // editor
 function Editor() {
@@ -723,6 +726,20 @@ function onlyNumber() {
 	}
 }
 
+// GeoLocation
+function GeoLocation(e) {
+	find = $(e).closest('dd').find('.inp');
+	getLocation();
+	function getLocation() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+		}
+	}
+	function showPosition(position) {
+		$(find).val(position.coords.latitude + " , " + position.coords.longitude);
+	}
+}
+
 // function
 
 
@@ -769,6 +786,7 @@ var city_options = {
 		//return element.name;
 		return element.name+", "+element.code+", "+element.keyword;
 	},
+	minCharNumber : 3,
 	template: {
 		type: "custom",
 		method: function(value, item) {

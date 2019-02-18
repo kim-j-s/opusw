@@ -144,14 +144,28 @@
 		<button type="button" class="inpReset"></button>
 	</div>
 
+	<div class="inputBox Edit_User">
+		<div class="thumb">
+			<img src="../static/images/common/icon/icon_person_small.png" alt="" />
+		</div>
+		<input type="text" name="cup11002_createdBy" class="inp Readonly" id="cup11002_createdBy" value="Park, JungIl" readonly="readonly">
+	</div>
+
 	<!-- souce code 뷰어 -->
 	<textarea name="" id="" cols="30" rows="10" class="pubTextarea">
 <div class="inputBox Edit_User">
 	<div class="thumb">
-		<img src="../static/images/common/icon/icon_person_small.png" alt="" />
+		<img src="../static/images/common/icon/icon_person_small.png" alt="" name="" id="" />
 	</div>
 	<input type="text" name="" class="inp autoSch Edit_User name" id="" placeholder="">
 	<button type="button" class="inpReset"></button>
+</div>
+
+<div class="inputBox Edit_User">
+	<div class="thumb">
+		<img src="../static/images/common/icon/icon_person_small.png" alt="" name="" id="" />
+	</div>
+	<input type="text" name="" class="inp Readonly" id="" value="Park, JungIl" readonly="readonly">
 </div>
 	</textarea>
 	<!-- //souce code 뷰어 -->
@@ -418,6 +432,32 @@ value="" 값과 option text를 비교하여 검색하는 기능 두가지가 동
 	"placeholder": "Type Country"
 })
 	</textarea>
+	<!-- //souce code 뷰어 -->
+
+	<h2>Geo Location</h2>
+	<dl class="inpItem">
+		<dt id="">Geo Location</dt>
+		<dd>
+			<div class="inputBox Edit_Geo">
+				<input type="text" name="" class="inp" id="" placeholder="" maxlength="50" readonly="readonly">
+			</div>
+			<button type="button" class="btn" onclick="GeoLocation(this)" id="">Get Location</button>
+		</dd>
+	</dl>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<dl class="inpItem">
+				<dt id="">Geo Location</dt>
+				<dd>
+					<div class="inputBox Edit_Geo">
+						<input type="text" name="" class="inp" id="" placeholder="" maxlength="50" readonly="readonly">
+					</div>
+					<button type="button" class="btn" onclick="GeoLocation(this)" id="">Get Location</button>
+				</dd>
+			</dl>
+		</pre>
+	</div>
 	<!-- //souce code 뷰어 -->
 
 

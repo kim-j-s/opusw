@@ -29,8 +29,9 @@
 .inputBox {position:relative; display:inline-block; width:200px;}
 .inputBox.full {display:block; width:auto; max-width:320px;}
 .inputBox + .inputBox {margin-left:7px;}
-.inputBox .inp {display:block; width:100%; height:28px; padding:0 28px 0 10px; border:1px solid #b4bcc9; font-size:13px; transition:all .5s ease; outline:none; border-radius:5px; font-family:'Open Sans', sans-serif;}
-.inputBox .inp:focus {border:1px solid #78abea;}
+.inputBox .inp {display:block; width:100%; height:28px; padding:0 10px 0 10px; border:1px solid #b4bcc9; font-size:13px; transition:all .2s ease; outline:none; border-radius:5px; font-family:'Open Sans', sans-serif;}
+.inputBox .inp:focus {padding:0 28px 0 10px; border:1px solid #78abea;}
+.inputBox.Edit_Geo .inp:focus {padding:0 10px 0 10px;}
 .inputBox .inp.Readonly {border:1px solid #b4bcc9; background:#e4e4e6; pointer-events:none;}
 .inputBox .inp.Warning {border:1px solid #ff597a; color:#ff0033;}
 .inputBox .inp.Mandate {background:#eff5f8; color:#1f63cd;}
@@ -103,7 +104,7 @@
 
 /* input file images upload */
 .fileBox {position:relative; display:inline-block;}
-.fileBox > label {display:inline-block; padding:0 17px; height:28px; font-weight:600; font-size:13px; color:#fff; line-height:28px; text-align:center; border-radius:5px; vertical-align:top; border:1px solid #abb8c5; background:#abb8c5;}
+.fileBox > label {display:inline-block; padding:0 17px; height:28px; font-weight:600; font-size:13px; color:#fff; line-height:28px; text-align:center; border-radius:5px; vertical-align:top; border:1px solid #abb8c5; background:#abb8c5; cursor:pointer;}
 .fileBox > input[type="file"] {position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;}
 
 
@@ -142,6 +143,8 @@
 .inputBox.full.schType.ty2 > .inner .easy-autocomplete {width:calc(100% - 100px);}
 .inputBox.full.schType > .inner {display:block;}
 .inputBox.zipCode {width:104px; min-width:auto;}
+.inputBox.schType.short > .inner .easy-autocomplete:first-child {width:70px;}
+.inputBox.schType.short > .inner .easy-autocomplete {width:130px;}
 
 
 /* easy-autocomplete */
@@ -205,14 +208,14 @@ body .ui-tooltip {display:none !important;}
 /* semantic ui reset */
 
 /* dropdown */
-.ui.dropdown.country {width:200px; height:28px; min-height:auto; padding:0 28px 0 10px;}
+.ui.dropdown.country.search {width:200px; height:28px; min-height:auto; padding:0 28px 0 10px;}
 .ui.dropdown.country.search.selection > input.search {padding:0 30px 0 10px;}
-.ui.dropdown.country > .text {line-height:26px;}
+.ui.dropdown.country.search > .text {font-size:13px; color:#999; line-height:26px;}
 .ui.dropdown.country.selection > .dropdown.icon {right:0; top:0; width:26px; height:26px; margin:0; padding:0; line-height:normal; opacity:1;}
-.ui.dropdown.country > .dropdown.icon:before {content:''; position:absolute; top:10px; left:7px; width:12px; height:6px; background:url(../images/common/sprite_common.png) no-repeat 0 -80px !important;}
+.ui.dropdown.country.search > .dropdown.icon:before {content:''; position:absolute; top:10px; left:7px; width:12px; height:6px; background:url(../images/common/sprite_common.png) no-repeat 0 -80px !important;}
 
 
-.ui.dropdown.Mandate {border:1px solid #78abea; background:#eff5f8; color:#1f63cd;}
+.ui.dropdown.Mandate {background:#eff5f8; color:#1f63cd;}
 .ui.dropdown.disabled {background:#e4e4e6; opacity:1;}
 
 .ui.dropdown + .inputBox.zipCode {width:calc(100% - 247px); max-width:200px; vertical-align:top; margin-left:7px;}
@@ -267,7 +270,7 @@ body .ui-tooltip {display:none !important;}
 
 .switchChk {position:relative; display:inline-block; height:28px;vertical-align:top; overflow:hidden;}
 .switchChk > input {position:absolute; top:-20px; left:0;}
-.switchChk > label {position:relative; display:block; padding:0 0 0 70px; font-size:14px; line-height:28px;}
+.switchChk > label {position:relative; display:block; padding:0 0 0 70px; font-size:14px; line-height:28px; cursor:pointer;}
 .switchChk > label:before {content:''; position:absolute; top:6px; left:8px; z-index:2; width:16px; height:16px; border-radius:50%; background:#d9d9d9; transition:.45s;}
 .switchChk > label:after {content:''; position:absolute; top:0; left:0; width:58px; height:28px; border-radius:45px 45px 45px 45px; border:2px solid #d9d9d9; box-sizing:border-box; transition:.45s;}
 .switchChk > input:checked + label {}
@@ -393,8 +396,20 @@ nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
 .ql-editor em, .ql-editor em * {font-style:italic;}
 .ql-editor u, .ql-editor u * {text-decoration:underline;}
 
+
+/* ibsheep */
 .filter {display:inline-block;}
+
 .ibsheetDiv {min-height:200px; border:1px solid #d9d9d9;}
+.ibsheetDiv + .ibsheetDiv {margin-top:10px;}
+.ibsheepTop {position:relative; margin-top:10px;}
+.ibsheepTop:after {content:''; display:block; clear:both;}
+.ibsheepTop > .filter {}
+.ibsheepTop > .btn {float:right;}
+.ibsheepTop > .tools {float:right;}
+.ibsheepTop > .tools .btn + .btn {margin-left:7px;}
+.ibsheepTop + .ibsheetDiv {margin-top:10px;}
+.ibsheetDiv + h3.tit {margin-top:20px;}
 
 
 /* flag */

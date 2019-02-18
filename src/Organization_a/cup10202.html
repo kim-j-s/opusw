@@ -1,0 +1,471 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<!-- 헤더영역 -->
+		@@include('include/header.html')
+		<!-- //헤더영역 -->
+		<section id="container">
+			<div class="inner">
+				@@include('include/nav.html')
+				<div class="content editBtns">
+					@@include('include/tabWrap.html')
+					<!-- 컨텐츠 영역 -->
+					<form action="">
+						<div class="layout Layout_Sidebar">
+							<h2 class="tit" id="cup10202_organizationLb">Organization</h2>
+							<div class="serviceCode">
+								<div class="srvNum" id="">
+									<div class="inputBox inpNone">
+										<input type="text" name="cup10202_organizationIdLb" class="inp" id="cup10202_organizationIdLb" readonly="readonly" value="O10000001">
+									</div>
+								</div>
+								<div class="actChk">
+									<div class="switchChk">
+										<input type="checkbox" name="cup10202_activeChk" id="cup10202_activeChk" checked="checked">
+										<label for="cup10202_activeChk" id="cup10202_active">
+											<span class="txt1">Inactive</span>
+											<span class="txt2">Active</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="inner">
+								<div class="lsCont">
+									<h3 class="tit" id="cup10202_basicLb">Basic</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_logoLb">Logo</dt>
+												<dd>
+													<div class="imgAdd">
+														<div class="imgBox person">
+															<img src="../static/images/common/icon/icon_person.png" alt="" class="Image_Logo_Large" name="cup10202_logo" id="cup10202_logo" />
+															<button type="button" class="imgRemove" id="">Delete</button>
+														</div>
+														<div class="changeBtn">
+															<div class="fileBox">
+																<label for="imgUpload" id="cup10202_changeLogo">Change Logo</label>
+																<input type="file" name="imgUpload" id="imgUpload" class="fileUpload" />
+															</div>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_displayNameLb">Display Name</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="cup10202_displayName" class="inp Mandate" id="cup10202_displayName" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Display Name</strong>
+															<p class="txt">Display Name is <br />shown on the system</p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+											<dl class="inpItem">
+												<dt id="cup10202_englishNameLb">English Name</dt>
+												<dd>
+													<div class="inputBox Edit_AlphaNum">
+														<input type="text" name="cup10202_englishName" class="inp" id="cup10202_englishName" placeholder="First Name, Last Name" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_languageNameLb">Language Name</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="cup10202_languageName" class="inp" id="cup10202_languageName" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Language Name</strong>
+															<p class="txt">Language Name Is <br />your name in native<br /> language, as it appear<br /> language.</p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_aliasLb">Alias</dt>
+												<dd>
+													<div class="inputBox Edit_AlphaNum">
+														<input type="text" name="cup10202_alias" class="inp" id="cup10202_alias" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+													<div class="tooltip">
+														<div class="tips" id="">
+															<strong class="tit">Alias</strong>
+															<p class="txt">Alias can be <br />organization code or <br />abbreviation.</p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_companyLb">Company</dt>
+												<dd>
+													<div class="inputBox schType ty1">
+														<div class="inner">
+															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+															<input type="text" name="cup10202_company" class="inp autoSch ty1 name Mandate" id="cup10202_company" placeholder="">
+															<button type="button" class="inpReset"></button>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+
+									<h3 class="tit" id="cup10202_addressLb">Address</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_telephoneNumberLb">Telephone Number</dt>
+												<dd>
+													<div class="inputBox Edit_PhoneFax">
+														<input type="text" name="cup10202_telephoneNumber" class="inp" id="cup10202_telephoneNumber" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_faxNumberLb">Fax Number</dt>
+												<dd>
+													<div class="inputBox Edit_PhoneFax">
+														<input type="text" name="cup10202_faxNumber" class="inp" id="cup10202_faxNumber" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_addressLine1Lb">Address Line1</dt>
+												<dd>
+													<div class="inputBox full">
+														<input type="text" name="cup10202_addressLine1" class="inp" id="cup10202_addressLine1" placeholder="" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_addressLine2Lb">Address Line2</dt>
+												<dd>
+													<div class="inputBox full">
+														<input type="text" name="cup10202_addressLine2" class="inp" id="cup10202_addressLine2" placeholder="" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_cityLb">City</dt>
+												<dd>
+													<div class="inputBox schType ty2 short">
+														<div class="inner">
+															<input type="text" class="inp autoSch ty2 code Readonly" readonly="readonly">
+															<input type="text" name="cup10202_city" class="inp autoSch ty2 name Mandate" id="cup10202_city" placeholder="Type City" maxlength="50">
+															<button type="button" class="inpReset"></button>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_stateProvinceLb">State/Province</dt>
+												<dd>
+													<div class="inputBox schType ty2 short">
+														<div class="inner">
+															<input type="text" class="inp autoSch ty3 code Readonly" readonly="readonly">
+															<input type="text" name="cup10202_stateProvince" class="inp autoSch ty3 name" id="cup10202_stateProvince" placeholder="Type State">
+															<button type="button" class="inpReset"></button>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_countryLb">Country</dt>
+												<dd>
+													@@include('include/CountrySelect.html',{
+														"class": " Mandate",
+														"id": "cup10202_country",
+														"placeholder": "Select a Country"
+													})
+													<div class="inputBox zipCode">
+														<div class="inner">
+															<input type="text" name="cup10202_zipCode" class="inp" id="cup10202_zipCode" placeholder="Zip Code">
+															<button type="button" class="inpReset"></button>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_geoLocationLb">Geo Location</dt>
+												<dd>
+													<div class="inputBox Edit_Geo">
+														<input type="text" name="cup10202_geoLocation" class="inp" id="cup10202_geoLocation" placeholder="" maxlength="50" readonly="readonly">
+													</div>
+													<button type="button" class="btn" onclick="GeoLocation(this)" id="cup10202_getLocation">Get Location</button>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+
+									<h3 class="tit" id="cup10202_businessReferenceLb">Business Reference</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_registrationIdLb">Registration ID</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="cup10202_registrationId" class="inp" id="cup10202_registrationId" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_taxIdLb">TAX ID</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="cup10202_taxId" class="inp" id="cup10202_taxId" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+
+									<h3 class="tit" id="cup10202_subscriptionLb">Subscription</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_subscriptionManagerLb">Subscription Manager</dt>
+												<dd>
+													<div class="inputBox Edit_User">
+														<div class="thumb">
+															<img src="../static/images/common/icon/icon_person_small.png" alt="" name="" id="" />
+														</div>
+														<input type="text" name="cup10202_subscriptionManager" class="inp autoSch Edit_User name" id="cup10202_subscriptionManager" placeholder="">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_tenantIdLb">Tenant ID (GUID)</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="cup10202_tenantId" class="inp Readonly" id="cup10202_tenantId" readonly="readonly">
+													</div>
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Tenant ID</strong>
+															<p class="txt">Global Unique <br />Identifier in the <br />system. This <br />information is used to <br />assign ownership.</p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+
+									<h3 class="tit" id="cup10202_systemOptionsLb">System Options</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_timeZoneLb">Time Zone</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "cup10202_timeZone",
+														"class": "",
+														"placeholder": "Select a Time Zone"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_isDaylightSavingTimeLb">Is Daylight Saving Time</dt>
+												<dd>
+													<div class="checkbox">
+														<input type="checkbox" name="cup10202_isDaylightSavingTimeChk" id="cup10202_isDaylightSavingTimeChk" checked="checked"><label for="cup10202_isDaylightSavingTimeChk" id="cup10202_isDaylightSavingTime">Apply</label>
+													</div>	
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_currencyLb">Currency</dt>
+												<dd>
+													<div class="inputBox schType ty1 short">
+														<div class="inner">
+															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+															<input type="text" name="cup10202_currency" class="inp autoSch ty1 name" id="cup10202_currency" placeholder="Select a Currency">
+															<button type="button" class="inpReset"></button>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_unitOfWeightLb">Unit of Weight</dt>
+												<dd>
+													<div class="inputBox schType ty1 short">
+														<div class="inner">
+															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+															<input type="text" name="cup10202_unitOfWeight" class="inp autoSch ty1 name" id="cup10202_unitOfWeight" placeholder="Select a Unit">
+															<button type="button" class="inpReset"></button>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_unitOfVolumeLb">Unit of Volume</dt>
+												<dd>
+													<div class="inputBox schType ty1 short">
+														<div class="inner">
+															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+															<input type="text" name="cup10202_unitOfVolume" class="inp autoSch ty1 name" id="cup10202_unitOfVolume" placeholder="Select a Unit">
+															<button type="button" class="inpReset"></button>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10202_unitOfLengthLb">Unit of Length</dt>
+												<dd>
+													<div class="inputBox schType ty1 short">
+														<div class="inner">
+															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+															<input type="text" name="cup10202_unitOfLength" class="inp autoSch ty1 name" id="cup10202_unitOfLength" placeholder="Select a Unit">
+															<button type="button" class="inpReset"></button>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+
+									<h3 class="tit" id="cup10202_usersLb">Users</h3>
+									<div class="ibsheepTop">
+										@@include('include/sheet_filter.html',{
+											"id": "",
+											"class": " filter",
+											"placeholder": "Search tags..."
+										})
+										<div class="tools">
+											<button type="button" class="btn addBtn" id="">ADD</button>
+											<button type="button" class="btn removeBtn" id="">REMOVE</button>
+										</div>
+									</div>
+									<div class="ibsheetDiv">
+										ibsheet
+									</div>
+									<div class="ibsheetDiv">
+										ibsheet
+									</div>
+								</div>
+
+								<div class="lsCont fix">
+									<h3 class="tit" id="cup10202_recordLb">Record</h3>
+									<dl class="inpItem2">
+										<dt id="cup10202_createdOnLb">Created on</dt>
+										<dd>
+											<div class="ele">
+												<div class="inputBox Edit_date single">
+													<input type="text" name="cup10202_createDate" class="inp Readonly" id="cup10202_createDate" value="12-14-2018" readonly/>
+												</div>
+												<div class="inputBox Edit_Time readonly">
+													<input type="text" name="cup10202_createTime" class="inp Readonly" id="cup10202_createTime" value="10 : 20 AM" readonly="readonly">
+												</div>
+											</div>
+											<div class="ele">
+												<div class="inputBox Edit_User">
+													<div class="thumb">
+														<img src="../static/images/common/icon/icon_person_small.png" alt="" name="cup10202_createdByPhotoUrl" id="cup10202_createdByPhotoUrl">
+													</div>
+													<input type="text" name="cup10202_createdBy" class="inp Readonly" id="cup10202_createdBy" value="Park, JungIl" readonly="readonly">
+												</div>
+											</div>
+										</dd>
+									</dl>
+									<dl class="inpItem2">
+										<dt id="cup10202_modifiedOnLb">Modified on</dt>
+										<dd>
+											<div class="ele">
+												<div class="inputBox Edit_date single">
+													<input type="text" name="cup10202_modifiedDate" class="inp Readonly" id="cup10202_modifiedDate" value="12-14-2018" readonly/>
+												</div>
+												<div class="inputBox Edit_Time readonly">
+													<input type="text" name="cup10202_modifiedTime" class="inp Readonly" id="cup10202_modifiedTime" value="10 : 20 AM" readonly="readonly">
+												</div>
+											</div>
+											<div class="ele">
+												<div class="inputBox Edit_User">
+													<div class="thumb">
+														<img src="../static/images/common/icon/icon_person_small.png" alt="" name="cup10202_modifiedByPhotoUrl" id="cup10202_modifiedByPhotoUrl">
+													</div>
+													<input type="text" name="cup10202_modifiedBy" class="inp Readonly" id="cup10202_modifiedBy" value="Park, JungIl" readonly="readonly">
+												</div>
+											</div>
+										</dd>
+									</dl>
+
+									<h3 class="tit" id="cup10202_inviteUserLb">Invite User</h3>
+									<div class="iTxtCont">
+										<p class="txt" id="cup10202_inviteUserDescriptionLb">
+											Invite User allow you to invite other users to manage your subscription. Invited user will be belong to your organization
+										</p>
+										<div class="btnBox">
+											<button type="button" class="btn" id="cup10202_inviteUser">Invite User</button>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="editBtns">
+								<button type="button" class="btn basic" id="cup10202_save">Save</button>
+							</div>
+						</div>
+					</form>
+					<!--// 컨텐츠 영역 -->
+				</div>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('form').areYouSure();
+		});
+	</script>
+</body>
+</html>

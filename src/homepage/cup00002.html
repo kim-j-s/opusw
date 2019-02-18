@@ -9,11 +9,13 @@
 					<dl class="inpItem">
 						<dt id="i00002_basicLb">Basic</dt>
 						<dd class="tr">
-							<div class="inputBox count">
-								<button type="button" class="plus"><span>Plus</span></button> <!-- 2019-02-01 수정 -->
-								<input type="number" name="i00002_basic" class="inp Edit_Count" id="i00002_basic" min="0" value="15">
-								<button type="button" class="minus"><span>Minus</span></button> <!-- 2019-02-01 수정 -->
-							</div>
+							<!-- 2019-02-01 수정 -->
+							@@include('include/input_counter.html',{
+								"id": "i00002_basic",
+								"class": "",
+								"etc": " value='15'"
+							})
+							<!--// 2019-02-01 수정 -->
 							<div class="inputBox readonly amount">
 								<input type="text" name="" class="inp Readonly" id="" readonly="readonly" value="USD">
 								<input type="text" name="i00002_basicPrice" class="inp Readonly" id="i00002_basicPrice" readonly="readonly" value="100.00">

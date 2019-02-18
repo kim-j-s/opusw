@@ -1,0 +1,315 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<!-- 헤더영역 -->
+		@@include('include/header.html')
+		<!-- //헤더영역 -->
+		<section id="container">
+			<div class="inner">
+				@@include('include/nav.html')
+				<div class="content editBtns">
+					@@include('include/tabWrap.html')	
+					<!-- 컨텐츠 영역 -->
+					<form action="">
+						<div class="layout Layout_Sidebar">
+							<h2 class="tit" id="cup10602_billingPolicy">Billing Policy</h2>
+							<div class="serviceCode">
+								<div class="srvNum" id="">
+									<div class="inputBox inpNone">
+										<input type="text" name="cup10602_billingPolicyIDLb" class="inp" id="cup10602_billingPolicyIDLb" readonly="readonly" value="P10000001">
+									</div>
+								</div>
+								<div class="actChk">
+									<div class="switchChk">
+										<input type="checkbox" name="cup10602_activeChk" id="cup10602_activeChk" checked="checked">
+										<label for="cup10602_activeChk" id="cup10602_active">
+											<span class="txt1">Inactive</span>
+											<span class="txt2">Active</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="inner">
+								<div class="lsCont">
+									<h3 class="tit" id="cup10602_basicLb">Basic</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10602_billingPolicyNameLb">Billing Policy Name</dt>
+												<dd>
+													<div class="inputBox full">
+														<input type="text" name="cup10602_billingPolicyName" class="inp Mandate" id="cup10602_billingPolicyName" placeholder="" maxlength="80">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10602_customerTypeLb">Customer Type</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "cup10602_customerType",
+														"class": " Mandate",
+														"placeholder": "Select a Type"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10602_billingPartyLb">Billing Party</dt>
+												<dd>
+													<div class="inputBox Edit_Organization full">
+														<div class="thumb">
+															<img src="../static/images/common/icon/icon_logo_small.png" alt="" name="cup10602_billingPartylogoUrl" id="cup10602_billingPartylogoUrl" />
+														</div>
+														<input type="text" name="cup10602_billingParty" class="inp autoSch Edit_Organization name" id="cup10602_billingParty" placeholder="">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10602_billingCurrencyLb">Billing Currency</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "cup10602_billingCurrency",
+														"class": " Mandate",
+														"placeholder": "Select a Currency"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10602_productLineLb">Product Line</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "cup10602_productLine",
+														"class": " Mandate",
+														"placeholder": "Select a Product Line"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10602_billingContactLb">Billing Contact</dt>
+												<dd>
+													<div class="inputBox Edit_User">
+														<div class="thumb">
+															<img src="../static/images/common/icon/icon_person_small.png" alt="" name="cup10602_billingContactPhotoUrl" id="cup10602_billingContactPhotoUrl" />
+														</div>
+														<input type="text" name="cup10602_billingContact" class="inp autoSch Edit_User name" id="cup10602_billingContact" placeholder="">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10602_paymentMethodLb">Payment Method</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "cup10602_paymentMethod",
+														"class": " Mandate",
+														"placeholder": "Select a Method"
+													})
+												</dd>
+											</dl>
+										</li>
+									</ul>
+
+									<h3 class="tit" id="cup10602_billingRulesLb">Billing Rule</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10602_billingStartLb">Billing Started on</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "cup10602_billingStartType",
+														"class": " small",
+														"placeholder": "Type"
+													})
+													@@include('include/input_counter.html',{
+														"id": "cup10602_billingStartDay",
+														"class": "",
+														"etc": " placeholder='Day(s)'"
+													})
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Billing Started on</strong>
+															<p class="txt">Codition of Date the <br />billing begins</p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10602_creditTermLb">Credit Term</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "cup10602_creditTermType",
+														"class": " small",
+														"placeholder": "Type"
+													})
+													@@include('include/input_counter.html',{
+														"id": "cup10602_creditTermDay",
+														"class": "",
+														"etc": " placeholder='Day(s)'"
+													})
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Credit Term</strong>
+															<p class="txt">Invoice Due Date <br />Specification Condition</p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10602_invoiceStartLb">Invoice Started on</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "cup10602_invoiceStartType",
+														"class": " small",
+														"placeholder": "Type"
+													})
+													@@include('include/input_counter.html',{
+														"id": "cup10602_invoiceStartDay",
+														"class": "",
+														"etc": " placeholder='Day(s)'"
+													})
+													<div class="tooltip">
+														<div class="tips">
+															<strong class="tit">Invoice Started on</strong>
+															<p class="txt">Condition of Invoice <br />created on the same <br />date each month</p>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+
+									<h3 class="tit" id="cup10602_invoiceOptionLb">Invoice Option</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10602_invoiceLogoLb">Invoice Logo</dt>
+												<dd>
+													<div class="imgAdd">
+														<div class="imgBox">
+															<img src="../static/images/sample/sample_logo.png" alt="" class="Image_Logo_Large" name="cup10602_invoiceLogo" id="cup10602_invoiceLogo" />
+															<button type="button" class="imgRemove">Delete</button>
+														</div>
+														<div class="changeBtn">
+															<div class="fileBox">
+																<label for="imgUpload" id="cup10602_changeLogo">Change Logo</label>
+																<input type="file" name="imgUpload" id="imgUpload" class="fileUpload" />
+															</div>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="cup10602_invoiceRemarksLb">Invoice Remarks</dt>
+												<dd>
+													<div class="textareaDiv">
+														<textarea name="cup10602_invoicentRemarks" id="cup10602_invoicentRemarks" cols="30" rows="10" class="textarea" maxlength="500"></textarea>
+														<div class="byte"><span class="bold">100</span>/150</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+								</div>
+
+								<div class="lsCont fix">
+									<h3 class="tit" id="cup10602_recordLb">Record</h3>
+									<dl class="inpItem2">
+										<dt id="cup10602_createdOnLb">Created on</dt>
+										<dd>
+											<div class="ele">
+												<div class="inputBox Edit_date single">
+													<input type="text" name="cup10602_createDate" class="inp Readonly" id="cup10602_createDate" value="12-14-2018" readonly/>
+												</div>
+												<div class="inputBox Edit_Time readonly">
+													<input type="text" name="cup10602_createTime" class="inp Readonly" id="cup10602_createTime" value="10 : 20 AM" readonly="readonly">
+												</div>
+											</div>
+											<div class="ele">
+												<div class="inputBox Edit_User">
+													<div class="thumb">
+														<img src="../static/images/common/icon/icon_person_small.png" alt="" name="cup10602_createdByPhotoUrl" id="cup10602_createdByPhotoUrl" />
+													</div>
+													<input type="text" name="cup10602_createdBy" class="inp Readonly" id="cup10602_createdBy" value="Park, JungIl" readonly="readonly">
+												</div>
+											</div>
+										</dd>
+									</dl>
+									<dl class="inpItem2">
+										<dt id="cup10602_modifiedOnLb">Modified on</dt>
+										<dd>
+											<div class="ele">
+												<div class="inputBox Edit_date single">
+													<input type="text" name="cup10602_modifiedDate" class="inp Readonly" id="cup10602_modifiedDate" value="12-14-2018" readonly/>
+												</div>
+												<div class="inputBox Edit_Time readonly">
+													<input type="text" name="cup10602_modifiedTime" class="inp Readonly" id="cup10602_modifiedTime" value="10 : 20 AM" readonly="readonly">
+												</div>
+											</div>
+											<div class="ele">
+												<div class="inputBox Edit_User">
+													<div class="thumb">
+														<img src="../static/images/common/icon/icon_person_small.png" alt="" name="cup10602_modifiedByPhotoUrl" id="cup10602_modifiedByPhotoUrl" />
+													</div>
+													<input type="text" name="cup10602_modifiedBy" class="inp Readonly" id="cup10602_modifiedBy" value="Park, JungIl" readonly="readonly">
+												</div>
+											</div>
+										</dd>
+									</dl>
+
+									<h3 class="tit" id="cup10602_onlineDefaultLb">Online Default</h3>
+									<dl class="inpItem2">
+										<dt id="cup10602_onlineDefaultPolicyLb">Online Default Policy</dt>
+										<dd>
+											<div class="ele">
+												<div class="inputBox schType ty1">
+													<div class="inner">
+														<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+														<input type="text" name="cup10602_onlineDefaultPolicy" class="inp autoSch ty1 name" id="cup10602_onlineDefaultPolicy" placeholder="">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</div>
+											</div>
+											<div class="ele tr">
+												<button type="button" class="btn" id="cup10602_setItDefault">Set it Online Default</button>
+											</div>
+										</dd>
+									</dl>
+
+								</div>
+							</div>
+							<div class="editBtns">
+								<button type="button" class="btn basic" id="cup10602_Save">Save</button> 
+							</div>
+						</div>
+					</form>
+					<!--// 컨텐츠 영역 -->
+				</div>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('form').areYouSure();
+		});
+	</script>
+</body>
+</html>

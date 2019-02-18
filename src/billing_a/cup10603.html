@@ -1,0 +1,77 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<!-- 헤더영역 -->
+		@@include('include/header.html')
+		<!-- //헤더영역 -->
+		<section id="container">
+			<div class="inner">
+				@@include('include/nav.html')
+				<div class="content">
+					@@include('include/tabWrap.html')
+					<!-- 컨텐츠 영역 -->
+					<form action="">
+					<div class="layout Layout_List">
+						<h2 class="tit" id="i10603-InvoiceListLb">Invoice List</h2>
+						<div class="schOptionGroup">
+							<ul class="itemList1">
+								<li>
+									<dl class="inpItem">
+										<dt id="i10603-kewordLb">Keyword</dt>
+										<dd>
+											<div class="inputBox keyword">
+												<div class="inner">
+													<input type="text" name="i10603_keword" class="inp autoSch keyword name" id="i10603_keword" placeholder="ID, Name, Bill to">
+													<button type="button" class="inpReset"></button>
+												</div>
+											</div>
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="i10603-paidStatusLb">Paid</dt>
+										<dd>
+											@@include('include/combobox.html',{
+												"id": "i10603-paidStatus",
+												"class": " Mandate",
+												"placeholder": "Select a Status"
+											})
+										</dd>
+									</dl>
+								</li>
+								<li>
+									<dl class="inpItem">
+										<dt id="i10603-creationLb">Creation</dt>
+										<dd>
+											@@include('include/daterangepicker.html',{
+												"id": "i10603_creation"
+											})
+										</dd>
+									</dl>
+								</li>
+							</ul>
+							<button type="button" class="btn schBtn" id="i10603-search">Search</button>
+						</div>
+
+						<h3 class="tit" id="i10603-invoicesLb">Invoices</h3>
+						<div class="ibsheepTop">
+							@@include('include/sheet_filter.html',{
+								"id": "i10603-filterStatus",
+								"class": " filter",
+								"placeholder": "Search tags..."
+							})
+							<button type="button" class="btn" id="i10603-addInvoice">Add Invoice</button>
+						</div>
+						<div class="ibsheetDiv">
+							ibsheet
+						</div>
+					</div>
+					</form>
+					<!--// 컨텐츠 영역 -->
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
