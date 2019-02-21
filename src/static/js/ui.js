@@ -35,6 +35,7 @@ $(function(){
 	 * gnb 
 	 * ============================== */
 	Gnb();
+	GnbListClip();
 
 	/* ==============================
 	 * main 
@@ -77,7 +78,7 @@ $(function(){
 	$(".autoSch.ty1").easyAutocomplete(Comp_options);
 	$(".autoSch.ty2").easyAutocomplete(city_options);
 	$(".autoSch.ty3").easyAutocomplete(state_options);
-	$(".autoSch.keyword").easyAutocomplete(state_keyword);
+	//$(".autoSch.keyword").easyAutocomplete(state_keyword);
 	$(".autoSch.Edit_User").easyAutocomplete(person);
 	$(".autoSch.Edit_Organization").easyAutocomplete(company);	
 
@@ -93,7 +94,11 @@ $(function(){
 
 	// auto complete combobox
 	ACC();
-	$( ".comboSelect" ).combobox();
+	$('.comboSelect').combobox();
+	if ( $('.comboBox').hasClass('inputFocus') )
+	{
+		$(this).find('.custom-combobox-input').focus();
+	}
 
 	// time input
 	tsChk();
@@ -110,6 +115,7 @@ $(function(){
 			'This Month': [moment().startOf('month'), moment().endOf('month')],
 			'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
 		},
+		"autoUpdateInput": true,
 		"locale": {
 			"format": "MM/DD/YYYY",
 			"separator": " - ",
@@ -144,7 +150,7 @@ $(function(){
 			],
 			"firstDay": 1
 		},
-			"alwaysShowCalendars": false
+			"alwaysShowCalendars": true
 			//"startDate": "01/22/2019",
 			//"endDate": "01/28/2019"
 		}, function(start, end, label) {
@@ -154,6 +160,7 @@ $(function(){
 
 	$('.datesingle').daterangepicker({
 		"singleDatePicker": true,
+		"autoUpdateInput": true,
 		"locale": {
 			"format": "MM/DD/YYYY",
 			"separator": " - ",
@@ -188,15 +195,15 @@ $(function(){
 			],
 			"firstDay": 1
 		},
-			"alwaysShowCalendars": false
+			"alwaysShowCalendars": true
 		}, function(start, end, label) {
 		console.log('New date range selected: ' + start.format('YYYY/MM/DD') + ' to ' + end.format('YYYY/MM/DD') + ' (predefined range: ' + label + ')');
 	});
+	$('.datesingle').val('');
 
 	$('.Edit_date > .inp').on('click', function(){
 		$(this).select();
 	});
-
 
 	// images upload
 	jQuery('.fileUpload').on('change', function () {
@@ -249,7 +256,7 @@ $(function(){
 
 // 페이지 로드 시 탭 포커스
 $(window).load(function(){
-	$('.tabFocus').focus();	
+	$('.inputFocus').focus();
 });
 // 페이지 로드 시 탭 포커스
 
@@ -282,7 +289,6 @@ function Gnb() {
 		cnt++;
 		if (cnt == 1)
 		{
-			console.log('접기');
 			$(this).addClass('on');
 
 			$('nav').stop(true).animate({
@@ -294,7 +300,6 @@ function Gnb() {
 			},500);
 		} else if (cnt != 0)
 		{
-			console.log('펼치기');
 			$(this).removeClass('on');
 			$('nav').stop(true).animate({
 				width:'285px'
@@ -312,16 +317,31 @@ function GnbList() {
 	var GnbListTit = $('.gnbList').find('.gnbTit');
 	$(GnbListTit).each(function(z){
 		$(this).on('click', function(){
-			console.log(z);
-			if ( $(this).next().css('display') == 'none')
+			if ( $(this).next().css('display') == 'none' && !$(this).closest('li').find('.clip').hasClass('on') )
 			{
 				$(this).addClass('on').next().slideDown(500);
-			} else {
+			} else if ($(this).next().css('display') == 'block' && !$(this).closest('li').find('.clip').hasClass('on'))
+			{
 				$(this).removeClass('on').next().slideUp(500);
 			}
 		});
 	});
 }
+
+function GnbListClip() {
+	$('.gnbList').find('.clip').each(function(x){
+		$(this).on('click', function(){
+			if ( !$(this).hasClass('on') )
+			{
+				$(this).addClass('on');
+				$(this).prev('ul').slideDown(500);
+			} else {
+				$(this).removeClass('on');
+			}
+		});
+	});
+}
+
 
 // util menu display
 function UtilMenu() {
@@ -684,10 +704,9 @@ var Comp_options = {
 var city_options = {
 	url: "../static/json/sample_city.json",
 	getValue: function(element) {
-		//return element.name;
 		return element.name+", "+element.code+", "+element.keyword;
 	},
-	minCharNumber : 3,
+	//minCharNumber : 3,
 	template: {
 		type: "custom",
 		method: function(value, item) {

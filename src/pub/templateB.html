@@ -103,6 +103,32 @@
 	</div>
 	<!-- //souce code 뷰어 -->
 
+	<h2>input타입 - Readonly double</h2>
+	<!-- souce code 뷰어 -->
+	<dl class="inpItem">
+		<dt id="i00006_cityLb">City, State/Province</dt>
+		<dd>
+			<div class="inputBox double">
+				<input type="text" name="i00006_city" id="i00006_city" class="inp Readonly" readonly="readonly" value="City" maxlength="50" tabindex="-1">
+				<input type="text" name="i00006_stateProvince" id="i00006_stateProvince" class="inp Readonly" readonly="readonly" value="State" maxlength="50" tabindex="-1">
+			</div>
+		</dd>
+	</dl>
+	<div class="box">
+		<pre class="brush: html;">
+			<dl class="inpItem">
+				<dt id="">City, State/Province</dt>
+				<dd>
+					<div class="inputBox double">
+						<input type="text" name="" id="" class="inp Readonly" readonly="readonly" value="" maxlength="50" tabindex="-1">
+						<input type="text" name="" id="" class="inp Readonly" readonly="readonly" value="" maxlength="50" tabindex="-1">
+					</div>
+				</dd>
+			</dl>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+
 	<h2>input타입 - Warning</h2>
 	<div class="inputBox">
 		<input type="text" name="" class="inp Warning" id="">
@@ -311,7 +337,21 @@
 			</div>
 		</pre>
 	</div>
-	<!-- //souce code 뷰어 -->	
+	<!-- //souce code 뷰어 -->
+
+	<h2>금액 표기 - 단일 표기</h2>
+	<div class="inputBox readonly amount single">
+		<input type="text" name="" class="inp Readonly" id="" readonly="readonly" value="1,500.00">
+	</div>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<div class="inputBox readonly amount single">
+				<input type="text" name="" class="inp Readonly" id="" readonly="readonly" value="1,500.00">
+			</div>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
 
 	<h2>체크박스</h2>
 	<div class="checkbox">
@@ -362,6 +402,19 @@
 			</div>
 		</dd>
 	</dl>
+
+	<dl class="inpItem">
+		<dt id="i10003-companyLb">Company</dt>
+		<dd>
+			<div class="inputBox schType ty2 short">
+				<div class="inner">
+					<input type="text" class="inp autoSch ty2 code Readonly" id="n" readonly="readonly">
+					<input type="text" name="" class="inp autoSch ty2 name" id="i10003-company" placeholder="Type Company Name">
+					<button type="button" class="inpReset"></button>
+				</div>
+			</div>
+		</dd>
+	</dl>
 	<!-- souce code 뷰어 -->
 	<textarea class="pubTextarea" name="" id="" cols="30" rows="10">
 <dl class="inpItem">
@@ -378,6 +431,7 @@
 </dl>
 	</textarea>
 	<!-- //souce code 뷰어 -->
+	<p>길이가 짧은 타입은 short 클래스 추가 ex : inputBox schType ty2 short</p>
 
 	<h2>Combobox</h2>
 	@@include('include/combobox.html',{
@@ -418,8 +472,8 @@ value="" 값과 option text를 비교하여 검색하는 기능 두가지가 동
 	<h2>국가선택</h2>
 	<div>
 	@@include('include/CountrySelect.html',{
-		"class": "",
 		"id": "",
+		"class": "",
 		"placeholder": "Type Country"
 	})
 	</div>
@@ -427,8 +481,8 @@ value="" 값과 option text를 비교하여 검색하는 기능 두가지가 동
 	<!-- souce code 뷰어 -->
 	<textarea name="" id="" cols="30" rows="10" class="pubTextarea">
 @@include('include/CountrySelect.html',{
-	"class": "",
 	"id": "",
+	"class": "",
 	"placeholder": "Type Country"
 })
 	</textarea>

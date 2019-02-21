@@ -11,65 +11,72 @@
 					@@include('include/tabWrap.html')
 					<!-- 컨텐츠 영역 -->
 					<form action="">
-					<div class="layout Layout_List">
-						<h2 class="tit" id="i10703_tariffListLb">Tariff List</h2>
-						<div class="schOptionGroup">
-							<ul class="itemList1">
-								<li>
-									<dl class="inpItem">
-										<dt id="">Keyword</dt>
-										<dd>
-											<!-- 2019-02-12 수정 -->
-											<div class="inputBox keyword">
-											<!--// 2019-02-12 수정 -->
-												<div class="inner">
-													<input type="text" name="" class="inp autoSch keyword name" id="" placeholder="">
+						<div class="layout Layout_List">
+							<h2 class="tit" id="i10703_tariffListLb">Tariff List</h2>
+							<div class="schOptionGroup">
+								<ul class="itemList1">
+									<li>
+										<dl class="inpItem">
+											<!-- 2019-02-20 수정 -->
+											<dt id="i10703-keywordLb">Keyword</dt>
+											<dd>
+												<div class="inputBox keyword">
+													<input type="text" name="i10703_keyword" class="inp inputFocus" id="i10703_keyword" placeholder="ID, Name" maxlength="50">
 													<button type="button" class="inpReset"></button>
 												</div>
-											</div>
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl class="inpItem">
-										<dt>Customer Type</dt>
-										<dd>
-											@@include('include/combobox.html',{
-												"id": "",
-												"class": "",
-												"placeholder": "Select a Type"
-											})
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl class="inpItem">
-										<dt>Creation</dt>
-										<dd>
-											@@include('include/daterangepicker.html',{
-												"id": ""
-											})
-										</dd>
-									</dl>
-								</li>
-							</ul>
-							<button type="button" class="btn schBtn" id="i10703_search">Search</button>
+											</dd>
+											<!--// 2019-02-20 수정 -->
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<!-- 2019-02-20 수정 -->
+											<dt id="i10703-customerTypeLb">Customer Type</dt>
+											<dd>
+												@@include('include/combobox.html',{
+													"id": "i10703-customerType",
+													"class": "",
+													"placeholder": "Select a Type"
+												})
+											</dd>
+											<!--// 2019-02-20 수정 -->
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<!-- 2019-02-20 수정 -->
+											<dt id="i10703-creationLb">Creation</dt>
+											<dd>
+												@@include('include/daterangepicker.html',{
+													"id": "i10703_creation"
+												})
+											</dd>
+											<!--// 2019-02-20 수정 -->
+										</dl>
+									</li>
+								</ul>
+								<button type="button" class="btn schBtn" id="i10703_search">Search</button>
+							</div>
+							<h3 class="tit" id="i10703_tariffsLb">Tariffs</h3>
+							<div class="ibsheepTop">
+								<!-- 2019-02-12 수정 -->
+								@@include('include/sheet_filter.html',{
+									"id": "i10703_filterStatus",
+									"class": " filter",
+									"placeholder": "Search tags..."
+								})
+								<!--// 2019-02-12 수정 -->
+								<!-- 2019-02-21 수정 -->
+								<div class="btns">
+									<button type="button" class="btn" id="i10703-copyTariff">Copy Tariff</button>
+									<button type="button" class="btn" id="i10703_addTariff">Add Tariff</button>
+								</div>
+								<!--// 2019-02-21 수정 -->
+							</div>
+							<div class="ibsheetDiv">
+								ibsheet
+							</div>
 						</div>
-						<h3 class="tit" id="i10703_tariffsLb">Tariffs</h3>
-						<div class="ibsheepTop">
-							<!-- 2019-02-12 수정 -->
-							@@include('include/sheet_filter.html',{
-								"id": "i10703_filterStatus",
-								"class": " filter",
-								"placeholder": "Search tags..."
-							})
-							<!--// 2019-02-12 수정 -->
-							<button type="button" class="btn" id="i10703_addTariff">Add Tariff</button>
-						</div>
-						<div class="ibsheetDiv">
-							ibsheet
-						</div>
-					</div>
 					</form>
 					<!--// 컨텐츠 영역 -->
 				</div>

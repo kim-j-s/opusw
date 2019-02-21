@@ -16,7 +16,7 @@
 							<div class="serviceCode">
 								<div class="srvNum" id="">
 									<div class="inputBox inpNone">
-										<input type="text" name="i10101-userIdLb" class="inp" id="i10101-userIdLb" readonly="readonly" value="U10000001">
+										<input type="text" name="i10101-userIdLb" class="inp" id="i10101-userIdLb" readonly="readonly" value="U10000001" tabindex="-1">
 									</div>
 								</div>
 							</div>
@@ -48,7 +48,9 @@
 												<dt id="i10101-displayNameLb">Display Name</dt>
 												<dd>
 													<div class="inputBox">
-														<input type="text" name="i10101-displayName" class="inp Mandate" id="i10101-displayName" maxlength="50">
+														<!-- 2019-02-20 수정 -->
+														<input type="text" name="i10101-displayName" class="inp Mandate inputFocus" id="i10101-displayName" maxlength="50">
+														<!--// 2019-02-20 수정 -->
 														<button type="button" class="inpReset"></button>
 													</div>
 													<div class="tooltip">
@@ -91,7 +93,7 @@
 												<dt id="i10101-eMailLb">Email</dt>
 												<dd>
 													<div class="inputBox">
-														<input type="text" name="i10101-eMail" class="inp Readonly" id="i10101-eMail" readonly="readonly">
+														<input type="text" name="i10101-eMail" class="inp Readonly" id="i10101-eMail" readonly="readonly" tabindex="-1">
 													</div>
 													<div class="tooltip">
 														<div class="tips" id="i10101-eMailInfo">
@@ -221,10 +223,10 @@
 										<dd>
 											<div class="ele">
 												<div class="inputBox Edit_date single">
-													<input type="text" name="i10101-createDate" class="inp Readonly" id="i10101-createDate" value="12-14-2018" readonly/>
+													<input type="text" name="i10101-createDate" class="inp Readonly" id="i10101-createDate" value="12-14-2018" readonly="readonly" tabindex="-1">
 												</div>
 												<div class="inputBox Edit_Time readonly">
-													<input type="text" name="i10101-createTime" class="inp Readonly" id="i10101-createTime" value="10 : 20 AM" readonly="readonly">
+													<input type="text" name="i10101-createTime" class="inp Readonly" id="i10101-createTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
 												</div>
 											</div>
 										</dd>
@@ -234,10 +236,10 @@
 										<dd>
 											<div class="ele">
 												<div class="inputBox Edit_date single">
-													<input type="text" name="i10101-modifiedDate" class="inp Readonly" id="i10101-modifiedDate" value="12-14-2018" readonly/>
+													<input type="text" name="i10101-modifiedDate" class="inp Readonly" id="i10101-modifiedDate" value="12-14-2018" readonly="readonly" tabindex="-1">
 												</div>
 												<div class="inputBox Edit_Time readonly">
-													<input type="text" name="i10101-modifiedTime" class="inp Readonly" id="i10101-modifiedTime" value="10 : 20 AM" readonly="readonly">
+													<input type="text" name="i10101-modifiedTime" class="inp Readonly" id="i10101-modifiedTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
 												</div>
 											</div>
 										</dd>

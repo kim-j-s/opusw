@@ -17,17 +17,15 @@
 								<ul class="itemList1">
 									<li>
 										<dl class="inpItem">
-											<dt id="i10201-kewordLb">Keyword</dt>
+											<!-- 2019-02-20 수정 -->
+											<dt id="i10201-keywordLb">Keyword</dt>
 											<dd>
-												<!-- 2019-02-12 수정 -->
-												<div class="inputBox keyword">
-												<!--// 2019-02-12 수정 -->
-													<div class="inner">
-														<input type="text" name="i10201-keword" class="inp autoSch keyword name" id="i10201-keword" placeholder="Organization, Alias, Company" maxlength="50">
-														<button type="button" class="inpReset"></button>
-													</div>
+												<div class="inputBox">
+													<input type="text" name="i10201-keyword" class="inp inputFocus" id="i10201-keyword" placeholder="Organization, Alias, Company" maxlength="50">
+													<button type="button" class="inpReset"></button>
 												</div>
 											</dd>
+											<!--// 2019-02-20 수정 -->
 										</dl>
 									</li>
 									<li>
@@ -36,7 +34,7 @@
 											<dd>
 												@@include('include/CountrySelect.html',{
 													"id": "i10201-country",
-													"class": " Mandate",
+													"class": "",
 													"placeholder": "Select Country"
 												})
 											</dd>
@@ -64,7 +62,11 @@
 									"placeholder": "Search tags..."
 								})
 								<!--// 2019-02-12 수정 -->
-								<button type="button" class="btn" id="">Add Organization</button>
+								<!-- 2019-02-21 수정 -->
+								<div class="btns">
+									<button type="button" class="btn" id="">Add Organization</button>
+								</div>
+								<!--// 2019-02-21 수정 -->
 							</div>
 							<div class="ibsheetDiv">
 								ibsheet

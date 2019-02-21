@@ -1,0 +1,446 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<!-- 헤더영역 -->
+		@@include('include/header.html')
+		<!-- //헤더영역 -->
+		<section id="container">
+			<div class="inner">
+				@@include('include/nav.html')
+				<div class="content editBtns">
+					@@include('include/tabWrap.html')					
+					<!-- 컨텐츠 영역 -->
+					<form action="">
+						<div class="layout Layout_Sidebar">
+							<h2 class="tit" id="10608_invoiceLb">Invoice</h2>
+							<div class="serviceCode">
+								<div class="srvNum" id="">
+									<div class="inputBox inpNone">
+										<input type="text" name="10608_invoiceIdLb" class="inp" id="10608_invoiceIdLb" readonly="readonly" value="I10000001" tabindex="-1">
+									</div>
+								</div>
+							</div>
+							<div class="inner">
+								<div class="lsCont">
+									<h3 class="tit" id="10608_basicLb">Basic</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_invoiceNameLb">Invoice Name</dt>
+												<dd>
+													<div class="inputBox full">
+														<input type="text" name="10608_invoiceName" class="inp Mandate inputFocus" id="10608_invoiceName" placeholder="Invoice Name" maxlength="80">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_invoiceStatusLb">Invoice Status</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="10608_invoiceStatus" class="inp Readonly" id="10608_invoiceStatus" readonly="readonly" value="Requested" tabindex="-1">
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_subscriptionLb">Subscription</dt>
+												<dd>
+													<div class="inputBox schType ty1">
+														<div class="inner">
+															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly" tabindex="-1">
+															<input type="text" name="10608_subscription" class="inp autoSch ty1 Readonly" id="10608_subscription" placeholder="" readonly="readonly" tabindex="-1">
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_paymentMethodLb">Payment Method</dt>
+												<dd>
+													<div class="inputBox">
+														<input type="text" name="10608_paymentMethod" class="inp Readonly" id="10608_paymentMethod" readonly="readonly" value="Manual – Bank Account" tabindex="-1">
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_billingPartyLb">Billing Party</dt>
+												<dd>
+													<div class="inputBox Edit_Organization full">
+														<div class="thumb">
+															<img src="../static/images/common/icon/icon_logo_small.png" alt="" name="10608_billingPartyLogoUrl" id="10608_billingPartyLogoUrl" />
+														</div>
+														<input type="text" name="10608_billingParty" class="inp autoSch Edit_Organization Readonly" id="10608_billingParty" placeholder="" readonly="readonly" tabindex="-1">
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_billingContactLb">Billing Contact</dt>
+												<dd>
+													<div class="inputBox Edit_User">
+														<div class="thumb">
+															<img src="../static/images/common/icon/icon_person_small.png" alt="" name="10608_billingContactPhotoUrl" id="10608_billingContactPhotoUrl" />
+														</div>
+														<input type="text" name="10608_billingContact" class="inp Readonly" id="10608_billingContact" value="Park, JungIl" readonly="readonly" tabindex="-1">
+													</div>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+
+									<h3 class="tit" id="10608_billToPartyLb">Bill to Party</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_billtoLb">Bill to</dt>
+												<dd>
+													<div class="inputBox Edit_Organization full">
+														<div class="thumb">
+															<img src="../static/images/common/icon/icon_logo_small.png" alt="" name="10608_billtoLogoUrl" id="10608_billtoLogoUrl" />
+														</div>
+														<input type="text" name="10608_billto" class="inp autoSch Edit_Organization Readonly" id="10608_billto" placeholder="" readonly="readonly" tabindex="-1">
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_attentionLb">Attention</dt>
+												<dd>
+													<div class="inputBox Edit_User">
+														<div class="thumb">
+															<img src="../static/images/common/icon/icon_person_small.png" alt="" name="10608_attentionPhotoUrl" id="10608_attentionPhotoUrl" />
+														</div>
+														<input type="text" name="10608_attention" class="inp Readonly" id="10608_attention" value="Park, JungIl" readonly="readonly" tabindex="-1">
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_addressLine1Lb">Address Line1</dt>
+												<dd>
+													<div class="inputBox full">
+														<input type="text" name="10608_addressLine1" class="inp" id="10608_addressLine1" placeholder="Type Street Address, P.O. box" maxlength="80">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_addressLine2Lb">Address Line2</dt>
+												<dd>
+													<div class="inputBox full">
+														<input type="text" name="10608_addressLine2" class="inp" id="10608_addressLine2" placeholder="Type Apartment, Suite, Unit, Building, Floor" maxlength="80">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_cityLb">City</dt>
+												<dd>
+													<div class="inputBox schType ty2 short">
+														<div class="inner">
+															<input type="text" name="" class="inp autoSch ty2 code Readonly" id="" placeholder="" readonly="readonly" maxlength="50" tabindex="-1">
+															<input type="text" name="10608_city" class="inp autoSch Mandate ty2 name Mandate" id="10608_city" placeholder="City" maxlength="50">
+															<button type="button" class="inpReset"></button>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_stateLb">State/Province</dt>
+												<dd>
+													<div class="inputBox schType ty2 short">
+														<div class="inner">
+															<input type="text" name="" class="inp autoSch ty2 code Readonly" id="" placeholder="" readonly="readonly" maxlength="50" tabindex="-1">
+															<input type="text" name="10608_stateProvince" class="inp autoSch ty2 name Mandate" id="10608_stateProvince" placeholder="State/Province" maxlength="50">
+															<button type="button" class="inpReset"></button>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_countryLb">Country</dt>
+												<dd>
+													@@include('include/CountrySelect.html',{
+														"id": "10608_country",
+														"class": " Mandate",
+														"placeholder": "Country"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_zipCodeLb">Zip Code</dt>
+												<dd>
+													<div class="inputBox zipCode single">
+														<div class="inner">
+															<input type="text" name="10608_zipCode" class="inp" id="10608_zipCode" placeholder="Zip Code" maxlength="50">
+															<button type="button" class="inpReset"></button>
+														</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_departmentLb">Department</dt>
+												<dd>
+													<div class="inputBox full">
+														<input type="text" name="10608_department" class="inp" id="10608_department" placeholder="" maxlength="50">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</dd>
+											</dl>
+										</li>
+									</ul>									
+
+									<h3 class="tit" id="10608_headerLb">Header</h3>
+									<ul class="itemList2">
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_invoiceDateLb">Invoice Date</dt>
+												<dd>
+													@@include('include/datesinglepicker.html',{
+														"id": "10608_invoiceDate",
+														"class": " Mandate"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_creditTermLb">Credit Term</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "10608_creditTermType",
+														"class": " small Mandate",
+														"placeholder": "Type"
+													})
+													@@include('include/input_counter.html',{
+														"id": "10608_creditTermDay",
+														"class": " Mandate",
+														"placeholder": "Day(s)"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_dueDateLb">Due Date</dt>
+												<dd>
+													@@include('include/datesinglepicker.html',{
+														"id": "10608_dueDate",
+														"class": " Mandate"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_invoiceCurrencyLb">Invoice Currency</dt>
+												<dd>
+													@@include('include/combobox.html',{
+														"id": "10608_invoiceCurrency",
+														"class": " Mandate",
+														"placeholder": "Select a Currency"
+													})
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_memoLb">Memo</dt>
+												<dd>
+													<div class="textareaDiv">
+														<textarea name="10608_memo" id="10608_memo" cols="30" rows="10" class="textarea" maxlength="500" placeholder="Type Invoice Memo"></textarea>
+														<div class="byte"><span class="bold">100</span>/150</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+										<li>
+											<dl class="inpItem">
+												<dt id="10608_invoiceRemarksLb">Invoice Remarks</dt>
+												<dd>
+													<div class="textareaDiv">
+														<textarea name="10608_invoiceRemarks" id="10608_invoiceRemarks" cols="30" rows="10" class="textarea" maxlength="500"></textarea>
+														<div class="byte"><span class="bold">100</span>/150</div>
+													</div>
+												</dd>
+											</dl>
+										</li>
+									</ul>
+
+									<h3 class="tit" id="10608_linesLb">Lines</h3>
+									<div class="ibsheetDiv">
+										ibsheet
+									</div>
+								</div>
+
+								<div class="lsCont fix">
+									<h3 class="tit" id="10608_summaryLb">Summary</h3>
+									<dl class="inpItem2">
+										<dt id="10608_subTotalLb">Sub Total</dt>
+										<dd>
+											<div class="inputBox readonly amount single">
+												<input type="text" name="10608_subTotal" class="inp Readonly" id="10608_subTotal" readonly="readonly" value="8,525.25" tabindex="-1">
+											</div>
+										</dd>
+									</dl>
+									<dl class="inpItem2">
+										<dt id="10608_taxLb">TAX</dt>
+										<dd>
+											<div class="inputBox readonly amount single">
+												<input type="text" name="10608_tax" class="inp Readonly" id="10608_tax" readonly="readonly" value="0.00" tabindex="-1">
+											</div>
+										</dd>
+									</dl>
+									<dl class="inpItem2 total">
+										<dt id="10608_invoiceTotalLb">Invoice Total</dt>
+										<dd>
+											<div class="inputBox readonly amount single">
+												<input type="text" name="10608_invoiceTotal" class="inp Readonly bold" id="10608_invoiceTotal" readonly="readonly" value="8,525.25" tabindex="-1">
+											</div>
+										</dd>
+									</dl>
+									<div class="inpItem2Group">
+										<dl class="inpItem2">
+											<dt id="10608_paidLb">Paid</dt>
+											<dd>
+												<div class="inputBox readonly amount single">
+													<input type="text" name="10608_paid" class="inp Readonly" id="10608_paid" readonly="readonly" value="0.00" tabindex="-1">
+												</div>
+											</dd>
+										</dl>
+										<dl class="inpItem2">
+											<dt id="10608_lastPaidLb">Last Paid on</dt>
+											<dd>
+												<div class="inputBox Edit_date single">
+													<input type="text" name="10608_lastPaid" class="inp Readonly" id="10608_lastPaid" value="12-14-2018" readonly="readonly" tabindex="-1">
+												</div>
+											</dd>
+										</dl>
+									</div>
+									<dl class="inpItem2 total">
+										<dt id="10608_balanceTotalLb">Balance Total</dt>
+										<dd>
+											<div class="inputBox readonly amount single">
+												<input type="text" name="10608_balanceTotal" class="inp Readonly bold" id="10608_balanceTotal" readonly="readonly" value="8,525.25" tabindex="-1">
+											</div>
+										</dd>
+									</dl>
+
+									<h3 class="tit" id="10608_internalNoteLb">Internal Note</h3>
+									<dl class="inpItem2">
+										<dt id="10608_internalNotesLb">Internal Notes</dt>
+										<dd>
+											<div class="textareaDiv">
+												<textarea name="10608_internalNotes" id="10608_internalNotes" cols="30" rows="10" class="textarea" maxlength="500"></textarea>
+												<div class="byte"><span class="bold">100</span>/150</div>
+											</div>
+										</dd>
+									</dl>
+
+									<h3 class="tit" id="10608_recordLb">Record</h3>
+									<dl class="inpItem2">
+										<dt id="10608_createOnLb">Created on</dt>
+										<dd>
+											<div class="ele">
+												<div class="inputBox Edit_date single">
+													<input type="text" name="10608_createDate" class="inp Readonly" id="10608_createDate" value="12-14-2018" readonly="readonly" tabindex="-1">
+												</div>
+												<div class="inputBox Edit_Time readonly">
+													<input type="text" name="10608_createTime" class="inp Readonly" id="10608_createTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
+												</div>
+											</div>
+											<div class="ele">
+												<div class="inputBox Edit_User">
+													<div class="thumb">
+														<img src="../static/images/common/icon/icon_person_small.png" alt="" name="10608_createdByPhotoUrl" id="10608_createdByPhotoUrl" />
+													</div>
+													<input type="text" name="10608_createdBy" class="inp Readonly" id="10608_createdBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
+												</div>
+											</div>
+										</dd>
+									</dl>
+									<dl class="inpItem2">
+										<dt id="10608_modifiedOnLb">Modified on</dt>
+										<dd>
+											<div class="ele">
+												<div class="inputBox Edit_date single">
+													<input type="text" name="10608_modifiedDate" class="inp Readonly" id="10608_modifiedDate" value="12-14-2018" readonly="readonly" tabindex="-1">
+												</div>
+												<div class="inputBox Edit_Time readonly">
+													<input type="text" name="10608_modifiedTime" class="inp Readonly" id="10608_modifiedTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
+												</div>
+											</div>
+											<div class="ele">
+												<div class="inputBox Edit_User">
+													<div class="thumb">
+														<img src="../static/images/common/icon/icon_person_small.png" alt="" name="10608_modifiedByPhotoUrl" id="10608_modifiedByPhotoUrl" />
+													</div>
+													<input type="text" name="10608_modifiedBy" class="inp Readonly" id="10608_modifiedBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
+												</div>
+											</div>
+										</dd>
+									</dl>
+
+									<h3 class="tit" id="10608_statusLb">Status</h3>
+									<dl class="inpItem2">
+										<dt id="10608_changeStatusToLb">Change Status to</dt>
+										<dd>
+											<div class="ele">
+												@@include('include/combobox.html',{
+													"id": "10608_changeStatusTo",
+													"class": " full",
+													"placeholder": "Select a Status"
+												})
+											</div>
+											<div class="ele tr">
+												<button type="button" class="btn" id="10608_changeStatus">Change Status</button>
+											</div>
+										</dd>
+									</dl>
+
+									<h3 class="tit" id="10608_statusHistoryLb">Status History</h3>
+									<div class="ibsheetDiv">
+										ibsheet
+									</div>
+								</div>
+							</div>
+							<div class="editBtns">
+								<button type="button" class="btn basic" id="10608_Download">Download</button> 
+								<button type="button" class="btn basic" id="10608_Save">Save</button> 
+							</div>
+						</div>
+					</form>
+					<!--// 컨텐츠 영역 -->
+				</div>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('form').areYouSure();
+		});
+	</script>
+</body>
+</html>

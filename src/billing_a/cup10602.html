@@ -16,7 +16,7 @@
 							<div class="serviceCode">
 								<div class="srvNum" id="">
 									<div class="inputBox inpNone">
-										<input type="text" name="cup10602_billingPolicyIDLb" class="inp" id="cup10602_billingPolicyIDLb" readonly="readonly" value="P10000001">
+										<input type="text" name="cup10602_billingPolicyIDLb" class="inp" id="cup10602_billingPolicyIDLb" readonly="readonly" value="P10000001" tabindex="-1">
 									</div>
 								</div>
 								<div class="actChk">
@@ -38,7 +38,9 @@
 												<dt id="cup10602_billingPolicyNameLb">Billing Policy Name</dt>
 												<dd>
 													<div class="inputBox full">
-														<input type="text" name="cup10602_billingPolicyName" class="inp Mandate" id="cup10602_billingPolicyName" placeholder="" maxlength="80">
+														<!-- 2019-02-20 수정 -->
+														<input type="text" name="cup10602_billingPolicyName" class="inp Mandate inputFocus" id="cup10602_billingPolicyName" placeholder="" maxlength="80">
+														<!--// 2019-02-20 수정 -->
 														<button type="button" class="inpReset"></button>
 													</div>
 												</dd>
@@ -133,11 +135,13 @@
 														"class": " small",
 														"placeholder": "Type"
 													})
+													<!-- 2019-02-21 수정 -->
 													@@include('include/input_counter.html',{
 														"id": "cup10602_billingStartDay",
 														"class": "",
-														"etc": " placeholder='Day(s)'"
+														"placeholder": "Day(s)"
 													})
+													<!--// 2019-02-21 수정 -->
 													<div class="tooltip">
 														<div class="tips">
 															<strong class="tit">Billing Started on</strong>
@@ -156,11 +160,13 @@
 														"class": " small",
 														"placeholder": "Type"
 													})
+													<!-- 2019-02-21 수정 -->													
 													@@include('include/input_counter.html',{
 														"id": "cup10602_creditTermDay",
 														"class": "",
-														"etc": " placeholder='Day(s)'"
+														"placeholder": "Day(s)"
 													})
+													<!--// 2019-02-21 수정 -->
 													<div class="tooltip">
 														<div class="tips">
 															<strong class="tit">Credit Term</strong>
@@ -179,11 +185,13 @@
 														"class": " small",
 														"placeholder": "Type"
 													})
+													<!-- 2019-02-21 수정 -->
 													@@include('include/input_counter.html',{
 														"id": "cup10602_invoiceStartDay",
 														"class": "",
-														"etc": " placeholder='Day(s)'"
+														"placeholder": "Day(s)"
 													})
+													<!--// 2019-02-21 수정 -->
 													<div class="tooltip">
 														<div class="tips">
 															<strong class="tit">Invoice Started on</strong>
@@ -237,10 +245,10 @@
 										<dd>
 											<div class="ele">
 												<div class="inputBox Edit_date single">
-													<input type="text" name="cup10602_createDate" class="inp Readonly" id="cup10602_createDate" value="12-14-2018" readonly/>
+													<input type="text" name="cup10602_createDate" class="inp Readonly" id="cup10602_createDate" value="12-14-2018" readonly="readonly" tabindex="-1">
 												</div>
 												<div class="inputBox Edit_Time readonly">
-													<input type="text" name="cup10602_createTime" class="inp Readonly" id="cup10602_createTime" value="10 : 20 AM" readonly="readonly">
+													<input type="text" name="cup10602_createTime" class="inp Readonly" id="cup10602_createTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
 												</div>
 											</div>
 											<div class="ele">
@@ -248,7 +256,7 @@
 													<div class="thumb">
 														<img src="../static/images/common/icon/icon_person_small.png" alt="" name="cup10602_createdByPhotoUrl" id="cup10602_createdByPhotoUrl" />
 													</div>
-													<input type="text" name="cup10602_createdBy" class="inp Readonly" id="cup10602_createdBy" value="Park, JungIl" readonly="readonly">
+													<input type="text" name="cup10602_createdBy" class="inp Readonly" id="cup10602_createdBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
 												</div>
 											</div>
 										</dd>
@@ -258,10 +266,10 @@
 										<dd>
 											<div class="ele">
 												<div class="inputBox Edit_date single">
-													<input type="text" name="cup10602_modifiedDate" class="inp Readonly" id="cup10602_modifiedDate" value="12-14-2018" readonly/>
+													<input type="text" name="cup10602_modifiedDate" class="inp Readonly" id="cup10602_modifiedDate" value="12-14-2018" readonly="readonly" tabindex="-1">
 												</div>
 												<div class="inputBox Edit_Time readonly">
-													<input type="text" name="cup10602_modifiedTime" class="inp Readonly" id="cup10602_modifiedTime" value="10 : 20 AM" readonly="readonly">
+													<input type="text" name="cup10602_modifiedTime" class="inp Readonly" id="cup10602_modifiedTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
 												</div>
 											</div>
 											<div class="ele">
@@ -269,7 +277,7 @@
 													<div class="thumb">
 														<img src="../static/images/common/icon/icon_person_small.png" alt="" name="cup10602_modifiedByPhotoUrl" id="cup10602_modifiedByPhotoUrl" />
 													</div>
-													<input type="text" name="cup10602_modifiedBy" class="inp Readonly" id="cup10602_modifiedBy" value="Park, JungIl" readonly="readonly">
+													<input type="text" name="cup10602_modifiedBy" class="inp Readonly" id="cup10602_modifiedBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
 												</div>
 											</div>
 										</dd>
@@ -282,7 +290,7 @@
 											<div class="ele">
 												<div class="inputBox schType ty1">
 													<div class="inner">
-														<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+														<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly" tabindex="-1">
 														<input type="text" name="cup10602_onlineDefaultPolicy" class="inp autoSch ty1 name" id="cup10602_onlineDefaultPolicy" placeholder="">
 														<button type="button" class="inpReset"></button>
 													</div>

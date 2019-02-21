@@ -17,10 +17,18 @@
 					<div class="inpInner">
 						<div class="idArea">
 							<div class="inputBox full"> <!-- 2019-01-29 클래스 추가 -->
-								<input type="password" name="i10002_password" class="inp Mandate pwinp" id="i10002_password" maxlength="50" placeholder="Password" />
+								<!-- 2019-02-20 수정 -->
+								<input type="password" name="i10002_password" class="inp Mandate pwinp inputFocus" id="i10002_password" maxlength="50" 
+								placeholder="Password" />
+								<!--// 2019-02-20 수정 -->
 								<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 							</div>
 						</div>
+						<!-- 2019-02-21 추가 -->
+						<div class="txtBox">
+							<p class="alertMessage" id="i10002-passwordinfoLb">Wrong Password. Please, input the password again.</p>
+						</div>
+						<!--// 2019-02-21 추가 -->
 						<div class="joinBtn">
 							<a href="#" id="i10002_forgotPasswordLb">Forgot password?</a>
 							<div class="btns">

@@ -16,7 +16,7 @@
 							<div class="serviceCode">
 								<div class="srvNum" id="">
 									<div class="inputBox inpNone">
-										<input type="text" name="cup10202_organizationIdLb" class="inp" id="cup10202_organizationIdLb" readonly="readonly" value="O10000001">
+										<input type="text" name="cup10202_organizationIdLb" class="inp" id="cup10202_organizationIdLb" readonly="readonly" value="O10000001" tabindex="-1">
 									</div>
 								</div>
 								<div class="actChk">
@@ -57,7 +57,9 @@
 												<dt id="cup10202_displayNameLb">Display Name</dt>
 												<dd>
 													<div class="inputBox">
-														<input type="text" name="cup10202_displayName" class="inp Mandate" id="cup10202_displayName" maxlength="50">
+														<!-- 2019-02-20 수정 -->
+														<input type="text" name="cup10202_displayName" class="inp Mandate inputFocus" id="cup10202_displayName" maxlength="50">
+														<!--// 2019-02-20 수정 -->
 														<button type="button" class="inpReset"></button>
 													</div>
 													<div class="tooltip">
@@ -118,7 +120,7 @@
 												<dd>
 													<div class="inputBox schType ty1">
 														<div class="inner">
-															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly" tabindex="-1">
 															<input type="text" name="cup10202_company" class="inp autoSch ty1 name Mandate" id="cup10202_company" placeholder="">
 															<button type="button" class="inpReset"></button>
 														</div>
@@ -180,7 +182,7 @@
 												<dd>
 													<div class="inputBox schType ty2 short">
 														<div class="inner">
-															<input type="text" class="inp autoSch ty2 code Readonly" readonly="readonly">
+															<input type="text" class="inp autoSch ty2 code Readonly" readonly="readonly" tabindex="-1">
 															<input type="text" name="cup10202_city" class="inp autoSch ty2 name Mandate" id="cup10202_city" placeholder="Type City" maxlength="50">
 															<button type="button" class="inpReset"></button>
 														</div>
@@ -194,7 +196,7 @@
 												<dd>
 													<div class="inputBox schType ty2 short">
 														<div class="inner">
-															<input type="text" class="inp autoSch ty3 code Readonly" readonly="readonly">
+															<input type="text" class="inp autoSch ty3 code Readonly" readonly="readonly" tabindex="-1">
 															<input type="text" name="cup10202_stateProvince" class="inp autoSch ty3 name" id="cup10202_stateProvince" placeholder="Type State">
 															<button type="button" class="inpReset"></button>
 														</div>
@@ -207,8 +209,8 @@
 												<dt id="cup10202_countryLb">Country</dt>
 												<dd>
 													@@include('include/CountrySelect.html',{
-														"class": " Mandate",
 														"id": "cup10202_country",
+														"class": " Mandate",
 														"placeholder": "Select a Country"
 													})
 													<div class="inputBox zipCode">
@@ -225,7 +227,7 @@
 												<dt id="cup10202_geoLocationLb">Geo Location</dt>
 												<dd>
 													<div class="inputBox Edit_Geo">
-														<input type="text" name="cup10202_geoLocation" class="inp" id="cup10202_geoLocation" placeholder="" maxlength="50" readonly="readonly">
+														<input type="text" name="cup10202_geoLocation" class="inp" id="cup10202_geoLocation" placeholder="" maxlength="50" readonly="readonly" tabindex="-1">
 													</div>
 													<button type="button" class="btn" onclick="GeoLocation(this)" id="cup10202_getLocation">Get Location</button>
 												</dd>
@@ -280,7 +282,7 @@
 												<dt id="cup10202_tenantIdLb">Tenant ID (GUID)</dt>
 												<dd>
 													<div class="inputBox">
-														<input type="text" name="cup10202_tenantId" class="inp Readonly" id="cup10202_tenantId" readonly="readonly">
+														<input type="text" name="cup10202_tenantId" class="inp Readonly" id="cup10202_tenantId" readonly="readonly" tabindex="-1">
 													</div>
 													<div class="tooltip">
 														<div class="tips">
@@ -323,7 +325,7 @@
 												<dd>
 													<div class="inputBox schType ty1 short">
 														<div class="inner">
-															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly" tabindex="-1">
 															<input type="text" name="cup10202_currency" class="inp autoSch ty1 name" id="cup10202_currency" placeholder="Select a Currency">
 															<button type="button" class="inpReset"></button>
 														</div>
@@ -337,7 +339,7 @@
 												<dd>
 													<div class="inputBox schType ty1 short">
 														<div class="inner">
-															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly" tabindex="-1">
 															<input type="text" name="cup10202_unitOfWeight" class="inp autoSch ty1 name" id="cup10202_unitOfWeight" placeholder="Select a Unit">
 															<button type="button" class="inpReset"></button>
 														</div>
@@ -351,7 +353,7 @@
 												<dd>
 													<div class="inputBox schType ty1 short">
 														<div class="inner">
-															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly" tabindex="-1">
 															<input type="text" name="cup10202_unitOfVolume" class="inp autoSch ty1 name" id="cup10202_unitOfVolume" placeholder="Select a Unit">
 															<button type="button" class="inpReset"></button>
 														</div>
@@ -365,7 +367,7 @@
 												<dd>
 													<div class="inputBox schType ty1 short">
 														<div class="inner">
-															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+															<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly" tabindex="-1">
 															<input type="text" name="cup10202_unitOfLength" class="inp autoSch ty1 name" id="cup10202_unitOfLength" placeholder="Select a Unit">
 															<button type="button" class="inpReset"></button>
 														</div>
@@ -382,10 +384,12 @@
 											"class": " filter",
 											"placeholder": "Search tags..."
 										})
-										<div class="tools">
+										<!-- 2019-02-21 수정 -->
+										<div class="btns">
 											<button type="button" class="btn addBtn" id="">ADD</button>
 											<button type="button" class="btn removeBtn" id="">REMOVE</button>
 										</div>
+										<!--// 2019-02-21 수정 -->
 									</div>
 									<div class="ibsheetDiv">
 										ibsheet
@@ -402,10 +406,10 @@
 										<dd>
 											<div class="ele">
 												<div class="inputBox Edit_date single">
-													<input type="text" name="cup10202_createDate" class="inp Readonly" id="cup10202_createDate" value="12-14-2018" readonly/>
+													<input type="text" name="cup10202_createDate" class="inp Readonly" id="cup10202_createDate" value="12-14-2018" readonly="readonly" tabindex="-1">
 												</div>
 												<div class="inputBox Edit_Time readonly">
-													<input type="text" name="cup10202_createTime" class="inp Readonly" id="cup10202_createTime" value="10 : 20 AM" readonly="readonly">
+													<input type="text" name="cup10202_createTime" class="inp Readonly" id="cup10202_createTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
 												</div>
 											</div>
 											<div class="ele">
@@ -413,7 +417,7 @@
 													<div class="thumb">
 														<img src="../static/images/common/icon/icon_person_small.png" alt="" name="cup10202_createdByPhotoUrl" id="cup10202_createdByPhotoUrl">
 													</div>
-													<input type="text" name="cup10202_createdBy" class="inp Readonly" id="cup10202_createdBy" value="Park, JungIl" readonly="readonly">
+													<input type="text" name="cup10202_createdBy" class="inp Readonly" id="cup10202_createdBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
 												</div>
 											</div>
 										</dd>
@@ -423,10 +427,10 @@
 										<dd>
 											<div class="ele">
 												<div class="inputBox Edit_date single">
-													<input type="text" name="cup10202_modifiedDate" class="inp Readonly" id="cup10202_modifiedDate" value="12-14-2018" readonly/>
+													<input type="text" name="cup10202_modifiedDate" class="inp Readonly" id="cup10202_modifiedDate" value="12-14-2018" readonly="readonly" tabindex="-1">
 												</div>
 												<div class="inputBox Edit_Time readonly">
-													<input type="text" name="cup10202_modifiedTime" class="inp Readonly" id="cup10202_modifiedTime" value="10 : 20 AM" readonly="readonly">
+													<input type="text" name="cup10202_modifiedTime" class="inp Readonly" id="cup10202_modifiedTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
 												</div>
 											</div>
 											<div class="ele">
@@ -434,7 +438,7 @@
 													<div class="thumb">
 														<img src="../static/images/common/icon/icon_person_small.png" alt="" name="cup10202_modifiedByPhotoUrl" id="cup10202_modifiedByPhotoUrl">
 													</div>
-													<input type="text" name="cup10202_modifiedBy" class="inp Readonly" id="cup10202_modifiedBy" value="Park, JungIl" readonly="readonly">
+													<input type="text" name="cup10202_modifiedBy" class="inp Readonly" id="cup10202_modifiedBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
 												</div>
 											</div>
 										</dd>

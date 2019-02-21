@@ -16,7 +16,7 @@
 						<div class="serviceCode">
 							<div class="srvNum" id="">
 								<div class="inputBox inpNone">
-									<input type="text" name="cup11002_masterCode" class="inp" id="cup11002_masterCode" readonly="readonly" value="TAXCD">
+									<input type="text" name="cup11002_masterCode" class="inp" id="cup11002_masterCode" readonly="readonly" value="TAXCD" tabindex="-1">
 								</div>
 							</div>
 							<div class="actChk">
@@ -38,7 +38,9 @@
 											<dt id="cup11002_masterCdLb">Master Code</dt>
 											<dd>
 												<div class="inputBox Edit_AlphaNum">
-													<input type="text" name="cup11002_masterCd" class="inp Mandate" id="cup11002_masterCd" maxlength="5">
+													<!-- 2019-02-20 수정 -->
+													<input type="text" name="cup11002_masterCd" class="inp Mandate inputFocus" id="cup11002_masterCd" maxlength="5">
+													<!--// 2019-02-20 수정 -->
 													<button type="button" class="inpReset"></button>
 												</div>
 											</dd>
@@ -89,7 +91,7 @@
 											<dd>
 												<div class="inputBox schType ty1">
 													<div class="inner">
-														<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+														<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly" tabindex="-1">
 														<input type="text" name="cup11002_defaultDetailCode" class="inp autoSch ty1 name Mandate" id="cup11002_defaultDetailCode" placeholder="Type Company Name">
 														<button type="button" class="inpReset"></button>
 													</div>
@@ -101,10 +103,12 @@
 
 								<h3 class="tit" id="cup11002_itemsLb">Items</h3>
 								<div class="ibsheepTop">
-									<div class="tools">
+									<!-- 2019-02-21 수정 -->
+									<div class="btns">
 										<button type="button" class="btn addBtn" id="cup11002_rowDelete">ADD</button>
 										<button type="button" class="btn removeBtn" id="cup11002_rowAdd">REMOVE</button>
 									</div>
+									<!--// 2019-02-21 수정 -->
 								</div>
 								<div class="ibsheetDiv">
 									ibsheet
@@ -118,10 +122,10 @@
 									<dd>
 										<div class="ele">
 											<div class="inputBox Edit_date single">
-												<input type="text" name="cup11002_createDate" class="inp Readonly" id="cup11002_createDate" value="12-14-2018" readonly="readonly"/>
+												<input type="text" name="cup11002_createDate" class="inp Readonly" id="cup11002_createDate" value="12-14-2018" readonly="readonly" tabindex="-1">
 											</div>
 											<div class="inputBox Edit_Time readonly">
-												<input type="text" name="cup11002_createTime" class="inp Readonly" id="cup11002_createTime" value="10 : 20 AM" readonly="readonly">
+												<input type="text" name="cup11002_createTime" class="inp Readonly" id="cup11002_createTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
 											</div>
 										</div>
 										<div class="ele">
@@ -129,7 +133,7 @@
 												<div class="thumb">
 													<img src="../static/images/common/icon/icon_person_small.png" alt="" />
 												</div>
-												<input type="text" name="cup11002_createdBy" class="inp Readonly" id="cup11002_createdBy" value="Park, JungIl" readonly="readonly">
+												<input type="text" name="cup11002_createdBy" class="inp Readonly" id="cup11002_createdBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
 											</div>
 										</div>
 									</dd>
@@ -140,10 +144,10 @@
 									<dd>
 										<div class="ele">
 											<div class="inputBox Edit_date single">
-												<input type="text" name="cup11002_modifiedDate" class="inp Readonly" id="cup11002_modifiedDate" value="12-14-2018" readonly="readonly"/>
+												<input type="text" name="cup11002_modifiedDate" class="inp Readonly" id="cup11002_modifiedDate" value="12-14-2018" readonly="readonly" tabindex="-1">
 											</div>
 											<div class="inputBox Edit_Time readonly">
-												<input type="text" name="cup11002_modifiedTime" class="inp Readonly" id="cup11002_modifiedTime" value="10 : 20 AM" readonly="readonly">
+												<input type="text" name="cup11002_modifiedTime" class="inp Readonly" id="cup11002_modifiedTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
 											</div>
 										</div>
 										<div class="ele">
@@ -151,7 +155,7 @@
 												<div class="thumb">
 													<img src="../static/images/common/icon/icon_person_small.png" alt="" />
 												</div>
-												<input type="text" name="cup11002_modifiedBy" class="inp Readonly" id="cup11002_modifiedBy" value="Park, JungIl" readonly="readonly">
+												<input type="text" name="cup11002_modifiedBy" class="inp Readonly" id="cup11002_modifiedBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
 											</div>
 										</div>
 									</dd>

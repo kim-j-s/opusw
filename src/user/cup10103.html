@@ -9,25 +9,38 @@
 					<div class="inpInner">
 						<div class="idArea">
 							<div class="inputBox full">
-								<input type="text" name="i10103_userId" class="inp Mandate" id="i10103_userId" maxlength="50" placeholder="Email or User ID" />
+								<!-- 2019-02-20 수정 -->
+								<input type="text" name="i10103_userId" class="inp Mandate inputFocus" id="i10103_userId" maxlength="50" placeholder="Email or User ID" />
+								<!--// 2019-02-20 수정 -->
 								<button type="button" class="inpReset"></button>
 							</div>
 						</div>
+						<!-- 2019-02-21 추가 -->
+						<div class="txtBox">
+							<p class="alertMessage" id="i10003_userIdInfoLb">Your ID has not been activated. Click here to get a new activation Email.</p>
+							<p class="alertMessage" id="i10003_userIdInfoLb">Your ID is not found. Please, sign up using your Email.</p>
+						</div>
+						<!--// 2019-02-21 추가 -->
 						<div class="idArea">
 							<div class="inputBox full">
 								<input type="text" name="i10103_password" class="inp pwinp" id="i10103_password" placeholder="Password" />
 								<button type="button" class="inpReset"></button>
 							</div>
 						</div>
+						<!-- 2019-02-21 추가 -->
+						<div class="txtBox">
+							<p class="alertMessage" id="i10003_passwordInfoLb">Wrong Password. Please, input the password again.</p>
+						</div>
+						<!--// 2019-02-21 추가 -->
 						<div class="loginCheck">
 							<div class="checkbox">
-								<input type="checkbox" name="i10103-rememberMe" id="i10103-rememberMe"><label for="i10103-rememberMe" id="i10103-rememberMeLb">Remember Me</label>
+								<input type="checkbox" name="i10103_rememberMe" id="i10103_rememberMe"><label for="i10103_rememberMe" id="i10103_rememberMeLb">Remember Me</label>
 							</div>			
 						</div>
 						<div class="joinBtn">
 							<a href="#" id="i10103-forgotPasswordLb">Forgot Password?</a>
 							<div class="btns">
-								<button type="button" class="btn" id="i10103-next">Next</button>
+								<button type="button" class="btn" id="i10103_next">Next</button>
 							</div>
 						</div>
 					</div>

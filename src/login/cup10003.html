@@ -11,7 +11,9 @@
 						<dt id="i10003_nameLb">Name</dt>
 						<dd>
 							<div class="inputBox">
-								<input type="text" name="i10003_name" class="inp Mandate" id="i10003_name" placeholder="Your Name" maxlength="50">
+								<!-- 2019-02-20 수정 -->
+								<input type="text" name="i10003_name" class="inp Mandate inputFocus" id="i10003_name" placeholder="Your Name" maxlength="50">
+								<!--// 2019-02-20 수정 -->
 								<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 							</div>
 						</dd>
@@ -38,7 +40,9 @@
 						</dd>
 					</dl>
 					<div class="txtBox">
-						<p class="alertMessage" id="i10003_shortPasswordLb">Password must contain at least 6 characters, including alphabets and numbers.</p>
+						<!-- 2019-02-21 수정 -->
+						<p class="alertMessage" id="i10003_shortPasswordLb">Password must contain at least 8 characters. At least one alphabet and one number should be included.</p>
+						<!--// 2019-02-21 수정 -->
 					</div>
 					<dl class="inpItem">
 						<dt id="i10003_confirmPasswordLb">Confirm Password</dt>
@@ -59,7 +63,7 @@
 						<dd>
 							<div class="inputBox schType ty1">
 								<div class="inner">
-									<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+									<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly" tabindex="-1">
 									<input type="text" name="i10003_company" class="inp autoSch ty1 name Mandate" id="i10003_company" placeholder="Type Company Name"> <!-- 2019-01-29 클래스 추가 -->
 									<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 								</div>
@@ -88,7 +92,9 @@
 						<dt id="i10003_address2Lb">Address Line2</dt>
 						<dd>
 							<div class="inputBox full"> <!-- 2019-01-29 클래스 추가 -->
-								<input type="text" name="i10003_address2" class="inp" id="i10003_address2" placeholder="Type Department Name" maxlength="50">
+								<!-- 2019-02-21 수정 -->
+								<input type="text" name="i10003_address2" class="inp" id="i10003_address2" placeholder="Type Apartment, Suite, Unit, Building, Floor" maxlength="50">
+								<!--// 2019-02-21 수정 -->
 								<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 							</div>
 						</dd>
@@ -98,7 +104,7 @@
 						<dd>
 							<div class="inputBox schType ty2">
 								<div class="inner">
-									<input type="text" class="inp autoSch ty2 code Readonly" readonly="readonly">
+									<input type="text" class="inp autoSch ty2 code Readonly" readonly="readonly" tabindex="-1">
 									<input type="text" name="i10003_city" class="inp autoSch ty2 name Mandate" id="i10003_city" placeholder="Type City"><!-- 2019-01-29 클래스 추가 -->
 									<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 								</div>
@@ -110,7 +116,7 @@
 						<dd>
 							<div class="inputBox schType ty2">
 								<div class="inner">
-									<input type="text" class="inp autoSch ty3 code Readonly" readonly="readonly">
+									<input type="text" class="inp autoSch ty3 code Readonly" readonly="readonly" tabindex="-1">
 									<input type="text" name="i10003_state" class="inp autoSch ty3 name" id="i10003_state" placeholder="Type State">
 									<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 								</div>
@@ -122,8 +128,8 @@
 						<dd>
 							<!-- 2019-01-29 클래스 수정 -->
 							@@include('include/CountrySelect.html',{
-								"class": " Mandate",
 								"id": "i10003_state",
+								"class": " Mandate",
 								"placeholder": "Type Country"
 							})
 							<!--// 2019-01-29 클래스 수정 -->

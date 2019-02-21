@@ -11,8 +11,8 @@
 						<dd class="tr">
 							<span class="totalVal" id="i00006_userCount"><span class="bold">15</span></span>
 							<div class="inputBox readonly amount">
-								<input type="text" name="" class="inp Readonly" id="" readonly="readonly" value="USD">
-								<input type="text" name="i00006_basicPrice" class="inp Readonly" id="i00006_basicPrice" readonly="readonly" value="0.00">
+								<input type="text" name="" class="inp Readonly" id="" readonly="readonly" value="USD" tabindex="-1">
+								<input type="text" name="i00006_basicPrice" class="inp Readonly" id="i00006_basicPrice" readonly="readonly" value="0.00" tabindex="-1">
 							</div>
 							<a href="#" class="btn" id="i00006_backBasic">Back</a>
 						</dd>
@@ -26,8 +26,8 @@
 						<dd class="tr">
 							<span class="totalVal"><span class="bold" id="i00006_platformBaseLb">Share</span></span>
 							<div class="inputBox readonly amount">
-								<input type="text" name="" class="inp Readonly" id="" readonly="readonly" value="USD">
-								<input type="text" name="i00006_platformPrice" class="inp Readonly" id="i00006_platformPrice" readonly="readonly" value="0.00">
+								<input type="text" name="" class="inp Readonly" id="" readonly="readonly" value="USD" tabindex="-1">
+								<input type="text" name="i00006_platformPrice" class="inp Readonly" id="i00006_platformPrice" readonly="readonly" value="0.00" tabindex="-1">
 							</div>
 							<a href="#" class="btn" id="i00006_backPlatform">Back</a>
 						</dd>
@@ -37,8 +37,8 @@
 						<dt><span class="bold" id="i00006_monthlyTotalLb">Monthly Total</span></dt>
 						<dd class="tr">
 							<div class="inputBox readonly amount">
-								<input type="text" name="" class="inp Readonly" id="" readonly="readonly" value="USD">
-								<input type="text" name="i00006_monthlyTotal" class="inp Readonly" id="i00006_monthlyTotal" readonly="readonly" value="1,500.00">
+								<input type="text" name="" class="inp Readonly" id="" readonly="readonly" value="USD" tabindex="-1">
+								<input type="text" name="i00006_monthlyTotal" class="inp Readonly" id="i00006_monthlyTotal" readonly="readonly" value="1,500.00" tabindex="-1">
 							</div>
 						</dd>
 					</dl>
@@ -100,7 +100,7 @@
 						<dt id="i00006_billToPartyLb">Customer Name</dt>
 						<dd>
 							<div class="inputBox">
-								<input type="text" name="i00006_billToParty" class="inp Readonly" id="i00006_billToParty" readonly="readonly" value="Customer Name" maxlength="80">
+								<input type="text" name="i00006_billToParty" class="inp Readonly" id="i00006_billToParty" readonly="readonly" value="Customer Name" maxlength="80" tabindex="-1">
 								<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 							</div>
 						</dd>
@@ -109,7 +109,7 @@
 						<dt id="i00006_addressLine1Lb">Address Line1</dt>
 						<dd>
 							<div class="inputBox full">
-								<input type="text" name="i00006_addressLine1" class="inp Readonly" id="i00006_addressLine1" readonly="readonly" value="Address Line1" maxlength="80">
+								<input type="text" name="i00006_addressLine1" class="inp Readonly" id="i00006_addressLine1" readonly="readonly" value="Address Line1" maxlength="80" tabindex="-1">
 								<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 							</div>
 						</dd>
@@ -118,23 +118,28 @@
 						<dt id="i00006_addressLine2Lb">Address Line2</dt>
 						<dd>
 							<div class="inputBox full">
-								<input type="text" name="i00006_addressLine2" class="inp Readonly" id="i00006_addressLine2" readonly="readonly" value="Address Line2" maxlength="80">
+								<input type="text" name="i00006_addressLine2" class="inp Readonly" id="i00006_addressLine2" readonly="readonly" value="Address Line2" maxlength="80" tabindex="-1">
 								<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 							</div>
 						</dd>
 					</dl>
+
+
+
+					<!-- 2019-02-21 수정 -->
 					<dl class="inpItem">
 						<dt id="i00006_cityLb">City, State/Province</dt>
 						<dd>
-							<div class="inputBox full schType ty2">
-								<div class="inner">
-									<input type="text" name="i00006_stateProvince" class="inp autoSch ty2 code Readonly" id="i00006_stateProvince" readonly="readonly" value="State" maxlength="50">
-									<input type="text" name="i00006_city" class="inp autoSch ty2 name Readonly" id="i00006_city" value="Type City" maxlength="50">
-									<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
-								</div>
+							<div class="inputBox double">
+								<input type="text" name="i00006_city" id="i00006_city" class="inp Readonly" readonly="readonly" value="City" maxlength="50" tabindex="-1">
+								<input type="text" name="i00006_stateProvince" id="i00006_stateProvince" class="inp Readonly" readonly="readonly" value="State" maxlength="50" tabindex="-1">
 							</div>
 						</dd>
 					</dl>
+					<!--// 2019-02-21 수정 -->
+
+
+
 					<dl class="inpItem">
 						<dt id="i00006_countryLb">Country, Zip Code</dt>
 						<dd>
@@ -143,7 +148,7 @@
 							})
 							<div class="inputBox zipCode">
 								<div class="inner">
-									<input type="text" name="i00006_zipCode" class="inp Readonly" id="i00006_zipCode" readonly="readonly" value="Zip Code">
+									<input type="text" name="i00006_zipCode" class="inp Readonly" id="i00006_zipCode" readonly="readonly" value="Zip Code" tabindex="-1">
 									<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 								</div>
 							</div>
@@ -154,7 +159,7 @@
 						<dt id="i00006_departmentLb">Department</dt>
 						<dd>
 							<div class="inputBox full">
-								<input type="text" name="i00006_department" class="inp Readonly" id="i00006_department" readonly="readonly" value="Department Name" maxlength="80">
+								<input type="text" name="i00006_department" class="inp Readonly" id="i00006_department" readonly="readonly" value="Department Name" maxlength="80" tabindex="-1">
 								<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 							</div>
 						</dd>
@@ -163,7 +168,7 @@
 						<dt id="i00006_picNameLb">Person in Charge</dt>
 						<dd>
 							<div class="inputBox">
-								<input type="text" name="i00006_picName" class="inp Readonly" id="i00006_picName" readonly="readonly" value="Name">
+								<input type="text" name="i00006_picName" class="inp Readonly" id="i00006_picName" readonly="readonly" value="Name" tabindex="-1">
 							</div>
 						</dd>
 					</dl>
@@ -171,7 +176,7 @@
 						<dt id="i00006_emailLb">Email</dt>
 						<dd>
 							<div class="inputBox">
-								<input type="text" name="i00006_email" class="inp Readonly" id="i00006_email" readonly="readonly" value="Email">
+								<input type="text" name="i00006_email" class="inp Readonly" id="i00006_email" readonly="readonly" value="Email" tabindex="-1">
 							</div>
 						</dd>
 					</dl>
@@ -180,7 +185,7 @@
 						<dd>
 							<!-- 2019-02-12 수정 -->
 							<div class="inputBox Edit_PhoneFax">
-								<input type="text" name="i00006_phoneNumber" class="inp Readonly" id="i00006_phoneNumber" readonly="readonly" value="Phone Number">
+								<input type="text" name="i00006_phoneNumber" class="inp Readonly" id="i00006_phoneNumber" readonly="readonly" value="Phone Number" tabindex="-1">
 								<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 							</div>
 							<!--// 2019-02-12 수정 -->
@@ -191,7 +196,7 @@
 						<dd>
 							<!-- 2019-02-12 수정 -->
 							<div class="inputBox Edit_PhoneFax">
-								<input type="text" name="i00006_faxNumber" class="inp Readonly" id="i00006_faxNumber" readonly="readonly" value="Fax Number">
+								<input type="text" name="i00006_faxNumber" class="inp Readonly" id="i00006_faxNumber" readonly="readonly" value="Fax Number" tabindex="-1">
 								<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
 							</div>
 							<!--// 2019-02-12 수정 -->

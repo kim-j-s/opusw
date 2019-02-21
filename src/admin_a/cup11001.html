@@ -12,63 +12,56 @@
 					<!-- 컨텐츠 영역 -->
 					<form action="">
 						<div class="layout Layout_List">
-							<h2 class="tit" id="i10603-InvoiceListLb">Invoice List</h2>
+							<h2 class="tit" id="i11001-systemCodeListLb">System Code List</h2>
 							<div class="schOptionGroup">
 								<ul class="itemList1">
 									<li>
 										<dl class="inpItem">
-											<!-- 2019-02-20 수정 -->
-											<dt id="i10603-keywordLb">Keyword</dt>
+											<dt id="i11001-keywordLb">Keyword</dt>
 											<dd>
 												<div class="inputBox">
 													<!-- 2019-02-20 수정 -->
-													<input type="text" name="i10603_keyword" class="inp inputFocus" id="i10603_keyword" placeholder="ID, Name, Bill to" maxlength="50">
+													<input type="text" name="i11001_keyword" class="inp inputFocus" id="i11001_keyword" placeholder="Code, Name" maxlength="50">
 													<!--// 2019-02-20 수정 -->
 													<button type="button" class="inpReset"></button>
 												</div>
 											</dd>
-											<!--// 2019-02-20 수정 -->
 										</dl>
 									</li>
 									<li>
 										<dl class="inpItem">
-											<dt id="i10603-paidStatusLb">Paid</dt>
+											<dt id="i11001-descriptionLb">Description</dt>
 											<dd>
-												@@include('include/combobox.html',{
-													"id": "i10603-paidStatus",
-													"class": "",
-													"placeholder": "Select a Status"
-												})
+												<div class="inputBox">
+													<input type="text" name="i11001_description" class="inp" id="i11001_description" placeholder="Description">
+													<button type="button" class="inpReset"></button>
+												</div>
 											</dd>
 										</dl>
 									</li>
 									<li>
 										<dl class="inpItem">
-											<dt id="i10603-creationLb">Creation</dt>
+											<dt id="i11001-creationLb">Creation</dt>
 											<dd>
 												@@include('include/daterangepicker.html',{
-													"id": "i10603_creation"
+													"id": "i11001_creation"
 												})
 											</dd>
 										</dl>
 									</li>
 								</ul>
-								<button type="button" class="btn schBtn" id="i10603-search">Search</button>
+								<button type="button" class="btn schBtn" id="i11001-search">Search</button>
 							</div>
-
-							<h3 class="tit" id="i10603-invoicesLb">Invoices</h3>
+							<h3 class="tit" id="i11001-systemCodesLb">System Codes</h3>
 							<div class="ibsheepTop">
 								@@include('include/sheet_filter.html',{
-									"id": "i10603-filterStatus",
+									"id": "i11001-filterStatus",
 									"class": " filter",
 									"placeholder": "Search tags..."
 								})
 								<!-- 2019-02-21 수정 -->
 								<div class="btns">
-									<button type="button" class="btn" id="i10603-approval">Approval</button>
-									<button type="button" class="btn" id="i10603-reject">Reject</button>
-									<button type="button" class="btn" id="i10603-cancel">Cancel</button>
-									<button type="button" class="btn" id="i10603-addInvoice">Add Invoice</button>
+									<button type="button" class="btn" id="i11001-addSystemCode">Add System Code</button>
 								</div>
 								<!--// 2019-02-21 수정 -->
 							</div>

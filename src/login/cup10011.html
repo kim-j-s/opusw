@@ -11,13 +11,26 @@
 					@@include('include/tabWrap.html')
 					<!-- 컨텐츠 영역 -->
 					<form action="">
-					<div class="layout Layout_List">
-						<h2 class="tit" id="i10011_homeLb">Welcome to OPUS Logistics!</h2>
-						<h3 class="tit" id="i10011-noticeLb">Notice</h3>
-						<div class="ibsheetDiv">
-							ibsheet
+						<div class="layout Layout_List">
+							<h2 class="tit" id="i10011_homeLb">Welcome to OPUS Logistics!</h2>
+							<!-- 2019-02-20 추가 -->
+							<h3 class="tit" id="i10010-newSubscriptionLb">New Subscription</h3>
+							<div class="ibsheepTop">
+								@@include('include/sheet_filter.html',{
+									"id": "i10010-filterStatus",
+									"class": " filter",
+									"placeholder": "Filter Status"
+								})
+							</div>
+							<div class="ibsheetDiv">
+								ibsheet
+							</div>
+							<!--// 2019-02-20 추가 -->
+							<h3 class="tit" id="i10011-noticeLb">Notice</h3>
+							<div class="ibsheetDiv">
+								ibsheet
+							</div>
 						</div>
-					</div>
 					</form>
 					<!--// 컨텐츠 영역 -->
 				</div>

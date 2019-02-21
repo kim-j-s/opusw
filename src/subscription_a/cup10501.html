@@ -11,67 +11,74 @@
 					@@include('include/tabWrap.html')
 					<!-- 컨텐츠 영역 -->
 					<form action="">
-					<div class="layout Layout_List">
-						<h2 class="tit" id="i10501-subscriptionListLb">Subscription List</h2>
-						<div class="schOptionGroup">
-							<ul class="itemList1">
-								<li>
-									<dl class="inpItem">
-										<dt id="i10501-kewordLb">Keyword</dt>
-										<dd>
-											<div class="inputBox keyword">
-												<div class="inner">
-													<input type="text" name="i10501_keword" class="inp autoSch keyword name" id="i10501_keword" placeholder="ID, Name, Bill to" maxlength="50">
+						<div class="layout Layout_List">
+							<h2 class="tit" id="i10501-subscriptionListLb">Subscription List</h2>
+							<div class="schOptionGroup">
+								<ul class="itemList1">
+									<li>
+										<dl class="inpItem">
+											<!-- 2019-02-20 수정 -->
+											<dt id="i10501-keywordLb">Keyword</dt>
+											<dd>
+												<div class="inputBox">
+													<input type="text" name="i10501_keyword" class="inp inputFocus" id="i10501_keyword" placeholder="ID, Name, Bill to" maxlength="50">
 													<button type="button" class="inpReset"></button>
 												</div>
-											</div>
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl class="inpItem">
-										<dt id="i10501-billingTypeLb">Billing Type</dt>
-										<dd>
-											@@include('include/combobox.html',{
-												"id": "i10501-billingType",
-												"class": " Mandate",
-												"placeholder": "Select a Type"
-											})
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl class="inpItem">
-										<dt id="i10501-creationLb">Registration</dt>
-										<dd>
-											@@include('include/daterangepicker.html',{
-												"id": "i10501_creation"
-											})
-										</dd>
-									</dl>
-								</li>
-							</ul>
-							<button type="button" class="btn schBtn" id="i10501-search">Search</button>
-						</div>
+											</dd>
+											<!--// 2019-02-20 수정 -->
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="i10501-billingTypeLb">Billing Type</dt>
+											<dd>
+												@@include('include/combobox.html',{
+													"id": "i10501-billingType",
+													"class": "",
+													"placeholder": "Select a Type"
+												})
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="i10501-creationLb">Registration</dt>
+											<dd>
+												@@include('include/daterangepicker.html',{
+													"id": "i10501_creation"
+												})
+											</dd>
+										</dl>
+									</li>
+								</ul>
+								<button type="button" class="btn schBtn" id="i10501-search">Search</button>
+							</div>
 
-						<h3 class="tit" id="i10501-subscriptionLb">Subscriptions</h3>
-						<div class="ibsheepTop">
-							@@include('include/sheet_filter.html',{
-								"id": "i10501-filterStatus",
-								"class": " filter",
-								"placeholder": "Search tags..."
-							})
-							<button type="button" class="btn" id="i10501-addSubscription">Add Subscription</button>
-						</div>
-						<div class="ibsheetDiv">
-							ibsheet
-						</div>
+							<h3 class="tit" id="i10501-subscriptionLb">Subscriptions</h3>
+							<div class="ibsheepTop">
+								@@include('include/sheet_filter.html',{
+									"id": "i10501-filterStatus",
+									"class": " filter",
+									"placeholder": "Search tags..."
+								})
+								<!-- 2019-02-21 수정 -->
+								<div class="btns">
+									<button type="button" class="btn" id="i10501-approval">Approval</button>
+									<button type="button" class="btn" id="i10501-reject">Reject</button>
+									<button type="button" class="btn" id="i10501-cancel">Cancel</button>
+									<button type="button" class="btn" id="i10501-addSubscription">Add Subscription</button>
+								</div>
+								<!--// 2019-02-21 수정 -->
+							</div>
+							<div class="ibsheetDiv">
+								ibsheet
+							</div>
 
-						<h3 class="tit" id="i10501-servicesLb">Services</h3>
-						<div class="ibsheetDiv">
-							ibsheet
+							<h3 class="tit" id="i10501-servicesLb">Services</h3>
+							<div class="ibsheetDiv">
+								ibsheet
+							</div>
 						</div>
-					</div>
 					</form>
 					<!--// 컨텐츠 영역 -->
 				</div>

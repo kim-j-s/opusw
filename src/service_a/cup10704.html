@@ -16,11 +16,11 @@
 						<div class="serviceCode">
 							<div class="srvNum" id="">
 								<div class="inputBox inpNone">
-									<input type="text" name="cup10704_tariffIdLb" class="inp" id="cup10704_tariffIdLb" readonly="readonly" value="S10000001">
+									<input type="text" name="cup10704_tariffIdLb" class="inp" id="cup10704_tariffIdLb" readonly="readonly" value="S10000001" tabindex="-1">
 								</div>
 								<span class="codeLabel" id="cup10704_RevisonLb">REV</span>
 								<div class="inputBox inpNone">
-									<input type="text" name="cup10704_tariffRevLb" class="inp" id="cup10704_tariffRevLb" readonly="readonly" value="11">
+									<input type="text" name="cup10704_tariffRevLb" class="inp" id="cup10704_tariffRevLb" readonly="readonly" value="11" tabindex="-1">
 								</div>
 							</div>
 							<div class="actChk">
@@ -41,11 +41,13 @@
 									<dt id="cup10704_serviceNameLb">Service Name</dt>
 									<dd>
 										<div class="inputBox schType ty1">
+											<!-- 2019-02-20 수정 -->
 											<div class="inner">
-												<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
-												<input type="text" name="cup10704_serviceName" class="inp autoSch ty1 name Mandate" id="cup10704_serviceName" placeholder="Select a Service">
+												<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly" tabindex="-1">
+												<input type="text" name="cup10704_serviceName" class="inp autoSch ty1 name Mandate inputFocus" id="cup10704_serviceName" placeholder="Select a Service">
 												<button type="button" class="inpReset"></button>
 											</div>
+											<!--// 2019-02-20 수정 -->
 										</div>
 									</dd>
 								</dl>
@@ -113,10 +115,10 @@
 									<dt id="cup10704_registeredOnLb">Registered on</dt>
 									<dd>
 										<div class="inputBox Edit_date single">
-											<input type="text" name="cup10704_registeredDate" class="inp Readonly" id="cup10704_registeredDate" value="12-14-2018" readonly/>
+											<input type="text" name="cup10704_registeredDate" class="inp Readonly" id="cup10704_registeredDate" value="12-14-2018" readonly="readonly" tabindex="-1">
 										</div>
 										<div class="inputBox Edit_Time readonly">
-											<input type="text" name="cup10704_registeredTime" class="inp Readonly" id="cup10704_registeredTime" value="10 : 20 AM" readonly="readonly">
+											<input type="text" name="cup10704_registeredTime" class="inp Readonly" id="cup10704_registeredTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
 										</div>
 									</dd>
 								</dl>
@@ -129,7 +131,7 @@
 											<div class="thumb">
 												<img src="../static/images/common/icon/icon_person_small.png" alt="" />
 											</div>
-											<input type="text" name="cup10704_registeredBy" class="inp Readonly" id="cup10704_registeredBy" value="Park, JungIl" readonly="readonly">
+											<input type="text" name="cup10704_registeredBy" class="inp Readonly" id="cup10704_registeredBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
 										</div>
 									</dd>
 								</dl>
@@ -225,10 +227,12 @@
 
 						<h3 class="tit" id="cup10704_discountRuleLb">Discount Rule</h3>
 						<div class="ibsheepTop">
-							<div class="tools">
+							<!-- 2019-02-21 수정 -->
+							<div class="btns">
 								<button type="button" class="btn addBtn" id="cup10704_addRule">ADD</button>
 								<button type="button" class="btn removeBtn" id="cup10704_deleteRule">REMOVE</button>
 							</div>
+							<!--// 2019-02-21 수정 -->
 						</div>
 						<div class="ibsheetDiv">
 							ibsheet
