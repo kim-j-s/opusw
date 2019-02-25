@@ -12,17 +12,15 @@
 					<!-- 컨텐츠 영역 -->
 					<form action="">
 						<div class="layout Layout_List">
-							<h2 class="tit" id="i11001_systemCodeListLb">System Code List</h2>
+							<h2 class="tit" id="i10614_transactionListLb">Transaction List</h2>
 							<div class="schOptionGroup">
 								<ul class="itemList1">
 									<li>
 										<dl class="inpItem">
-											<dt id="i11001_keywordLb">Keyword</dt>
+											<dt id="i10614_keywordLb">Keyword</dt>
 											<dd>
 												<div class="inputBox">
-													<!-- 2019-02-20 수정 -->
-													<input type="text" name="i11001_keyword" class="inp inputFocus" id="i11001_keyword" placeholder="Code, Name" maxlength="50">
-													<!--// 2019-02-20 수정 -->
+													<input type="text" name="i10614_keyword" class="inp inputFocus" id="i10614_keyword" placeholder="ID" maxlength="50">
 													<button type="button" class="inpReset"></button>
 												</div>
 											</dd>
@@ -30,10 +28,10 @@
 									</li>
 									<li>
 										<dl class="inpItem">
-											<dt id="i11001_descriptionLb">Description</dt>
+											<dt id="i10614_serviceLb">Service</dt>
 											<dd>
 												<div class="inputBox">
-													<input type="text" name="i11001_description" class="inp" id="i11001_description" placeholder="Description">
+													<input type="text" name="i10614_service" class="inp" id="i10614_service">
 													<button type="button" class="inpReset"></button>
 												</div>
 											</dd>
@@ -41,31 +39,49 @@
 									</li>
 									<li>
 										<dl class="inpItem">
-											<dt id="i11001_creationLb">Creation</dt>
+											<dt id="i10614_accountLb">Account</dt>
+											<dd>
+												<div class="inputBox">
+													<input type="text" name="i10614_account" class="inp" id="i10614_account" placeholder="">
+													<button type="button" class="inpReset"></button>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="i10614_groupLb">Group</dt>
+											<dd>
+												<div class="inputBox">
+													<input type="text" name="i10614_group" class="inp" id="i10614_group">
+													<button type="button" class="inpReset"></button>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="i10614_creationLb">Creation</dt>
 											<dd>
 												@@include('include/daterangepicker.html',{
-													"id": "i11001_creation"
+													"id": "i10614_creation"
 												})
 											</dd>
 										</dl>
 									</li>
 								</ul>
-								<button type="button" class="btn schBtn" id="i11001_search">Search</button>
+								<button type="button" class="btn schBtn" id="i10614_search">Search</button>
 							</div>
-							<h3 class="tit" id="i11001_systemCodesLb">System Codes</h3>
+
+							<h3 class="tit" id="i10614_transactionsLb">Transactions</h3>
 							<!-- 2019-02-25 수정 -->
 							<div class="ibsheetTop">
 							<!--// 2019-02-25 수정 -->
 								@@include('include/sheet_filter.html',{
-									"id": "i11001_filterStatus",
+									"id": "i10614_filterStatus",
 									"class": " filter",
 									"placeholder": "Filter Status"
 								})
-								<!-- 2019-02-21 수정 -->
-								<div class="btns">
-									<button type="button" class="btn" id="i11001_addSystemCode">Add System Code</button>
-								</div>
-								<!--// 2019-02-21 수정 -->
 							</div>
 							<div class="ibsheetDiv">
 								ibsheet

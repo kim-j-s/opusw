@@ -1,0 +1,45 @@
+@@include('include/head.html')
+<body>
+	<section class="layerPopup">
+		<div class="inner">
+			<h1 class="popupTitle" id="i10104_inviteUserLb">Invite User</h1>
+			<div class="layerContent">
+				<dl class="inpItem">
+					<dt id="i10104_serNameLb">User Name</dt>
+					<dd>
+						<div class="inputBox">
+							<input type="text" name="i10104_userName" class="inp inputFocus Mandate" id="i10104_userName" placeholder="Type User Name" maxlength="50">
+							<button type="button" class="inpReset"></button>
+						</div>
+					</dd>
+				</dl>
+				<dl class="inpItem">
+					<dt id="i10104_userEmailLb">Email</dt>
+					<dd>
+						<div class="inputBox">
+							<input type="text" name="i10104_userEmail" class="inp Mandate" id="i10104_userEmail" placeholder="Type Email" maxlength="50">
+							<button type="button" class="inpReset"></button>
+						</div>
+					</dd>
+				</dl>
+				<div class="txtBox">
+					<p class="alertMessage" id="i10004_dupeMailLb">Duplicated Email address found while adding your address</p>
+				</div>
+				<dl class="inpItem">
+					<dt id="i10104_inviteMessageLb">Message</dt>
+					<dd>
+						<div class="textareaDiv">
+							<textarea name="i10104_inviteMessage" id="i10104_inviteMessage" cols="30" rows="10" class="textarea" maxlength="500" placeholder="You have been invited to join OPUS Logistics. Press the Button to complete the Sign On."></textarea>
+							<div class="byte"><span class="bold">100</span>/150</div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="layerBtns">
+			<button type="button" class="btn basic" id="i10104_inviteUser">Invite User</button>
+		</div>
+		<button type="button" class="btn close">Close</button>
+	</section>
+</body>
+</html>

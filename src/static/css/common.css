@@ -76,6 +76,8 @@
 .inputBox.amount.single {width:200px;}
 .inputBox.amount.single > .inp:nth-child(1) {width:100%; padding:0 10px; text-align:right; border-radius:5px;  border-right:1px solid #b4bcc9;}
 .inputBox.amount.single:before, .inputBox.amount.single:after {content:none;}
+.inputBox.amount.long {width:200px;}
+.inputBox.amount.long > .inp:nth-child(2) {width:155px;}
 
 .inputBox.Edit_User {}
 .inputBox.Edit_User > .thumb {position:absolute; top:5px; left:5px; width:20px; height:20px; display:flex; align-items: center; vertical-align:middle;}
@@ -335,6 +337,7 @@ a.btn {text-decoration:none; color:#fff;}
 .btn.minus {width:30px; padding:0; background:#fff; border:1px solid #b4bcc9; overflow:hidden; text-indent:-999px;}
 .btn.minus:before {content:''; position:absolute; top:13px; left:6px; width:16px; border-bottom:2px solid #0b61ca;}
 .btn.minus:after {content:''; position:absolute; top:6px; left:13px; width:2px; border-bottom:16px solid #0b61ca;}
+.btn.error {background:#009fe8;}
 
 
 /* menuAll */
@@ -390,15 +393,6 @@ a.btn {text-decoration:none; color:#fff;}
 .tabListBox li .tabClose:after {content:''; position:absolute; top:4px; right:-1px; width:12px; border-bottom:2px solid #c5c4cd; transform: rotate(135deg);}
 
 
-/*
-.tabListBox li a.on {background:#ddd;}
-form {display:block !important; border:1px solid #333;}
-form + form {margin-top:10px; height:40px; overflow:hidden;}
-form .layout {background:none !important;}
-*/
-
-
-
 /* gnb */
 nav {position:fixed; top:60px; left:0; z-index:45; width:285px; height:calc(100% - 60px); padding-top:21px; background:#fff; border-right:1px solid #e1e0e8; overflow:hidden;}
 nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
@@ -445,6 +439,18 @@ nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
 
 .ibsheetDiv {min-height:200px; border:1px solid #d9d9d9;}
 .ibsheetDiv + .ibsheetDiv {margin-top:10px;}
+.ibsheetTop {position:relative; margin-top:10px;}
+.ibsheetTop:after {content:''; display:block; clear:both;}
+.ibsheetTop > .filter {}
+.ibsheetTop > .btns {float:right;}
+.ibsheetTop .btn + .btn {margin-left:7px;}
+.ibsheetTop > .tools {float:right;}
+.ibsheetTop > .tools .btn + .btn {margin-left:7px;}
+.ibsheetTop + .ibsheetDiv {margin-top:10px;}
+.ibsheetDiv + h3.tit {margin-top:20px;}
+
+
+/* 삭제 예정 */
 .ibsheepTop {position:relative; margin-top:10px;}
 .ibsheepTop:after {content:''; display:block; clear:both;}
 .ibsheepTop > .filter {}
@@ -453,7 +459,18 @@ nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
 .ibsheepTop > .tools {float:right;}
 .ibsheepTop > .tools .btn + .btn {margin-left:7px;}
 .ibsheepTop + .ibsheetDiv {margin-top:10px;}
-.ibsheetDiv + h3.tit {margin-top:20px;}
+/* 삭제 예정 */
+
+
+/* error page */
+.errorPage {width:390px; padding:30px; border-radius:5px; box-shadow: 3px 4px 20px 0px rgba(190, 192, 196, 0.7);}
+.errorPage > h1 {padding:0 0 15px 0; text-align:center; border-bottom:2px solid #085ec1;}
+.errorPage > h1 + .errorTxt1 {margin-top:28px;}
+.errorTxt1 {text-align:center; font-weight:600; font-size:20px; color:#0754d2; line-height:22px;}
+.errorTxt2 {text-align:center; font-weight:600; font-size:13px; color:#181818; line-height:19px;}
+.errorTxt1 + .errorTxt2 {margin-top:20px;}
+.errorPage .btns {text-align:center;}
+.errorPage .errorTxt2 + .btns {margin-top:39px;}
 
 
 /* flag */

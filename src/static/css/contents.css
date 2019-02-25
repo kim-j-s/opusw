@@ -18,14 +18,17 @@
 
 
 /* login */
-.flexWrap{position:relative; display:flex; height:100%; align-items:center;}
-.flexWrap:before {content:''; flex:0; text-align:center;}
-.flexWrap > form {display:inline-block; margin:0 auto;}
-.flexLayer {display:inline-block; margin:0 auto;}
-.flexLayer > .inner { padding:10px; }
+/* .flexWrap{position:relative; display:flex; height:100%; align-items:center;} */
+/* .flexWrap:before {content:''; flex:0; text-align:center;} */
+/* .flexWrap > form {display:inline-block; margin:0 auto;} */
+/* .flexLayer {display:inline-block; margin:0 auto;} */
+.flexWrap {position:absolute; top:0; right:0; bottom:0; left:0; width:100%; min-width:1400px; height:100%; text-align:center;}
+.flexWrap:before {content:''; display:inline-block; height:100%; vertical-align:middle;}
+.flexWrap > form {display:inline-block; vertical-align:middle; text-align:left; background:#fff;}
+.flexLayer {display:inline-block; vertical-align:middle; text-align:left; background:#fff;}
+.flexLayer > .inner {padding:10px;}
 .flexLayer > h1 {text-align:center;}
 .flexLayer > h1 + .inner {margin-top:10px; padding:20px 20px; min-height:280px;}
-
 
 .flexLayer .flexContent {margin-top:10px; padding:20px 20px; border:1px solid #d9d9d9; font-size:0;}
 .flexLayer .flexContent > .inner {display:inline-block; width:518px; min-height:260px; vertical-align:top;}

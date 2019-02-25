@@ -58,18 +58,16 @@ $(function(){
 	// Semantic UI Drop box
 	$('.ui.selection.dropdown').dropdown({
 		fullTextSearch:true
-		/*
-		onChange : function(){
-			console.log('zzz');
-			$(this).find('.search').blur();
-		}
-		*/
-		/*
-		onLabelSelect : function (val) {
-			alert(val);
-		}
-		*/
 	});
+
+	/*
+	$('.ui.selection.dropdown').find('.item').on('click', function(){
+		console.log($(this).html());
+		$(this).css('background','red');
+		$(this).closest('.ui.selection.dropdown').find('.search').blur();
+		$(this).closest('.ui.selection.dropdown').find('.search').css('background','blue');
+	});
+	*/
 
 	$('.ui.fluid.dropdown').dropdown({fullTextSearch:true});
 	$('.ui.floating.dropdown.labeled').dropdown();
@@ -115,7 +113,7 @@ $(function(){
 			'This Month': [moment().startOf('month'), moment().endOf('month')],
 			'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
 		},
-		"autoUpdateInput": true,
+		"autoUpdateInput": false,
 		"locale": {
 			"format": "MM/DD/YYYY",
 			"separator": " - ",
@@ -160,9 +158,10 @@ $(function(){
 
 	$('.datesingle').daterangepicker({
 		"singleDatePicker": true,
-		"autoUpdateInput": true,
+		"autoUpdateInput": false,
+		"alwaysShowCalendars": true,
 		"locale": {
-			"format": "MM/DD/YYYY",
+			"format": "MM/DD/YYYY",			
 			"separator": " - ",
 			"applyLabel": "Apply",
 			"cancelLabel": "Cancel",
@@ -194,12 +193,19 @@ $(function(){
 				"December"
 			],
 			"firstDay": 1
-		},
-			"alwaysShowCalendars": true
-		}, function(start, end, label) {
-		console.log('New date range selected: ' + start.format('YYYY/MM/DD') + ' to ' + end.format('YYYY/MM/DD') + ' (predefined range: ' + label + ')');
+		}
 	});
-	$('.datesingle').val('');
+
+	// 날짜 선택에 의한 입력이 가능하도록 하는 옵션
+	// range
+	$('.daterange').on('apply.daterangepicker', function(ev, picker) {
+		$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+	});
+
+	// single
+	$('.datesingle').on('apply.daterangepicker', function(ev, picker) {
+		$(this).val(picker.startDate.format('YYYY/DD/MM'));
+	});
 
 	$('.Edit_date > .inp').on('click', function(){
 		$(this).select();

@@ -1,0 +1,35 @@
+@@include('include/head.html')
+<body>
+	<div class="flexWrap">
+		<div class="flexLayer">
+			<h1><img src="../static/images/common/logo.png" alt="OPUS LOGISTICS" /></h1>
+			<div class="flexContent">
+				<div class="inner">
+					<h2 class="tit" id="i10108_leaveOrganizationLb">Leave Organization</h2>
+					<div class="inpInner">
+						<p class="nTxt" id="i10108_leaveOrganizationConfirmLb">
+							Your account belongs to the following <br />
+							organization.
+						</p>
+						<ul class="list1">
+							<li>Organization ID: {Org_ID}</li>
+							<li>Organization Name: {Org_Name)</li>
+							<li>Company Name: {Company_Name}</li>
+						</ul>
+						<div class="joinBtn">
+							<div class="btns">
+								<button type="button" class="btn" id="i10108_leaveOrganization">Leave Organization</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			@@include('include/link.html',{
+				"help": "i10108_helpLb",
+				"privacy": "i10108_privacyLb",
+				"terms": "i10108_termsLb"
+			})
+		</div>
+    </div>
+</body>
+</html>

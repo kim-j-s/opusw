@@ -12,28 +12,26 @@
 					<!-- 컨텐츠 영역 -->
 					<form action="">
 						<div class="layout Layout_List">
-							<h2 class="tit" id="i10501-subscriptionListLb">Subscription List</h2>
+							<h2 class="tit" id="i10610_schedulerHistoryLb">Scheduler History</h2>
 							<div class="schOptionGroup">
 								<ul class="itemList1">
 									<li>
 										<dl class="inpItem">
-											<!-- 2019-02-20 수정 -->
-											<dt id="i10501-keywordLb">Keyword</dt>
+											<dt id="i10610_keywordLb">Keyword</dt>
 											<dd>
 												<div class="inputBox">
-													<input type="text" name="i10501_keyword" class="inp inputFocus" id="i10501_keyword" placeholder="ID, Name, Bill to" maxlength="50">
+													<input type="text" name="i10610_keyword" class="inp inputFocus" id="i10610_keyword" placeholder="Schedule Name" maxlength="50">
 													<button type="button" class="inpReset"></button>
 												</div>
 											</dd>
-											<!--// 2019-02-20 수정 -->
 										</dl>
 									</li>
 									<li>
 										<dl class="inpItem">
-											<dt id="i10501-billingTypeLb">Billing Type</dt>
+											<dt id="i10610_typeLb">Type</dt>
 											<dd>
 												@@include('include/combobox.html',{
-													"id": "i10501-billingType",
+													"id": "i10610_typeLb",
 													"class": "",
 													"placeholder": "Select a Type"
 												})
@@ -42,41 +40,28 @@
 									</li>
 									<li>
 										<dl class="inpItem">
-											<dt id="i10501-creationLb">Registration</dt>
+											<dt id="i10610_creationLb">Creation</dt>
 											<dd>
 												@@include('include/daterangepicker.html',{
-													"id": "i10501_creation"
+													"id": "i10610_creation"
 												})
 											</dd>
 										</dl>
 									</li>
 								</ul>
-								<button type="button" class="btn schBtn" id="i10501-search">Search</button>
+								<button type="button" class="btn schBtn" id="i10610_search">Search</button>
 							</div>
 
-							<h3 class="tit" id="i10501-subscriptionLb">Subscriptions</h3>
+							<h3 class="tit" id="i10610_tasksLb">Tasks</h3>
 							<!-- 2019-02-25 수정 -->
 							<div class="ibsheetTop">
 							<!--// 2019-02-25 수정 -->
 								@@include('include/sheet_filter.html',{
-									"id": "i10501-filterStatus",
+									"id": "i10610_filterStatus",
 									"class": " filter",
 									"placeholder": "Filter Status"
 								})
-								<!-- 2019-02-21 수정 -->
-								<div class="btns">
-									<button type="button" class="btn" id="i10501-approval">Approval</button>
-									<button type="button" class="btn" id="i10501-reject">Reject</button>
-									<button type="button" class="btn" id="i10501-cancel">Cancel</button>
-									<button type="button" class="btn" id="i10501-addSubscription">Add Subscription</button>
-								</div>
-								<!--// 2019-02-21 수정 -->
 							</div>
-							<div class="ibsheetDiv">
-								ibsheet
-							</div>
-
-							<h3 class="tit" id="i10501-servicesLb">Services</h3>
 							<div class="ibsheetDiv">
 								ibsheet
 							</div>

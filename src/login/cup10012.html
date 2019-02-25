@@ -1,0 +1,26 @@
+@@include('include/head.html')
+<body>
+	<div class="flexWrap">
+		<div class="flexLayer">
+			<h1><img src="../static/images/common/logo.png" alt="OPUS LOGISTICS" /></h1>
+			<div class="flexContent">
+				<div class="inner">
+					<h2 class="tit" id="i10012_verificationEmaiSentLb">Verification Email has been sent</h2>
+					<div class="inpInner">
+						<p class="nTxt" id="i10012_verificationEmailInstructionLb">
+							We will send a Email to verify new account. <br />
+							Please, follow the instruction in the Email that has <br />
+							been sent to you.
+						</p>
+					</div>
+				</div>
+			</div>
+			@@include('include/link.html',{
+				"help": "i10012_helpLb",
+				"privacy": "i10012_privacyLb",
+				"terms": "i10012_termsLb"
+			})
+		</div>
+    </div>
+</body>
+</html>
