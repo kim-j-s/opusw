@@ -248,14 +248,9 @@ $(function(){
 	});
 
 	// only AlphaNum
-	
-	$(".Edit_AlphaNum > .inp").keyup(function(e) { 
-		if (!(e.keyCode >=37 && e.keyCode<=40)) {
-			var v = $(this).val();
-			$(this).val(v.replace(/[^a-z0-9]/gi,''));
-		}
+	$('.Edit_AlphaNum > .inp').on("blur keyup", function() {
+		$(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g, '' ) );
 	});
-
 
 });
 

@@ -115,6 +115,7 @@
 .inputBox.Edit_Time.readonly {width:83px;}
 .inputBox.Edit_Time.readonly > .inp {padding:0 0 0 0; text-align:center;}
 
+.inputBox.Edit_AlphaNum > .inp {ime-mode:disabled;}
 
 .inputBox.inpNone {border-radius:0;}
 .inputBox.inpNone > .inp {padding:0; border:none; font-weight:600; font-size:18px; color:#3e60ee;}
@@ -306,7 +307,7 @@ body .ui-tooltip {display:none !important;}
 .switchChk {position:relative; display:inline-block; height:30px;vertical-align:top; overflow:hidden;}
 .switchChk > input {position:absolute; top:-20px; left:0;}
 .switchChk > label {position:relative; display:block; padding:0 0 0 70px; font-size:14px; line-height:30px; cursor:pointer;}
-.switchChk > label:before {content:''; position:absolute; top:6px; left:8px; z-index:2; width:16px; height:16px; border-radius:50%; background:#d9d9d9; transition:.45s;}
+.switchChk > label:before {content:''; position:absolute; top:7px; left:8px; z-index:2; width:16px; height:16px; border-radius:50%; background:#d9d9d9; transition:.45s;}
 .switchChk > label:after {content:''; position:absolute; top:0; left:0; width:58px; height:30px; border-radius:45px 45px 45px 45px; border:2px solid #d9d9d9; box-sizing:border-box; transition:.45s;}
 .switchChk > input:checked + label {}
 .switchChk > input:checked + label:before {left:34px; background:#fff;}
