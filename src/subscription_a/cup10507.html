@@ -1,0 +1,25 @@
+@@include('include/head.html')
+<body>
+	<section class="layerPopup">
+		<div class="inner">
+			<h1 class="popupTitle" id="i10507_approvalStepLb">Approval Step</h1>
+			<div class="layerContent">
+				<dl class="inpItem">
+					<dt id="i10507_selectBillingPolicyLb">Select Billing Policy</dt>
+					<dd>
+						@@include('include/combobox.html',{
+							"id": "i10507_billingPolicy",
+							"class": " Mandate",
+							"placeholder": ""
+						})
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="layerBtns">
+			<button type="button" class="btn basic" id="i10507_applyBillingPolicy">Apply Billing Policy</button>
+		</div>
+		<button type="button" class="btn close">Close</button>
+	</section>
+</body>
+</html>

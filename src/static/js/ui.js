@@ -56,18 +56,15 @@ $(function(){
 	$('.pwinp').dPassword();
 
 	// Semantic UI Drop box
-	$('.ui.selection.dropdown').dropdown({
-		fullTextSearch:true
-	});
+	$('.ui.selection.dropdown').dropdown({fullTextSearch:true});
 
-	/*
-	$('.ui.selection.dropdown').find('.item').on('click', function(){
-		console.log($(this).html());
-		$(this).css('background','red');
-		$(this).closest('.ui.selection.dropdown').find('.search').blur();
-		$(this).closest('.ui.selection.dropdown').find('.search').css('background','blue');
+	// country cursor event
+	$('.selection.country').find('.menu').on("DOMSubtreeModified", function(){
+		if ( $(this).css('display') == 'none')
+		{
+			$('.ui.selection.dropdown').find('.search').blur();
+		}
 	});
-	*/
 
 	$('.ui.fluid.dropdown').dropdown({fullTextSearch:true});
 	$('.ui.floating.dropdown.labeled').dropdown();
@@ -250,6 +247,40 @@ $(function(){
 	// only AlphaNum
 	$('.Edit_AlphaNum > .inp').on("blur keyup", function() {
 		$(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g, '' ) );
+	});
+
+	// textarea
+	$('.textareaDiv > textarea').on("blur keyup", function() {
+		var str = $(this).val();
+		var strLng = str.length;
+		var rbyte = 0;
+		var rlen = 0;
+		var one_char = '';
+		var str2 = '';
+		var maxByte = 500;
+
+		for(var i=0; i < strLng; i++)
+		{
+			one_char = str.charAt(i);
+			if(escape(one_char).length > 4)
+			{
+				rbyte += 2;
+			} else {
+				rbyte++;
+			}
+			if(rbyte <= maxByte)
+			{
+				rlen = i+1;
+			}
+		}
+
+		if(rbyte > maxByte)
+		{
+			str2 = str.substr(0,rlen);
+			$(this).val(str2);
+		} else {
+			$(this).next().find('.bold').html(rbyte);
+		}
 	});
 
 });

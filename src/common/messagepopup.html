@@ -1,0 +1,40 @@
+@@include('include/head.html')
+<body>
+	<!-- 완성 예시 -->
+	<!--
+	<div class="messagePopup">
+		<dl class="mpCont">
+			<dt>Success</dt>
+			<dd>Data has been saved successfully</dd>
+		</dl>
+	</div>
+	-->
+	<!--// 완성 예시 -->
+
+	<button type="button" class="btn" onclick="msgpopup()">Message Popup</button>
+
+
+<script type="text/javascript">
+
+function msgpopup() {
+	var msg = '<div class="messagePopup">'
+			+   '<dl class="mpCont">'
+			+	  '<dt>Success</dt>'
+			+	  '<dd>Data has been saved successfully</dd>'
+			+   '</dl>'
+			+ '</div>';
+
+	$(msg).appendTo('body');
+
+	// fadeout 효과 후 해당 레이어 삭제
+	$('.messagePopup').fadeOut(3000, function(){
+		$(this).remove();
+	});
+}
+
+
+</script>
+
+
+</body>
+</html>
