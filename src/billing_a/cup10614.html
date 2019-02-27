@@ -31,7 +31,9 @@
 											<dt id="i10614_serviceLb">Service</dt>
 											<dd>
 												<div class="inputBox">
-													<input type="text" name="i10614_service" class="inp" id="i10614_service">
+													<!-- 2019-02-27 수정 -->
+													<input type="text" name="i10614_service" class="inp" id="i10614_service" maxlength="50">
+													<!--// 2019-02-27 수정 -->
 													<button type="button" class="inpReset"></button>
 												</div>
 											</dd>
@@ -42,7 +44,9 @@
 											<dt id="i10614_accountLb">Account</dt>
 											<dd>
 												<div class="inputBox">
-													<input type="text" name="i10614_account" class="inp" id="i10614_account" placeholder="">
+													<!-- 2019-02-27 수정 -->
+													<input type="text" name="i10614_account" class="inp" id="i10614_account" placeholder="" maxlength="50">
+													<!--// 2019-02-27 수정 -->
 													<button type="button" class="inpReset"></button>
 												</div>
 											</dd>
@@ -69,6 +73,19 @@
 											</dd>
 										</dl>
 									</li>
+									<!-- 2019-02-27 추가 -->
+									<li>
+										<dl class="inpItem">
+											<dt id="i10614_billingPartyLb">Billing Party</dt>
+											<dd>
+												<div class="inputBox">
+													<input type="text" name="i10614_billingParty" class="inp" id="i10614_billingParty" maxlength="50">
+													<button type="button" class="inpReset"></button>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<!--// 2019-02-27 추가 -->
 								</ul>
 								<button type="button" class="btn schBtn" id="i10614_search">Search</button>
 							</div>

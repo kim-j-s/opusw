@@ -56,7 +56,10 @@ $(function(){
 	$('.pwinp').dPassword();
 
 	// Semantic UI Drop box
-	$('.ui.selection.dropdown').dropdown({fullTextSearch:true});
+	$('.ui.selection.dropdown').dropdown({
+		fullTextSearch:true,
+		direction:'downward'
+	});
 
 	// country cursor event
 	$('.selection.country').find('.menu').on("DOMSubtreeModified", function(){
@@ -66,17 +69,21 @@ $(function(){
 		}
 	});
 
-	$('.ui.fluid.dropdown').dropdown({fullTextSearch:true});
-	$('.ui.floating.dropdown.labeled').dropdown();
+	$('.ui.fluid.dropdown').dropdown({
+		fullTextSearch:true,
+		direction:'downward'
+	});
+	$('.ui.floating.dropdown.labeled').dropdown({
+		direction:'downward'
+	});
 
 	// autocomplete
 	$(".autoSch.ty1").easyAutocomplete(Comp_options);
 	$(".autoSch.ty2").easyAutocomplete(city_options);
 	$(".autoSch.ty3").easyAutocomplete(state_options);
-	//$(".autoSch.keyword").easyAutocomplete(state_keyword);
 	$(".autoSch.Edit_User").easyAutocomplete(person);
 	$(".autoSch.Edit_Organization").easyAutocomplete(company);	
-
+	//$(".autoSch.keyword").easyAutocomplete(state_keyword);
 
 	//gnbList
 	GnbList();
@@ -90,6 +97,9 @@ $(function(){
 	// auto complete combobox
 	ACC();
 	$('.comboSelect').combobox();
+	$('.comboBox.readonly > .comboSelect').parent().find('.custom-combobox-input').prop({'readonly':true, 'tabindex':'-1'});
+	$('.comboBox.readonly > .comboSelect').parent().find('a.ui-button').button('disable');
+	
 	if ( $('.comboBox').hasClass('inputFocus') )
 	{
 		$(this).find('.custom-combobox-input').focus();
@@ -299,7 +309,7 @@ $(window).load(function(){
 // editor
 function Editor() {
 	var snowQuill = new Quill('#editor', {
-		placeholder: '기본 placerholder',
+		placeholder: '',
 		modules: {
 			toolbar: [
 			[{ header: [] }],
@@ -462,81 +472,81 @@ function PlusMinus() {
 // auto complete combobox
 function ACC() {
 	$.widget("custom.combobox", {
-      _create: function() {
-        this.wrapper = $( "<span>" )
-          .addClass( "custom-combobox" )
-          .insertAfter( this.element );
- 
-        this.element.hide();
-        this._createAutocomplete();
-        this._createShowAllButton();
-		this.input.attr("placeholder", this.element.attr('placeholder'));
-      },
+		_create: function() {
+			this.wrapper = $( "<span>" )
+				.addClass( "custom-combobox" )
+				.insertAfter( this.element );
+
+			this.element.hide();
+			this._createAutocomplete();
+			this._createShowAllButton();
+			this.input.attr("placeholder", this.element.attr('placeholder'));
+		},
  
       _createAutocomplete: function() {
-        var selected = this.element.children( ":selected" ),
-          value = selected.val() ? selected.text() : "";
+			var selected = this.element.children( ":selected" ),
+				value = selected.val() ? selected.text() : "";
  
-        this.input = $( "<input>" )
-          .appendTo( this.wrapper )
-          .val( value )
-          .attr( "title", "" )
-          .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left" )
-          .autocomplete({
-            delay: 0,
-            minLength: 0,
-            source: $.proxy( this, "_source" )
-          })
-          .tooltip({
-            classes: {
-              "ui-tooltip": "ui-state-highlight"
-            }
-          });
+			this.input = $( "<input>" )
+			.appendTo( this.wrapper )
+			.val( value )
+			.attr( "title", "" )
+			.addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left" )
+			.autocomplete({
+				delay: 0,
+				minLength: 0,
+				source: $.proxy( this, "_source" )
+			})
+			.tooltip({
+				classes: {
+					"ui-tooltip": "ui-state-highlight"
+				}
+			});
  
-        this._on( this.input, {
-          autocompleteselect: function( event, ui ) {
-            ui.item.option.selected = true;
-            this._trigger( "select", event, {
-              item: ui.item.option
-            });
-          },
+			this._on( this.input, {
+				autocompleteselect: function( event, ui ) {
+					ui.item.option.selected = true;
+					this._trigger( "select", event, {
+						item: ui.item.option
+					});
+				},
  
-          autocompletechange: "_removeIfInvalid"
-        });
-      },
+				autocompletechange: "_removeIfInvalid"
+			});
+		},
  
       _createShowAllButton: function() {
-        var input = this.input,
-          wasOpen = false;
+			var input = this.input,
+				wasOpen = false;
  
         $( "<a>" )
-          .attr( "tabIndex", -1 )
-          //.attr( "title", "Show All Items" )
-          .tooltip()
-          .appendTo( this.wrapper )
-          .button({
-            icons: {
-              primary: "ui-icon-triangle-1-s"
-            },
-            text: false
-          })
-          .removeClass( "ui-corner-all" )
-          .addClass( "custom-combobox-toggle ui-corner-right" )
-          .on( "mousedown", function() {
-            wasOpen = input.autocomplete( "widget" ).is( ":visible" );
-          })
-          .on( "click", function() {
-            input.trigger( "focus" );
- 
-            // Close if already visible
-            if ( wasOpen ) {
-              return;
-            }
- 
-            // Pass empty string as value to search for, displaying all results
-            input.autocomplete( "search", "" );
-          });
-      },
+			.attr( "tabIndex", -1 )
+			//.attr( "title", "Show All Items" )
+			.tooltip()
+			.appendTo( this.wrapper )
+			.button({
+				icons: {
+					primary: "ui-icon-triangle-1-s"
+				},
+				text: false
+			})
+			.removeClass( "ui-corner-all" )
+			.addClass( "custom-combobox-toggle ui-corner-right" )
+			.on( "mousedown", function() {
+				wasOpen = input.autocomplete( "widget" ).is( ":visible" );
+			})
+			.on( "click", function() {
+				input.trigger( "focus" );
+
+				// Close if already visible
+				if ( wasOpen ) {
+					return;
+				}
+
+				// Pass empty string as value to search for, displaying all results
+				input.autocomplete( "search", "" );
+			});
+		},
  
 		_source: function( request, response ) {
 			var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
@@ -561,45 +571,45 @@ function ACC() {
 		);
 	},
  
-      _removeIfInvalid: function( event, ui ) {
+		_removeIfInvalid: function( event, ui ) {
+
+			// Selected an item, nothing to do
+			if ( ui.item ) {
+				return;
+			}
+
+			// Search for a match (case-insensitive)
+			var value = this.input.val(),
+				valueLowerCase = value.toLowerCase(),
+				valid = false;
+			this.element.children( "option" ).each(function() {
+				if ( $( this ).text().toLowerCase() === valueLowerCase ) {
+					this.selected = valid = true;
+					return false;
+				}
+			});
+
+			// Found a match, nothing to do
+			if ( valid ) {
+				return;
+			}
+
+			// Remove invalid value
+			this.input
+				.val( "" )
+				.attr( "title", value + " didn't match any item" )
+				.tooltip( "open" );
+			this.element.val( "" );
+			this._delay(function() {
+				this.input.tooltip( "close" ).attr( "title", "" );
+			}, 2500 );
+			this.input.autocomplete( "instance" ).term = "";
+		},
  
-        // Selected an item, nothing to do
-        if ( ui.item ) {
-          return;
-        }
- 
-        // Search for a match (case-insensitive)
-        var value = this.input.val(),
-          valueLowerCase = value.toLowerCase(),
-          valid = false;
-        this.element.children( "option" ).each(function() {
-          if ( $( this ).text().toLowerCase() === valueLowerCase ) {
-            this.selected = valid = true;
-            return false;
-          }
-        });
- 
-        // Found a match, nothing to do
-        if ( valid ) {
-          return;
-        }
- 
-        // Remove invalid value
-        this.input
-          .val( "" )
-          .attr( "title", value + " didn't match any item" )
-          .tooltip( "open" );
-        this.element.val( "" );
-        this._delay(function() {
-          this.input.tooltip( "close" ).attr( "title", "" );
-        }, 2500 );
-        this.input.autocomplete( "instance" ).term = "";
-      },
- 
-      _destroy: function() {
-        this.wrapper.remove();
-        this.element.show();
-      }
+		_destroy: function() {
+			this.wrapper.remove();
+			this.element.show();
+		}
     });
 }
 
@@ -694,8 +704,6 @@ function GeoLocation(e) {
 }
 
 // function
-
-
 
 // 자동완성 예시 변수
 var Comp_options = {
@@ -927,3 +935,47 @@ var company = {
 		}
 	}
 };
+
+
+
+
+$(function(){
+	$(".autoSch.key").easyAutocomplete(test);
+});
+
+var test = {
+	url: function(phrase) {
+		return "http://fwd01.cyberlogitec.com:3000/api/v1/location?phrase=" + phrase;
+	},
+	getValue: function(element) {
+		return element.name+", "+element.code+", "+element.keyword;
+	},
+
+	template: {
+		type: "custom",
+		method: function(value, item) {
+			return item.name + "<span>" + item.code + "</span>";
+		}
+	},
+	list: {
+		maxNumberOfElements: 10,
+		sort: {
+			enabled: true
+		},
+		onSelectItemEvent: function() {
+			var selectedItemValue = $(".autoSch.key.name").getSelectedItemData().name;
+			var selectedItemValue2 = $(".autoSch.key.name").getSelectedItemData().code;
+			$(".autoSch.key.name").val(selectedItemValue);
+			$(".autoSch.key.code").val(selectedItemValue2);
+		},
+		onChooseEvent: function() {
+			var selectedItemValue = $(".autoSch.key.name").getSelectedItemData().name;
+			var selectedItemValue2 = $(".autoSch.key.name").getSelectedItemData().code;
+			$(".autoSch.key.name").val(selectedItemValue);
+			$(".autoSch.key.code").val(selectedItemValue2);
+		},
+		match: {
+			enabled: true
+		}
+	}
+}

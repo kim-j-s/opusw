@@ -33,9 +33,121 @@
 				<dl class="inpItem">
 					<dt id="">Select Files</dt>
 					<dd>
-						d
+						<ul class="fileList">
+							<li class="fix">
+								<input type="file" name="" id="" class="inpfile" />
+								<div class="inputBox">
+									<input type="text" name="" class="inp" id="" readonly="readonly">
+								</div>
+								<div class="btns">
+									<button type="button" class="btn minus" id="">Delete</button>
+									<button type="button" class="btn plus" onclick="fileUpload(this)" id="">Add</button>
+								</div>
+							</li>
+
+							<li>
+								<input type="file" name="" id="" class="inpfile" />
+								<div class="inputBox">
+									<input type="text" name="" class="inp" id="" readonly="readonly">
+								</div>
+								<div class="btns">
+									<button type="button" class="btn minus" id="">Delete</button>
+									<button type="button" class="btn plus" onclick="fileUpload(this)" id="">Add</button>
+								</div>
+							</li>
+
+							<li>
+								<input type="file" name="" id="" class="inpfile" />
+								<div class="inputBox">
+									<input type="text" name="" class="inp" id="" readonly="readonly">
+								</div>
+								<div class="btns">
+									<button type="button" class="btn minus" id="">Delete</button>
+									<button type="button" class="btn plus" onclick="fileUpload(this)" id="">Add</button>
+								</div>
+							</li>
+
+							<li>
+								<input type="file" name="" id="" class="inpfile" />
+								<div class="inputBox">
+									<input type="text" name="" class="inp" id="" readonly="readonly">
+								</div>
+								<div class="btns">
+									<button type="button" class="btn minus" id="">Delete</button>
+									<button type="button" class="btn plus" onclick="fileUpload(this)" id="">Add</button>
+								</div>
+							</li>
+
+							<li>
+								<input type="file" name="" id="" class="inpfile" />
+								<div class="inputBox">
+									<input type="text" name="" class="inp" id="" readonly="readonly">
+								</div>
+								<div class="btns">
+									<button type="button" class="btn minus" id="">Delete</button>
+									<button type="button" class="btn plus" onclick="fileUpload(this)" id="">Add</button>
+								</div>
+							</li>
+
+						</ul>
 					</dd>
 				</dl>
+
+
+
+<style type="text/css">
+.fileList {}
+.fileList > li {position:relative; display:none; font-size:0;}
+.fileList > li:first-child {display:block;}
+.fileList > li + li {margin-top:30px;}
+.fileList > li input[type="file"] {position:absolute; top:-25px; right:-100px; font-size:13px;}
+.fileList > li .btn.minus {display:none;}
+
+.fileList > li .pathDp {display:inline-block; width:200px; height:30px; padding:0 10px; border:1px solid blue; font-size:13px; line-height:28px; vertical-align:top;}
+.fileList > li .pathDp {overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.fileList > li .pathDp + .btns {margin-left:7px;}
+.fileList > li .btns {display:inline-block; font-size:0; vertical-align:top;}
+.fileList > li .btns .btn + .btn {margin-left:7px;}
+</style>
+
+
+<script type="text/javascript">
+$(function(){
+	//fileUpload
+
+	$('.inpfile').change(function(){
+		console.log( $(this).val() );
+		g = $('.inpfile').val().split('\\').pop();
+		$(this).closest('li').find('.inp').val(g);
+	});
+
+	$('.fileList > li').click(function(){
+		if ( !$(this).hasClass('fix'))
+		{
+			console.log( $(this).attr('class'));
+			$('.fileList > li').first().appendTo('.fileList');
+			$('.fileList > li').removeClass('fix').first().addClass('fix');
+		}
+	});
+
+
+});
+
+
+function fileUpload(e) {
+	$(e).closest('li').find('input').trigger('click');
+}
+
+
+</script>
+
+
+
+
+
+
+
+
 				<dl class="inpItem">
 					<dt id="">Posted on</dt>
 					<dd>

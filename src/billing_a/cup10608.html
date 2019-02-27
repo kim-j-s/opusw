@@ -58,16 +58,22 @@
 												</dd>
 											</dl>
 										</li>
+
+										<!-- 2019-02-27 수정 -->
 										<li>
 											<dl class="inpItem">
 												<dt id="10608_paymentMethodLb">Payment Method</dt>
 												<dd>
-													<div class="inputBox">
-														<input type="text" name="10608_paymentMethod" class="inp Readonly" id="10608_paymentMethod" readonly="readonly" value="Manual – Bank Account" tabindex="-1">
-													</div>
+													@@include('include/combobox_readonly.html',{
+														"id": "10608_paymentMethod",
+														"class": " readonly",
+														"placeholder": "Select a Type"
+													})
 												</dd>
 											</dl>
 										</li>
+										<!--// 2019-02-27 수정 -->
+
 										<li>
 											<dl class="inpItem">
 												<dt id="10608_billingPartyLb">Billing Party</dt>
