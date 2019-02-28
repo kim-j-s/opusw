@@ -18,10 +18,6 @@
 
 
 /* login */
-/* .flexWrap{position:relative; display:flex; height:100%; align-items:center;} */
-/* .flexWrap:before {content:''; flex:0; text-align:center;} */
-/* .flexWrap > form {display:inline-block; margin:0 auto;} */
-/* .flexLayer {display:inline-block; margin:0 auto;} */
 .flexWrap {position:absolute; top:0; right:0; bottom:0; left:0; width:100%; min-width:1400px; height:100%; text-align:center;}
 .flexWrap:before {content:''; display:inline-block; height:100%; vertical-align:middle;}
 .flexWrap > form {display:inline-block; vertical-align:middle; text-align:left; background:#fff;}
@@ -104,6 +100,18 @@ h3.tit + .editorWrap {margin-top:10px;}
 .inpItem2.total + .inpItem2Group {margin-top:15px;}
 .inpItem2Group + .inpItem2.total {margin-top:15px; padding-top:11px; border-top:1px solid #d9d9d9;}
 
+.fileList {}
+.fileList > li {position:relative; display:none; font-size:0; overflow:hidden;}
+.fileList > li + li {margin-top:15px;}
+.fileList > li.on {display:block;}
+.fileList > li input[type="file"] {position:absolute; top:-25px; right:-100px; font-size:13px;}
+.fileList > li:first-child .btn.minus {display:none;}
+.fileList > li .pathDp {display:inline-block; width:200px; height:30px; padding:0 10px; border:1px solid blue; font-size:13px; line-height:28px; vertical-align:top;}
+.fileList > li .pathDp {overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.fileList > li .pathDp + .btns {margin-left:7px;}
+.fileList > li .btns {display:inline-block; font-size:0; vertical-align:top;}
+.fileList > li .btns .btn {margin-left:7px;}
+
 
 /* txtBox */
 .txtBox {max-height:200px; font-size:14px; overflow:auto;}
@@ -176,7 +184,8 @@ h3.tit + .editorWrap {margin-top:10px;}
 .imgAdd {max-width:320px;}
 .imgAdd > .imgBox {position:relative; display:inline-block; max-width:360px; font-size:0;}
 .imgAdd > .imgBox > img {max-width:100%;}
-.imgAdd > .imgBox.person > img {max-width:40px;}
+.imgAdd > .imgBox.person > img {max-width:40px; border-radius:50%;}
+.imgAdd > .imgBox.logo > img {border-radius:25%;}
 .imgAdd > .imgBox .imgRemove {position:absolute; top:-7px; right:-7px; display:none;}
 .imgAdd > .changeBtn {text-align:right;}
 .imgAdd > .imgBox + .changeBtn {margin-top:10px;}

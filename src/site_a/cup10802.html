@@ -2,160 +2,99 @@
 <body>
 	<section class="layerPopup wide">
 		<div class="inner">
-			<h1 class="popupTitle" id="">Notice</h1>
+			<h1 class="popupTitle" id="i10802_noticeLb">Notice</h1>
 			<div class="layerContent">
 
 				<dl class="inpItem">
-					<dt id="">Category</dt>
+					<dt id="i10802_categoryLb">Category</dt>
 					<dd>
 						@@include('include/combobox.html',{
-							"id": "",
+							"id": "i10802_category",
 							"class": " Mandate inputFocus",
 							"placeholder": "Select a Category"
 						})
 					</dd>
 				</dl>
 				<dl class="inpItem">
-					<dt id="">Title</dt>
+					<dt id="i10802_titleLb">Title</dt>
 					<dd>
 						<div class="inputBox full">
-							<input type="text" name="" class="inp Mandate" id="" placeholder="" maxlength="80">
+							<input type="text" name="i10802_title" class="inp Mandate" id="i10802_title" placeholder="" maxlength="80">
 							<button type="button" class="inpReset"></button>
 						</div>
 					</dd>
 				</dl>
 
-				<h3 class="tit">Contents</h3>
+				<h3 class="tit" id="i10802_contentsLb">Contents</h3>
 				<div class="editorWrap">
 					<div id="editor"></div>
 				</div>
 
 				<dl class="inpItem">
-					<dt id="">Select Files</dt>
+					<dt id="i10802_attachmentLb">Select Files</dt>
 					<dd>
 						<ul class="fileList">
-							<li class="fix">
-								<input type="file" name="" id="" class="inpfile" />
+							<li class="on">
+								<input type="file" name="i10802_attachment1" id="i10802_attachment1" class="inpfile" />
 								<div class="inputBox">
 									<input type="text" name="" class="inp" id="" readonly="readonly">
 								</div>
 								<div class="btns">
-									<button type="button" class="btn minus" id="">Delete</button>
-									<button type="button" class="btn plus" onclick="fileUpload(this)" id="">Add</button>
+									<button type="button" class="btn minus" onclick="fileUploadDelete(this)" id="i10802_attachmentDelete1">Delete</button>
+									<button type="button" class="btn plus" onclick="fileUploadAdd(this)" id="i10802_attachmentAdd1">Add</button>
 								</div>
 							</li>
-
 							<li>
-								<input type="file" name="" id="" class="inpfile" />
+								<input type="file" name="i10802_attachment2" id="i10802_attachment2" class="inpfile" />
 								<div class="inputBox">
 									<input type="text" name="" class="inp" id="" readonly="readonly">
 								</div>
 								<div class="btns">
-									<button type="button" class="btn minus" id="">Delete</button>
-									<button type="button" class="btn plus" onclick="fileUpload(this)" id="">Add</button>
+									<button type="button" class="btn minus" onclick="fileUploadDelete(this)" id="i10802_attachmentDelete2">Delete</button>
+									<button type="button" class="btn plus" onclick="fileUploadAdd(this)" id="i10802_attachmentAdd2">Add</button>
 								</div>
 							</li>
-
 							<li>
-								<input type="file" name="" id="" class="inpfile" />
+								<input type="file" name="i10802_attachment3" id="i10802_attachment3" class="inpfile" />
 								<div class="inputBox">
 									<input type="text" name="" class="inp" id="" readonly="readonly">
 								</div>
 								<div class="btns">
-									<button type="button" class="btn minus" id="">Delete</button>
-									<button type="button" class="btn plus" onclick="fileUpload(this)" id="">Add</button>
+									<button type="button" class="btn minus" onclick="fileUploadDelete(this)" id="i10802_attachmentDelete3">Delete</button>
+									<button type="button" class="btn plus" onclick="fileUploadAdd(this)" id="i10802_attachmentAdd3">Add</button>
 								</div>
 							</li>
-
 							<li>
-								<input type="file" name="" id="" class="inpfile" />
+								<input type="file" name="i10802_attachment4" id="i10802_attachment4" class="inpfile" />
 								<div class="inputBox">
 									<input type="text" name="" class="inp" id="" readonly="readonly">
 								</div>
 								<div class="btns">
-									<button type="button" class="btn minus" id="">Delete</button>
-									<button type="button" class="btn plus" onclick="fileUpload(this)" id="">Add</button>
+									<button type="button" class="btn minus" onclick="fileUploadDelete(this)" id="i10802_attachmentDelete4">Delete</button>
+									<button type="button" class="btn plus" onclick="fileUploadAdd(this)" id="i10802_attachmentAdd4">Add</button>
 								</div>
 							</li>
-
 							<li>
-								<input type="file" name="" id="" class="inpfile" />
+								<input type="file" name="i10802_attachment5" id="i10802_attachment5" class="inpfile" />
 								<div class="inputBox">
 									<input type="text" name="" class="inp" id="" readonly="readonly">
 								</div>
 								<div class="btns">
-									<button type="button" class="btn minus" id="">Delete</button>
-									<button type="button" class="btn plus" onclick="fileUpload(this)" id="">Add</button>
+									<button type="button" class="btn minus" onclick="fileUploadDelete(this)" id="i10802_attachmentDelete5">Delete</button>
+									<button type="button" class="btn plus" onclick="fileUploadAdd(this)" id="i10802_attachmentAdd5">Add</button>
 								</div>
 							</li>
-
 						</ul>
 					</dd>
 				</dl>
-
-
-
-<style type="text/css">
-.fileList {}
-.fileList > li {position:relative; display:none; font-size:0;}
-.fileList > li:first-child {display:block;}
-.fileList > li + li {margin-top:30px;}
-.fileList > li input[type="file"] {position:absolute; top:-25px; right:-100px; font-size:13px;}
-.fileList > li .btn.minus {display:none;}
-
-.fileList > li .pathDp {display:inline-block; width:200px; height:30px; padding:0 10px; border:1px solid blue; font-size:13px; line-height:28px; vertical-align:top;}
-.fileList > li .pathDp {overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
-.fileList > li .pathDp + .btns {margin-left:7px;}
-.fileList > li .btns {display:inline-block; font-size:0; vertical-align:top;}
-.fileList > li .btns .btn + .btn {margin-left:7px;}
-</style>
-
-
-<script type="text/javascript">
-$(function(){
-	//fileUpload
-
-	$('.inpfile').change(function(){
-		console.log( $(this).val() );
-		g = $('.inpfile').val().split('\\').pop();
-		$(this).closest('li').find('.inp').val(g);
-	});
-
-	$('.fileList > li').click(function(){
-		if ( !$(this).hasClass('fix'))
-		{
-			console.log( $(this).attr('class'));
-			$('.fileList > li').first().appendTo('.fileList');
-			$('.fileList > li').removeClass('fix').first().addClass('fix');
-		}
-	});
-
-
-});
-
-
-function fileUpload(e) {
-	$(e).closest('li').find('input').trigger('click');
-}
-
-
-</script>
-
-
-
-
-
-
-
-
 				<dl class="inpItem">
-					<dt id="">Posted on</dt>
+					<dt id="i10802_modifiedOnLb">Posted on</dt>
 					<dd>
 						<div class="inputBox Edit_date single">
-							<input type="text" name="" class="inp Readonly" id="" value="12-14-2018" readonly="readonly" tabindex="-1">
+							<input type="text" name="i10802_modifiedDate" class="inp Readonly" id="i10802_modifiedDate" value="12-14-2018" readonly="readonly" tabindex="-1">
 						</div>
 						<div class="inputBox Edit_Time readonly">
-							<input type="text" name="" class="inp Readonly" id="" value="10 : 20 AM" readonly="readonly" tabindex="-1">
+							<input type="text" name="i10802_modifiedTime" class="inp Readonly" id="i10802_modifiedTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
 						</div>
 					</dd>
 				</dl>
@@ -164,19 +103,17 @@ function fileUpload(e) {
 					<dd>
 						<div class="inputBox Edit_User">
 							<div class="thumb">
-								<img src="../static/images/common/icon/icon_person_small.png" alt="" name="" id="" />
+								<img src="../static/images/common/icon/icon_person_small.png" alt="" name="i10802-modifiedByPhotoUrl" id="i10802-modifiedByPhotoUrl" />
 							</div>
-							<input type="text" name="" class="inp Readonly" id="" value="Park, JungIl" readonly="readonly" tabindex="-1">
+							<input type="text" name="i10802_modifiedBy" class="inp Readonly" id="i10802_modifiedBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
 						</div>
 					</dd>
 				</dl>
 			</div>
 		</div>
 		<div class="layerBtns">
-			<button type="button" class="btn basic" id="">Save</button>
-			<button type="button" class="btn basic" id="">Delete</button>
-			<button type="button" class="btn plus" id="">Add</button>
-			<button type="button" class="btn minus" id="">Delete</button>
+			<button type="button" class="btn basic" id="i10802_Save">Save</button>
+			<button type="button" class="btn basic" id="i10802_Delete">Delete</button>
 		</div>
 		<button type="button" class="btn close">Close</button>
 	</section>

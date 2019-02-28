@@ -293,6 +293,20 @@ $(function(){
 		}
 	});
 
+	//fileUpload File
+	$('.inpfile').change(function(){
+		g = $(this).val().split('\\').pop();
+		$(this).closest('li').find('.inp').val(g);
+		if ( !$(this).val() == '' )
+		{
+			$(this).closest('li').find('.btn.minus').css('display','inline-block');
+			$(this).closest('li').find('.btn.plus').css('display','none');
+			$(this).closest('li').next().addClass('on');
+			$(this).closest('li').next().find('.btn.minus').css('display','inline-block');
+			$(this).closest('li').next().find('.btn.plus').css('display','inline-block');
+		}
+	});
+
 });
 
 
@@ -384,7 +398,6 @@ function GnbListClip() {
 	});
 }
 
-
 // util menu display
 function UtilMenu() {
 	$('.util').find('.btn.utilMenu').on('click', function(){
@@ -399,7 +412,6 @@ function UtilMenu() {
 		$(this).closest('.utilBox').stop(true,true).slideUp();
 	});
 }
-
 
 // input reset
 function InputReset() {
@@ -700,6 +712,27 @@ function GeoLocation(e) {
 	}
 	function showPosition(position) {
 		$(find).val(position.coords.latitude + " , " + position.coords.longitude);
+	}
+}
+
+// fileUploadAdd
+function fileUploadAdd(e) {
+	$(e).closest('li').find('.inpfile').val('');
+	$(e).closest('li').find('.inp').val('');
+	$(e).closest('li').find('.inpfile').trigger('click');
+}
+
+// fileUploadDelete
+function fileUploadDelete(e) {
+	i = $(e).closest('li').index();
+	$(e).closest('li').find('.inpfile').val('');
+	$(e).closest('li').find('.inp').val('');
+	$(e).css('display','none');
+	$('.fileList > li').eq(i).removeClass('on').appendTo('.fileList');
+	$('.fileList > li.on').last().find('.btn.plus').css('display','inline-block');
+	if ( $('.fileList > li.on').length < 2)
+	{
+		$('.fileList > li.on').eq(0).find('.btn.minus').css('display','none');
 	}
 }
 
