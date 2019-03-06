@@ -1,0 +1,74 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<!-- 헤더영역 -->
+		@@include('include/header.html')
+		<!-- //헤더영역 -->
+		<section id="container">
+			<div class="inner">
+				@@include('include/nav.html')
+				<div class="content">
+					@@include('include/tabWrap.html')
+					<!-- 컨텐츠 영역 -->
+					<form action="">
+						<div class="layout Layout_List">
+							<h2 class="tit" id="i10705_serverGroupListLb">Service Group List</h2>
+							<div class="schOptionGroup">
+								<ul class="itemList1">
+									<li>
+										<dl class="inpItem">
+											<dt id="i10705_keywordLb">Keyword</dt>
+											<dd>
+												<div class="inputBox">
+													<input type="text" name="i10705_keyword" class="inp inputFocus" id="i10705_keyword" placeholder="Service Group" maxlength="50">
+													<button type="button" class="inpReset"></button>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="i10705_productLineLb">Product Line</dt>
+											<dd>
+												@@include('include/combobox.html',{
+													"id": "i10705_productLine",
+													"class": "",
+													"placeholder": "Select a Product Line"
+												})
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="i10705_creationLb">Creation</dt>
+											<dd>
+												@@include('include/daterangepicker.html',{
+													"id": "i10705_creation"
+												})
+											</dd>
+										</dl>
+									</li>
+								</ul>
+								<button type="button" class="btn schBtn" id="i10705_search">Search</button>
+							</div>
+
+							<h3 class="tit" id="i10705_rolesLb">Service Groups</h3>
+							<div class="ibsheetTop">
+								@@include('include/sheet_filter.html',{
+									"id": "i10705_filterStatus",
+									"class": " filter",
+									"placeholder": "Filter Status"
+								})
+							</div>
+							<div class="ibsheetDiv">
+								ibsheet
+							</div>
+						</div>
+					</form>
+					<!--// 컨텐츠 영역 -->
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
