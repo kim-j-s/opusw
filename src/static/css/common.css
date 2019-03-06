@@ -333,7 +333,7 @@ body .ui-tooltip {display:none !important;}
 .btn.basic {color:#fff; background:#0b61ca;}
 .btn.basic:disabled {background:#e0e1e2;}
 .btn.schBtn {position:relative; width:30px; height:30px; padding:0; background:#eceefb; overflow:hidden; border:none; border-radius:5px; text-indent:-999px;}
-.btn.schBtn:before {content:''; position:absolute; top:5px; left:6px; width:16px; height:17px; background:url(../images/common/sprite_common.png) no-repeat -126px -140px;}
+.btn.schBtn:before {content:''; position:absolute; top:7px; left:7px; width:16px; height:17px; background:url(../images/common/sprite_common.png) no-repeat -126px -140px;}
 a.btn {text-decoration:none; color:#fff;}
 .imgRemove {display:inline-block; width:14px; height:14px; font-size:0; text-indent:-999px; overflow:hidden; background:url(../images/common/sprite_common.png) no-repeat 0px -120px;}
 .btn.addBtn {width:31px; height:30px; padding:0; text-indent:-999px; background:#fff; border:1px solid #dcdcdc; overflow:hidden;}
@@ -349,6 +349,14 @@ a.btn {text-decoration:none; color:#fff;}
 .btn.minus {width:30px; padding:0; background:#fff; border:1px solid #b4bcc9; overflow:hidden; text-indent:-999px;}
 .btn.minus:before {content:''; position:absolute; top:13px; left:6px; width:16px; border-bottom:2px solid #0b61ca;}
 .btn.error {background:#009fe8;}
+
+
+/* datepicker btn */
+.daterangepicker td.in-range {color:#4c7bec; background-color:#e9eef8;}
+.daterangepicker td.start-date, .daterangepicker td.start-date:hover {color:#fff; background-color:#4c7bec;}
+.daterangepicker td.in-range.end-date {color:#fff; background-color:#4c7bec;}
+.daterangepicker .drp-buttons .btn {margin-left:7px; padding:0 17px; font-size:13px; vertical-align:middle;}
+.daterangepicker .drp-buttons .btn.btn-primary {background:#0b61ca;}
 
 
 /* menuAll */
