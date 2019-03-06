@@ -249,14 +249,43 @@ $(function(){
 
 	// input control
 	// only Number
-	$(".inp.onlyNumber").keyup(function (event) {
-		var inputVal = $(this).val();
-		$(this).val(inputVal.replace(/[^0-9]/gi,''));
+	$(".inp.onlyNumber").on('keypress', function (event) {
+		if ( (event.keyCode < 48) || (event.keyCode > 57) ) {
+			return false;
+		}
 	});
 
-	// only AlphaNum
+	$(".inp.onlyNumber").on('blur', function (event) {
+		var v = $(this).val();
+		console.log('숫자값 : ' + v);
+
+
+		/*
+		if ( (event.keyCode < 48) || (event.keyCode > 57) ) {
+			return false;
+		}
+
+		formObj.mk_meas.value = doMoneyFmt(formObj.mk_meas.value.replace(/,/gi, ""));
+		*/
+
+
+	});
+
+	// AlphaNum
 	$('.Edit_AlphaNum > .inp').on("blur keyup", function() {
 		$(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g, '' ) );
+	});
+
+	$('.Edit_AlphaNum > .textarea').on("blur keyup", function() {
+		$(this).val( $(this).val().replace( /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g, '' ) );
+	});
+
+	// Only_AlphaNum
+	$('.Only_AlphaNum > .inp').on("blur keyup", function(e) {
+		if (!(e.keyCode >=37 && e.keyCode<=40)) {
+			var v = $(this).val();
+			$(this).val(v.replace(/[^a-z0-9]/gi,''));
+		}
 	});
 
 	// textarea

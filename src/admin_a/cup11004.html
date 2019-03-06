@@ -1,0 +1,136 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<!-- 헤더영역 -->
+		@@include('include/header.html')
+		<!-- //헤더영역 -->
+		<section id="container">
+			<div class="inner">
+				@@include('include/nav.html')
+				<div class="content editBtns">
+					@@include('include/tabWrap.html')					
+					<!-- 컨텐츠 영역 -->
+					<form action="">
+					<div class="layout Layout_Sidebar">
+						<h2 class="tit" id="i11004_roleLb">Role</h2>
+						<div class="serviceCode">
+							<div class="srvNum" id="">
+								<div class="inputBox inpNone">
+									<input type="text" name="i11004_roleIdLb" class="inp" id="i11004_roleIdLb" readonly="readonly" value="R10000001" tabindex="-1">
+								</div>
+							</div>
+							<div class="actChk">
+								<div class="switchChk">
+									<input type="checkbox" name="i11004_activeChk" id="i11004_activeChk" checked="checked">
+									<label for="i11004_activeChk" id="i11004_active">
+										<span class="txt1">Inactive</span>
+										<span class="txt2">Active</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="inner">
+							<div class="lsCont">
+								<h3 class="tit" id="i11004_basicLb">Basic</h3>
+								<ul class="itemList2">
+									<li>
+										<dl class="inpItem">
+											<dt id="i11004_roleNameLb">Role Name</dt>
+											<dd>
+												<div class="inputBox">
+													<input type="text" name="i11004_roleName" class="inp Mandate inputFocus" id="i11004_roleName">
+													<button type="button" class="inpReset"></button>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="i11004_descriptionLb">Description</dt>
+											<dd>
+												<div class="textareaDiv Edit_AlphaNum">
+													<textarea name="i11004_description" id="i11004_description" cols="30" rows="10" class="textarea" maxlength="500" placeholder=""></textarea>
+													<div class="byte"><span class="bold">0</span>/500</div>
+												</div>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+
+								<h3 class="tit" id="i11004_usersLb">Users</h3>
+								<div class="ibsheetTop">
+									<div class="btns">
+										<button type="button" class="btn addBtn" id="i11004_rowAdd">ADD</button>
+										<button type="button" class="btn removeBtn" id="i11004_rowDelete">REMOVE</button>
+									</div>
+								</div>
+								<div class="ibsheetDiv">
+									ibsheet
+								</div>
+							</div>
+
+							<div class="lsCont fix">
+								<h3 class="tit" id="i11004_record">Record</h3>
+								<dl class="inpItem2">
+									<dt id="i11004_createdOnLb">Created on</dt>
+									<dd>
+										<div class="ele">
+											<div class="inputBox Edit_date single">
+												<input type="text" name="i11004_createDate" class="inp Readonly" id="i11004_createDate" value="12-14-2018" readonly="readonly" tabindex="-1">
+											</div>
+											<div class="inputBox Edit_Time readonly">
+												<input type="text" name="i11004_createTime" class="inp Readonly" id="i11004_createTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
+											</div>
+										</div>
+										<div class="ele">
+											<div class="inputBox Edit_User">
+												<div class="thumb">
+													<img src="../static/images/common/icon/icon_person_small.png" alt="" name="i11004_createdByPhotoUrl" id="i11004_createdByPhotoUrl" />
+												</div>
+												<input type="text" name="i11004_createdBy" class="inp Readonly" id="i11004_createdBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
+											</div>
+										</div>
+									</dd>
+								</dl>
+
+								<dl class="inpItem2">
+									<dt id="i11004_modifiedOnLb">Modified on</dt>
+									<dd>
+										<div class="ele">
+											<div class="inputBox Edit_date single">
+												<input type="text" name="i11004_modifiedDate" class="inp Readonly" id="i11004_modifiedDate" value="12-14-2018" readonly="readonly" tabindex="-1">
+											</div>
+											<div class="inputBox Edit_Time readonly">
+												<input type="text" name="i11004_modifiedTime" class="inp Readonly" id="i11004_modifiedTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
+											</div>
+										</div>
+										<div class="ele">
+											<div class="inputBox Edit_User">
+												<div class="thumb">
+													<img src="../static/images/common/icon/icon_person_small.png" alt="" name="i11004_modifiedByPhotoUrl" id="i11004_modifiedByPhotoUrl" />
+												</div>
+												<input type="text" name="i11004_modifiedBy" class="inp Readonly" id="i11004_modifiedBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
+											</div>
+										</div>
+									</dd>
+								</dl>
+
+							</div>
+						</div>
+						<div class="editBtns">
+							<button type="button" class="btn basic" id="i11004_save">Save</button>
+						</div>
+					</div>
+					</form>
+					<!--// 컨텐츠 영역 -->
+				</div>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('form').areYouSure();
+		});
+	</script>
+</body>
+</html>

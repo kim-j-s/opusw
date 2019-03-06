@@ -1,0 +1,36 @@
+@@include('include/head.html')
+<body>
+	<section class="layerPopup">
+		<div class="inner">
+			<h1 class="popupTitle" id="">Manual Invoice Issuance</h1>
+			<div class="layerContent">
+				<dl class="inpItem">
+					<dt id="i10617_subscriptionLb">Select Subscription</dt>
+					<dd>
+						<div class="inputBox schType ty1 short">
+							<div class="inner">
+								<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+								<input type="text" name="i10617_subscription" class="inp autoSch ty1 name Mandate" id="i10617_subscription" placeholder="Select a Subscription">
+								<button type="button" class="inpReset"></button>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl class="inpItem">
+					<dt id="i10617_invoiceDateLb">Select Invoice Date</dt>
+					<dd>
+						@@include('include/datesinglepicker.html',{
+							"id": "i10617_invoiceDate",
+							"class": ""
+						})
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="layerBtns">
+			<button type="button" class="btn basic" id="i10617_addInvoice">Add Invoice</button>
+		</div>
+		<button type="button" class="btn close">Close</button>
+	</section>
+</body>
+</html>
