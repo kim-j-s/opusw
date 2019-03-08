@@ -360,6 +360,7 @@ a.btn {text-decoration:none; color:#fff;}
 .daterangepicker td.in-range.end-date {color:#fff; background-color:#4c7bec;}
 .daterangepicker .drp-buttons .btn {margin-left:7px; padding:0 17px; font-size:13px; vertical-align:middle;}
 .daterangepicker .drp-buttons .btn.btn-primary {background:#0b61ca;}
+.daterangepicker.single .drp-buttons {display:block !important;}
 
 
 /* menuAll */

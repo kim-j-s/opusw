@@ -109,7 +109,6 @@ $(function(){
 	tsChk();
 	tsDisplay();
 
-
 	// date range picker
 	$('.daterange').daterangepicker({
 		ranges: {
@@ -120,12 +119,12 @@ $(function(){
 			'This Month': [moment().startOf('month'), moment().endOf('month')],
 			'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
 		},
-		"autoUpdateInput": false,
+		"autoUpdateInput": true,
 		"locale": {
 			"format": "MM/DD/YYYY",
 			"separator": " - ",
 			"applyLabel": "Apply",
-			"cancelLabel": "Cancel",
+			"cancelLabel": "Clear",
 			"fromLabel": "From",
 			"toLabel": "To",
 			"customRangeLabel": "Custom",
@@ -156,70 +155,85 @@ $(function(){
 			"firstDay": 1
 		},
 			"alwaysShowCalendars": true
-			//"startDate": "01/22/2019",
-			//"endDate": "01/28/2019"
 		}, function(start, end, label) {
-		console.log('New date range selected: ' + start.format('YYYY/MM/DD') + ' to ' + end.format('YYYY/MM/DD') + ' (predefined range: ' + label + ')');
+			console.log('New date range selected: ' + start.format('YYYY/MM/DD') + ' to ' + end.format('YYYY/MM/DD') + ' (predefined range: ' + label + ')');
 	});
+
 	$('.daterange').val('');
 
-	$('.datesingle').daterangepicker({
-		"singleDatePicker": true,
-		"autoUpdateInput": false,
-		"alwaysShowCalendars": true,
-		"locale": {
-			"format": "MM/DD/YYYY",			
-			"separator": " - ",
-			"applyLabel": "Apply",
-			"cancelLabel": "Cancel",
-			"fromLabel": "From",
-			"toLabel": "To",
-			"customRangeLabel": "Custom",
-			"weekLabel": "W",
-			"daysOfWeek": [
-				"Su",
-				"Mo",
-				"Tu",
-				"We",
-				"Th",
-				"Fr",
-				"Sa"
-			],
-			"monthNames": [
-				"January",
-				"February",
-				"March",
-				"April",
-				"May",
-				"June",
-				"July",
-				"August",
-				"September",
-				"October",
-				"November",
-				"December"
-			],
-			"firstDay": 1
+	// 달력선택 문자 제한
+	$('.daterange, .datesingle').on('keypress', function (event) {
+		if ( (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 45 || event.keyCode == 46 || event.keyCode == 47 || event.keyCode == 32 ) {
+			return true;
+		} else {
+			return false;
 		}
 	});
 
-	// 날짜 선택에 의한 입력이 가능하도록 하는 옵션
+	$('.datesingle').daterangepicker({
+		"singleDatePicker": true,
+		"autoUpdateInput": true,
+		"locale": {
+		"format": "MM/DD/YYYY",
+		"separator": " - ",
+		"applyLabel": "Apply",
+		"cancelLabel": "Clear",
+		"fromLabel": "From",
+		"toLabel": "To",
+		"customRangeLabel": "Custom",
+		"weekLabel": "W",
+		"daysOfWeek": [
+			"Su",
+			"Mo",
+			"Tu",
+			"We",
+			"Th",
+			"Fr",
+			"Sa"
+		],
+		"monthNames": [
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June",
+			"July",
+			"August",
+			"September",
+			"October",
+			"November",
+			"December"
+		],
+		},
+			"firstDay": 1
+		
+		}, function(start, end, label) {
+		console.log('New date range selected sinlge : ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+	});
+	$('.datesingle').val('');
+
 	// range
+	/*
 	$('.daterange').on('apply.daterangepicker', function(ev, picker) {
 		$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
 	});
+	*/
 
-
-	$('.daterange').on('blur', function(ev, picker){
-		v = $(this).val();
-		console.log('인풋 벨류값 : ' + v);
-		console.log('인풋 벨류값 테스트 : ' + picker.startDate.format('MM/DD/YYYY'));
-	});
-
-	// single
+	/*
 	$('.datesingle').on('apply.daterangepicker', function(ev, picker) {
-		$(this).val(picker.startDate.format('YYYY/DD/MM'));
+		$(this).val(picker.startDate.format('MM/DD/YYYY'));
 	});
+	*/
+
+	$('.daterange').on('cancel.daterangepicker', function (ev, picker) {
+		$(this).val('');
+	});
+
+	$('.datesingle').on('cancel.daterangepicker', function (ev, picker) {
+		$(this).val('');
+	});
+
 
 	$('.Edit_date > .inp').on('click', function(){
 		$(this).select();
@@ -269,19 +283,17 @@ $(function(){
 	$(".inp.onlyNumber").on('blur', function (event) {
 		var v = $(this).val();
 		var regx = new RegExp(/(-?\d+)(\d{3})/);
-        var bExists = v.indexOf(".", 0);//0번째부터 .을 찾는다.
+        var bExists = v.indexOf(".", 0);
         var strArr = v.split('.');
-        while (regx.test(strArr[0])) {//문자열에 정규식 특수문자가 포함되어 있는지 체크
-            //정수 부분에만 콤마 달기 
-            strArr[0] = strArr[0].replace(regx, "$1,$2");//콤마추가하기
+        while (regx.test(strArr[0])) {
+            strArr[0] = strArr[0].replace(regx, "$1,$2");
         }
         if (bExists > -1) {
-            //. 소수점 문자열이 발견되지 않을 경우 -1 반환
             v = strArr[0] + "." + strArr[1];
-        } else { //정수만 있을경우 //소수점 문자열 존재하면 양수 반환 
+        } else {
             v = strArr[0];
         }
-		$(this).val(v);//문자열 반환
+		$(this).val(v);
 	});
 
 	// AlphaNum
