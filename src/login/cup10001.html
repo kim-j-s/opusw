@@ -4,36 +4,38 @@
 		<div class="flexLayer">
 			<h1><img src="../static/images/common/logo.png" alt="OPUS LOGISTICS" /></h1>
 			<div class="flexContent">
-				<div class="inner">
-					<h2 class="tit" id="i10001_signInLb">Sign In</h2>
-					<div class="inpInner">
-						<div class="idArea">
-							<div class="inputBox full"> <!-- 2019-01-29 클래스 추가 -->
-								<!-- 2019-02-20 수정 -->
-								<input type="text" name="i10001_userId" class="inp Mandate inputFocus" id="i10001_userId" maxlength="50" placeholder="Email or User ID" />
-								<!--// 2019-02-20 수정 -->
-								<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
+				<form action="">
+					<div class="inner">
+						<h2 class="tit" id="i10001_signInLb">Sign In</h2>
+						<div class="inpInner">
+							<div class="idArea">
+								<div class="inputBox full"> <!-- 2019-01-29 클래스 추가 -->
+									<!-- 2019-02-20 수정 -->
+									<input type="text" name="i10001_userId" class="inp Mandate inputFocus" id="i10001_userId" maxlength="50" placeholder="Email or User ID" />
+									<!--// 2019-02-20 수정 -->
+									<button type="button" class="inpReset"></button> <!-- 2019-02-01 수정 -->
+								</div>
 							</div>
-						</div>
-						<!-- 2019-02-28 수정 -->
-						<div class="txtBox">
-							<p class="alertMessage" id="i10001_userIdInfoLb">Your ID has not been activated.</p>
-							<p class="alertMessage" id="i10001_userIdInfoLb">Your ID is not found. Please, sign up your account.</p>
-						</div>
-						<!--// 2019-02-28 수정 -->
-						<div class="loginCheck">
-							<div class="checkbox">
-								<input type="checkbox" name="i10001_rememberMe" id="i10001_rememberMe"><label for="i10001_rememberMe" id="i10001_rememberMeLb">Remember Me</label>
-							</div>			
-						</div>
-						<div class="joinBtn">
-							<a href="#" id="i10001_newAccountLb">New Account</a>
-							<div class="btns">
-								<button type="button" class="btn" id="i10001_next">Next</button> <!-- 2019-02-01 수정 -->
+							<!-- 2019-02-28 수정 -->
+							<div class="txtBox">
+								<p class="alertMessage" id="i10001_userIdInfoLb">Your ID has not been activated.</p>
+								<p class="alertMessage" id="i10001_userIdInfoLb">Your ID is not found. Please, sign up your account.</p>
+							</div>
+							<!--// 2019-02-28 수정 -->
+							<div class="loginCheck">
+								<div class="checkbox">
+									<input type="checkbox" name="i10001_rememberMe" id="i10001_rememberMe"><label for="i10001_rememberMe" id="i10001_rememberMeLb">Remember Me</label>
+								</div>			
+							</div>
+							<div class="joinBtn">
+								<a href="#" id="i10001_newAccountLb">New Account</a>
+								<div class="btns">
+									<button type="button" class="btn" id="i10001_next">Next</button> <!-- 2019-02-01 수정 -->
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 			@@include('include/link.html',{
 				"help": "i10001_helpLb",

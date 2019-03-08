@@ -228,6 +228,7 @@ body .ui-tooltip {display:none !important;}
 .comboBox.full {display:block; width:auto;}
 .comboBox.Mandate .ui-widget.ui-widget-content {background:#eff5f8; transition:.45s;}
 .comboBox.Mandate .ui-widget.ui-widget-content:focus {border:1px solid #78abea;}
+.comboBox.Warning .ui-widget.ui-widget-content {border:1px solid #ff597a}
 .ui-widget.ui-widget-content {border:1px solid #b4bcc9; background:#fff; border-radius:5px; overflow:auto; max-height:200px; font-size:13px; color:#666; z-index:10001;}
 .ui-widget.ui-widget-content:focus {outline:0;}
 .readonly .ui-widget.ui-widget-content {background:#e4e4e6;}
@@ -286,6 +287,7 @@ body .ui-tooltip {display:none !important;}
 .ui.labeled.icon.button.filter > i {background:#ebecef;}
 .ui.labeled.icon.button.filter > i:before {content:''; position:absolute; top:7px; left:13px; width:15px; height:14px; background:url(../images/common/sprite_common.png) no-repeat -79px -50px !important; transform:none;}
 .ui.labeled.icon.button.filter > .text {font-weight:400; color:#666; line-height:28px;}
+.ui.labeled.icon.button.filter > .text .label {position:relative; top:2px;}
 .ui.labeled.icon.button.filter .menu {margin-top:5px !important; margin-left:-1px; border-radius:5px !important; box-shadow:none !important;}
 .ui.labeled.icon.button.filter .menu:hover {opacity:1 !important; background:#fff;}
 .ui.labeled.icon.button.filter .menu >.input:not(.transparent) input {height:28px; padding:0 28px 0 10px !important; font-size:13px; line-height:1.5; font-family:'Open Sans', sans-serif;}
@@ -296,6 +298,7 @@ body .ui-tooltip {display:none !important;}
 .ui.labeled.icon.button.filter .menu > .header {margin:0; padding:10px; font-size:14px;}
 .ui.labeled.icon.button.filter .menu > .header > i.tags.icon {position:relative; top:2px; width:20px; height:16px; margin:0;}
 .ui.labeled.icon.button.filter .menu > .header > i.tags.icon:before {content:''; display:inline-block; width:20px; height:16px; font-size:0; background:url(../images/common/sprite_common.png) no-repeat -79px -75px !important;}
+.ui.labeled.icon.button.filter .menu .label {position:relative; top:1px;}
 
 
 /* timeselect */
@@ -446,7 +449,7 @@ nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
 
 /* editor */
 .editorWrap {}
-.editorWrap > #editor {height:200px;}
+.editorWrap > #editor {height:150px;}
 .ql-editor strong, .ql-editor strong * {font-weight:600;}
 .ql-editor em, .ql-editor em * {font-style:italic;}
 .ql-editor u, .ql-editor u * {text-decoration:underline;}

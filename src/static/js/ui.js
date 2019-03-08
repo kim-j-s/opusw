@@ -209,6 +209,13 @@ $(function(){
 		$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
 	});
 
+
+	$('.daterange').on('blur', function(ev, picker){
+		v = $(this).val();
+		console.log('인풋 벨류값 : ' + v);
+		console.log('인풋 벨류값 테스트 : ' + picker.startDate.format('MM/DD/YYYY'));
+	});
+
 	// single
 	$('.datesingle').on('apply.daterangepicker', function(ev, picker) {
 		$(this).val(picker.startDate.format('YYYY/DD/MM'));
