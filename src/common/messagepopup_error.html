@@ -1,0 +1,58 @@
+@@include('include/head.html')
+<body>
+	<!-- 완성 예시 -->
+	<!--
+	<div class="messagePopup error">
+		<dl class="mpCont error">
+			<dt>! Error</dt>
+			<dd>An internal error occurred. Please try again later</dd>
+		</dl>
+	</div>
+	-->
+	<!--// 완성 예시 -->
+
+	<div class="inputBox">
+		<input type="text" name="" class="inp" id="">
+		<button type="button" class="inpReset"></button>
+	</div>
+
+	<!-- Error Message -->
+	<button type="button" class="btn warn" onclick="Errormsgpopup()">Message Popup - Error</button>
+	<!-- Error Message -->
+
+	<button type="button" class="btn">Message Popup</button>
+
+
+<script type="text/javascript">
+
+$(function(){
+
+	$('body, html').on('click', function(e){
+		var obj = $(e.target);
+		if ( !obj.is('.btn.warn') ) {
+			$('.messagePopup.error').remove();
+		}
+	});
+
+});
+
+function Errormsgpopup() {
+	var msg = '<div class="messagePopup error">'
+			+   '<dl class="mpCont error">'
+			+	  '<dt>! Error</dt>'
+			+	  '<dd>An internal error occurred. Please try again later</dd>'
+			+   '</dl>'
+			+ '</div>';
+
+	if ( $('.messagePopup.error').length > 0 )
+	{
+		$('.messagePopup.error').remove();
+	} else {
+		$(msg).appendTo('body');		
+	}
+}
+
+</script>
+
+</body>
+</html>

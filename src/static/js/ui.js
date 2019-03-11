@@ -248,7 +248,6 @@ $(function(){
 		} else {
 			file = jQuery('.fileUpload').prop("files")[0];
 			blobURL = window.URL.createObjectURL(file);
-			console.log(blobURL);
 			jQuery(this).closest('.imgAdd').find('.imgBox').show();
 			jQuery(this).closest('.imgAdd').find('.imgRemove').show();
 			jQuery(this).closest('.imgAdd').find('.Image_Logo_Large').attr('src', blobURL);
@@ -273,7 +272,6 @@ $(function(){
 
 	$(".inp.onlyNumber").on('keypress', function (event) {
 		if ( (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 46 ) {
-			console.log(event.keyCode);
 			return true;
 		} else {
 			return false;
@@ -395,7 +393,6 @@ function Editor() {
 function Gnb() {
 	cnt = 0;
 	$('.allBtn').on('click', function(){
-		console.log('bng');
 		cnt++;
 		if (cnt == 1)
 		{
@@ -471,7 +468,6 @@ function UtilMenu() {
 function InputReset() {
 	// input reset
 	$('.inpReset').click(function(){
-		console.log('active');
 		$(this).closest('.inputBox').find('.inp').val('');
 		$(this).hide();
 	});
@@ -681,6 +677,7 @@ function ACC() {
 
 // time select
 function tsChk() {
+	/*
 	$(".quantity").keyup(function (event) {
 		var inputVal = $(this).val();
 		if (inputVal.length > 4)
@@ -688,6 +685,15 @@ function tsChk() {
 			$(this).val('');
 		}
 		$(this).val(inputVal.replace(/[^0-9]/gi,''));
+	});
+	*/
+
+	$(".quantity").keypress(function (event) {
+		if ( (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 46 ) {
+			return true;
+		} else {
+			return false;
+		}
 	});
 }
 
@@ -961,10 +967,8 @@ var person = {
 			$(".autoSch.Edit_User.code").each(function(){
 				if ( selectedItemValue3 != null)
 				{
-					console.log('y ' + selectedItemValue3);
 					$(this).closest('.inputBox.Edit_User').find('img').attr('src',selectedItemValue3);
 				} else {
-					console.log('n');
 					$(this).closest('.inputBox.Edit_User').find('img').attr('src','../static/images/common/icon/icon_person_small.png');
 				}
 			});
@@ -1008,10 +1012,8 @@ var company = {
 			$(".autoSch.Edit_Organization.code").each(function(){
 				if ( selectedItemValue3 != null)
 				{
-					console.log('y ' + selectedItemValue3);
 					$(this).closest('.inputBox.Edit_Organization').find('img').attr('src',selectedItemValue3);
 				} else {
-					console.log('n');
 					$(this).closest('.inputBox.Edit_Organization').find('img').attr('src','../static/images/common/icon/icon_logo_small.png');
 				}
 			});

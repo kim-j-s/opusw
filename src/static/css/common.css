@@ -488,6 +488,8 @@ nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
 .messagePopup {position:fixed; top:1px; left:50%; transform:translate(-50%, 0); z-index:101;}
 .mpCont {display:table; width:346px; border:1px solid #4090eb; border-radius:5px; background:#fff; table-layout:fixed; box-shadow: 2px 3px 0px 0px rgba(0, 0, 0, 0.07);}
 .mpCont > dt {display:table-cell; vertical-align:middle; width:90px; height:49px; padding:10px; background:#177cee; font-weight:600; font-size:14px; color:#fff; text-align:center;}
+.mpCont.error {border:1px solid #f44167;}
+.mpCont.error > dt {background:#f44167;}
 .mpCont > dd {display:table-cell; vertical-align:middle; height:49px; padding:8px 12px; font-size:12px; color:#3d3e49; line-height:16px;}
 
 
