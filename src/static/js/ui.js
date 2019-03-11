@@ -491,7 +491,13 @@ function InputReset() {
 	});
 
 	$('.inpReset').unbind('focusout').focusout(function(){
+		//$(this).prev('.inp').removeClass('focus');
+		$(this).closest('.inputBox').find('.inp').last().removeClass('focus');
 		$(this).hide();
+	});
+
+	$('.inpReset').unbind('focusin').focusin(function(){
+		$(this).closest('.inputBox').find('.inp').last().addClass('focus');
 	});
 
 	$(InpObj).unbind('focusout').focusout(function(){
