@@ -35,6 +35,14 @@
 <script type="text/javascript">
 $(function(){
 
+	// list home
+	$('.tabHome > a').on('click', function(){
+		$('.tabList > li > a').removeClass('on');
+		$('.tabListBox').find('a').removeClass('on');
+		$('.content').find('form').hide();
+		$('.content').find('form').eq(0).show();
+	});
+
 	// list tab 활성화
 	$('.tabList').on('click', '.addNewTab', function(){
 		idx = $(this).parent('li').index();

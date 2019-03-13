@@ -125,6 +125,7 @@ h3.tit + .editorWrap {margin-top:10px;}
 .iTxtCont > .txt + .btnBox {margin-top:15px; text-align:right;}
 .iTxtCont + h3.tit {margin-top:20px;}
 
+
 /* agreeChk */
 .agreeChk {position:relative;}
 .agreeChk:after { content:''; display:block; clear:both;}
@@ -160,7 +161,6 @@ h3.tit + .editorWrap {margin-top:10px;}
 .schOptionGroup {position:relative; padding:10px 48px 0px 10px; background:#f7fcff; border-top:1px solid #dbdbdb; border-bottom:1px solid #dbdbdb;}
 .schOptionGroup > .btn {position:absolute; top:10px; right:10px;}
 .schOptionGroup + h3.tit {margin-top:15px;}
-
 .schOptionGroup .itemList1 > li .inpItem > dt {text-align:center;}
 
 .itemList1 {position:relative;}
@@ -179,7 +179,6 @@ h3.tit + .editorWrap {margin-top:10px;}
 .itemList2 > li .inpItem > dt + dd {padding:0 0 0 220px;}
 .itemList2 > li .inpItem + .inpItem {margin-top:10px;}
 .itemList2 + h3.tit {margin-top:20px;}
-
 
 .imgAdd {max-width:320px;}
 .imgAdd > .imgBox {position:relative; display:inline-block; max-width:360px; font-size:0;}
@@ -207,7 +206,7 @@ h3.tit + .detailViewer {margin-top:10px;}
 
 
 /* etc */
-.alertMessage {position:relative; padding-left:25px; font-size:12px;}
+.alertMessage {position:relative; padding-left:25px; font-size:12px; color:#ff0000;}
 .alertMessage + .alertMessage {margin-top:5px;}
 .alertMessage:before {content:''; position:absolute; top:0px; left:0; width:18px; height:16px; background:url(../images/common/sprite_common.png) no-repeat -126px -100px;}
 

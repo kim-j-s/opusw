@@ -21,7 +21,8 @@
 .privacy > .thumb:before {content:''; -webkit-box-flex:1; -ms-flex:1; flex:1;}
 .privacy > .thumb:after {content:''; -webkit-box-flex:1; -ms-flex:1; flex:1;}
 .privacy > .thumb a {display:inline-block; font-size:0;}
-.privacy > .thumb a img {max-width:36px; max-height:36px; border-radius:50%;}
+/* .privacy > .thumb a img {max-width:36px; max-height:36px; border-radius:50%;} */
+.privacy > .thumb a img {width:36px; height:36px; border-radius:50%;}
 
 .util {position:relative; float:left; margin-left:13px;}
 .utilBox {position:absolute; top:46px; right:0; display:none; width:215px; padding:31px 20px 31px 20px; border:1px solid #b4bcc9; border-radius:5px; background:#fff; box-shadow:0px 3px 0px 0px rgba(0, 0, 0, 0.07);}
@@ -190,6 +191,7 @@
 .inputBox.schType.short > .inner .easy-autocomplete:first-child {width:70px;}
 .inputBox.schType.short > .inner .easy-autocomplete {width:130px;}
 
+
 /* easy-autocomplete */
 .easy-autocomplete-container {position:absolute; left:0; z-index:1; width:100%;}
 .easy-autocomplete-container ul {position:relative; border-radius:5px;}
@@ -255,7 +257,6 @@ body .ui-tooltip {display:none !important;}
 
 
 /* semantic ui reset */
-
 /* dropdown */
 .ui.dropdown.country.search {width:200px; height:30px; min-height:auto; padding:0 28px 0 10px;}
 .ui.dropdown.country.search.selection > input.search {padding:0 30px 0 10px;}
@@ -490,10 +491,10 @@ nav {box-shadow: 0px 5px 20px 0px rgba(31, 54, 95, 0.15);}
 
 
 /* message popup */
-.messagePopup {position:fixed; top:1px; left:50%; transform:translate(-50%, 0); z-index:101;}
+.messagePopup {position:fixed; top:1px; left:50%; transform:translate(-50%, 0); z-index:2001;}
 .mpCont {display:table; width:346px; border:1px solid #4090eb; border-radius:5px; background:#fff; table-layout:fixed; box-shadow: 2px 3px 0px 0px rgba(0, 0, 0, 0.07);}
-.mpCont > dt {display:table-cell; vertical-align:middle; width:90px; height:49px; padding:10px; background:#177cee; font-weight:600; font-size:14px; color:#fff; text-align:center;}
 .mpCont.error {border:1px solid #f44167;}
+.mpCont > dt {display:table-cell; vertical-align:middle; width:90px; height:49px; padding:10px; background:#177cee; font-weight:600; font-size:14px; color:#fff; text-align:center;}
 .mpCont.error > dt {background:#f44167;}
 .mpCont > dd {display:table-cell; vertical-align:middle; height:49px; padding:8px 12px; font-size:12px; color:#3d3e49; line-height:16px;}
 

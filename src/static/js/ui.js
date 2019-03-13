@@ -278,6 +278,16 @@ $(function(){
 		}
 	});
 
+	$(".inp.onlyNumber.etc").on('keypress', function (event) {
+		if ( (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 8 || event.keyCode == 9 ) {
+			console.log(event.keyCode);
+			return true;
+		} else {
+			console.log(event.keyCode);
+			return false;
+		}
+	});
+
 	$(".inp.onlyNumber").on('blur', function (event) {
 		var v = $(this).val();
 		var regx = new RegExp(/(-?\d+)(\d{3})/);
@@ -292,6 +302,14 @@ $(function(){
             v = strArr[0];
         }
 		$(this).val(v);
+	});
+
+	$(".inp.onlyNumber.etc").on('blur', function (event) {
+		if( $(this).val() != null && $(this).val() != '' ) {
+			var tmps = $(this).val().replace(/[^0-9]/g, '');
+			var tmps2 = tmps.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+			$(this).val(tmps2);
+		}
 	});
 
 	// AlphaNum
