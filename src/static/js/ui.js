@@ -163,16 +163,24 @@ $(function(){
 
 	// 달력선택 문자 제한
 	$('.daterange, .datesingle').on('keypress', function (event) {
-		if ( (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 45 || event.keyCode == 46 || event.keyCode == 47 || event.keyCode == 32 ) {
+		if ( (event.which >= 48 && event.which <= 57) || event.which == 8 || event.which == 9 || event.which == 45 || event.which == 46 || event.which == 47 || event.which == 32 ) {
+			console.log('true : ' + event.which);
 			return true;
 		} else {
+			console.log('false : ' + event.which);
 			return false;
 		}
 	});
 
+	// 추가
+	var Single_startDate;
+	var Single_endDate;
+	// 추가
+
 	$('.datesingle').daterangepicker({
 		"singleDatePicker": true,
-		"autoUpdateInput": true,
+		//"autoUpdateInput": true,
+		"autoUpdateInput": false,
 		"locale": {
 		"format": "MM/DD/YYYY",
 		"separator": " - ",
@@ -208,8 +216,13 @@ $(function(){
 		},
 			"firstDay": 1
 		
-		}, function(start, end, label) {
+		}, function(start, end, label, ev) {
 		console.log('New date range selected sinlge : ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+		// 추가
+		Single_startDate = start;
+		Single_endDate = end; 
+		// 추가
+		
 	});
 	$('.datesingle').val('');
 
@@ -220,11 +233,11 @@ $(function(){
 	});
 	*/
 
-	/*
+	// 추가
 	$('.datesingle').on('apply.daterangepicker', function(ev, picker) {
 		$(this).val(picker.startDate.format('MM/DD/YYYY'));
 	});
-	*/
+	// 추가
 
 	$('.daterange').on('cancel.daterangepicker', function (ev, picker) {
 		$(this).val('');
@@ -233,6 +246,18 @@ $(function(){
 	$('.datesingle').on('cancel.daterangepicker', function (ev, picker) {
 		$(this).val('');
 	});
+
+	// 추가
+	$('.datesingle').on('change.datepicker', function(ev){
+		v = $(this).val();
+		console.log(v);
+		$(this).val(Single_startDate.format('MM/DD/YYYY'));
+	});
+
+	$('.datesingle').on('click', function(){
+		$(this).val('');
+	});
+	// 추가
 
 
 	$('.Edit_date > .inp').on('click', function(){
@@ -271,7 +296,7 @@ $(function(){
 	// only Number
 
 	$(".inp.onlyNumber").on('keypress', function (event) {
-		if ( (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 46 ) {
+		if ( (event.which >= 48 && event.which <= 57) || event.which == 8 || event.which == 9 || event.which == 46 ) {
 			return true;
 		} else {
 			return false;
@@ -279,11 +304,11 @@ $(function(){
 	});
 
 	$(".inp.onlyNumber.etc").on('keypress', function (event) {
-		if ( (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 8 || event.keyCode == 9 ) {
-			console.log(event.keyCode);
+		if ( (event.which >= 48 && event.which <= 57) || event.which == 8 || event.which == 9 ) {
+			console.log(event.which);
 			return true;
 		} else {
-			console.log(event.keyCode);
+			console.log(event.which);
 			return false;
 		}
 	});
@@ -323,7 +348,7 @@ $(function(){
 
 	// Only_AlphaNum
 	$('.Only_AlphaNum > .inp').on("blur keyup", function(e) {
-		if (!(e.keyCode >=37 && e.keyCode<=40)) {
+		if (!(e.which >=37 && e.which<=40)) {
 			var v = $(this).val();
 			$(this).val(v.replace(/[^a-z0-9]/gi,''));
 		}
@@ -569,7 +594,7 @@ function ACC() {
 			this.input.attr("placeholder", this.element.attr('placeholder'));
 		},
  
-      _createAutocomplete: function() {
+		_createAutocomplete: function() {
 			var selected = this.element.children( ":selected" ),
 				value = selected.val() ? selected.text() : "";
  
@@ -601,11 +626,11 @@ function ACC() {
 			});
 		},
  
-      _createShowAllButton: function() {
+		_createShowAllButton: function() {
 			var input = this.input,
 				wasOpen = false;
  
-        $( "<a>" )
+			$( "<a>" )
 			.attr( "tabIndex", -1 )
 			//.attr( "title", "Show All Items" )
 			.tooltip()
@@ -682,7 +707,8 @@ function ACC() {
 
 			// Remove invalid value
 			this.input
-				.val( "" )
+				//.val( "" )
+				.val(value)
 				.attr( "title", value + " didn't match any item" )
 				.tooltip( "open" );
 			this.element.val( "" );
@@ -713,7 +739,7 @@ function tsChk() {
 	*/
 
 	$(".quantity").keypress(function (event) {
-		if ( (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 46 ) {
+		if ( (event.which >= 48 && event.which <= 57) || event.which == 8 || event.which == 9 || event.which == 46 ) {
 			return true;
 		} else {
 			return false;
