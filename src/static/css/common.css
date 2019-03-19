@@ -21,7 +21,6 @@
 .privacy > .thumb:before {content:''; -webkit-box-flex:1; -ms-flex:1; flex:1;}
 .privacy > .thumb:after {content:''; -webkit-box-flex:1; -ms-flex:1; flex:1;}
 .privacy > .thumb a {display:inline-block; font-size:0;}
-/* .privacy > .thumb a img {max-width:36px; max-height:36px; border-radius:50%;} */
 .privacy > .thumb a img {width:36px; height:36px; border-radius:50%;}
 
 .util {position:relative; float:left; margin-left:13px;}
@@ -260,7 +259,7 @@ body .ui-tooltip {display:none !important;}
 /* dropdown */
 .ui.dropdown.country.search {width:200px; height:30px; min-height:auto; padding:0 28px 0 10px;}
 .ui.dropdown.country.search.selection > input.search {padding:0 30px 0 10px;}
-.ui.dropdown.country.selection {color:#666;}
+.ui.dropdown.country.selection {color:#666; border:1px solid #b4bcc9;}
 .ui.dropdown:not(.button)>.default.text {color:#999;}
 .ui.dropdown.country.search > .text {font-size:13px; line-height:28px;}
 .ui.dropdown.country.selection > .dropdown.icon {right:0; top:0; width:28px; height:28px; margin:0; padding:0; line-height:normal; opacity:1;}
