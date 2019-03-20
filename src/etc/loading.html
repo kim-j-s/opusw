@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Customer Portal</title>
+<meta name="Generator" content="">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<style type="text/css">
+.flexWrap {position:absolute; top:0; right:0; bottom:0; left:0; width:100%; min-width:1400px; height:100%; text-align:center;}
+.flexWrap:before {content:''; display:inline-block; height:100%; vertical-align:middle;}
+.flexLayer {display:inline-block; vertical-align:middle; text-align:left; background:#fff;}
+
+.loading {position:relative; width:505px; height:334px; background:#eee; overflow:hidden;}
+.loading:before {content:''; position:absolute;}
+.loading > .bgAni {
+	position:absolute; top:0; left:0; z-index:1; width:300px; height:100%;
+	background: -webkit-linear-gradient(left, #eee 0%, #ddd 50%, #eee 100%);
+	background-size: 100% 100%;
+	animation: Gradient 1s linear infinite;
+}
+@-webkit-keyframes Gradient {
+	from {
+		left:-120%
+	}
+	to {
+		left:120%
+	}
+}
+.loading > .loadingImg {position:absolute; top:0; left:0; z-index:2;}
+</style>
+
+<script type="text/javascript">
+$(window).load(function(){
+	setTimeout(function(){
+		window.location.href = 'http://in.opuslogis.com/opuslogis/idlogin.usr';
+	}, 1000);
+});
+</script>
+</head>
+<body>
+	<div class="flexWrap">
+		<div class="flexLayer">
+			<div class="loading">
+				<div class="bgAni"></div>
+				<img src="./loading.png" alt="" class="loadingImg" />
+			</div>
+		</div>
+    </div>
+</body>
+</html>
