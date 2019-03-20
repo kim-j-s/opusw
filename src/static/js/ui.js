@@ -47,10 +47,12 @@ $(function(){
 	 * ============================== */
 
 	// editor
+	/*
 	if ( $('#editor').length > 0)
 	{
 		Editor();
 	}
+	*/
 
 	// password api
 	$('.pwinp').dPassword();
