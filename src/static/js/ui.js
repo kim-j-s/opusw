@@ -58,10 +58,17 @@ $(function(){
 	$('.pwinp').dPassword();
 
 	// Semantic UI Drop box
+	// 2019-03-21 수정
 	$('.ui.selection.dropdown').dropdown({
 		fullTextSearch:true,
-		direction:'downward'
+		direction:'downward',
+		clearable:true,
+		allowReselection: true,
+		onChange: function (val) {
+			$(this).find('.delete').css('display','block');
+		}
 	});
+	// 2019-03-21 수정
 
 	// country cursor event
 	$('.selection.country').find('.menu').on("DOMSubtreeModified", function(){
@@ -70,6 +77,18 @@ $(function(){
 			$('.ui.selection.dropdown').find('.search').blur();
 		}
 	});
+
+	// 2019-03-21 추가
+	$('.selection.country').find('.search').on('keyup', function(e) {
+		if($(this).val().length >= 1) {
+			$(this).closest('.selection').find('.delete').css('display','block');
+		}
+		if ( $(this).val().length == 0 )
+		{
+			$(this).closest('.selection').find('.delete').css('display','none');
+		}
+	});
+	// 2019-03-21 추가
 
 	$('.ui.fluid.dropdown').dropdown({
 		fullTextSearch:true,
@@ -415,6 +434,14 @@ $(window).load(function(){
 
 
 // functions
+
+// 2019-03-21 추가
+function countryReset(e) {
+	var obj = $(e.target).closest('.selection').find('.text');
+	$(obj).addClass('default').html('Select Country');
+	$(e.target).css('display','none');
+}
+// 2019-03-21 추가
 
 
 // editor

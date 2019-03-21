@@ -175,7 +175,7 @@ h3.tit + .editorWrap {margin-top:10px;}
 .itemList2 > li {float:left; display:inline-block; width:580px; margin-bottom:10px; font-size:0; vertical-align:top;}
 .itemList2 > li .inpItem {}
 .itemList2 > li .inpItem > dt {width:220px;}
-.itemList2 > li .inpItem > dd {min-height:28px;}
+.itemList2 > li .inpItem > dd {min-height:30px;}
 .itemList2 > li .inpItem > dt + dd {padding:0 0 0 220px;}
 .itemList2 > li .inpItem + .inpItem {margin-top:10px;}
 .itemList2 + h3.tit {margin-top:20px;}
