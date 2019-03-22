@@ -111,6 +111,9 @@ h3.tit + .editorWrap {margin-top:10px;}
 .fileList > li .pathDp + .btns {margin-left:7px;}
 .fileList > li .btns {display:inline-block; font-size:0; vertical-align:top;}
 .fileList > li .btns .btn {margin-left:7px;}
+.fileList > li .inp {padding:0 10px 0 30px; transition:0s;}
+.fileList > li.add .inp {padding:0 10px 0 30px;}
+.fileList > li.add .inp {background:url(../images/common/icon/icon_down.jpg) no-repeat left 5px center; background-size:20px 20px;}
 
 
 /* txtBox */
@@ -150,7 +153,6 @@ h3.tit + .editorWrap {margin-top:10px;}
 .Layout_Sidebar > .inner .lsCont {display:table-cell;}
 .Layout_Sidebar > .inner .lsCont.fix {width:370px; padding-left:10px;}
 
-
 .serviceCode {padding:10px 0;}
 .serviceCode > .srvNum {display:inline-block; min-width:200px; font-weight:600; font-size:18px; line-height:28px; vertical-align:top;}
 .serviceCode > .srvNum .inputBox.inpNone:nth-of-type(1) {width:120px;}
@@ -181,9 +183,11 @@ h3.tit + .editorWrap {margin-top:10px;}
 .itemList2 + h3.tit {margin-top:20px;}
 
 .imgAdd {max-width:320px;}
-.imgAdd > .imgBox {position:relative; display:inline-block; max-width:360px; font-size:0;}
-.imgAdd > .imgBox > img {max-width:100%;}
-.imgAdd > .imgBox.person > img {max-width:40px; border-radius:50%;}
+.imgAdd > .imgBox {position:relative; display:inline-block; width:36px; height:36px; font-size:0; background:url(../images/common/icon/icon_company.jpg) no-repeat 100% 100%;}
+.imgAdd > .imgBox.on {background:none;}
+.imgAdd > .imgBox > img {width:36px; height:36px; border-radius:5px;}
+.imgAdd > .imgBox.person {background:url(../images/common/icon/icon_person.png) no-repeat 100% 100%;}
+.imgAdd > .imgBox.person > img {width:36px; height:36px; border-radius:50%;}
 .imgAdd > .imgBox.logo > img {border-radius:5px;}
 .imgAdd > .imgBox .imgRemove {position:absolute; top:-7px; right:-7px; display:none;}
 .imgAdd > .changeBtn {text-align:right;}

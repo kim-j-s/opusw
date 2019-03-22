@@ -297,7 +297,8 @@ $(function(){
 		} else {
 			file = jQuery('.fileUpload').prop("files")[0];
 			blobURL = window.URL.createObjectURL(file);
-			jQuery(this).closest('.imgAdd').find('.imgBox').show();
+			//jQuery(this).closest('.imgAdd').find('.imgBox').show();
+			jQuery(this).closest('.imgAdd').find('.imgBox').addClass('on');
 			jQuery(this).closest('.imgAdd').find('.imgRemove').show();
 			jQuery(this).closest('.imgAdd').find('.Image_Logo_Large').attr('src', blobURL);
 		}
@@ -305,7 +306,9 @@ $(function(){
 
 	$('.imgRemove').on('click', function(){
 		resetFormElement(jQuery('.fileUpload'));
-		$(this).closest('.imgBox').hide().find('img').attr('src','');
+		$(this).closest('.imgBox').removeClass('on');
+		$(this).closest('.imgBox').find('img').attr('src','');
+		$(this).hide();
 		return false;
 	});
 
@@ -421,6 +424,7 @@ $(function(){
 			$(this).closest('li').find('.btn.minus').css('display','inline-block');
 			$(this).closest('li').find('.btn.plus').css('display','none');
 			$(this).closest('li').next().addClass('on');
+			$(this).closest('li').addClass('add');
 			$(this).closest('li').next().find('.btn.minus').css('display','inline-block');
 			$(this).closest('li').next().find('.btn.plus').css('display','inline-block');
 		}
@@ -861,6 +865,7 @@ function GeoLocation(e) {
 function fileUploadAdd(e) {
 	$(e).closest('li').find('.inpfile').val('');
 	$(e).closest('li').find('.inp').val('');
+	$(e).closest('li').removeClass('add');
 	$(e).closest('li').find('.inpfile').trigger('click');
 }
 
@@ -1106,9 +1111,6 @@ var company = {
 		}
 	}
 };
-
-
-
 
 $(function(){
 	$(".autoSch.key").easyAutocomplete(test);
