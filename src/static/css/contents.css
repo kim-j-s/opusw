@@ -33,7 +33,7 @@
 
 h2.tit {position:relative; padding:7px 0; font-weight:700; font-size:24px; color:#181818; line-height:32px;}
 h2.tit.thumb {padding-left:50px;}
-h2.tit.thumb > img {position:absolute; top:4px; left:0; max-width:41px; max-height:41px;}
+h2.tit.thumb > img {position:absolute; top:4px; left:0; width:41px; height:41px; border-radius:50%;}
 h2.tit + .inpItem {margin-top:20px;}
 h2.tit + h3.tit {margin-top:20px;}
 
@@ -146,10 +146,10 @@ h3.tit + .editorWrap {margin-top:10px;}
 
 /* Layout */
 .layout {position:relative; padding:20px 20px 20px 20px; background:#fff url(../images/common/bg_layout.png) no-repeat left top; border-radius:0 10px 10px 10px;}
-.Layout_Sidebar > .inner {display:flex;}
-.Layout_Sidebar > .inner .lsCont {}
-.Layout_Sidebar > .inner .lsCont:not(.fix) {flex:1; font-size:0;}
-.Layout_Sidebar > .inner .lsCont.fix {width:360px; margin-left:10px;}
+.Layout_Sidebar > .inner {display:table; width:100%; table-layout:fixed;}
+.Layout_Sidebar > .inner .lsCont {display:table-cell;}
+.Layout_Sidebar > .inner .lsCont.fix {width:370px; padding-left:10px;}
+
 
 .serviceCode {padding:10px 0;}
 .serviceCode > .srvNum {display:inline-block; min-width:200px; font-weight:600; font-size:18px; line-height:28px; vertical-align:top;}

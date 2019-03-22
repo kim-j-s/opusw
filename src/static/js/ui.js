@@ -132,6 +132,8 @@ $(function(){
 
 	// date range picker
 	$('.daterange').daterangepicker({
+		// 달력 표시 위치 설정 : opens:'left / center / right'
+		opens:'left',
 		ranges: {
 			'Today': [moment(), moment()],
 			'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
@@ -175,7 +177,8 @@ $(function(){
 			],
 			"firstDay": 1
 		},
-			"alwaysShowCalendars": true
+			// 달력화면 기본표기 옵션 "alwaysShowCalendars": true / false
+			"alwaysShowCalendars": false
 		}, function(start, end, label) {
 			console.log('New date range selected: ' + start.format('YYYY/MM/DD') + ' to ' + end.format('YYYY/MM/DD') + ' (predefined range: ' + label + ')');
 	});
@@ -243,8 +246,8 @@ $(function(){
 		Single_startDate = start;
 		Single_endDate = end; 
 		// 추가
-		
 	});
+
 	$('.datesingle').val('');
 
 	// range
