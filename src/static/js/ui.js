@@ -150,7 +150,7 @@ $(function(){
 			"cancelLabel": "Clear",
 			"fromLabel": "From",
 			"toLabel": "To",
-			"customRangeLabel": "Custom",
+			"customRangeLabel": "Calendar",
 			"weekLabel": "W",
 			"daysOfWeek": [
 				"Su",
@@ -212,7 +212,7 @@ $(function(){
 		"cancelLabel": "Clear",
 		"fromLabel": "From",
 		"toLabel": "To",
-		"customRangeLabel": "Custom",
+		"customRangeLabel": "Calendar",
 		"weekLabel": "W",
 		"daysOfWeek": [
 			"Su",

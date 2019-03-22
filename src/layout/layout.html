@@ -25,6 +25,14 @@
 		</section>
 
 	</div>
+
+
+
+<style type="text/css">
+.dept {display:block !important;}
+</style>
+
+
 <script type="text/javascript">
 $(function(){
 
@@ -56,14 +64,29 @@ $(function(){
 	});
 
 	// more 탭 리스트
+	//2019-03-22 수정
 	$('.tabListBox > span').on('click', function(){
 		if ( $('.tabListBox > ul').css('display') == 'none' )
 		{
 			$('.tabListBox > ul').stop(true, true).slideDown();
+			return false;
 		} else {
 			$('.tabListBox > ul').stop(true, true).slideUp();
+			return false;
 		}
 	});
+
+	$('body, html').on('click', function(){
+		if ( $('.tabListBox').css('display') == 'block')
+		{
+			if ( $('.tabListBox > ul').css('display') == 'block' )
+			{
+				$('.tabListBox > ul').stop(true, true).slideUp();
+				return false;
+			}
+		}
+	});
+	//2019-03-22 수정
 
 	// gnb 탭 추가 및 form 추가
 	var gnbAppen = $('.gnbList').find('a');

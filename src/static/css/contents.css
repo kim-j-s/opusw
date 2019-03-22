@@ -184,11 +184,14 @@ h3.tit + .editorWrap {margin-top:10px;}
 
 .imgAdd {max-width:320px;}
 .imgAdd > .imgBox {position:relative; display:inline-block; width:36px; height:36px; font-size:0; background:url(../images/common/icon/icon_company.jpg) no-repeat 100% 100%;}
-.imgAdd > .imgBox.on {background:none;}
+.imgAdd > .imgBox.on {background:none !important;}
 .imgAdd > .imgBox > img {width:36px; height:36px; border-radius:5px;}
 .imgAdd > .imgBox.person {background:url(../images/common/icon/icon_person.png) no-repeat 100% 100%;}
 .imgAdd > .imgBox.person > img {width:36px; height:36px; border-radius:50%;}
 .imgAdd > .imgBox.logo > img {border-radius:5px;}
+.imgAdd > .imgBox.invoiceLogoImg {width:auto; max-width:320px; height:auto; min-width:320px; min-height:35px; background:url(../images/sample/sample_logo.png) no-repeat; background-size:100% auto;}
+.imgAdd > .imgBox.invoiceLogoImg.on {min-width:0; min-height:0;}
+.imgAdd > .imgBox.invoiceLogoImg > img {width:320px; height:35px; max-width:320px; border-radius:5px;}
 .imgAdd > .imgBox .imgRemove {position:absolute; top:-7px; right:-7px; display:none;}
 .imgAdd > .changeBtn {text-align:right;}
 .imgAdd > .imgBox + .changeBtn {margin-top:10px;}
