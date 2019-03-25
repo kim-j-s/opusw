@@ -26,6 +26,27 @@
 
 	</div>
 
+<script type="text/javascript">
+$(function(){
+	$('form').areYouSure();
+});
+
+window.onbeforeunload = function (e) {
+// Your logic to prepare for 'Stay on this Page' goes here 
+
+    return "Please click 'Stay on this Page' and we will give you candy";
+};
+
+
+
+
+</script>
+
+
+<style type="text/css">
+.dept {display:block !important;}
+</style>
+
 
 <script type="text/javascript">
 $(function(){
@@ -88,6 +109,11 @@ $(function(){
 		$(this).on('click', function(){
 			var thisDate = $(this).data('name');
 			var thisTitle = $(this).text();
+
+			var inp = '<input type="text" name="" id="" />';
+
+
+
 			console.log(thisDate);
 
 			if ( $('.tabList').find('li').hasClass(thisDate) || $('.tabListBox').find('li').hasClass(thisDate) )
@@ -133,7 +159,7 @@ $(function(){
 				$('.tabList').find('.' + thisDate).children('a').addClass('on');
 				$('.tabListBox').find('.' + thisDate).children('a').addClass('on');
 
-				var dmpDom = '<form action=""><div class="layout" style="background:#fff; height:300px;"><span style="color:#000;">'+ thisDate +'</span></div></form>'
+				var dmpDom = '<form action=""><div class="layout" style="background:#fff; height:300px;">' + inp + '<span style="color:#000;">'+ thisDate +'</span></div></form>'
 				$('.content').find('form').hide();
 				$(dmpDom).appendTo('.content');
 				TabListSort();
@@ -143,7 +169,6 @@ $(function(){
 
 	// script
 });
-
 
 // more tab sort
 function moreTabSort(a , b, c) {

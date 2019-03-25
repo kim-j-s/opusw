@@ -424,7 +424,7 @@ $(function(){
 			$(this).closest('li').find('.btn.minus').css('display','inline-block');
 			$(this).closest('li').find('.btn.plus').css('display','none');
 			$(this).closest('li').next().addClass('on');
-			$(this).closest('li').addClass('add');
+			//$(this).closest('li').addClass('add');
 			$(this).closest('li').next().find('.btn.minus').css('display','inline-block');
 			$(this).closest('li').next().find('.btn.plus').css('display','inline-block');
 		}
@@ -865,7 +865,7 @@ function GeoLocation(e) {
 function fileUploadAdd(e) {
 	$(e).closest('li').find('.inpfile').val('');
 	$(e).closest('li').find('.inp').val('');
-	$(e).closest('li').removeClass('add');
+	//$(e).closest('li').removeClass('add');
 	$(e).closest('li').find('.inpfile').trigger('click');
 }
 
