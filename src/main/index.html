@@ -16,15 +16,23 @@
 							layer
 						</div>
 
-						<!-- test
 						<div class="a">
+							@@include('include/CountrySelect.html',{
+								"id": "",
+								"class": "",
+								"placeholder": "Select Country"
+							})
+						</div>
+
+
+						<!-- <div class="a">
 							<dl class="inpItem">
-								<dt id="">Company</dt>
+								<dt id="i10003-companyLb">Company</dt>
 								<dd>
-									<div class="inputBox schType key short">
+									<div class="inputBox schType ty1">
 										<div class="inner">
-											<input type="text" class="inp autoSch key code Readonly" id="n" readonly="readonly">
-											<input type="text" name="" class="inp autoSch key name" id="" placeholder="Type Company Name">
+											<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly">
+											<input type="text" name="" class="inp autoSch ty1 name" id="i10003-company" placeholder="Type Company Name">
 											<button type="button" class="inpReset"></button>
 										</div>
 									</div>
@@ -32,49 +40,17 @@
 							</dl>
 						</div>
 						
-						
 						<div class="a">
-							@@include('include/CountrySelect.html',{
-								"id": "",
-								"class": "",
-								"placeholder": ""
-							})
-						</div>
-						-->
+							<div class="inputBox Edit_Organization">
+								<div class="thumb">
+									<img src="../static/images/common/icon/icon_logo_small.png" alt="" />
+								</div>
+								<input type="text" name="" class="inp autoSch Edit_Organization name" id="" placeholder="">
+								<button type="button" class="inpReset"></button>
+							</div>
+								
+						</div> -->
 
-						 <!--
-
-						 <div class="a">
-							@@include('include/datesinglepicker.html',{
-								"id": "",
-								"class": ""
-							})
-						 </div>
-
-						 <div class="a">
-							@@include('include/daterangepicker.html',{
-								"id": ""
-							})
-						 </div>
-
-						 -->
-
-						 <div class="a">
-							@@include('include/combobox.html',{
-								"id": "ddd",
-								"class": "",
-								"placeholder": "Select a Type"
-							})
-						 </div>
-
-						 <div class="a">
-							 <div class="c">값</div>
-							 <input type="text" name="" id="" class="a1" />
-							 <input type="text" name="" id="" class="a2" />
-							 <button type="button" onclick="count();">계산</button>
-						 </div>
-
-						 <div class="dd" tabindex="0">탭 포커스 확인</div>
 
 					</div>
 				</div>
@@ -83,7 +59,7 @@
 
 <style type="text/css">
 .a {margin-top:20px;}
-.a + .a {}
+.a + .a {margin-top:200px;}
 
 </style>
 
@@ -98,19 +74,6 @@ $(function(){
 */
 
 
-function count() {
-	a = $('.a1').val();
-	b = $('.a2').val();
-	console.log('count');
-	xxx(a,b);
-}
-
-function xxx() {
-	console.log('xxx');
-	val = a + b;
-	//console.log('xxx2' + val);
-	$('.c').html(val);
-}
 
 
 </script>
