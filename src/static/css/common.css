@@ -235,7 +235,7 @@ body .ui-tooltip {display:none !important;}
 .comboBox.Mandate .ui-widget.ui-widget-content {background:#eff5f8; transition:.45s;}
 .comboBox.Mandate .ui-widget.ui-widget-content:focus {border:1px solid #78abea;}
 .comboBox.Warning .ui-widget.ui-widget-content {border:1px solid #ff597a}
-.ui-widget.ui-widget-content {border:1px solid #b4bcc9; background:#fff; border-radius:5px; overflow:auto; max-height:200px; font-size:13px; color:#666; z-index:10001;}
+.ui-widget.ui-widget-content {width:200px !important; max-height:200px; border:1px solid #b4bcc9; background:#fff; border-radius:5px; overflow:auto; font-size:13px; color:#666; z-index:10001;}
 .ui-widget.ui-widget-content:focus {outline:0;}
 .readonly .ui-widget.ui-widget-content {background:#e4e4e6;}
 
