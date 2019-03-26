@@ -274,7 +274,6 @@ $(function(){
 	// 추가
 	$('.datesingle').on('change.datepicker', function(ev){
 		v = $(this).val();
-		console.log(v);
 		$(this).val(Single_startDate.format('MM/DD/YYYY'));
 	});
 
@@ -332,10 +331,8 @@ $(function(){
 
 	$(".inp.onlyNumber.etc, .inp.onlyNumber2").on('keypress', function (event) {
 		if ( (event.which >= 48 && event.which <= 57) || event.which == 8 || event.which == 9 ) {
-			console.log(event.which);
 			return true;
 		} else {
-			console.log(event.which);
 			return false;
 		}
 	});
@@ -616,6 +613,7 @@ function PlusMinus() {
 	});
 }
 
+
 // auto complete combobox
 function ACC() {
 	$.widget("custom.combobox", {
@@ -628,7 +626,6 @@ function ACC() {
 			this._createAutocomplete();
 			this._createShowAllButton();
 			this.input.attr("placeholder", this.element.attr('placeholder'));
-			
 		},
  
 		_createAutocomplete: function() {
@@ -654,6 +651,7 @@ function ACC() {
 			this._on( this.input, {
 				autocompleteselect: function( event, ui ) {
 					ui.item.option.selected = true;
+					
 					this._trigger( "select", event, {
 						item: ui.item.option
 					});

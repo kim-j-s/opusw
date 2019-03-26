@@ -1,0 +1,83 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<!-- 헤더영역 -->
+		@@include('include/header.html')
+		<!-- //헤더영역 -->
+		<section id="container">
+			<div class="inner">
+				@@include('include/nav.html')
+				<div class="content">
+					@@include('include/tabWrap.html')
+					<!-- 컨텐츠 영역 -->
+					<form action="">
+						<div class="layout Layout_List">
+							<h2 class="tit" id="i10703_tariffListLb">Tariff List</h2>
+							<div class="schOptionGroup">
+								<ul class="itemList1">
+									<li>
+										<dl class="inpItem">
+											<dt id="i10703_keywordLb">Keyword</dt>
+											<dd>
+												<div class="inputBox keyword">
+													<input type="text" name="i10703_keyword" class="inp inputFocus" id="i10703_keyword" placeholder="ID, Name" maxlength="50">
+													<button type="button" class="inpReset"></button>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="i10703_customerTypeLb">Customer Type</dt>
+											<dd>
+												@@include('include/itemselect.html',{
+													"id": "i10703_customerType",
+													"class": "",
+													"placeholder": "Select a Type"
+												})
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="i10703_creationLb">Creation</dt>
+											<dd>
+												@@include('include/daterangepicker.html',{
+													"id": "i10703_creation"
+												})
+											</dd>
+										</dl>
+									</li>
+								</ul>
+								<button type="button" class="btn schBtn" id="i10703_search">Search</button>
+							</div>
+
+							<h3 class="tit" id="i10703_tariffsLb">Tariffs</h3>
+							<div class="ibsheetTop">
+								@@include('include/sheet_filter.html',{
+									"id": "i10703_filterStatus",
+									"class": " filter",
+									"placeholder": "Filter Status"
+								})
+								<div class="btns">
+									<button type="button" class="btn" id="i10703_copyTariff">Copy Tariff</button>
+									<button type="button" class="btn" id="i10703_addTariff">Add Tariff</button>
+								</div>
+							</div>
+							<div class="ibsheetDiv">
+								ibsheet
+							</div>
+
+							<h3 class="tit" id="i10703_revisionsLb">Revisions</h3>
+							<div class="ibsheetDiv">
+								ibsheet
+							</div>
+						</div>
+					</form>
+					<!--// 컨텐츠 영역 -->
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
