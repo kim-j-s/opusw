@@ -628,6 +628,7 @@ function ACC() {
 			this._createAutocomplete();
 			this._createShowAllButton();
 			this.input.attr("placeholder", this.element.attr('placeholder'));
+			
 		},
  
 		_createAutocomplete: function() {
