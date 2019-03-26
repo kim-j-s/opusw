@@ -330,7 +330,7 @@ $(function(){
 		}
 	});
 
-	$(".inp.onlyNumber.etc").on('keypress', function (event) {
+	$(".inp.onlyNumber.etc, .inp.onlyNumber2").on('keypress', function (event) {
 		if ( (event.which >= 48 && event.which <= 57) || event.which == 8 || event.which == 9 ) {
 			console.log(event.which);
 			return true;
