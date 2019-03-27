@@ -1,0 +1,40 @@
+@@include('include/head.html')
+<body>
+	<section class="layerPopup">
+		<div class="inner">
+			<h1 class="popupTitle" id="i10618_paymentProcessingLb">Payment Processing</h1>
+			<div class="layerContent">
+				<dl class="inpItem">
+					<dt id="i10618_paidAmountLb">Paid Amount</dt>
+					<dd>
+						<div class="inputBox readonly amount single">
+							<input type="text" name="i10618_paidAmount" class="inp Readonly" id="i10618_paidAmount" readonly="readonly" value="0.00" tabindex="-1">
+						</div>
+					</dd>
+				</dl>
+				<dl class="inpItem">
+					<dt id="i10618_isPaidCompletelyLb">Is Paid Completely</dt>
+					<dd>
+						<div class="checkbox">
+							<input type="checkbox" name="i10618_isPaidChk" id="i10618_isPaidChk" checked="checked"><label for="i10618_isPaidChk" id="i10618_isPaid">Apply</label>
+						</div>	
+					</dd>
+				</dl>
+				<dl class="inpItem">
+					<dt id="i10618_paidDateLb">Select Paid Date</dt>
+					<dd>
+						@@include('include/datesinglepicker.html',{
+							"id": "i10618_paidDate",
+							"class": " Mandate"
+						})
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="layerBtns">
+			<button type="button" class="btn basic" id="i10618_applyPayment">Apply Payment</button>
+		</div>
+		<button type="button" class="btn close">Close</button>
+	</section>
+</body>
+</html>

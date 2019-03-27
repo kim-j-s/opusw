@@ -1,0 +1,228 @@
+@@include('include/head.html')
+<body>
+	<div class="wrapper">
+		<!-- 헤더영역 -->
+		@@include('include/header.html')
+		<!-- //헤더영역 -->
+		<section id="container">
+			<div class="inner">
+				@@include('include/nav.html')
+				<div class="content editBtns">
+					@@include('include/tabWrap.html')					
+					<!-- 컨텐츠 영역 -->
+					<form action="">
+					<div class="layout Layout_Sidebar">
+						<h2 class="tit" id="cup10702_serviceLb">Service</h2>
+						<div class="serviceCode">
+							<div class="srvNum" id="cup10702_serviceIDLb">
+								<div class="inputBox inpNone">
+									<input type="text" name="" class="inp" id="" readonly="readonly" value="S10000001" tabindex="-1">
+								</div>
+							</div>
+							<div class="actChk">
+								<div class="switchChk">
+									<input type="checkbox" name="cup10702_activeChk" id="cup10702_activeChk">
+									<label for="cup10702_activeChk" id="cup10702_active">
+										<span class="txt1">Inactive</span>
+										<span class="txt2">Active</span>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="inner">
+							<div class="lsCont">
+								<h3 class="tit" id="cup10702_basicLb">Basic</h3>
+								<ul class="itemList2">
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_serviceTypeLb">Service Type</dt>
+											<dd>
+												@@include('include/combobox.html',{
+													"id": "cup10702_serviceType",
+													"class": " inputFocus Mandate",
+													"placeholder": "Select a Type"
+												})
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_serviceOwnerLb">Service Name</dt>
+											<dd>
+												<div class="inputBox">
+													<input type="text" name="cup10702_serviceName" class="inp Mandate" id="cup10702_serviceName" maxlength="50">
+													<button type="button" class="inpReset"></button>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_serviceNameLb">Service Owner</dt>
+											<dd>
+												<div class="inputBox Edit_Organization">
+													<div class="thumb">
+														<img src="../static/images/common/icon/icon_logo_small.png" alt="" name="cup10702_serviceNamePhotoUrl" id="cup10702_serviceNamePhotoUrl" />
+													</div>
+													<input type="text" name="cup10702_serviceOwner" class="inp autoSch Edit_Organization name" id="cup10702_serviceOwner" placeholder="" maxlength="50">
+													<button type="button" class="inpReset"></button>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_personInChargeLb">Person in Charge</dt>
+											<dd>
+												<div class="inputBox Edit_User">
+													<div class="thumb">
+														<img src="../static/images/common/icon/icon_person_small.png" alt="" name="cup10702_personInChargePhotoUrl" id="cup10702_personInChargePhotoUrl" />
+													</div>
+													<input type="text" name="cup10702_personInCharge" class="inp autoSch Edit_User name" id="cup10702_personInCharge" placeholder="" maxlength="50">
+													<button type="button" class="inpReset"></button>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_serviceAliasLb">Alias</dt>
+											<dd>
+												<div class="inputBox Only_AlphaNum">
+													<input type="text" name="cup10702_serviceAlias" class="inp" id="cup10702_serviceAlias" maxlength="50">
+													<button type="button" class="inpReset"></button>
+												</div>
+												<div class="tooltip">
+													<div class="tips">
+														<strong class="tit">Alias</strong>
+														<p class="txt">Alias can be service <br />code or abbreviation.</p>
+													</div>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_descriptionLb">Description</dt>
+											<dd>
+												<div class="textareaDiv">
+													<textarea name="" id="cup10702_description" cols="30" rows="10" class="textarea" maxlength="500"></textarea>
+													<div class="byte"><span class="bold">0</span>/500</div>
+												</div>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+
+								<h3 class="tit" id="cup10702_suggestedTariffLb">Selling</h3>
+								<ul class="itemList2">
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_suggestedTariff">Suggested Tariff</dt>
+											<dd>
+												<div class="inputBox schType ty1">
+													<div class="inner">
+														<input type="text" class="inp autoSch ty1 code Readonly" readonly="readonly" tabindex="-1">
+														<input type="text" name="cup10702_suggestedTariff" class="inp autoSch ty1 name" id="cup10702_suggestedTariff" placeholder="Select a Tariff">
+														<button type="button" class="inpReset"></button>
+													</div>
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_addTariffLb">Need New Tariff?</dt>
+											<dd>
+												<button type="button" class="btn" id="cup10702_newTariff">Add Tariff</button>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_isForOnlineSalesLb">Is for Online Sales</dt>
+											<dd>
+												<div class="checkbox">
+													<input type="checkbox" name="cup10702_isForOnlineSalesChk" id="cup10702_isForOnlineSalesChk" checked="checked"><label for="cup10702_isForOnlineSalesChk" id="cup10702_isForOnlineSales">Apply</label>
+												</div>	
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="inpItem">
+											<dt id="cup10702_displayOrderLb">Display Order</dt>
+											<dd>
+												<div class="inputBox onlyNumber">
+													<input type="text" name="cup10702_displayOrder" class="inp onlyNumber2" id="cup10702_displayOrder" placeholder="Ascending Order" maxlength="10">
+													<button type="button" class="inpReset"></button>
+												</div>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+							<div class="lsCont fix">
+								<h3 class="tit">Record</h3>
+								<dl class="inpItem2">
+									<dt id="cup10702_createdOnLb">Created on</dt>
+									<dd>
+										<div class="ele">
+											<div class="inputBox Edit_date single">
+												<input type="text" name="cup10702_createDate" class="inp Readonly" id="cup10702_createDate" value="12-14-2018" readonly="readonly" tabindex="-1">
+											</div>
+											<div class="inputBox Edit_Time readonly">
+												<input type="text" name="cup10702_createTime" class="inp Readonly" id="cup10702_createTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
+											</div>
+										</div>
+										<div class="ele">
+											<div class="inputBox Edit_User">
+												<div class="thumb">
+													<img src="../static/images/common/icon/icon_person_small.png" alt="" />
+												</div>
+												<input type="text" name="cup10702_createdBy" class="inp Readonly" id="cup10702_createdBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
+											</div>
+										</div>
+									</dd>
+								</dl>
+
+								<dl class="inpItem2">
+									<dt id="cup10702_modifiedOnLb">Modified on</dt>
+									<dd>
+										<div class="ele">
+											<div class="inputBox Edit_date single">
+												<input type="text" name="cup10702_modifiedDate" class="inp Readonly" id="cup10702_modifiedDate" value="12-14-2018" readonly="readonly" tabindex="-1">
+											</div>
+											<div class="inputBox Edit_Time readonly">
+												<input type="text" name="cup10702_modifiedTime" class="inp Readonly" id="cup10702_modifiedTime" value="10 : 20 AM" readonly="readonly" tabindex="-1">
+											</div>
+										</div>
+										<div class="ele">
+											<div class="inputBox Edit_User">
+												<div class="thumb">
+													<img src="../static/images/common/icon/icon_person_small.png" alt="" />
+												</div>
+												<input type="text" name="cup10702_modifiedBy" class="inp Readonly" id="cup10702_modifiedBy" value="Park, JungIl" readonly="readonly" tabindex="-1">
+											</div>
+										</div>
+									</dd>
+								</dl>
+
+							</div>
+						</div>
+						<div class="editBtns">
+							<button type="button" class="btn basic" id="cup10702_Save">Save</button>
+						</div>
+					</div>
+					</form>
+					<!--// 컨텐츠 영역 -->
+				</div>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('form').areYouSure();
+		});
+	</script>
+</body>
+</html>
