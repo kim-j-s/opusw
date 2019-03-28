@@ -25,11 +25,17 @@ function msgpopup() {
 			+ '</div>';
 
 	$(msg).appendTo('body');
+	msgRemove();
+	
+}
 
-	// fadeout 효과 후 해당 레이어 삭제
-	$('.messagePopup').fadeOut(3000, function(){
-		$(this).remove();
-	});
+// fadeout 효과 후 해당 레이어 삭제
+function msgRemove() {
+	setTimeout(function(){
+		$('.messagePopup').fadeOut(1000, function(){
+			$(this).remove();
+		});
+	}, 1000);
 }
 
 

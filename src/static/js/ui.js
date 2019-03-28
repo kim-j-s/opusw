@@ -502,10 +502,10 @@ function GnbList() {
 		$(this).on('click', function(){
 			if ( $(this).next().css('display') == 'none' && !$(this).closest('li').find('.clip').hasClass('on') )
 			{
-				$(this).addClass('on').next().slideDown(500);
+				$(this).addClass('on').next().slideDown(300);
 			} else if ($(this).next().css('display') == 'block' && !$(this).closest('li').find('.clip').hasClass('on'))
 			{
-				$(this).removeClass('on').next().slideUp(500);
+				$(this).removeClass('on').next().slideUp(300);
 			}
 		});
 	});
