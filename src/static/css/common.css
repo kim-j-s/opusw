@@ -221,7 +221,7 @@
 .ui.multiple.dropdown.Mandate {border:1px solid #78abea; background:#eff5f8; color:#1f63cd;}
 .ui.multiple.dropdown > .text {height:18px; margin:0;}
 .ui.multiple.dropdown:not(.button)>.default.text {position:relative; top:1px; color:#999; line-height:18px;}
-.ui.multiple.dropdown > .label {position:relative; font-size:12px; margin:0 5px 4px 0; padding:0 22px 0 10px; background:#3689f0; color:#fff; line-height:20px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; border:none; border-radius:5px; box-shadow:none;}
+.ui.multiple.dropdown > .label {position:relative; font-size:12px; margin:0 5px 4px 0; padding:0 22px 0 10px; background:#3689f0; color:#fff; line-height:20px; overflow:hidden; text-overflow:ellipsis; border:none; border-radius:5px; box-shadow:none;}
 .ui.multiple.dropdown > .label .delete.icon {position:absolute; top:6px; right:10px; display:inline-block; width:8px; height:8px;}
 .ui.multiple.dropdown > .label .delete.icon:before {content:''; position:absolute; top:3px; left:-1px; width:10px; border-bottom:1px solid #fff; transform: rotate(45deg);}
 .ui.multiple.dropdown > .label .delete.icon:after {content:''; position:absolute; top:3px; right:-1px; width:10px; border-bottom:1px solid #fff; transform: rotate(135deg);}

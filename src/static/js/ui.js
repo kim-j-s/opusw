@@ -664,6 +664,9 @@ function ACC() {
 		_createShowAllButton: function() {
 			var input = this.input,
 				wasOpen = false;
+
+			// 2019-03-29 추가 [리스트 넓이 설정]
+			//var Width = this.input.outerWidth();
  
 			$( "<a>" )
 			.attr( "tabIndex", -1 )
@@ -691,11 +694,18 @@ function ACC() {
 
 				// Pass empty string as value to search for, displaying all results
 				input.autocomplete( "search", "" );
+
+				// 2019-03-29 추가 [리스트 넓이 설정]
+				//$('.ui-autocomplete.ui-front').css('width',Width);
 			});
 		},
  
 		_source: function( request, response ) {
 			var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
+
+			// 2019-03-29 추가 [리스트 넓이 설정]
+			//var Width = this.input.outerWidth();
+
 			//var matcher = new RegExp("^" + $.ui.autocomplete.escapeRegex(request.term), "i" );
 			response( this.element.children( "option" ).map(function() {
 				var text = $( this ).text();
@@ -715,6 +725,8 @@ function ACC() {
 				};
 			})
 		);
+			// 2019-03-29 추가 [리스트 넓이 설정]
+			//$('.ui-autocomplete.ui-front').css('width',Width);
 	},
  
 		_removeIfInvalid: function( event, ui ) {
